@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kloster-fieldglass"
+version = "0.1.0"
+description = "Fieldglass — Phone-to-telemetry & botanical specimen field instrument (Kloster A_tau(p), Causal Chiasm, 4K focus plates, SVG, 2x4 Braille, USB showcase)"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Nicholas Michael Kloster"},
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.11",
+    "Pillow>=10.0",
+    "matplotlib>=3.7",
+]
+
+[project.scripts]
+fieldglass = "fieldglass.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

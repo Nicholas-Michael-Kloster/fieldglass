@@ -1,0 +1,633 @@
+{
+  "source_video": "/home/cowboy/Downloads/Flowers for Zoe.mp4",
+  "contract": "zoe-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "tonal_states": [
+    "deep_shadow",
+    "ink_linework",
+    "dark_midtone",
+    "botanical_mid",
+    "warm_sepia",
+    "aged_paper",
+    "bright_cream",
+    "paper_highlight"
+  ],
+  "episode_count": 26,
+  "fig40_nexus_second": 15,
+  "fig40_state_distribution": {
+    "deep_shadow": 0.20247679752320247,
+    "ink_linework": 0.1535848464151536,
+    "dark_midtone": 0.1652978347021653,
+    "botanical_mid": 0.1367818632181368,
+    "warm_sepia": 0.08435991564008437,
+    "aged_paper": 0.12096287903712097,
+    "bright_cream": 0.1334018665981334,
+    "paper_highlight": 0.0031339968660031342
+  },
+  "chiasm_fig40_nexus": {
+    "contract": "zoe-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 10,
+    "past_repertoire": {
+      "deep_shadow": 0.25179340182048393,
+      "ink_linework": 0.2236170438277171,
+      "dark_midtone": 0.15148077987081934,
+      "botanical_mid": 0.11408728128487043,
+      "warm_sepia": 0.09494685360273437,
+      "aged_paper": 0.10080049752215017,
+      "bright_cream": 0.06000764091993643,
+      "paper_highlight": 0.0032665011512881766
+    },
+    "future_repertoire": {
+      "deep_shadow": 0.1927038190920927,
+      "ink_linework": 0.22371226157363733,
+      "dark_midtone": 0.2089613791187178,
+      "botanical_mid": 0.1396605295531505,
+      "warm_sepia": 0.1020320509986828,
+      "aged_paper": 0.10203486607072174,
+      "bright_cream": 0.0298358948679939,
+      "paper_highlight": 0.0010591987250032494
+    },
+    "past_accessible_volume": 5,
+    "past_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "dark_midtone",
+      "deep_shadow",
+      "ink_linework"
+    ],
+    "future_accessible_volume": 6,
+    "future_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "dark_midtone",
+      "deep_shadow",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "chiasm_shift": 1,
+    "effective_information_bits": 0.04409920991598334,
+    "q_arrow": {
+      "tau": 0.1,
+      "ei_bits": 0.04409920991598334,
+      "delta_accessible_q_volume": 1,
+      "entered": [
+        "warm_sepia"
+      ],
+      "exited": []
+    },
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "clinical_action_authorized": false
+  },
+  "chiasm_plates_vs_room": {
+    "contract": "zoe-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 6,
+    "past_repertoire": {
+      "deep_shadow": 0.20529003185092376,
+      "ink_linework": 0.19449556808698426,
+      "dark_midtone": 0.16280138102736325,
+      "botanical_mid": 0.12858505088582708,
+      "warm_sepia": 0.11184825612198954,
+      "aged_paper": 0.13469805737922871,
+      "bright_cream": 0.060168788264881916,
+      "paper_highlight": 0.002112866382801491
+    },
+    "future_repertoire": {
+      "deep_shadow": 0.20371266320693446,
+      "ink_linework": 0.27741040678440054,
+      "dark_midtone": 0.23337893420119302,
+      "botanical_mid": 0.14651519996687254,
+      "warm_sepia": 0.07302273625388193,
+      "aged_paper": 0.04458142908407009,
+      "bright_cream": 0.019975966127642197,
+      "paper_highlight": 0.0014026643750052494
+    },
+    "past_accessible_volume": 6,
+    "past_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "dark_midtone",
+      "deep_shadow",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "future_accessible_volume": 4,
+    "future_accessible_states": [
+      "botanical_mid",
+      "dark_midtone",
+      "deep_shadow",
+      "ink_linework"
+    ],
+    "chiasm_shift": -2,
+    "effective_information_bits": 0.14005286659373695,
+    "q_arrow": {
+      "tau": 0.1,
+      "ei_bits": 0.14005286659373695,
+      "delta_accessible_q_volume": -2,
+      "entered": [],
+      "exited": [
+        "aged_paper",
+        "warm_sepia"
+      ]
+    },
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "clinical_action_authorized": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "zoe-causal-chiasm/v1",
+    "episode_count": 26,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        6,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        2,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        5,
+        3,
+        3,
+        2,
+        2,
+        1,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        2,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        5,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        6,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        5,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        5,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        4,
+        4,
+        3,
+        2,
+        0,
+        0
+      ],
+      [
+        5,
+        4,
+        4,
+        3,
+        2,
+        0,
+        0
+      ],
+      [
+        5,
+        4,
+        4,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        5,
+        4,
+        4,
+        3,
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    ],
+    "persistence_scores": {
+      "aged_paper": 0.07461538461538461,
+      "botanical_mid": 0.10384615384615384,
+      "bright_cream": 0.03538461538461538,
+      "dark_midtone": 0.14423076923076922,
+      "deep_shadow": 0.185,
+      "ink_linework": 0.18692307692307694,
+      "paper_highlight": 0.0,
+      "warm_sepia": 0.0776923076923077
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "dark_midtone",
+      "deep_shadow",
+      "ink_linework"
+    ],
+    "transient_states": [
+      "aged_paper",
+      "botanical_mid",
+      "bright_cream",
+      "paper_highlight",
+      "warm_sepia"
+    ],
+    "executed": false
+  },
+  "per_second_luminance_metrics": [
+    {
+      "sec": 0,
+      "A_0.004": 82,
+      "A_0.010": 19,
+      "momentum_0.010": 0,
+      "shannon_H1": 7.4126,
+      "renyi_H2": 7.043
+    },
+    {
+      "sec": 1,
+      "A_0.004": 52,
+      "A_0.010": 28,
+      "momentum_0.010": 9,
+      "shannon_H1": 7.1699,
+      "renyi_H2": 6.7567
+    },
+    {
+      "sec": 2,
+      "A_0.004": 69,
+      "A_0.010": 30,
+      "momentum_0.010": 2,
+      "shannon_H1": 6.8752,
+      "renyi_H2": 6.3536
+    },
+    {
+      "sec": 3,
+      "A_0.004": 80,
+      "A_0.010": 27,
+      "momentum_0.010": -3,
+      "shannon_H1": 7.4228,
+      "renyi_H2": 7.1034
+    },
+    {
+      "sec": 4,
+      "A_0.004": 64,
+      "A_0.010": 29,
+      "momentum_0.010": 2,
+      "shannon_H1": 7.3158,
+      "renyi_H2": 6.9848
+    },
+    {
+      "sec": 5,
+      "A_0.004": 85,
+      "A_0.010": 18,
+      "momentum_0.010": -11,
+      "shannon_H1": 7.3636,
+      "renyi_H2": 7.0336
+    },
+    {
+      "sec": 6,
+      "A_0.004": 81,
+      "A_0.010": 26,
+      "momentum_0.010": 8,
+      "shannon_H1": 7.2468,
+      "renyi_H2": 6.8267
+    },
+    {
+      "sec": 7,
+      "A_0.004": 101,
+      "A_0.010": 10,
+      "momentum_0.010": -16,
+      "shannon_H1": 7.5362,
+      "renyi_H2": 7.3054
+    },
+    {
+      "sec": 8,
+      "A_0.004": 123,
+      "A_0.010": 12,
+      "momentum_0.010": 2,
+      "shannon_H1": 7.4397,
+      "renyi_H2": 7.2301
+    },
+    {
+      "sec": 9,
+      "A_0.004": 131,
+      "A_0.010": 10,
+      "momentum_0.010": -2,
+      "shannon_H1": 7.5077,
+      "renyi_H2": 7.3399
+    },
+    {
+      "sec": 10,
+      "A_0.004": 120,
+      "A_0.010": 20,
+      "momentum_0.010": 10,
+      "shannon_H1": 7.4303,
+      "renyi_H2": 7.2226
+    },
+    {
+      "sec": 11,
+      "A_0.004": 114,
+      "A_0.010": 18,
+      "momentum_0.010": -2,
+      "shannon_H1": 7.3173,
+      "renyi_H2": 7.1105
+    },
+    {
+      "sec": 12,
+      "A_0.004": 109,
+      "A_0.010": 15,
+      "momentum_0.010": -3,
+      "shannon_H1": 7.4476,
+      "renyi_H2": 7.2282
+    },
+    {
+      "sec": 13,
+      "A_0.004": 95,
+      "A_0.010": 21,
+      "momentum_0.010": 6,
+      "shannon_H1": 7.3098,
+      "renyi_H2": 7.0788
+    },
+    {
+      "sec": 14,
+      "A_0.004": 117,
+      "A_0.010": 7,
+      "momentum_0.010": -14,
+      "shannon_H1": 7.334,
+      "renyi_H2": 7.128
+    },
+    {
+      "sec": 15,
+      "A_0.004": 103,
+      "A_0.010": 23,
+      "momentum_0.010": 16,
+      "shannon_H1": 7.4165,
+      "renyi_H2": 7.1701
+    },
+    {
+      "sec": 16,
+      "A_0.004": 120,
+      "A_0.010": 18,
+      "momentum_0.010": -5,
+      "shannon_H1": 7.3105,
+      "renyi_H2": 7.033
+    },
+    {
+      "sec": 17,
+      "A_0.004": 116,
+      "A_0.010": 17,
+      "momentum_0.010": -1,
+      "shannon_H1": 7.3263,
+      "renyi_H2": 7.1027
+    },
+    {
+      "sec": 18,
+      "A_0.004": 140,
+      "A_0.010": 7,
+      "momentum_0.010": -10,
+      "shannon_H1": 7.3004,
+      "renyi_H2": 7.1544
+    },
+    {
+      "sec": 19,
+      "A_0.004": 104,
+      "A_0.010": 14,
+      "momentum_0.010": 7,
+      "shannon_H1": 7.4425,
+      "renyi_H2": 7.2208
+    },
+    {
+      "sec": 20,
+      "A_0.004": 116,
+      "A_0.010": 15,
+      "momentum_0.010": 1,
+      "shannon_H1": 7.504,
+      "renyi_H2": 7.3436
+    },
+    {
+      "sec": 21,
+      "A_0.004": 111,
+      "A_0.010": 21,
+      "momentum_0.010": 6,
+      "shannon_H1": 7.0907,
+      "renyi_H2": 6.9315
+    },
+    {
+      "sec": 22,
+      "A_0.004": 110,
+      "A_0.010": 5,
+      "momentum_0.010": -16,
+      "shannon_H1": 7.1892,
+      "renyi_H2": 7.0433
+    },
+    {
+      "sec": 23,
+      "A_0.004": 106,
+      "A_0.010": 20,
+      "momentum_0.010": 15,
+      "shannon_H1": 7.1454,
+      "renyi_H2": 6.9691
+    },
+    {
+      "sec": 24,
+      "A_0.004": 129,
+      "A_0.010": 0,
+      "momentum_0.010": -20,
+      "shannon_H1": 7.2699,
+      "renyi_H2": 7.1399
+    },
+    {
+      "sec": 25,
+      "A_0.004": 45,
+      "A_0.010": 38,
+      "momentum_0.010": 38,
+      "shannon_H1": 6.2157,
+      "renyi_H2": 5.6707
+    }
+  ],
+  "scene_sha256": "49de05ffc9f66fe47238fce6dcdd2356ac77fb34ef43d52afe5b0ceabec1a355",
+  "svg_path": "/home/cowboy/flowers_for_zoe/chiasm/flowers_for_zoe_chiasm.svg",
+  "png_path": "/home/cowboy/flowers_for_zoe/chiasm/flowers_for_zoe_chiasm.png",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "b1d3c8120fbd6237cd6c5dbf8ba4efa3c58dc7a61b1b49ea06468dc50cfd2b1b"
+}

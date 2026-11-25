@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Fieldglass · Flowers for Zoe (Fig. 30 Spiranthes elata &amp; Kloster A_tau(p))</title>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 {
+    margin: 0 0 6px;
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    color: var(--gold);
+  }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: clamp(0.8rem, 1.8vw, 0.96rem);
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 6px 0 10px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .sub { font-size: 0.88rem; color: var(--muted); margin: 0 0 10px; }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .card h2 {
+    margin: 0 0 6px;
+    font-size: 1.08rem;
+    color: var(--cyan);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+  }
+  .cap { font-size: 0.85rem; color: var(--muted); margin: 0 0 12px; }
+  video, img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    background: #070a10;
+    border: 1px solid #223248;
+  }
+  .grid2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .grid3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .step-box {
+    background: var(--panel2);
+    border: 1px solid #223248;
+    border-radius: 10px;
+    padding: 12px;
+  }
+  .step-box strong { color: var(--gold); display: block; margin-bottom: 4px; font-size: 0.86rem; }
+  .step-box p { margin: 0; font-size: 0.79rem; color: var(--muted); }
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .pill {
+    font-size: 0.76rem;
+    font-family: ui-monospace, monospace;
+    background: #0c121d;
+    border: 1px solid #2a3c55;
+    border-radius: 8px;
+    padding: 5px 10px;
+    color: var(--text);
+  }
+  a.btn, button.btn {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 6px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #1a273b;
+    color: var(--gold);
+    border: 1px solid #3c5475;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  a.btn:hover, button.btn:hover { background: #23344f; }
+  pre.code {
+    overflow-x: auto;
+    background: #090d15;
+    border: 1px solid #24364d;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 0.8rem;
+    color: #d7e5f5;
+    margin: 10px 0 0;
+  }
+  details summary {
+    cursor: pointer;
+    color: var(--gold);
+    font-size: 0.86rem;
+    margin-top: 10px;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Fieldglass · Phone-to-Telemetry &amp; Botanical Specimen Instrument</div>
+    <h1>Flowers for Zoe · Fig. 30 <i>Spiranthes elata</i></h1>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <p class="sub">
+      Full research capture from a Google Pixel 7 (4K 60fps) flipping through Oakes Ames &amp; Donovan Stewart Correll's
+      <i>Orchids of Guatemala and Belize</i> (p. 109, drawn by G. W. Dillon) — processed 100% locally with zero cloud tokens.
+    </p>
+    <div class="nav-links">
+      <a class="btn" href="https://github.com/Ablation-Tool/fieldglass" target="_blank">GitHub Repo</a>
+      <a class="btn" href="https://github.com/Ablation-Tool/fieldglass/blob/main/HOW_IT_WORKS.md" target="_blank">How It Works (DIY Guide)</a>
+      <a class="btn" href="https://github.com/Ablation-Tool/zoe" target="_blank">Ablation-Tool/zoe</a>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>1. Live Kloster A_tau(p_t) Telemetry Overlay Video <span class="badge">1280×720 · 24fps · Stereo Audio</span></h2>
+    <p class="cap">
+      Real-time multi-threshold superlevel-set volume A_tau(p_t), momentum M_0.01, Shannon H_1, Renyi H_2, quartic purity M_4^(1/4),
+      and a live 256-bin luminance histogram lighting up bins strictly above tau = 0.010 in gold.
+    </p>
+    <video controls playsinline preload="metadata" poster="video/overlay_frame_fig40_preview.png">
+      <source src="video/flowers_for_zoe_a_tau_overlay.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <section class="card">
+    <h2>2. Fig. 30 · <i>Spiranthes elata</i> — Archival Print &amp; Vector Engraving <span class="badge">Deskewed + Scalable SVG</span></h2>
+    <p class="cap">
+      Perspective-corrected and shadow-cleaned via Gaussian illumination division (left), then contour-traced into a framed two-tone
+      scalable vector SVG (right). Tap either image to inspect full resolution.
+    </p>
+    <div class="grid2">
+      <a href="assets/fig30_spiranthes_elata_archival_print.png" target="_blank">
+        <img src="assets/fig30_spiranthes_elata_archival_print.png" alt="Fig. 30 Spiranthes elata Archival Ink Print" />
+      </a>
+      <a href="assets/fig30_spiranthes_elata.svg" target="_blank">
+        <img src="assets/fig30_spiranthes_elata_svg_preview.png" alt="Fig. 30 Spiranthes elata Framed Vector SVG" />
+      </a>
+    </div>
+    <div>
+      <a class="btn" href="assets/fig30_spiranthes_elata.svg" target="_blank">Open Raw Scalable SVG</a>
+      <a class="btn" href="assets/fig30_spiranthes_elata_ink_bw.png" target="_blank">Pure B&amp;W Ink Plate</a>
+      <a class="btn" href="assets/fig30_spiranthes_elata_archival_print.png" target="_blank">Archival Parchment PNG</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>3. 2×4 Unicode Braille Botanical Specimen <span class="badge">72×54 cells · 144×216 sub-pixels</span></h2>
+    <p class="cap">
+      Every 2×4 ink sub-pixel block encoded into Unicode Braille (U+2800..U+28FF) with Bayer 4×4 dithering for terminal consoles and phones.
+    </p>
+    <a href="assets/fig30_spiranthes_elata_braille_preview.png" target="_blank">
+      <img src="assets/fig30_spiranthes_elata_braille_preview.png" alt="Fig. 30 2x4 Unicode Braille Preview" />
+    </a>
+    <div>
+      <a class="btn" href="assets/fig30_spiranthes_elata_braille.txt" target="_blank">Open Raw Braille .txt</a>
+      <a class="btn" href="assets/fig30_spiranthes_elata_braille.json" target="_blank">Open Braille .json</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>4. GEM Causal Chiasm &amp; Persistent Filtration Tomography <span class="badge">glyph: ^_^ · exec=False</span></h2>
+    <p class="cap">
+      All 26 per-second tonal-repertoire episodes plugged directly into <code>guiai.gem.chiasm</code> (Causal Chiasm decussation at the
+      t = 15 s Fig. 30 nexus + Persistent Filtration Tomography across 7 thresholds).
+    </p>
+    <a href="chiasm/flowers_for_zoe_chiasm.svg" target="_blank">
+      <img src="chiasm/flowers_for_zoe_chiasm.png" alt="GEM Causal Chiasm & Filtration Tomography" />
+    </a>
+    <div class="pill-row">
+      <span class="pill">Past (0–13 s) A_0.10 = 5</span>
+      <span class="pill">Future (16–25 s) A_0.10 = 6</span>
+      <span class="pill">Nexus EI = 0.0441 bits</span>
+      <span class="pill">Plates → Room: 6 → 4 (EI = 0.1401 b)</span>
+      <span class="pill">Invariants: ink_linework, deep_shadow, dark_midtone</span>
+    </div>
+    <div>
+      <a class="btn" href="chiasm/flowers_for_zoe_chiasm.svg" target="_blank">Open Chiasm SVG</a>
+      <a class="btn" href="chiasm/flowers_for_zoe_chiasm_report.json" target="_blank">SHA-256 JSON Report</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>5. All 6 Focus-Selected 4K Plates <span class="badge">2160×3840 · Laplacian Variance</span></h2>
+    <p class="cap">
+      Automatically picked by highest 2D Laplacian edge variance from the 60fps 4K Pixel 7 source.
+    </p>
+    <a href="plates/contact_sheet_plates.jpg" target="_blank">
+      <img src="plates/contact_sheet_plates.jpg" alt="6-Plate 4K Contact Sheet" />
+    </a>
+    <div>
+      <a class="btn" href="plates/00_cover_orchids_guatemala_belize.jpg" target="_blank">Cover</a>
+      <a class="btn" href="plates/01_fig53_54_stelis_gracilis_guatemalensis.jpg" target="_blank">Fig. 53/54 Stelis</a>
+      <a class="btn" href="plates/02_fig41_tropidia_polystachya.jpg" target="_blank">Fig. 41 Tropidia</a>
+      <a class="btn" href="plates/03_fig42_spiranthes_pyramidalis.jpg" target="_blank">Fig. 42 S. pyramidalis</a>
+      <a class="btn" href="plates/04_fig30_spiranthes_elata.jpg" target="_blank">Fig. 30 S. elata</a>
+      <a class="btn" href="plates/05_fig39_spiranthes_cranichoides.jpg" target="_blank">Fig. 39 S. cranichoides</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>6. How It Works — Run Fieldglass Yourself <span class="badge">MIT · 0 Cloud Tokens</span></h2>
+    <div class="grid3">
+      <div class="step-box">
+        <strong>1. Sharpest Frame</strong>
+        <p>Score every candidate frame with <code>ndimage.laplace(gray).var()</code> and extract the peak focus frame losslessly at 4K.</p>
+      </div>
+      <div class="step-box">
+        <strong>2. Deskew + Shadow Clean</strong>
+        <p>Perspective homography flattens the page; dividing by <code>gaussian_filter(gray, 45)</code> erases uneven lamp shadows.</p>
+      </div>
+      <div class="step-box">
+        <strong>3. SVG + 2×4 Braille</strong>
+        <p>Two-tone <code>contourf</code> traces scalable vector paths; 2×4 pixel patches pack directly into <code>chr(0x2800 + mask)</code>.</p>
+      </div>
+      <div class="step-box">
+        <strong>4. Live A_tau(p_t) Video</strong>
+        <p>Stream raw RGB from <code>ffmpeg</code>, count <code>sum(p &gt; tau)</code> per frame, draw HUD + histogram, mux original stereo audio.</p>
+      </div>
+      <div class="step-box">
+        <strong>5. Causal Chiasm</strong>
+        <p>Sweep thresholds across episode distributions to separate structural invariants from transient noise.</p>
+      </div>
+      <div class="step-box">
+        <strong>6. USB Phone Showcase</strong>
+        <p>Loopback Range HTTP server + <code>adb reverse</code> beams the interactive showcase straight to Android/Pixel Chrome.</p>
+      </div>
+    </div>
+    <pre class="code">git clone https://github.com/Ablation-Tool/fieldglass.git &amp;&amp; cd fieldglass
+pip install -e .
+fieldglass plate your_photo.jpg -o out/ --title "MY SPECIMEN"
+fieldglass overlay your_video.mp4 -o out/
+fieldglass serve out/ --port 8776</pre>
+  </section>
+
+  <footer>
+    Fieldglass · Nicholas Michael Kloster · Zero Cloud Tokens ($0.00) · Transparent Research Measurement (executed=False, sentience_claimed=False)
+  </footer>
+</div>
+</body>
+</html>

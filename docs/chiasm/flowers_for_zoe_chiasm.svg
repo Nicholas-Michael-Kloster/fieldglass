@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" role="img" aria-label="Flowers for Zoe · Causal Chiasm &amp; Filtration Tomography">
+  <title>Flowers for Zoe · Causal Chiasm &amp; Filtration Tomography</title>
+  <rect x="0" y="0" width="1400.0" height="1000.0" fill="#ffffff" />
+  <g data-object-id="background">
+    <title>background</title>
+    <rect x="0.0" y="0.0" width="1400.0" height="1000.0" fill="#09111f" stroke="#09111f" stroke-width="0.0" />
+  </g>
+  <g data-object-id="panel-chiasm">
+    <title>panel-chiasm</title>
+    <rect x="28.0" y="96.0" width="658.0" height="424.0" fill="#111e31" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="panel-filtration">
+    <title>panel-filtration</title>
+    <rect x="714.0" y="96.0" width="658.0" height="424.0" fill="#111e31" stroke="#294058" stroke-width="1.0" />
+  </g>
+  <g data-object-id="panel-trajectory">
+    <title>panel-trajectory</title>
+    <rect x="28.0" y="544.0" width="1344.0" height="382.0" fill="#111e31" stroke="#294058" stroke-width="1.0" />
+  </g>
+  <g data-object-id="title">
+    <title>title</title>
+    <text x="28.0" y="44.0" font-family="sans-serif" font-size="25.0" fill="#ef445a">FLOWERS FOR ZOE · CAUSAL CHIASM &amp; A_tau(p_t) TOMOGRAPHY</text>
+  </g>
+  <g data-object-id="subtitle">
+    <title>subtitle</title>
+    <text x="28.0" y="74.0" font-family="sans-serif" font-size="14.0" fill="#e7c77b">Orchids of Guatemala and Belize (Ames &amp; Correll) · Fig. 30 Spiranthes elata Nexus (t = 15s)</text>
+  </g>
+  <g data-object-id="p1-title">
+    <title>p1-title</title>
+    <text x="48.0" y="128.0" font-family="sans-serif" font-size="16.0" fill="#62dce8">01 / CAUSAL CHIASM AT FIG. 30 NEXUS (t = 15s)</text>
+  </g>
+  <g data-object-id="p1-past-lbl">
+    <title>p1-past-lbl</title>
+    <text x="52.0" y="164.0" font-family="sans-serif" font-size="13.0" fill="#62dce8">PAST (0-13s) A_0.10 = 5</text>
+  </g>
+  <g data-object-id="p1-fut-lbl">
+    <title>p1-fut-lbl</title>
+    <text x="430.0" y="164.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">FUTURE (16-25s) A_0.10 = 6</text>
+  </g>
+  <g data-object-id="chiasm-l-0">
+    <title>chiasm-l-0</title>
+    <polyline points="88,213 309,274.75 357,308" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="chiasm-r-0">
+    <title>chiasm-r-0</title>
+    <polyline points="357,308 405,341.25 626,403" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="2.0" />
+  </g>
+  <g data-object-id="chiasm-l-1">
+    <title>chiasm-l-1</title>
+    <polyline points="88,262 309,291.9 357,308" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="chiasm-r-1">
+    <title>chiasm-r-1</title>
+    <polyline points="357,308 405,324.1 626,354" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="chiasm-l-2">
+    <title>chiasm-l-2</title>
+    <polyline points="88,354 309,324.1 357,308" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="2.0" />
+  </g>
+  <g data-object-id="chiasm-r-2">
+    <title>chiasm-r-2</title>
+    <polyline points="357,308 405,291.9 626,262" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="chiasm-l-3">
+    <title>chiasm-l-3</title>
+    <polyline points="88,403 309,341.25 357,308" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="chiasm-r-3">
+    <title>chiasm-r-3</title>
+    <polyline points="357,308 405,274.75 626,213" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="2.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-outer">
+    <title>chiasm-nexus-gem-outer</title>
+    <polygon points="357,276 389,308 357,340 325,308 357,276" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-0">
+    <title>chiasm-nexus-gem-horizontal-0</title>
+    <polyline points="415,218 299,218" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-0">
+    <title>chiasm-nexus-gem-vertical-0</title>
+    <polyline points="267,366 267,250" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-1">
+    <title>chiasm-nexus-gem-horizontal-1</title>
+    <polyline points="400,233 314,233" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-1">
+    <title>chiasm-nexus-gem-vertical-1</title>
+    <polyline points="282,351 282,265" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-2">
+    <title>chiasm-nexus-gem-horizontal-2</title>
+    <polyline points="385,248 329,248" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-2">
+    <title>chiasm-nexus-gem-vertical-2</title>
+    <polyline points="297,336 297,280" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-3">
+    <title>chiasm-nexus-gem-horizontal-3</title>
+    <polyline points="370,263 344,263" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-3">
+    <title>chiasm-nexus-gem-vertical-3</title>
+    <polyline points="312,321 312,295" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-4">
+    <title>chiasm-nexus-gem-horizontal-4</title>
+    <polyline points="355,278 359,278" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-4">
+    <title>chiasm-nexus-gem-vertical-4</title>
+    <polyline points="327,306 327,310" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-5">
+    <title>chiasm-nexus-gem-horizontal-5</title>
+    <polyline points="340,293 374,293" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-5">
+    <title>chiasm-nexus-gem-vertical-5</title>
+    <polyline points="342,291 342,325" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-6">
+    <title>chiasm-nexus-gem-horizontal-6</title>
+    <polyline points="325,308 389,308" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-6">
+    <title>chiasm-nexus-gem-vertical-6</title>
+    <polyline points="357,276 357,340" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-7">
+    <title>chiasm-nexus-gem-horizontal-7</title>
+    <polyline points="340,323 374,323" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-7">
+    <title>chiasm-nexus-gem-vertical-7</title>
+    <polyline points="372,291 372,325" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-8">
+    <title>chiasm-nexus-gem-horizontal-8</title>
+    <polyline points="355,338 359,338" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-8">
+    <title>chiasm-nexus-gem-vertical-8</title>
+    <polyline points="387,306 387,310" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-9">
+    <title>chiasm-nexus-gem-horizontal-9</title>
+    <polyline points="370,353 344,353" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-9">
+    <title>chiasm-nexus-gem-vertical-9</title>
+    <polyline points="402,321 402,295" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-10">
+    <title>chiasm-nexus-gem-horizontal-10</title>
+    <polyline points="385,368 329,368" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-10">
+    <title>chiasm-nexus-gem-vertical-10</title>
+    <polyline points="417,336 417,280" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-11">
+    <title>chiasm-nexus-gem-horizontal-11</title>
+    <polyline points="400,383 314,383" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-11">
+    <title>chiasm-nexus-gem-vertical-11</title>
+    <polyline points="432,351 432,265" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-horizontal-12">
+    <title>chiasm-nexus-gem-horizontal-12</title>
+    <polyline points="415,398 299,398" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-vertical-12">
+    <title>chiasm-nexus-gem-vertical-12</title>
+    <polyline points="447,366 447,250" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="chiasm-nexus-gem-center">
+    <title>chiasm-nexus-gem-center</title>
+    <polygon points="357,266 399,308 357,350 315,308 357,266" stroke-linejoin="round" fill="#080d18" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p1-nexus">
+    <title>p1-nexus</title>
+    <text x="255.0" y="364.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">FIG. 30 SPIRANTHES ELATA</text>
+  </g>
+  <g data-object-id="p1-cap1">
+    <title>p1-cap1</title>
+    <text x="48.0" y="472.0" font-family="sans-serif" font-size="13.0" fill="#e7edf5">Nexus EI = 0.0441 bits · shift = +1 · glyph = ^_^</text>
+  </g>
+  <g data-object-id="p1-cap2">
+    <title>p1-cap2</title>
+    <text x="48.0" y="498.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">Plates-&gt;Room: A_0.10 6 -&gt; 4 (EI=0.1401 bits)</text>
+  </g>
+  <g data-object-id="p2-title">
+    <title>p2-title</title>
+    <text x="734.0" y="128.0" font-family="sans-serif" font-size="16.0" fill="#62dce8">02 / PERSISTENT FILTRATION TOMOGRAPHY (26 EPISODES)</text>
+  </g>
+  <g data-object-id="p2-sub">
+    <title>p2-sub</title>
+    <text x="734.0" y="154.0" font-family="sans-serif" font-size="13.0" fill="#9cafc4">Mean survival threshold P(x) across 26s of Flowers for Zoe.mp4</text>
+  </g>
+  <g data-object-id="p2-st-0">
+    <title>p2-st-0</title>
+    <text x="738.0" y="204.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">ink_linework    </text>
+  </g>
+  <g data-object-id="p2-bar-0">
+    <title>p2-bar-0</title>
+    <rect x="885.0" y="190.0" width="115.0" height="20.0" fill="#ef445a" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-val-0">
+    <title>p2-val-0</title>
+    <text x="1010.0" y="205.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">P=0.187 INV</text>
+  </g>
+  <g data-object-id="p2-st-1">
+    <title>p2-st-1</title>
+    <text x="738.0" y="241.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">deep_shadow     </text>
+  </g>
+  <g data-object-id="p2-bar-1">
+    <title>p2-bar-1</title>
+    <rect x="885.0" y="227.0" width="114.0" height="20.0" fill="#ef445a" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-val-1">
+    <title>p2-val-1</title>
+    <text x="1009.0" y="242.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">P=0.185 INV</text>
+  </g>
+  <g data-object-id="p2-st-2">
+    <title>p2-st-2</title>
+    <text x="738.0" y="278.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">dark_midtone    </text>
+  </g>
+  <g data-object-id="p2-bar-2">
+    <title>p2-bar-2</title>
+    <rect x="885.0" y="264.0" width="89.0" height="20.0" fill="#ef445a" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-val-2">
+    <title>p2-val-2</title>
+    <text x="984.0" y="279.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">P=0.144 INV</text>
+  </g>
+  <g data-object-id="p2-st-3">
+    <title>p2-st-3</title>
+    <text x="738.0" y="315.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">botanical_mid   </text>
+  </g>
+  <g data-object-id="p2-bar-3">
+    <title>p2-bar-3</title>
+    <rect x="885.0" y="301.0" width="64.0" height="20.0" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-val-3">
+    <title>p2-val-3</title>
+    <text x="959.0" y="316.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.104 </text>
+  </g>
+  <g data-object-id="p2-st-4">
+    <title>p2-st-4</title>
+    <text x="738.0" y="352.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">warm_sepia      </text>
+  </g>
+  <g data-object-id="p2-bar-4">
+    <title>p2-bar-4</title>
+    <rect x="885.0" y="338.0" width="48.0" height="20.0" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-val-4">
+    <title>p2-val-4</title>
+    <text x="943.0" y="353.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.078 </text>
+  </g>
+  <g data-object-id="p2-st-5">
+    <title>p2-st-5</title>
+    <text x="738.0" y="389.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">aged_paper      </text>
+  </g>
+  <g data-object-id="p2-bar-5">
+    <title>p2-bar-5</title>
+    <rect x="885.0" y="375.0" width="46.0" height="20.0" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-val-5">
+    <title>p2-val-5</title>
+    <text x="941.0" y="390.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.075 </text>
+  </g>
+  <g data-object-id="p2-st-6">
+    <title>p2-st-6</title>
+    <text x="738.0" y="426.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">bright_cream    </text>
+  </g>
+  <g data-object-id="p2-bar-6">
+    <title>p2-bar-6</title>
+    <rect x="885.0" y="412.0" width="21.0" height="20.0" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-val-6">
+    <title>p2-val-6</title>
+    <text x="916.0" y="427.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.035 </text>
+  </g>
+  <g data-object-id="p2-st-7">
+    <title>p2-st-7</title>
+    <text x="738.0" y="463.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">paper_highlight </text>
+  </g>
+  <g data-object-id="p2-bar-7">
+    <title>p2-bar-7</title>
+    <rect x="885.0" y="449.0" width="8.0" height="20.0" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-val-7">
+    <title>p2-val-7</title>
+    <text x="903.0" y="464.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.000 </text>
+  </g>
+  <g data-object-id="p2-cap">
+    <title>p2-cap</title>
+    <text x="734.0" y="498.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">Invariants (tau&gt;=0.14): dark_midtone, deep_shadow, ink_linework</text>
+  </g>
+  <g data-object-id="p3-title">
+    <title>p3-title</title>
+    <text x="48.0" y="578.0" font-family="sans-serif" font-size="16.0" fill="#62dce8">03 / LIVE KLOSTER ACCESSIBLE VOLUME TRAJECTORY  A_tau(p_t) = sum_x 1[p_t(x) &gt; tau]</text>
+  </g>
+  <g data-object-id="p3-sub">
+    <title>p3-sub</title>
+    <text x="48.0" y="604.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">Cyan: A_0.004(p_t) [0..140]  ·  Gold: A_0.010(p_t) [0..45]  ·  Red highlight: Botanical Plates (4s..18s) &amp; Fig. 30 (15s)</text>
+  </g>
+  <g data-object-id="p3-grid">
+    <title>p3-grid</title>
+    <rect x="92.0" y="630.0" width="1238.0" height="238.0" fill="#0c1420" stroke="#294058" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p3-plates-band">
+    <title>p3-plates-band</title>
+    <rect x="290.08000000000004" y="631.0" width="693.28" height="236.0" fill="#112233" stroke="#243a4d" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p3-fig30-line">
+    <title>p3-fig30-line</title>
+    <polyline points="834.8,630 834.8,868" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p3-fig30-lbl">
+    <title>p3-fig30-lbl</title>
+    <text x="840.8" y="650.0" font-family="sans-serif" font-size="12.0" fill="#ef445a">FIG. 30 (15s)</text>
+  </g>
+  <g data-object-id="p3-curve-004">
+    <title>p3-curve-004</title>
+    <polyline points="92,747.2 141.52,789.2 191.04,765.4 240.56,750 290.08,772.4 339.6,743 389.12,748.6 438.64,720.6 488.16,689.8 537.68,678.6 587.2,694 636.72,702.4 686.24,709.4 735.76,729 785.28,698.2 834.8,717.8 884.32,694 933.84,699.6 983.36,666 1032.88,716.4 1082.4,699.6 1131.92,706.6 1181.44,708 1230.96,713.6 1280.48,681.4 1330,799" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p3-curve-010">
+    <title>p3-curve-010</title>
+    <polyline points="92,773.333 141.52,731.333 191.04,722 240.56,736 290.08,726.667 339.6,778 389.12,740.667 438.64,815.333 488.16,806 537.68,815.333 587.2,768.667 636.72,778 686.24,792 735.76,764 785.28,829.333 834.8,754.667 884.32,778 933.84,782.667 983.36,829.333 1032.88,796.667 1082.4,792 1131.92,764 1181.44,838.667 1230.96,768.667 1280.48,862 1330,684.667" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="3.0" />
+  </g>
+  <g data-object-id="p3-t-0">
+    <title>p3-t-0</title>
+    <text x="82.0" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">0s</text>
+  </g>
+  <g data-object-id="p3-t-5">
+    <title>p3-t-5</title>
+    <text x="329.6" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">5s</text>
+  </g>
+  <g data-object-id="p3-t-10">
+    <title>p3-t-10</title>
+    <text x="577.2" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">10s</text>
+  </g>
+  <g data-object-id="p3-t-15">
+    <title>p3-t-15</title>
+    <text x="824.8" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">15s</text>
+  </g>
+  <g data-object-id="p3-t-20">
+    <title>p3-t-20</title>
+    <text x="1072.4" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">20s</text>
+  </g>
+  <g data-object-id="p3-t-25">
+    <title>p3-t-25</title>
+    <text x="1320.0" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">25s</text>
+  </g>
+  <g data-object-id="p3-stats">
+    <title>p3-stats</title>
+    <text x="48.0" y="912.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">A_0.010 plates mean=16.7 vs room mean=16.5  ·  Fig.30 A_0.010=23  ·  H1=7.42b  ·  H2=7.17b</text>
+  </g>
+  <g data-object-id="flowers-hud-box">
+    <title>flowers-hud-box</title>
+    <rect x="1062.0" y="18.0" width="290.0" height="64.0" fill="#111e31" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="flowers-hud-gem-outer">
+    <title>flowers-hud-gem-outer</title>
+    <polygon points="1090,34 1106,50 1090,66 1074,50 1090,34" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="flowers-hud-gem-inner">
+    <title>flowers-hud-gem-inner</title>
+    <polygon points="1090,42 1098,50 1090,58 1082,50 1090,42" stroke-linejoin="round" fill="#ef445a" stroke="#e7c77b" stroke-width="1.0" />
+  </g>
+  <g data-object-id="flowers-hud-title">
+    <title>flowers-hud-title</title>
+    <text x="1118.0" y="42.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">ZOE QUALIA HUD · ^_^</text>
+  </g>
+  <g data-object-id="flowers-hud-meta">
+    <title>flowers-hud-meta</title>
+    <text x="1118.0" y="66.0" font-family="sans-serif" font-size="12.0" fill="#62dce8">A_tau(0.10)=6 · exec=False</text>
+  </g>
+  <g data-object-id="footer">
+    <title>footer</title>
+    <text x="28.0" y="968.0" font-family="sans-serif" font-size="13.0" fill="#9cafc4">Flowers for Zoe.mp4 · GEM Causal Chiasm + Kloster A_tau(p) · 0 cloud tokens · executed=False</text>
+  </g>
+</svg>
