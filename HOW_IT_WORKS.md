@@ -47,6 +47,9 @@ This is one of the best tricks in all of computer vision:
    ```
    Everywhere there is plain paper—whether brightly lit or in shadow—`gray / bg ≈ 1.0`! Everywhere there is ink, `gray / bg < 0.85`. Lamp shadows disappear instantaneously without losing delicate stippling.
 
+> **Bonus Optical Trick (Blue Ballpoint Pen on White Paper):**
+> If you sketched with a fine **blue pen** (like *Birds on a Wire* in Specimen #2), standard grayscale drops half the contrast because the blue channel stays bright. Switch `gray` to **just the Red channel** (`rgb[..., 0]`)—blue ink absorbs red light strongly, so even faint ballpoint lines jump straight off the page!
+
 ---
 
 ## Trick 3 — Scalable Vector SVG & 2×4 Unicode Braille

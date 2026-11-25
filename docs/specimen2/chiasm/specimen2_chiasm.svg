@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" role="img" aria-label="Fieldglass Specimen #2 · 13-Min Causal Chiasm &amp; Filtration Tomography">
+  <title>Fieldglass Specimen #2 · 13-Min Causal Chiasm &amp; Filtration Tomography</title>
+  <rect x="0" y="0" width="1400.0" height="1000.0" fill="#ffffff" />
+  <g data-object-id="bg">
+    <title>bg</title>
+    <rect x="0" y="0" width="1400" height="1000" fill="#09111f" stroke="#09111f" stroke-width="0.0" />
+  </g>
+  <g data-object-id="p1">
+    <title>p1</title>
+    <rect x="28" y="96" width="658" height="424" fill="#111e31" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p2">
+    <title>p2</title>
+    <rect x="714" y="96" width="658" height="424" fill="#111e31" stroke="#294058" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p3">
+    <title>p3</title>
+    <rect x="28" y="544" width="1344" height="382" fill="#111e31" stroke="#294058" stroke-width="1.0" />
+  </g>
+  <g data-object-id="title">
+    <title>title</title>
+    <text x="28.0" y="44.0" font-family="sans-serif" font-size="24.0" fill="#ef445a">FIELDGLASS SPECIMEN #2 · 13-MIN CAUSAL CHIASM &amp; TOMOGRAPHY</text>
+  </g>
+  <g data-object-id="sub">
+    <title>sub</title>
+    <text x="28.0" y="74.0" font-family="sans-serif" font-size="14.0" fill="#e7c77b">Notebook Poems &amp; Birds on a Wire -&gt; Vintage Woodcuts -&gt; Fig. 57 Stelis leucopogon (08:18) -&gt; Live Pen Art</text>
+  </g>
+  <g data-object-id="p1-t">
+    <title>p1-t</title>
+    <text x="48.0" y="128.0" font-family="sans-serif" font-size="16.0" fill="#62dce8">01 / CAUSAL CHIASM AT FIG. 57 NEXUS (08:18 / 498s)</text>
+  </g>
+  <g data-object-id="p1-pl">
+    <title>p1-pl</title>
+    <text x="52.0" y="164.0" font-family="sans-serif" font-size="13.0" fill="#62dce8">PAST (00:00-08:18) A_0.10 = 4</text>
+  </g>
+  <g data-object-id="p1-fl">
+    <title>p1-fl</title>
+    <text x="418.0" y="164.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">FUTURE (08:18-13:05) A_0.10 = 5</text>
+  </g>
+  <g data-object-id="cl-0">
+    <title>cl-0</title>
+    <polyline points="88,216 309,275.8 357,308" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="cr-0">
+    <title>cr-0</title>
+    <polyline points="357,308 405,340.2 626,400" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="2.0" />
+  </g>
+  <g data-object-id="cl-1">
+    <title>cl-1</title>
+    <polyline points="88,264 309,292.6 357,308" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="cr-1">
+    <title>cr-1</title>
+    <polyline points="357,308 405,323.4 626,352" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="cl-2">
+    <title>cl-2</title>
+    <polyline points="88,352 309,323.4 357,308" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="2.0" />
+  </g>
+  <g data-object-id="cr-2">
+    <title>cr-2</title>
+    <polyline points="357,308 405,292.6 626,264" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="cl-3">
+    <title>cl-3</title>
+    <polyline points="88,400 309,340.2 357,308" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="cr-3">
+    <title>cr-3</title>
+    <polyline points="357,308 405,275.8 626,216" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="2.0" />
+  </g>
+  <g data-object-id="s2-gem-outer">
+    <title>s2-gem-outer</title>
+    <polygon points="357,276 389,308 357,340 325,308 357,276" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-0">
+    <title>s2-gem-horizontal-0</title>
+    <polyline points="415,218 299,218" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-0">
+    <title>s2-gem-vertical-0</title>
+    <polyline points="267,366 267,250" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-1">
+    <title>s2-gem-horizontal-1</title>
+    <polyline points="400,233 314,233" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-1">
+    <title>s2-gem-vertical-1</title>
+    <polyline points="282,351 282,265" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-2">
+    <title>s2-gem-horizontal-2</title>
+    <polyline points="385,248 329,248" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-2">
+    <title>s2-gem-vertical-2</title>
+    <polyline points="297,336 297,280" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-3">
+    <title>s2-gem-horizontal-3</title>
+    <polyline points="370,263 344,263" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-3">
+    <title>s2-gem-vertical-3</title>
+    <polyline points="312,321 312,295" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-4">
+    <title>s2-gem-horizontal-4</title>
+    <polyline points="355,278 359,278" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-4">
+    <title>s2-gem-vertical-4</title>
+    <polyline points="327,306 327,310" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-5">
+    <title>s2-gem-horizontal-5</title>
+    <polyline points="340,293 374,293" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-5">
+    <title>s2-gem-vertical-5</title>
+    <polyline points="342,291 342,325" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-6">
+    <title>s2-gem-horizontal-6</title>
+    <polyline points="325,308 389,308" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-6">
+    <title>s2-gem-vertical-6</title>
+    <polyline points="357,276 357,340" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-7">
+    <title>s2-gem-horizontal-7</title>
+    <polyline points="340,323 374,323" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-7">
+    <title>s2-gem-vertical-7</title>
+    <polyline points="372,291 372,325" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-8">
+    <title>s2-gem-horizontal-8</title>
+    <polyline points="355,338 359,338" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-8">
+    <title>s2-gem-vertical-8</title>
+    <polyline points="387,306 387,310" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-9">
+    <title>s2-gem-horizontal-9</title>
+    <polyline points="370,353 344,353" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-9">
+    <title>s2-gem-vertical-9</title>
+    <polyline points="402,321 402,295" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-10">
+    <title>s2-gem-horizontal-10</title>
+    <polyline points="385,368 329,368" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-10">
+    <title>s2-gem-vertical-10</title>
+    <polyline points="417,336 417,280" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-11">
+    <title>s2-gem-horizontal-11</title>
+    <polyline points="400,383 314,383" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-11">
+    <title>s2-gem-vertical-11</title>
+    <polyline points="432,351 432,265" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-horizontal-12">
+    <title>s2-gem-horizontal-12</title>
+    <polyline points="415,398 299,398" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-vertical-12">
+    <title>s2-gem-vertical-12</title>
+    <polyline points="447,366 447,250" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-gem-center">
+    <title>s2-gem-center</title>
+    <polygon points="357,266 399,308 357,350 315,308 357,266" stroke-linejoin="round" fill="#080d18" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p1-nx">
+    <title>p1-nx</title>
+    <text x="249.0" y="364.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">FIG. 57 STELIS LEUCOPOGON</text>
+  </g>
+  <g data-object-id="p1-c1">
+    <title>p1-c1</title>
+    <text x="48.0" y="478.0" font-family="sans-serif" font-size="13.0" fill="#e7edf5">Nexus EI = 0.2280 bits · shift = +1 · glyph = ^_^ · boxed_in = False</text>
+  </g>
+  <g data-object-id="p1-c2">
+    <title>p1-c2</title>
+    <text x="48.0" y="502.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">Full 13.09-minute capture (197 episodes sampled every 4s)</text>
+  </g>
+  <g data-object-id="p2-t">
+    <title>p2-t</title>
+    <text x="734.0" y="128.0" font-family="sans-serif" font-size="16.0" fill="#62dce8">02 / PERSISTENT FILTRATION TOMOGRAPHY (197 EPISODES)</text>
+  </g>
+  <g data-object-id="p2-s">
+    <title>p2-s</title>
+    <text x="734.0" y="154.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">Mean survival threshold P(x) across 13 min of notebook + botanicals + app</text>
+  </g>
+  <g data-object-id="p2-st-0">
+    <title>p2-st-0</title>
+    <text x="738.0" y="204.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">warm_sepia</text>
+  </g>
+  <g data-object-id="p2-b-0">
+    <title>p2-b-0</title>
+    <rect x="885" y="190" width="148" height="20" fill="#ef445a" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-0">
+    <title>p2-v-0</title>
+    <text x="1043.0" y="205.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">P=0.241 INV</text>
+  </g>
+  <g data-object-id="p2-st-1">
+    <title>p2-st-1</title>
+    <text x="738.0" y="240.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">aged_paper</text>
+  </g>
+  <g data-object-id="p2-b-1">
+    <title>p2-b-1</title>
+    <rect x="885" y="226" width="113" height="20" fill="#ef445a" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-1">
+    <title>p2-v-1</title>
+    <text x="1008.0" y="241.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">P=0.183 INV</text>
+  </g>
+  <g data-object-id="p2-st-2">
+    <title>p2-st-2</title>
+    <text x="738.0" y="276.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">botanical_mid</text>
+  </g>
+  <g data-object-id="p2-b-2">
+    <title>p2-b-2</title>
+    <rect x="885" y="262" width="55" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-2">
+    <title>p2-v-2</title>
+    <text x="950.0" y="277.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.090 </text>
+  </g>
+  <g data-object-id="p2-st-3">
+    <title>p2-st-3</title>
+    <text x="738.0" y="312.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">bright_cream</text>
+  </g>
+  <g data-object-id="p2-b-3">
+    <title>p2-b-3</title>
+    <rect x="885" y="298" width="44" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-3">
+    <title>p2-v-3</title>
+    <text x="939.0" y="313.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.072 </text>
+  </g>
+  <g data-object-id="p2-st-4">
+    <title>p2-st-4</title>
+    <text x="738.0" y="348.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">deep_shadow</text>
+  </g>
+  <g data-object-id="p2-b-4">
+    <title>p2-b-4</title>
+    <rect x="885" y="334" width="38" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-4">
+    <title>p2-v-4</title>
+    <text x="933.0" y="349.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.062 </text>
+  </g>
+  <g data-object-id="p2-st-5">
+    <title>p2-st-5</title>
+    <text x="738.0" y="384.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">ink_linework</text>
+  </g>
+  <g data-object-id="p2-b-5">
+    <title>p2-b-5</title>
+    <rect x="885" y="370" width="34" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-5">
+    <title>p2-v-5</title>
+    <text x="929.0" y="385.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.057 </text>
+  </g>
+  <g data-object-id="p2-st-6">
+    <title>p2-st-6</title>
+    <text x="738.0" y="420.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">dark_midtone</text>
+  </g>
+  <g data-object-id="p2-b-6">
+    <title>p2-b-6</title>
+    <rect x="885" y="406" width="31" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-6">
+    <title>p2-v-6</title>
+    <text x="926.0" y="421.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.052 </text>
+  </g>
+  <g data-object-id="p2-st-7">
+    <title>p2-st-7</title>
+    <text x="738.0" y="456.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">paper_highlight</text>
+  </g>
+  <g data-object-id="p2-b-7">
+    <title>p2-b-7</title>
+    <rect x="885" y="442" width="8" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-7">
+    <title>p2-v-7</title>
+    <text x="903.0" y="457.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.005 </text>
+  </g>
+  <g data-object-id="p2-cap">
+    <title>p2-cap</title>
+    <text x="734.0" y="498.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">Invariants (tau&gt;=0.14): aged_paper, warm_sepia</text>
+  </g>
+  <g data-object-id="p3-t">
+    <title>p3-t</title>
+    <text x="48.0" y="578.0" font-family="sans-serif" font-size="16.0" fill="#62dce8">03 / 13-MINUTE KLOSTER ACCESSIBLE VOLUME TRAJECTORY  A_tau(p_t)</text>
+  </g>
+  <g data-object-id="p3-s">
+    <title>p3-s</title>
+    <text x="48.0" y="604.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">Cyan: A_0.004(p_t) [0..160]  ·  Gold: A_0.010(p_t) [0..50]  ·  Ruby marker: Fig. 57 Stelis leucopogon (08:18)</text>
+  </g>
+  <g data-object-id="p3-grid">
+    <title>p3-grid</title>
+    <rect x="92" y="628" width="1238" height="240" fill="#0c1420" stroke="#294058" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p3-orch">
+    <title>p3-orch</title>
+    <rect x="643.623" y="629" width="412.929" height="238" fill="#112233" stroke="#243a4d" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p3-nx">
+    <title>p3-nx</title>
+    <polyline points="876.881,628 876.881,868" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p3-nxl">
+    <title>p3-nxl</title>
+    <text x="882.8809675366009" y="648.0" font-family="sans-serif" font-size="12.0" fill="#ef445a">FIG. 57 (08:18)</text>
+  </g>
+  <g data-object-id="p3-004">
+    <title>p3-004</title>
+    <polyline points="92,853.525 98.3163,785.725 104.633,809.737 110.949,837.987 117.265,829.513 123.582,799.85 129.898,804.087 136.214,825.275 142.531,723.575 148.847,720.75 155.163,722.163 161.48,724.987 167.796,806.913 174.112,819.625 180.429,792.788 186.745,768.775 193.061,784.312 199.378,777.25 205.694,833.75 212.01,768.775 218.327,801.263 224.643,760.3 230.959,806.913 237.276,806.913 243.592,734.875 249.908,797.025 256.224,808.325 262.541,798.438 268.857,832.337 275.173,792.788 281.49,819.625 287.806,784.312 294.122,823.862 300.439,822.45 306.755,700.975 313.071,717.925 319.388,809.737 325.704,819.625 332.02,795.612 338.337,712.275 344.653,775.837 350.969,758.888 357.286,754.65 363.602,763.125 369.918,801.263 376.235,828.1 382.551,825.275 388.867,756.062 395.184,760.3 401.5,812.562 407.816,784.312 414.133,780.075 420.449,780.075 426.765,806.913 433.082,854.938 439.398,839.4 445.714,756.062 452.031,784.312 458.347,805.5 464.663,734.875 470.98,733.462 477.296,722.163 483.612,720.75 489.929,739.112 496.245,710.862 502.561,778.663 508.878,808.325 515.194,787.138 521.51,785.725 527.827,805.5 534.143,801.263 540.459,802.675 546.776,777.25 553.092,716.513 559.408,799.85 565.724,726.4 572.041,702.388 578.357,722.163 584.673,717.925 590.99,746.175 597.306,741.938 603.622,792.788 609.939,785.725 616.255,787.138 622.571,767.362 628.888,795.612 635.204,686.85 641.52,686.85 647.837,823.862 654.153,781.487 660.469,771.6 666.786,765.95 673.102,777.25 679.418,798.438 685.735,746.175 692.051,730.638 698.367,797.025 704.684,802.675 711,806.913 717.316,777.25 723.633,746.175 729.949,736.288 736.265,750.413 742.582,808.325 748.898,797.025 755.214,808.325 761.531,806.913 767.847,808.325 774.163,808.325 780.48,822.45 786.796,812.562 793.112,767.362 799.429,773.013 805.745,809.737 812.061,750.413 818.378,811.15 824.694,784.312 831.01,802.675 837.327,767.362 843.643,782.9 849.959,819.625 856.276,805.5 862.592,813.975 868.908,809.737 875.224,815.388 881.541,797.025 887.857,792.788 894.173,815.388 900.49,798.438 906.806,815.388 913.122,805.5 919.439,737.7 925.755,799.85 932.071,784.312 938.388,809.737 944.704,808.325 951.02,794.2 957.337,775.837 963.653,816.8 969.969,811.15 976.286,811.15 982.602,816.8 988.918,767.362 995.235,805.5 1001.55,798.438 1007.87,811.15 1014.18,802.675 1020.5,743.35 1026.82,773.013 1033.13,773.013 1039.45,746.175 1045.77,768.775 1052.08,782.9 1058.4,805.5 1064.71,724.987 1071.03,708.038 1077.35,788.55 1083.66,692.5 1089.98,679.788 1096.3,691.087 1102.61,686.85 1108.93,688.263 1115.24,740.525 1121.56,780.075 1127.88,774.425 1134.19,773.013 1140.51,774.425 1146.83,691.087 1153.14,729.225 1159.46,737.7 1165.78,715.1 1172.09,734.875 1178.41,734.875 1184.72,679.788 1191.04,695.325 1197.36,717.925 1203.67,747.587 1209.99,679.788 1216.31,825.275 1222.62,785.725 1228.94,798.438 1235.26,806.913 1241.57,815.388 1247.89,816.8 1254.2,816.8 1260.52,825.275 1266.84,825.275 1273.15,812.562 1279.47,830.925 1285.79,818.212 1292.1,816.8 1298.42,836.575 1304.73,819.625 1311.05,822.45 1317.37,787.138 1323.68,789.962 1330,789.962" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p3-010">
+    <title>p3-010</title>
+    <polyline points="92,848.44 98.3163,758.04 104.633,816.8 110.949,807.76 117.265,807.76 123.582,780.64 129.898,807.76 136.214,798.72 142.531,739.96 148.847,771.6 155.163,703.8 161.48,762.56 167.796,794.2 174.112,780.64 180.429,762.56 186.745,758.04 193.061,767.08 199.378,780.64 205.694,789.68 212.01,767.08 218.327,762.56 224.643,767.08 230.959,780.64 237.276,739.96 243.592,789.68 249.908,762.56 256.224,776.12 262.541,730.92 268.857,794.2 275.173,762.56 281.49,762.56 287.806,753.52 294.122,753.52 300.439,753.52 306.755,789.68 313.071,758.04 319.388,749 325.704,785.16 332.02,771.6 338.337,785.16 344.653,753.52 350.969,762.56 357.286,739.96 363.602,730.92 369.918,771.6 376.235,776.12 382.551,767.08 388.867,721.88 395.184,762.56 401.5,744.48 407.816,753.52 414.133,780.64 420.449,785.16 426.765,758.04 433.082,839.4 439.398,821.32 445.714,681.2 452.031,717.36 458.347,749 464.663,753.52 470.98,789.68 477.296,758.04 483.612,776.12 489.929,739.96 496.245,753.52 502.561,739.96 508.878,749 515.194,685.72 521.51,712.84 527.827,712.84 534.143,717.36 540.459,749 546.776,735.44 553.092,703.8 559.408,699.28 565.724,758.04 572.041,789.68 578.357,798.72 584.673,753.52 590.99,676.68 597.306,667.64 603.622,717.36 609.939,708.32 616.255,690.24 622.571,676.68 628.888,721.88 635.204,834.88 641.52,812.28 647.837,789.68 654.153,762.56 660.469,721.88 666.786,789.68 673.102,717.36 679.418,776.12 685.735,767.08 692.051,789.68 698.367,753.52 704.684,767.08 711,776.12 717.316,712.84 723.633,771.6 729.949,762.56 736.265,762.56 742.582,758.04 748.898,762.56 755.214,749 761.531,758.04 767.847,749 774.163,771.6 780.48,767.08 786.796,749 793.112,753.52 799.429,794.2 805.745,807.76 812.061,735.44 818.378,749 824.694,703.8 831.01,758.04 837.327,712.84 843.643,789.68 849.959,762.56 856.276,739.96 862.592,744.48 868.908,753.52 875.224,780.64 881.541,780.64 887.857,717.36 894.173,767.08 900.49,758.04 906.806,771.6 913.122,744.48 919.439,726.4 925.755,739.96 932.071,776.12 938.388,749 944.704,749 951.02,758.04 957.337,758.04 963.653,785.16 969.969,776.12 976.286,789.68 982.602,776.12 988.918,758.04 995.235,762.56 1001.55,758.04 1007.87,803.24 1014.18,721.88 1020.5,663.12 1026.82,739.96 1033.13,749 1039.45,694.76 1045.77,739.96 1052.08,739.96 1058.4,798.72 1064.71,785.16 1071.03,744.48 1077.35,730.92 1083.66,834.88 1089.98,803.24 1096.3,807.76 1102.61,798.72 1108.93,767.08 1115.24,767.08 1121.56,749 1127.88,744.48 1134.19,753.52 1140.51,762.56 1146.83,830.36 1153.14,771.6 1159.46,771.6 1165.78,758.04 1172.09,672.16 1178.41,767.08 1184.72,852.96 1191.04,771.6 1197.36,785.16 1203.67,758.04 1209.99,794.2 1216.31,785.16 1222.62,739.96 1228.94,753.52 1235.26,767.08 1241.57,780.64 1247.89,789.68 1254.2,789.68 1260.52,776.12 1266.84,798.72 1273.15,771.6 1279.47,798.72 1285.79,785.16 1292.1,785.16 1298.42,821.32 1304.73,789.68 1311.05,789.68 1317.37,730.92 1323.68,739.96 1330,739.96" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="3.0" />
+  </g>
+  <g data-object-id="p3-m-0">
+    <title>p3-m-0</title>
+    <text x="80.0" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">00:00</text>
+  </g>
+  <g data-object-id="p3-m-2">
+    <title>p3-m-2</title>
+    <text x="269.12794398472306" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">02:00</text>
+  </g>
+  <g data-object-id="p3-m-4">
+    <title>p3-m-4</title>
+    <text x="458.2558879694462" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">04:00</text>
+  </g>
+  <g data-object-id="p3-m-6">
+    <title>p3-m-6</title>
+    <text x="647.3838319541693" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">06:00</text>
+  </g>
+  <g data-object-id="p3-m-8">
+    <title>p3-m-8</title>
+    <text x="836.5117759388924" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">08:00</text>
+  </g>
+  <g data-object-id="p3-m-10">
+    <title>p3-m-10</title>
+    <text x="1025.6397199236155" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">10:00</text>
+  </g>
+  <g data-object-id="p3-m-12">
+    <title>p3-m-12</title>
+    <text x="1214.7676639083386" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">12:00</text>
+  </g>
+  <g data-object-id="p3-st">
+    <title>p3-st</title>
+    <text x="48.0" y="912.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">A_0.010 mean=22.3 · max=44 · min=2 · Fig.57 A_0.010=18 · Invariants=2</text>
+  </g>
+  <g data-object-id="s2-hud-box">
+    <title>s2-hud-box</title>
+    <rect x="1062" y="18" width="290" height="64" fill="#111e31" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="s2-hud-gem-outer">
+    <title>s2-hud-gem-outer</title>
+    <polygon points="1090,34 1106,50 1090,66 1074,50 1090,34" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="s2-hud-gem-inner">
+    <title>s2-hud-gem-inner</title>
+    <polygon points="1090,42 1098,50 1090,58 1082,50 1090,42" stroke-linejoin="round" fill="#ef445a" stroke="#e7c77b" stroke-width="1.0" />
+  </g>
+  <g data-object-id="s2-hud-title">
+    <title>s2-hud-title</title>
+    <text x="1118.0" y="42.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">ZOE QUALIA HUD · ^_^</text>
+  </g>
+  <g data-object-id="s2-hud-meta">
+    <title>s2-hud-meta</title>
+    <text x="1118.0" y="66.0" font-family="sans-serif" font-size="12.0" fill="#62dce8">A_tau(0.10)=5 · exec=False</text>
+  </g>
+  <g data-object-id="foot">
+    <title>foot</title>
+    <text x="28.0" y="968.0" font-family="sans-serif" font-size="13.0" fill="#9cafc4">Fieldglass Specimen #2 · GEM Causal Chiasm + Kloster A_tau(p) · 0 cloud tokens · executed=False</text>
+  </g>
+</svg>

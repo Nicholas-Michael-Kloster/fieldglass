@@ -29,7 +29,19 @@ Recorded in 4K 60fps on a Google Pixel 7 while flipping through Oakes Ames & Don
 |---|---|
 | ![Fig 30 SVG](docs/assets/fig30_spiranthes_elata_svg_preview.png) | ![Fig 30 Braille](docs/assets/fig30_spiranthes_elata_braille_preview.png) |
 
-*(Open the **[live showcase](https://ablation-tool.github.io/fieldglass/)** to watch the full 25.4 s telemetry video with stereo audio, inspect all 6 4K plates, zoom the raw SVG, and copy the Unicode Braille text.)*
+## Specimen #2: 13-Min Field Notebook, *Birds on a Wire* & Fig. 57 *Stelis leucopogon* (Blanche Ames)
+
+A full 13.09-minute capture (`197` episodes, 16× smooth telemetry reel) pairing Nicholas Kloster's original handwritten poem & pen sketch (*"Birds on a Wire"*, isolated cleanly via red-channel optical contrast!) with Blanche Ames's **Fig. 57 *Stelis leucopogon*** (p. 177):
+
+| Fig. 57 *Stelis leucopogon* (Blanche Ames) — SVG | Original *Birds on a Wire* Notebook Sketch — Indigo SVG |
+|---|---|
+| ![Fig 57 SVG](docs/specimen2/assets/fig57_stelis_leucopogon_svg_preview.png) | ![Birds on a Wire SVG](docs/specimen2/assets/nick_birds_on_a_wire_svg_preview.png) |
+
+| 13-Minute 16× Telemetry Reel | 197-Episode Causal Chiasm & Tomography |
+|---|---|
+| ![Specimen 2 Telemetry](docs/specimen2/video/specimen2_overlay_poster.png) | ![Specimen 2 Chiasm](docs/specimen2/chiasm/specimen2_chiasm.png) |
+
+*(Open the **[live showcase](https://ablation-tool.github.io/fieldglass/)** to watch both telemetry videos, inspect all 12 extracted plates, zoom the raw SVGs, and copy the Unicode Braille specimens.)*
 
 ---
 

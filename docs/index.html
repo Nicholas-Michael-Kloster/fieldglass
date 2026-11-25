@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Fieldglass · Flowers for Zoe (Fig. 30 Spiranthes elata &amp; Kloster A_tau(p))</title>
+<title>Fieldglass · Phone-to-Telemetry &amp; Specimen Field Observatory</title>
 <style>
   :root {
     --bg: #0b0f17;
@@ -17,6 +17,7 @@
     --muted: #93a6be;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--bg);
@@ -25,10 +26,7 @@
     line-height: 1.5;
     padding: 18px 14px 64px;
   }
-  .wrap {
-    max-width: 1080px;
-    margin: 0 auto;
-  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
   header {
     background: linear-gradient(145deg, #162133, #0f1622);
     border: 1.5px solid var(--ruby);
@@ -46,7 +44,7 @@
   }
   h1 {
     margin: 0 0 6px;
-    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    font-size: clamp(1.3rem, 3vw, 1.95rem);
     color: var(--gold);
   }
   .eq {
@@ -64,6 +62,20 @@
   }
   .sub { font-size: 0.88rem; color: var(--muted); margin: 0 0 10px; }
   .nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .specimen-banner {
+    background: linear-gradient(90deg, #1a2438, #121926);
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 26px 0 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .specimen-banner h2 { margin: 0; font-size: 1.2rem; color: var(--gold); }
+  .specimen-banner span { font-size: 0.8rem; color: var(--cyan); font-family: ui-monospace, monospace; }
   .card {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -71,9 +83,9 @@
     padding: 16px 18px;
     margin-bottom: 18px;
   }
-  .card h2 {
+  .card h3 {
     margin: 0 0 6px;
-    font-size: 1.08rem;
+    font-size: 1.05rem;
     color: var(--cyan);
     display: flex;
     flex-wrap: wrap;
@@ -118,12 +130,7 @@
   }
   .step-box strong { color: var(--gold); display: block; margin-bottom: 4px; font-size: 0.86rem; }
   .step-box p { margin: 0; font-size: 0.79rem; color: var(--muted); }
-  .pill-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 12px;
-  }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
   .pill {
     font-size: 0.76rem;
     font-family: ui-monospace, monospace;
@@ -133,7 +140,7 @@
     padding: 5px 10px;
     color: var(--text);
   }
-  a.btn, button.btn {
+  a.btn {
     display: inline-block;
     margin-top: 10px;
     margin-right: 6px;
@@ -144,10 +151,13 @@
     border: 1px solid #3c5475;
     font-size: 0.8rem;
     text-decoration: none;
-    cursor: pointer;
-    font-family: inherit;
   }
-  a.btn:hover, button.btn:hover { background: #23344f; }
+  a.btn.accent {
+    background: #2b1826;
+    border-color: var(--ruby);
+    color: #ffd3da;
+  }
+  a.btn:hover { background: #23344f; }
   pre.code {
     overflow-x: auto;
     background: #090d15;
@@ -158,39 +168,133 @@
     color: #d7e5f5;
     margin: 10px 0 0;
   }
-  details summary {
-    cursor: pointer;
-    color: var(--gold);
-    font-size: 0.86rem;
-    margin-top: 10px;
-  }
-  footer {
-    text-align: center;
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 24px;
-  }
+  footer { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 28px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="kicker">Fieldglass · Phone-to-Telemetry &amp; Botanical Specimen Instrument</div>
-    <h1>Flowers for Zoe · Fig. 30 <i>Spiranthes elata</i></h1>
+    <div class="kicker">Fieldglass · Phone-to-Telemetry &amp; Specimen Field Observatory</div>
+    <h1>Kloster Fieldglass — Live Research Archive</h1>
     <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
     <p class="sub">
-      Full research capture from a Google Pixel 7 (4K 60fps) flipping through Oakes Ames &amp; Donovan Stewart Correll's
-      <i>Orchids of Guatemala and Belize</i> (p. 109, drawn by G. W. Dillon) — processed 100% locally with zero cloud tokens.
+      Real-world Google Pixel 7 field captures transformed 100% locally (0 cloud tokens) into focus-selected plates, archival ink prints,
+      scalable vector SVGs, 2×4 Unicode Braille specimens, live Kloster A_tau(p_t) telemetry videos, and GEM Causal Chiasm tomography.
     </p>
     <div class="nav-links">
+      <a class="btn accent" href="#specimen-2">Jump to Specimen #2 (NEW · 13-Min Session)</a>
+      <a class="btn" href="#specimen-1">Specimen #1 · Flowers for Zoe (Fig. 30)</a>
+      <a class="btn" href="#how-it-works">How It Works (DIY)</a>
       <a class="btn" href="https://github.com/Ablation-Tool/fieldglass" target="_blank">GitHub Repo</a>
-      <a class="btn" href="https://github.com/Ablation-Tool/fieldglass/blob/main/HOW_IT_WORKS.md" target="_blank">How It Works (DIY Guide)</a>
       <a class="btn" href="https://github.com/Ablation-Tool/zoe" target="_blank">Ablation-Tool/zoe</a>
     </div>
   </header>
 
+  <!-- ==================== SPECIMEN #2 ==================== -->
+  <div id="specimen-2" class="specimen-banner">
+    <h2>Specimen #2 · Field Notebook, <i>Birds on a Wire</i> &amp; Fig. 57 <i>Stelis leucopogon</i></h2>
+    <span>13.09 min · 197 episodes · Blanche Ames + Original Pen Art</span>
+  </div>
+
   <section class="card">
-    <h2>1. Live Kloster A_tau(p_t) Telemetry Overlay Video <span class="badge">1280×720 · 24fps · Stereo Audio</span></h2>
+    <h3>2A. 13-Minute Field Session Telemetry Reel (16× Timelapse) <span class="badge">1280×720 · 49 s · 197 Episodes</span></h3>
+    <p class="cap">
+      Full 13-minute Pixel 7 session compressed smoothly at 16× across all 5 chapters: Original Notebook Poems &amp; Sketches →
+      Vintage Woodcut Folio (<i>Those Evening Bells</i>) → Ames &amp; Correll Orchids (Fig. 57 <i>Stelis leucopogon</i> at 08:18) →
+      Rose Tattoo &amp; Live Pen Smiles → Zoe Mobile App Studio.
+    </p>
+    <video controls playsinline preload="metadata" poster="specimen2/video/specimen2_overlay_poster.png">
+      <source src="specimen2/video/specimen2_a_tau_overlay.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <section class="card">
+    <h3>2B. Fig. 57 · <i>Stelis leucopogon</i> (Drawn by Blanche Ames, p. 177) <span class="badge">Vector SVG + 70×34 Braille</span></h3>
+    <p class="cap">
+      Extracted cleanly from 08:19 inside the live camera feed, illumination-cleaned, traced into a framed two-tone botanical engraving,
+      and encoded into glowing 2×4 Unicode Braille.
+    </p>
+    <div class="grid2">
+      <a href="specimen2/assets/fig57_stelis_leucopogon.svg" target="_blank">
+        <img src="specimen2/assets/fig57_stelis_leucopogon_svg_preview.png" alt="Fig. 57 Stelis leucopogon Framed Vector SVG" />
+      </a>
+      <a href="specimen2/assets/fig57_stelis_leucopogon_braille_preview.png" target="_blank">
+        <img src="specimen2/assets/fig57_stelis_leucopogon_braille_preview.png" alt="Fig. 57 Stelis leucopogon 2x4 Unicode Braille" />
+      </a>
+    </div>
+    <div>
+      <a class="btn" href="specimen2/assets/fig57_stelis_leucopogon.svg" target="_blank">Open Scalable SVG</a>
+      <a class="btn" href="specimen2/assets/fig57_stelis_leucopogon_archival_print.png" target="_blank">Archival Print PNG</a>
+      <a class="btn" href="specimen2/assets/fig57_stelis_leucopogon_braille.txt" target="_blank">Raw Braille .txt</a>
+      <a class="btn" href="specimen2/assets/fig57_stelis_leucopogon_braille.json" target="_blank">Braille .json</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>2C. Original Field Notebook — <i>Birds on a Wire</i> (Red-Channel Blue-Pen Isolation) <span class="badge">Indigo SVG + 64-Col Braille</span></h3>
+    <p class="cap">
+      <i>"Birds on a wire with nothin to do / So I tell em 'I'll scribble bout you!'"</i> — Nicholas Kloster.
+      Isolated by dividing the <b>Red color channel</b> (where blue ballpoint ink absorbs strongly) by a Gaussian lighting field.
+    </p>
+    <div class="grid2">
+      <a href="specimen2/assets/nick_birds_on_a_wire.svg" target="_blank">
+        <img src="specimen2/assets/nick_birds_on_a_wire_svg_preview.png" alt="Birds on a Wire Indigo Vector SVG" />
+      </a>
+      <a href="specimen2/assets/nick_birds_on_a_wire_braille_preview.png" target="_blank">
+        <img src="specimen2/assets/nick_birds_on_a_wire_braille_preview.png" alt="Birds on a Wire 2x4 Unicode Braille" />
+      </a>
+    </div>
+    <div>
+      <a class="btn" href="specimen2/assets/nick_birds_on_a_wire.svg" target="_blank">Open Indigo SVG</a>
+      <a class="btn" href="specimen2/assets/nick_birds_on_a_wire_archival_print.png" target="_blank">Indigo Archival Print</a>
+      <a class="btn" href="specimen2/assets/nick_birds_on_a_wire_braille.txt" target="_blank">Raw Braille .txt</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>2D. 13-Minute GEM Causal Chiasm &amp; Persistent Filtration Tomography <span class="badge">197 Episodes · glyph: ^_^</span></h3>
+    <p class="cap">
+      197 tonal-repertoire distributions sampled every 4 seconds across the full 13.09-minute recording plugged directly into
+      <code>guiai.gem.chiasm</code>, centered on the Fig. 57 <i>Stelis leucopogon</i> nexus (08:18).
+    </p>
+    <a href="specimen2/chiasm/specimen2_chiasm.svg" target="_blank">
+      <img src="specimen2/chiasm/specimen2_chiasm.png" alt="Specimen 2 13-Minute Causal Chiasm & Filtration Tomography" />
+    </a>
+    <div class="pill-row">
+      <span class="pill">Past (00:00–08:18) A_0.10 = 4</span>
+      <span class="pill">Future (08:18–13:05) A_0.10 = 5</span>
+      <span class="pill">Nexus EI = 0.2280 bits</span>
+      <span class="pill">Invariants: warm_sepia (0.241), aged_paper (0.183)</span>
+    </div>
+    <div>
+      <a class="btn" href="specimen2/chiasm/specimen2_chiasm.svg" target="_blank">Open Chiasm SVG</a>
+      <a class="btn" href="specimen2/chiasm/specimen2_chiasm_report.json" target="_blank">SHA-256 JSON Report</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>2E. Specimen #2 Highlight Plates (6 Clean Viewfinder Captures) <span class="badge">Laplacian Focus Selected</span></h3>
+    <a href="specimen2/plates/contact_sheet_specimen2.jpg" target="_blank">
+      <img src="specimen2/plates/contact_sheet_specimen2.jpg" alt="Specimen 2 6-Plate Contact Sheet" />
+    </a>
+    <div>
+      <a class="btn" href="specimen2/plates/01_birds_on_a_wire.png" target="_blank">Birds on a Wire</a>
+      <a class="btn" href="specimen2/plates/02_bridal_wreath_woodcut.png" target="_blank">Those Evening Bells Woodcut</a>
+      <a class="btn" href="specimen2/plates/03_orchid_multistem.png" target="_blank">Multi-Stem Orchid</a>
+      <a class="btn" href="specimen2/plates/04_fig57_stelis_leucopogon.png" target="_blank">Fig. 57 Stelis leucopogon</a>
+      <a class="btn" href="specimen2/plates/05_fig54_stelis_guatemalensis.png" target="_blank">Fig. 54 Stelis guatemalensis</a>
+      <a class="btn" href="specimen2/plates/06_live_pen_smiles.png" target="_blank">Live Pen Smiles</a>
+    </div>
+  </section>
+
+  <!-- ==================== SPECIMEN #1 ==================== -->
+  <div id="specimen-1" class="specimen-banner">
+    <h2>Specimen #1 · <i>Flowers for Zoe</i> — Fig. 30 <i>Spiranthes elata</i> (G. W. Dillon)</h2>
+    <span>25.44 s · 4K 60fps · Stereo Audio · 26 Episodes</span>
+  </div>
+
+  <section class="card">
+    <h3>1A. Live Kloster A_tau(p_t) Telemetry Overlay Video <span class="badge">1280×720 · 24fps · Stereo Audio</span></h3>
     <p class="cap">
       Real-time multi-threshold superlevel-set volume A_tau(p_t), momentum M_0.01, Shannon H_1, Renyi H_2, quartic purity M_4^(1/4),
       and a live 256-bin luminance histogram lighting up bins strictly above tau = 0.010 in gold.
@@ -201,11 +305,7 @@
   </section>
 
   <section class="card">
-    <h2>2. Fig. 30 · <i>Spiranthes elata</i> — Archival Print &amp; Vector Engraving <span class="badge">Deskewed + Scalable SVG</span></h2>
-    <p class="cap">
-      Perspective-corrected and shadow-cleaned via Gaussian illumination division (left), then contour-traced into a framed two-tone
-      scalable vector SVG (right). Tap either image to inspect full resolution.
-    </p>
+    <h3>1B. Fig. 30 · <i>Spiranthes elata</i> — Archival Print &amp; Vector Engraving <span class="badge">Deskewed 4K + Scalable SVG</span></h3>
     <div class="grid2">
       <a href="assets/fig30_spiranthes_elata_archival_print.png" target="_blank">
         <img src="assets/fig30_spiranthes_elata_archival_print.png" alt="Fig. 30 Spiranthes elata Archival Ink Print" />
@@ -222,10 +322,7 @@
   </section>
 
   <section class="card">
-    <h2>3. 2×4 Unicode Braille Botanical Specimen <span class="badge">72×54 cells · 144×216 sub-pixels</span></h2>
-    <p class="cap">
-      Every 2×4 ink sub-pixel block encoded into Unicode Braille (U+2800..U+28FF) with Bayer 4×4 dithering for terminal consoles and phones.
-    </p>
+    <h3>1C. Fig. 30 · 2×4 Unicode Braille Specimen <span class="badge">72×54 cells · 144×216 sub-pixels</span></h3>
     <a href="assets/fig30_spiranthes_elata_braille_preview.png" target="_blank">
       <img src="assets/fig30_spiranthes_elata_braille_preview.png" alt="Fig. 30 2x4 Unicode Braille Preview" />
     </a>
@@ -236,19 +333,14 @@
   </section>
 
   <section class="card">
-    <h2>4. GEM Causal Chiasm &amp; Persistent Filtration Tomography <span class="badge">glyph: ^_^ · exec=False</span></h2>
-    <p class="cap">
-      All 26 per-second tonal-repertoire episodes plugged directly into <code>guiai.gem.chiasm</code> (Causal Chiasm decussation at the
-      t = 15 s Fig. 30 nexus + Persistent Filtration Tomography across 7 thresholds).
-    </p>
+    <h3>1D. GEM Causal Chiasm &amp; Persistent Filtration Tomography <span class="badge">26 Episodes · glyph: ^_^</span></h3>
     <a href="chiasm/flowers_for_zoe_chiasm.svg" target="_blank">
-      <img src="chiasm/flowers_for_zoe_chiasm.png" alt="GEM Causal Chiasm & Filtration Tomography" />
+      <img src="chiasm/flowers_for_zoe_chiasm.png" alt="Specimen 1 GEM Causal Chiasm & Filtration Tomography" />
     </a>
     <div class="pill-row">
       <span class="pill">Past (0–13 s) A_0.10 = 5</span>
       <span class="pill">Future (16–25 s) A_0.10 = 6</span>
       <span class="pill">Nexus EI = 0.0441 bits</span>
-      <span class="pill">Plates → Room: 6 → 4 (EI = 0.1401 b)</span>
       <span class="pill">Invariants: ink_linework, deep_shadow, dark_midtone</span>
     </div>
     <div>
@@ -258,12 +350,9 @@
   </section>
 
   <section class="card">
-    <h2>5. All 6 Focus-Selected 4K Plates <span class="badge">2160×3840 · Laplacian Variance</span></h2>
-    <p class="cap">
-      Automatically picked by highest 2D Laplacian edge variance from the 60fps 4K Pixel 7 source.
-    </p>
+    <h3>1E. All 6 Focus-Selected 4K Orchid Plates <span class="badge">2160×3840 · Laplacian Variance</span></h3>
     <a href="plates/contact_sheet_plates.jpg" target="_blank">
-      <img src="plates/contact_sheet_plates.jpg" alt="6-Plate 4K Contact Sheet" />
+      <img src="plates/contact_sheet_plates.jpg" alt="Specimen 1 6-Plate 4K Contact Sheet" />
     </a>
     <div>
       <a class="btn" href="plates/00_cover_orchids_guatemala_belize.jpg" target="_blank">Cover</a>
@@ -275,24 +364,25 @@
     </div>
   </section>
 
-  <section class="card">
-    <h2>6. How It Works — Run Fieldglass Yourself <span class="badge">MIT · 0 Cloud Tokens</span></h2>
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section id="how-it-works" class="card">
+    <h3>How It Works — Run Fieldglass Yourself <span class="badge">MIT · 0 Cloud Tokens</span></h3>
     <div class="grid3">
       <div class="step-box">
         <strong>1. Sharpest Frame</strong>
-        <p>Score every candidate frame with <code>ndimage.laplace(gray).var()</code> and extract the peak focus frame losslessly at 4K.</p>
+        <p>Score candidates with <code>ndimage.laplace(gray).var()</code> and extract the peak focus frame losslessly.</p>
       </div>
       <div class="step-box">
-        <strong>2. Deskew + Shadow Clean</strong>
-        <p>Perspective homography flattens the page; dividing by <code>gaussian_filter(gray, 45)</code> erases uneven lamp shadows.</p>
+        <strong>2. Deskew + Shadow Eraser</strong>
+        <p>Homography flattens the page; dividing by <code>gaussian_filter(gray, 45)</code> (or Red channel for blue pen!) erases shadows.</p>
       </div>
       <div class="step-box">
         <strong>3. SVG + 2×4 Braille</strong>
-        <p>Two-tone <code>contourf</code> traces scalable vector paths; 2×4 pixel patches pack directly into <code>chr(0x2800 + mask)</code>.</p>
+        <p>Two-tone <code>contourf</code> traces scalable vector paths; 2×4 pixel patches pack into <code>chr(0x2800 + mask)</code>.</p>
       </div>
       <div class="step-box">
         <strong>4. Live A_tau(p_t) Video</strong>
-        <p>Stream raw RGB from <code>ffmpeg</code>, count <code>sum(p &gt; tau)</code> per frame, draw HUD + histogram, mux original stereo audio.</p>
+        <p>Stream raw RGB from <code>ffmpeg</code>, count <code>sum(p &gt; tau)</code> per frame, composite HUD + histogram, mux audio.</p>
       </div>
       <div class="step-box">
         <strong>5. Causal Chiasm</strong>
@@ -300,7 +390,7 @@
       </div>
       <div class="step-box">
         <strong>6. USB Phone Showcase</strong>
-        <p>Loopback Range HTTP server + <code>adb reverse</code> beams the interactive showcase straight to Android/Pixel Chrome.</p>
+        <p>Loopback Range HTTP server + <code>adb reverse</code> beams the showcase straight to Android/Pixel Chrome.</p>
       </div>
     </div>
     <pre class="code">git clone https://github.com/Ablation-Tool/fieldglass.git &amp;&amp; cd fieldglass
@@ -308,6 +398,9 @@ pip install -e .
 fieldglass plate your_photo.jpg -o out/ --title "MY SPECIMEN"
 fieldglass overlay your_video.mp4 -o out/
 fieldglass serve out/ --port 8776</pre>
+    <div>
+      <a class="btn" href="https://github.com/Ablation-Tool/fieldglass/blob/main/HOW_IT_WORKS.md" target="_blank">Read Full DIY Teaching Guide (HOW_IT_WORKS.md)</a>
+    </div>
   </section>
 
   <footer>
