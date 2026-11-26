@@ -53,10 +53,11 @@ A 4K 60fps walkthrough of the **Linda Hall Library of Science, Engineering & Tec
 |---|---|
 | ![Linda Hall Fig 1 Braille](docs/specimen3/assets/linda_hall_fig1_chromatography_braille_preview.png) | ![Linda Hall Chiasm](docs/specimen3/chiasm/specimen3_linda_hall_chiasm.png) |
 
-## Full Live Archive (14 Specimens on GitHub Pages)
+## Full Live Archive (15 Specimens on GitHub Pages)
 
-Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **14 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
+Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **15 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
 
+- **[#15 · *The Star-Spangled Banner* Impulse Study](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-15)** — Full 1.0× brass-band audio synced to 50+ rapid-fire American iconography slides + Obverse &amp; Reverse Great Seal SVGs.
 - **[#14 · December Poetry Manuscript](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-14)** — Red-channel Prussian-indigo broadsides (*"The Yellow House"*, *"Hands"*, *"Scribbling Immortality"*).
 - **[#13 · Ernst Haeckel: *Kunstformen der Natur*](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-13)** — Tafel 1 *Phaeodaria* & hexagonal honeycomb lattices + full 17m 54s studio dialogue.
 - **[#12 · Dr. Helen Ruth Horkan (FLAGSHIP)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-12)** — Full 19m 44s live biology lecture on pluripotent stem cells, meiosis, apoptosis, and chromatin + inverted-chalk jellyfish SVG.
