@@ -6,7 +6,7 @@ alongside Shannon H1, Renyi H2, quartic purity M4^(1/4), Causal Chiasm decussati
 and Persistent Filtration Tomography F(t, tau) = A_tau(p_t).
 
 Zero cloud tokens ($0.00), pure NumPy + Python stdlib, mathematical parity with
-`guiai.gem.chiasm` in Ablation-Tool/zoe.
+`guiai.gem.chiasm` in Nicholas-Michael-Kloster/zoe.
 """
 
 from __future__ import annotations

@@ -79,7 +79,7 @@ def build_specimen7() -> dict:
         assets_dir,
         "fig248_crosshatched_ablation_cone",
         title="FIG. 2.48 · CROSS-HATCHED ABLATION PATTERN ON TEFLON MODEL",
-        subtitle="Nachtsheim & Larson (1971) · Merzkirch Flow Visualization · Ablation-Tool",
+        subtitle="Nachtsheim & Larson (1971) · Merzkirch Flow Visualization · Nicholas-Michael-Kloster",
         crop_box=(0.30, 0.02, 0.85, 0.62),
         braille_cols=64,
         edge_hybrid=True,

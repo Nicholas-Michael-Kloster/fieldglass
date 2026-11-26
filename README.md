@@ -2,7 +2,7 @@
 
 **Phone-to-telemetry & specimen field instrument** — turn any real-world phone video or botanical drawing into crisp 4K focus-selected plates, perspective-deskewed archival prints, scalable vector SVGs, 2×4 Unicode Braille specimens, real-time **Kloster $A_{\tau}(p_t)$** telemetry videos, **Causal Chiasm** filtration tomography, and a zero-cloud USB showcase.
 
-> **Live Interactive Showcase (GitHub Pages):** **[https://ablation-tool.github.io/fieldglass/](https://ablation-tool.github.io/fieldglass/)**
+> **Live Interactive Showcase (GitHub Pages):** **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)**
 > **Step-by-Step Guide ("How It Works & Do It Yourself"):** **[HOW_IT_WORKS.md](HOW_IT_WORKS.md)**
 
 ---
@@ -53,7 +53,17 @@ A 4K 60fps walkthrough of the **Linda Hall Library of Science, Engineering & Tec
 |---|---|
 | ![Linda Hall Fig 1 Braille](docs/specimen3/assets/linda_hall_fig1_chromatography_braille_preview.png) | ![Linda Hall Chiasm](docs/specimen3/chiasm/specimen3_linda_hall_chiasm.png) |
 
-*(Open the **[live showcase](https://ablation-tool.github.io/fieldglass/)** to watch all three telemetry videos, inspect all 18 extracted plates, zoom the raw SVGs, and copy the Unicode Braille specimens.)*
+## Full Live Archive (14 Specimens on GitHub Pages)
+
+Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **14 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
+
+- **[#14 · December Poetry Manuscript](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-14)** — Red-channel Prussian-indigo broadsides (*"The Yellow House"*, *"Hands"*, *"Scribbling Immortality"*).
+- **[#13 · Ernst Haeckel: *Kunstformen der Natur*](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-13)** — Tafel 1 *Phaeodaria* & hexagonal honeycomb lattices + full 17m 54s studio dialogue.
+- **[#12 · Dr. Helen Ruth Horkan (FLAGSHIP)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-12)** — Full 19m 44s live biology lecture on pluripotent stem cells, meiosis, apoptosis, and chromatin + inverted-chalk jellyfish SVG.
+- **[#11 · *ASCE Guide to Post-Earthquake Investigation of Lifelines*](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-11)** — Unified 3-part critical infrastructure & SCADA monograph (Fig. 16.1 Liquid Fuel System, Fig. 11.69 Sign Trusses, HV CVTs, EOC).
+- **[#10 · Live Studio Screencast](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-10)** — Meta-telemetry capture of Fieldglass building itself alongside a live studio webcam mirror.
+- **[#9 · *Let There Be Light* (FLAGSHIP)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-9)** — Full 15m 04s stereo voice session with Nick & Dr. Helen (*Nematostella vectensis*, 500 Gy radiation resistance, Ancient Irish Ogham *"DOCTOR"* & Thomas Moore Irish Harp SVGs).
+- **[#4–#8](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-8)** — *Festschrift Zoller* (Kull hex wheel), Merzkirch *Flow Visualization* (Linda Hall Ex Libris & Fig. 2.48 Ablation Cone), *U.S. Constitution* (privacy-scrubbed), *Mechanical Characterization* ($\text{BaTiO}_3$), and *Laminar-Turbulent Transition* → *Hewett Cottrell Watson* (Darwin, Hooker & 1870 Azores Map).
 
 ---
 
@@ -61,7 +71,7 @@ A 4K 60fps walkthrough of the **Linda Hall Library of Science, Engineering & Tec
 
 ### Install locally
 ```bash
-git clone https://github.com/Ablation-Tool/fieldglass.git
+git clone https://github.com/Nicholas-Michael-Kloster/fieldglass.git
 cd fieldglass
 pip install -e .
 ```
@@ -97,4 +107,4 @@ pytest -v
 ## Design & Epistemic Invariants
 - **100% local & offline** (`tokens_used = 0`, no cloud APIs, loopback-only default server `127.0.0.1`).
 - **Transparent measurement** (`executed = False`, `sentience_claimed = False`, `auto_flash_allowed = False`).
-- **Companion monorepo integration**: mirrored in [Ablation-Tool/zoe](https://github.com/Ablation-Tool/zoe) alongside `guiai.gem.chiasm` and `guiai.gem.zoe_braille_studio`.
+- **Companion monorepo integration**: mirrored in [Nicholas-Michael-Kloster/zoe](https://github.com/Nicholas-Michael-Kloster/zoe) alongside `guiai.gem.chiasm` and `guiai.gem.zoe_braille_studio`.
