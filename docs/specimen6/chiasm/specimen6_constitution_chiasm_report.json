@@ -1,0 +1,398 @@
+{
+  "slug": "specimen6_constitution",
+  "title": "SPECIMEN #6 \u00b7 U.S. CONSTITUTION & DECLARATION (PRIVACY-SCRUBBED)",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "duration_sec": 125.67,
+  "episode_count": 32,
+  "nexus_sec": 32.0,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 5,
+    "past_repertoire": {
+      "deep_shadow": 0.3110049080608085,
+      "ink_linework": 0.08172013285819159,
+      "dark_midtone": 0.12504753183669212,
+      "botanical_mid": 0.11071885371892924,
+      "warm_sepia": 0.12079127501537643,
+      "aged_paper": 0.15636666924393708,
+      "bright_cream": 0.09416914370024947,
+      "paper_highlight": 0.0001814855658156346
+    },
+    "future_repertoire": {
+      "deep_shadow": 0.2618382996713252,
+      "ink_linework": 0.09251993461334794,
+      "dark_midtone": 0.11046535076537776,
+      "botanical_mid": 0.15991282950278943,
+      "warm_sepia": 0.1299721148447591,
+      "aged_paper": 0.12728872808633715,
+      "bright_cream": 0.11676979622429029,
+      "paper_highlight": 0.0012329462917730863
+    },
+    "past_accessible_volume": 5,
+    "past_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "dark_midtone",
+      "deep_shadow",
+      "warm_sepia"
+    ],
+    "future_accessible_volume": 6,
+    "future_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "bright_cream",
+      "dark_midtone",
+      "deep_shadow",
+      "warm_sepia"
+    ],
+    "chiasm_shift": 1,
+    "effective_information_bits": 0.032218,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 32,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        6,
+        3,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        6,
+        6,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        3,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        2,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        6,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        5,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        5,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "aged_paper": 0.107812,
+      "botanical_mid": 0.119688,
+      "bright_cream": 0.08875,
+      "dark_midtone": 0.0925,
+      "deep_shadow": 0.21875,
+      "ink_linework": 0.066875,
+      "paper_highlight": 0.0,
+      "warm_sepia": 0.10125
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "deep_shadow"
+    ],
+    "transient_states": [
+      "aged_paper",
+      "botanical_mid",
+      "bright_cream",
+      "dark_midtone",
+      "ink_linework",
+      "paper_highlight",
+      "warm_sepia"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "a_004_mean": 79.72,
+  "a_010_mean": 9.25,
+  "h1_mean_bits": 6.623,
+  "h2_mean_bits": 4.809,
+  "scene_sha256": "66c1b2d96eb59973cfda693a7e56c03e0d27b6a28966cf98add4add6b7ad812e",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "privacy_scrubbed": true,
+  "password_segments_removed": true,
+  "desk_card_redacted": true,
+  "report_sha256": "ee2afb16817bfefaffcc3b72dbc7bb13ce782302935f70f9158c0df6020b5958"
+}

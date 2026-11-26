@@ -1,0 +1,558 @@
+{
+  "slug": "specimen5_materials_batio3",
+  "title": "SPECIMEN #5 \u00b7 MECHANICAL CHARACTERIZATION & BaTiO3 OVERLAY",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "duration_sec": 247.07,
+  "episode_count": 50,
+  "nexus_sec": 145.0,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 5,
+    "past_repertoire": {
+      "deep_shadow": 0.1551295009958971,
+      "ink_linework": 0.10984346362855277,
+      "dark_midtone": 0.11397381351505617,
+      "botanical_mid": 0.12215464777439074,
+      "warm_sepia": 0.1589499257546536,
+      "aged_paper": 0.24589587442439942,
+      "bright_cream": 0.09064478754499858,
+      "paper_highlight": 0.0034079863620516465
+    },
+    "future_repertoire": {
+      "deep_shadow": 0.1394792986924939,
+      "ink_linework": 0.14963258535108745,
+      "dark_midtone": 0.18246615564658017,
+      "botanical_mid": 0.12249130820088941,
+      "warm_sepia": 0.1232896780114614,
+      "aged_paper": 0.2080699532857614,
+      "bright_cream": 0.07428294870615353,
+      "paper_highlight": 0.0002880721055727572
+    },
+    "past_accessible_volume": 6,
+    "past_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "dark_midtone",
+      "deep_shadow",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "future_accessible_volume": 6,
+    "future_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "dark_midtone",
+      "deep_shadow",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "chiasm_shift": 0,
+    "effective_information_bits": 0.052012,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 50,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        6,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        5,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        2,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        6,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        5,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        3,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        5,
+        3,
+        3,
+        2,
+        2,
+        1,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        4,
+        3,
+        3,
+        2,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        3,
+        3,
+        2,
+        1,
+        0
+      ],
+      [
+        6,
+        6,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      [
+        4,
+        4,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        7,
+        5,
+        3,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        3,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        6,
+        5,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        5,
+        5,
+        3,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        5,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        5,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        5,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        7,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        4,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "aged_paper": 0.2012,
+      "botanical_mid": 0.1006,
+      "bright_cream": 0.0626,
+      "dark_midtone": 0.1142,
+      "deep_shadow": 0.1218,
+      "ink_linework": 0.1028,
+      "paper_highlight": 0.0016,
+      "warm_sepia": 0.119
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "aged_paper"
+    ],
+    "transient_states": [
+      "botanical_mid",
+      "bright_cream",
+      "dark_midtone",
+      "deep_shadow",
+      "ink_linework",
+      "paper_highlight",
+      "warm_sepia"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "a_004_mean": 99.04,
+  "a_010_mean": 18.38,
+  "h1_mean_bits": 7.259,
+  "h2_mean_bits": 6.982,
+  "scene_sha256": "78bf7bc9e57b4f96545328e85d873502731185b5a5b61849cf27b73d36d56309",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "5fddb434c50faa8bb481d1b69d53e418f0659853382ee299d72defa9cc1691f5"
+}
