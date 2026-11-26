@@ -20,7 +20,7 @@
 <polyline points="357.0,289.4 375.6,308.0 357.0,326.6 338.4,308.0 357.0,289.4" fill="none" stroke="#f2c45c" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
 <line x1="325.0" y1="308.0" x2="389.0" y2="308.0" stroke="#5edaf0" stroke-width="1.2"/>
 <line x1="357.0" y1="276.0" x2="357.0" y2="340.0" stroke="#5edaf0" stroke-width="1.2"/>
-<text x="209.0" y="364.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="700">PRESENTER -STANDING -&gt; SEATED MASTERCLASS (gt; MASTERCLASS (5:40)</text>
+<text x="209.0" y="364.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="700">PRESENTER -&gt; MASTERCLASS (5:40)</text>
 <text x="48.0" y="478.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.5" font-weight="600">Nexus EI = 0.0876 bits · shift = -1 · glyph = ^_^ · boxed_in = False</text>
 <text x="48.0" y="502.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">237 episodes · 0 cloud tokens · SHA-256 sealed local telemetry</text>
 <text x="734.0" y="128.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="15.5" font-weight="700">02 / PERSISTENT FILTRATION TOMOGRAPHY (237 EPISODES)</text>
@@ -51,7 +51,7 @@
 <text x="903.0" y="457.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.000 </text>
 <text x="734.0" y="498.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">Invariants (tau&gt;=0.14): ink_linework, warm_sepia</text>
 <text x="48.0" y="578.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="15.5" font-weight="700">03 / LIVE KLOSTER ACCESSIBLE VOLUME TRAJECTORY  A_tau(p_t)</text>
-<text x="48.0" y="604.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">Cyan: A_0.004(p_t) [0..180]  ·  Gold: A_0.010(p_t) [0..60]  ·  Ruby marker: PRESENTER -PRESENTER -STANDING -&gt; SEATED MASTERCLASS (gt; MASTERCLASS (5:40)5:40)gt; MASTERCLASS (5:40)</text>
+<text x="48.0" y="604.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">Cyan: A_0.004(p_t) [0..180]  ·  Gold: A_0.010(p_t) [0..60]  ·  Ruby marker: PRESENTER -&gt; MASTERCLASS (5:40)</text>
 <rect x="92.0" y="628.0" width="1238.0" height="240.0" fill="#0c1420" stroke="#294058" stroke-width="1"/>
 <line x1="448.7" y1="628.0" x2="448.7" y2="868.0" stroke="#f46a7e" stroke-width="2"/>
 <text x="454.7" y="648.0" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="700">NEXUS (5:40)</text>
