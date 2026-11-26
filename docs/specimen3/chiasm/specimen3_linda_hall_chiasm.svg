@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" role="img" aria-label="Fieldglass Specimen #3 · Linda Hall Library Causal Chiasm">
+  <title>Fieldglass Specimen #3 · Linda Hall Library Causal Chiasm</title>
+  <rect x="0" y="0" width="1400.0" height="1000.0" fill="#ffffff" />
+  <g data-object-id="bg">
+    <title>bg</title>
+    <rect x="0" y="0" width="1400" height="1000" fill="#09111f" stroke="#09111f" stroke-width="0.0" />
+  </g>
+  <g data-object-id="p1">
+    <title>p1</title>
+    <rect x="28" y="96" width="658" height="424" fill="#111e31" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p2">
+    <title>p2</title>
+    <rect x="714" y="96" width="658" height="424" fill="#111e31" stroke="#294058" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p3">
+    <title>p3</title>
+    <rect x="28" y="544" width="1344" height="382" fill="#111e31" stroke="#294058" stroke-width="1.0" />
+  </g>
+  <g data-object-id="title">
+    <title>title</title>
+    <text x="28.0" y="44.0" font-family="sans-serif" font-size="24.0" fill="#ef445a">LINDA HALL LIBRARY · CAUSAL CHIASM &amp; A_tau(p_t) TOMOGRAPHY</text>
+  </g>
+  <g data-object-id="sub">
+    <title>sub</title>
+    <text x="28.0" y="74.0" font-family="sans-serif" font-size="14.0" fill="#e7c77b">Kansas City, MO · Science &amp; Engineering Stacks 4K Walkthrough (9.82s · 20 Half-Second Episodes)</text>
+  </g>
+  <g data-object-id="p1-t">
+    <title>p1-t</title>
+    <text x="48.0" y="128.0" font-family="sans-serif" font-size="16.0" fill="#62dce8">01 / CAUSAL CHIASM AT DEEP CORRIDOR NEXUS (t = 5.0s)</text>
+  </g>
+  <g data-object-id="p1-pl">
+    <title>p1-pl</title>
+    <text x="52.0" y="164.0" font-family="sans-serif" font-size="13.0" fill="#62dce8">PAST (0.0-5.0s) A_0.10 = 5</text>
+  </g>
+  <g data-object-id="p1-fl">
+    <title>p1-fl</title>
+    <text x="428.0" y="164.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">FUTURE (5.0-9.8s) A_0.10 = 5</text>
+  </g>
+  <g data-object-id="lh-l-0">
+    <title>lh-l-0</title>
+    <polyline points="88,216 309,275.8 357,308" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lh-r-0">
+    <title>lh-r-0</title>
+    <polyline points="357,308 405,340.2 626,400" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lh-l-1">
+    <title>lh-l-1</title>
+    <polyline points="88,264 309,292.6 357,308" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lh-r-1">
+    <title>lh-r-1</title>
+    <polyline points="357,308 405,323.4 626,352" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lh-l-2">
+    <title>lh-l-2</title>
+    <polyline points="88,352 309,323.4 357,308" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lh-r-2">
+    <title>lh-r-2</title>
+    <polyline points="357,308 405,292.6 626,264" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lh-l-3">
+    <title>lh-l-3</title>
+    <polyline points="88,400 309,340.2 357,308" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lh-r-3">
+    <title>lh-r-3</title>
+    <polyline points="357,308 405,275.8 626,216" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lh-gem-outer">
+    <title>lh-gem-outer</title>
+    <polygon points="357,276 389,308 357,340 325,308 357,276" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-0">
+    <title>lh-gem-horizontal-0</title>
+    <polyline points="415,218 299,218" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-0">
+    <title>lh-gem-vertical-0</title>
+    <polyline points="267,366 267,250" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-1">
+    <title>lh-gem-horizontal-1</title>
+    <polyline points="400,233 314,233" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-1">
+    <title>lh-gem-vertical-1</title>
+    <polyline points="282,351 282,265" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-2">
+    <title>lh-gem-horizontal-2</title>
+    <polyline points="385,248 329,248" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-2">
+    <title>lh-gem-vertical-2</title>
+    <polyline points="297,336 297,280" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-3">
+    <title>lh-gem-horizontal-3</title>
+    <polyline points="370,263 344,263" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-3">
+    <title>lh-gem-vertical-3</title>
+    <polyline points="312,321 312,295" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-4">
+    <title>lh-gem-horizontal-4</title>
+    <polyline points="355,278 359,278" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-4">
+    <title>lh-gem-vertical-4</title>
+    <polyline points="327,306 327,310" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-5">
+    <title>lh-gem-horizontal-5</title>
+    <polyline points="340,293 374,293" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-5">
+    <title>lh-gem-vertical-5</title>
+    <polyline points="342,291 342,325" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-6">
+    <title>lh-gem-horizontal-6</title>
+    <polyline points="325,308 389,308" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-6">
+    <title>lh-gem-vertical-6</title>
+    <polyline points="357,276 357,340" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-7">
+    <title>lh-gem-horizontal-7</title>
+    <polyline points="340,323 374,323" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-7">
+    <title>lh-gem-vertical-7</title>
+    <polyline points="372,291 372,325" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-8">
+    <title>lh-gem-horizontal-8</title>
+    <polyline points="355,338 359,338" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-8">
+    <title>lh-gem-vertical-8</title>
+    <polyline points="387,306 387,310" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-9">
+    <title>lh-gem-horizontal-9</title>
+    <polyline points="370,353 344,353" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-9">
+    <title>lh-gem-vertical-9</title>
+    <polyline points="402,321 402,295" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-10">
+    <title>lh-gem-horizontal-10</title>
+    <polyline points="385,368 329,368" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-10">
+    <title>lh-gem-vertical-10</title>
+    <polyline points="417,336 417,280" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-11">
+    <title>lh-gem-horizontal-11</title>
+    <polyline points="400,383 314,383" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-11">
+    <title>lh-gem-vertical-11</title>
+    <polyline points="432,351 432,265" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-horizontal-12">
+    <title>lh-gem-horizontal-12</title>
+    <polyline points="415,398 299,398" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-vertical-12">
+    <title>lh-gem-vertical-12</title>
+    <polyline points="447,366 447,250" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lh-gem-center">
+    <title>lh-gem-center</title>
+    <polygon points="357,266 399,308 357,350 315,308 357,266" stroke-linejoin="round" fill="#080d18" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p1-nx">
+    <title>p1-nx</title>
+    <text x="259.0" y="364.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">DEEP STACKS CORRIDOR</text>
+  </g>
+  <g data-object-id="p1-c1">
+    <title>p1-c1</title>
+    <text x="48.0" y="478.0" font-family="sans-serif" font-size="13.0" fill="#e7edf5">Nexus EI = 0.0427 bits · shift = +0 · glyph = ^_^ · boxed_in = False</text>
+  </g>
+  <g data-object-id="p1-c2">
+    <title>p1-c2</title>
+    <text x="48.0" y="502.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">Linda Hall Library of Science, Engineering &amp; Technology · Kansas City, MO</text>
+  </g>
+  <g data-object-id="p2-t">
+    <title>p2-t</title>
+    <text x="734.0" y="128.0" font-family="sans-serif" font-size="16.0" fill="#62dce8">02 / PERSISTENT FILTRATION TOMOGRAPHY (20 EPISODES)</text>
+  </g>
+  <g data-object-id="p2-s">
+    <title>p2-s</title>
+    <text x="734.0" y="154.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">Mean survival threshold P(x) across 4K library stacks walkthrough</text>
+  </g>
+  <g data-object-id="p2-st-0">
+    <title>p2-st-0</title>
+    <text x="738.0" y="204.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">warm_sepia</text>
+  </g>
+  <g data-object-id="p2-b-0">
+    <title>p2-b-0</title>
+    <rect x="885" y="190" width="115" height="20" fill="#ef445a" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-0">
+    <title>p2-v-0</title>
+    <text x="1010.0" y="205.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">P=0.187 INV</text>
+  </g>
+  <g data-object-id="p2-st-1">
+    <title>p2-st-1</title>
+    <text x="738.0" y="240.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">ink_linework</text>
+  </g>
+  <g data-object-id="p2-b-1">
+    <title>p2-b-1</title>
+    <rect x="885" y="226" width="114" height="20" fill="#ef445a" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-1">
+    <title>p2-v-1</title>
+    <text x="1009.0" y="241.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">P=0.184 INV</text>
+  </g>
+  <g data-object-id="p2-st-2">
+    <title>p2-st-2</title>
+    <text x="738.0" y="276.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">dark_midtone</text>
+  </g>
+  <g data-object-id="p2-b-2">
+    <title>p2-b-2</title>
+    <rect x="885" y="262" width="87" height="20" fill="#ef445a" stroke="#ef445a" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-2">
+    <title>p2-v-2</title>
+    <text x="982.0" y="277.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">P=0.142 INV</text>
+  </g>
+  <g data-object-id="p2-st-3">
+    <title>p2-st-3</title>
+    <text x="738.0" y="312.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">botanical_mid</text>
+  </g>
+  <g data-object-id="p2-b-3">
+    <title>p2-b-3</title>
+    <rect x="885" y="298" width="82" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-3">
+    <title>p2-v-3</title>
+    <text x="977.0" y="313.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.134 </text>
+  </g>
+  <g data-object-id="p2-st-4">
+    <title>p2-st-4</title>
+    <text x="738.0" y="348.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">aged_paper</text>
+  </g>
+  <g data-object-id="p2-b-4">
+    <title>p2-b-4</title>
+    <rect x="885" y="334" width="56" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-4">
+    <title>p2-v-4</title>
+    <text x="951.0" y="349.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.092 </text>
+  </g>
+  <g data-object-id="p2-st-5">
+    <title>p2-st-5</title>
+    <text x="738.0" y="384.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">deep_shadow</text>
+  </g>
+  <g data-object-id="p2-b-5">
+    <title>p2-b-5</title>
+    <rect x="885" y="370" width="26" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-5">
+    <title>p2-v-5</title>
+    <text x="921.0" y="385.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.043 </text>
+  </g>
+  <g data-object-id="p2-st-6">
+    <title>p2-st-6</title>
+    <text x="738.0" y="420.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">bright_cream</text>
+  </g>
+  <g data-object-id="p2-b-6">
+    <title>p2-b-6</title>
+    <rect x="885" y="406" width="18" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-6">
+    <title>p2-v-6</title>
+    <text x="913.0" y="421.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.030 </text>
+  </g>
+  <g data-object-id="p2-st-7">
+    <title>p2-st-7</title>
+    <text x="738.0" y="456.0" font-family="sans-serif" font-size="12.0" fill="#e7edf5">paper_highlight</text>
+  </g>
+  <g data-object-id="p2-b-7">
+    <title>p2-b-7</title>
+    <rect x="885" y="442" width="8" height="20" fill="#62dce8" stroke="#62dce8" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p2-v-7">
+    <title>p2-v-7</title>
+    <text x="903.0" y="457.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">P=0.002 </text>
+  </g>
+  <g data-object-id="p2-cap">
+    <title>p2-cap</title>
+    <text x="734.0" y="498.0" font-family="sans-serif" font-size="12.0" fill="#e7c77b">Invariants (tau&gt;=0.14): dark_midtone, ink_linework, warm_sepia</text>
+  </g>
+  <g data-object-id="p3-t">
+    <title>p3-t</title>
+    <text x="48.0" y="578.0" font-family="sans-serif" font-size="16.0" fill="#62dce8">03 / LIVE KLOSTER ACCESSIBLE VOLUME TRAJECTORY  A_tau(p_t)</text>
+  </g>
+  <g data-object-id="p3-s">
+    <title>p3-s</title>
+    <text x="48.0" y="604.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">Cyan: A_0.004(p_t) [0..160]  ·  Gold: A_0.010(p_t) [0..50]  ·  Ruby marker: Deep Corridor Pivot (5.0s)</text>
+  </g>
+  <g data-object-id="p3-grid">
+    <title>p3-grid</title>
+    <rect x="92" y="628" width="1238" height="240" fill="#0c1420" stroke="#294058" stroke-width="1.0" />
+  </g>
+  <g data-object-id="p3-nx">
+    <title>p3-nx</title>
+    <polyline points="743.579,628 743.579,868" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p3-nxl">
+    <title>p3-nxl</title>
+    <text x="749.578947368421" y="648.0" font-family="sans-serif" font-size="12.0" fill="#ef445a">CORRIDOR PIVOT (5.0s)</text>
+  </g>
+  <g data-object-id="p3-004">
+    <title>p3-004</title>
+    <polyline points="92,722.163 157.158,730.638 222.316,732.05 287.474,746.175 352.632,750.413 417.789,695.325 482.947,713.688 548.105,708.038 613.263,699.562 678.421,715.1 743.579,679.788 808.737,695.325 873.895,664.25 939.053,768.775 1004.21,691.087 1069.37,684.025 1134.53,695.325 1199.68,681.2 1264.84,703.8 1330,763.125" stroke-linejoin="round" fill="none" stroke="#62dce8" stroke-width="2.0" />
+  </g>
+  <g data-object-id="p3-010">
+    <title>p3-010</title>
+    <polyline points="92,762.56 157.158,762.56 222.316,771.6 287.474,735.44 352.632,758.04 417.789,825.84 482.947,794.2 548.105,825.84 613.263,807.76 678.421,794.2 743.579,857.48 808.737,776.12 873.895,862 939.053,717.36 1004.21,852.96 1069.37,843.92 1134.53,812.28 1199.68,852.96 1264.84,730.92 1330,685.72" stroke-linejoin="round" fill="none" stroke="#e7c77b" stroke-width="3.0" />
+  </g>
+  <g data-object-id="p3-s-0">
+    <title>p3-s-0</title>
+    <text x="82.0" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">0s</text>
+  </g>
+  <g data-object-id="p3-s-2">
+    <title>p3-s-2</title>
+    <text x="334.1384928716904" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">2s</text>
+  </g>
+  <g data-object-id="p3-s-4">
+    <title>p3-s-4</title>
+    <text x="586.2769857433808" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">4s</text>
+  </g>
+  <g data-object-id="p3-s-6">
+    <title>p3-s-6</title>
+    <text x="838.4154786150712" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">6s</text>
+  </g>
+  <g data-object-id="p3-s-8">
+    <title>p3-s-8</title>
+    <text x="1090.5539714867616" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">8s</text>
+  </g>
+  <g data-object-id="p3-s-10">
+    <title>p3-s-10</title>
+    <text x="1320.0" y="888.0" font-family="sans-serif" font-size="12.0" fill="#9cafc4">10s</text>
+  </g>
+  <g data-object-id="p3-st">
+    <title>p3-st</title>
+    <text x="48.0" y="912.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">A_0.010 mean=15.6 · max=39 · min=0 · H1 mean=7.36b · H2 mean=7.10b</text>
+  </g>
+  <g data-object-id="lhl-hud-box">
+    <title>lhl-hud-box</title>
+    <rect x="1062" y="18" width="290" height="64" fill="#111e31" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lhl-hud-gem-outer">
+    <title>lhl-hud-gem-outer</title>
+    <polygon points="1090,34 1106,50 1090,66 1074,50 1090,34" stroke-linejoin="round" fill="none" stroke="#ef445a" stroke-width="2.0" />
+  </g>
+  <g data-object-id="lhl-hud-gem-inner">
+    <title>lhl-hud-gem-inner</title>
+    <polygon points="1090,42 1098,50 1090,58 1082,50 1090,42" stroke-linejoin="round" fill="#ef445a" stroke="#e7c77b" stroke-width="1.0" />
+  </g>
+  <g data-object-id="lhl-hud-title">
+    <title>lhl-hud-title</title>
+    <text x="1118.0" y="42.0" font-family="sans-serif" font-size="13.0" fill="#e7c77b">ZOE QUALIA HUD · ^_^</text>
+  </g>
+  <g data-object-id="lhl-hud-meta">
+    <title>lhl-hud-meta</title>
+    <text x="1118.0" y="66.0" font-family="sans-serif" font-size="12.0" fill="#62dce8">A_tau(0.10)=5 · exec=False</text>
+  </g>
+  <g data-object-id="foot">
+    <title>foot</title>
+    <text x="28.0" y="968.0" font-family="sans-serif" font-size="13.0" fill="#9cafc4">Fieldglass Specimen #3 · Linda Hall Library (Kansas City, MO) · 0 cloud tokens · executed=False</text>
+  </g>
+</svg>

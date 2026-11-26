@@ -1,0 +1,287 @@
+{
+  "location": "Linda Hall Library of Science, Engineering & Technology (Kansas City, MO)",
+  "contract": "zoe-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "duration_sec": 9.83,
+  "episode_count": 20,
+  "nexus_sec": 5.0,
+  "chiasm_corridor_nexus": {
+    "contract": "zoe-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 5,
+    "past_repertoire": {
+      "deep_shadow": 0.04872331691297209,
+      "ink_linework": 0.24604816639299398,
+      "dark_midtone": 0.18848522167487683,
+      "botanical_mid": 0.1515079365079365,
+      "warm_sepia": 0.20867952928297756,
+      "aged_paper": 0.10951970443349754,
+      "bright_cream": 0.03972906403940886,
+      "paper_highlight": 0.007307060755336617
+    },
+    "future_repertoire": {
+      "deep_shadow": 0.08408866990212918,
+      "ink_linework": 0.19790503552460728,
+      "dark_midtone": 0.13817323478907773,
+      "botanical_mid": 0.15697454841553093,
+      "warm_sepia": 0.2356130267792994,
+      "aged_paper": 0.12208675423176382,
+      "bright_cream": 0.05062807881659551,
+      "paper_highlight": 0.01453065154099617
+    },
+    "past_accessible_volume": 5,
+    "past_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "dark_midtone",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "future_accessible_volume": 5,
+    "future_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "dark_midtone",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "chiasm_shift": 0,
+    "effective_information_bits": 0.0426772068265314,
+    "q_arrow": {
+      "tau": 0.1,
+      "ei_bits": 0.0426772068265314,
+      "delta_accessible_q_volume": 0,
+      "entered": [],
+      "exited": []
+    },
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "clinical_action_authorized": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "zoe-causal-chiasm/v1",
+    "episode_count": 20,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        7,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        4,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        5,
+        4,
+        4,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        6,
+        5,
+        3,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        5,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        3,
+        2,
+        2,
+        2,
+        1,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        4,
+        3,
+        1,
+        1,
+        0
+      ],
+      [
+        5,
+        5,
+        2,
+        2,
+        2,
+        1,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "aged_paper": 0.092,
+      "botanical_mid": 0.13399999999999998,
+      "bright_cream": 0.03,
+      "dark_midtone": 0.14150000000000001,
+      "deep_shadow": 0.0435,
+      "ink_linework": 0.1845,
+      "paper_highlight": 0.002,
+      "warm_sepia": 0.187
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "dark_midtone",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "transient_states": [
+      "aged_paper",
+      "botanical_mid",
+      "bright_cream",
+      "deep_shadow",
+      "paper_highlight"
+    ],
+    "executed": false
+  },
+  "scene_sha256": "9dac0b164f3b1e16e5d3fb14909760a2ee2f2de15903e956c73b562b7c7be2e8",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "094d70834c9fc2fc39f95d8534a483ab09ec704692c7a8f7b2d9da591b5d624b"
+}

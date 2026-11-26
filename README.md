@@ -41,7 +41,19 @@ A full 13.09-minute capture (`197` episodes, 16× smooth telemetry reel) pairing
 |---|---|
 | ![Specimen 2 Telemetry](docs/specimen2/video/specimen2_overlay_poster.png) | ![Specimen 2 Chiasm](docs/specimen2/chiasm/specimen2_chiasm.png) |
 
-*(Open the **[live showcase](https://ablation-tool.github.io/fieldglass/)** to watch both telemetry videos, inspect all 12 extracted plates, zoom the raw SVGs, and copy the Unicode Braille specimens.)*
+## Specimen #3: Linda Hall Library (Kansas City, MO) — Science Stacks & Affinity Chromatography
+
+A 4K 60fps walkthrough of the **Linda Hall Library of Science, Engineering & Technology** stacks (with original stereo audio) paired with on-site monograph captures (*Magnetic Fabric*, *Separation of Plasma Proteins* Fig. 1 MK-521 affinity column elution curves, and the autumn arboretum window):
+
+| Live Stacks Telemetry (`H₁ = 7.70 bits` across book spines) | Fig. 1 MK-521 Affinity Chromatography — Vector SVG |
+|---|---|
+| ![Linda Hall Telemetry](docs/specimen3/video/specimen3_linda_hall_poster.png) | ![Linda Hall Fig 1 SVG](docs/specimen3/assets/linda_hall_fig1_chromatography_svg_preview.png) |
+
+| Fig. 1 Chromatography — 76-Col Braille | Linda Hall Library 20-Episode Causal Chiasm |
+|---|---|
+| ![Linda Hall Fig 1 Braille](docs/specimen3/assets/linda_hall_fig1_chromatography_braille_preview.png) | ![Linda Hall Chiasm](docs/specimen3/chiasm/specimen3_linda_hall_chiasm.png) |
+
+*(Open the **[live showcase](https://ablation-tool.github.io/fieldglass/)** to watch all three telemetry videos, inspect all 18 extracted plates, zoom the raw SVGs, and copy the Unicode Braille specimens.)*
 
 ---
 
