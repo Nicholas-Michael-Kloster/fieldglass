@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
+<rect x="0.0" y="0.0" width="1400.0" height="1000.0" fill="#0b111b" stroke="#0b111b" stroke-width="0"/>
+<rect x="28.0" y="96.0" width="658.0" height="424.0" fill="#121b2a" stroke="#f46a7e" stroke-width="2"/>
+<rect x="714.0" y="96.0" width="658.0" height="424.0" fill="#121b2a" stroke="#294058" stroke-width="1"/>
+<rect x="28.0" y="544.0" width="1344.0" height="382.0" fill="#121b2a" stroke="#294058" stroke-width="1"/>
+<text x="28.0" y="44.0" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="21.0" font-weight="700">SPECIMEN #25 · "NERUDA AND I" (DEC 2012 – OCT 2013 JOURNAL)</text>
+<text x="28.0" y="74.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.5" font-weight="600">17m 44s Year-Long Manuscript · Coffee Pot (12/28/12), Jazz Cafe &amp; Oct 29 Rose Garden</text>
+<text x="48.0" y="128.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="15.5" font-weight="700">01 / CAUSAL CHIASM AT NEXUS (8:37)</text>
+<text x="52.0" y="164.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="600">PAST (0:00-8:37) A_0.10 = 3</text>
+<text x="410.0" y="164.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="600">FUTURE (8:37-17:44) A_0.10 = 2</text>
+<polyline points="88.0,216.0 309.0,275.8 357.0,308.0" fill="none" stroke="#5edaf0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,308.0 405.0,340.2 626.0,400.0" fill="none" stroke="#f2c45c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="88.0,264.0 309.0,292.6 357.0,308.0" fill="none" stroke="#5edaf0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,308.0 405.0,323.4 626.0,352.0" fill="none" stroke="#f46a7e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="88.0,352.0 309.0,323.4 357.0,308.0" fill="none" stroke="#f2c45c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,308.0 405.0,292.6 626.0,264.0" fill="none" stroke="#5edaf0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="88.0,400.0 309.0,340.2 357.0,308.0" fill="none" stroke="#f46a7e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,308.0 405.0,275.8 626.0,216.0" fill="none" stroke="#f2c45c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,276.0 389.0,308.0 357.0,340.0 325.0,308.0 357.0,276.0" fill="none" stroke="#f46a7e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,289.4 375.6,308.0 357.0,326.6 338.4,308.0 357.0,289.4" fill="none" stroke="#f2c45c" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="325.0" y1="308.0" x2="389.0" y2="308.0" stroke="#5edaf0" stroke-width="1.2"/>
+<line x1="357.0" y1="276.0" x2="357.0" y2="340.0" stroke="#5edaf0" stroke-width="1.2"/>
+<text x="277.0" y="364.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="700">"RUN FOREVER" (8:36)</text>
+<text x="48.0" y="478.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.5" font-weight="600">Nexus EI = 0.0351 bits · shift = -1 · glyph = ^_^ · boxed_in = False</text>
+<text x="48.0" y="502.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">177 episodes · 0 cloud tokens · SHA-256 sealed local telemetry</text>
+<text x="734.0" y="128.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="15.5" font-weight="700">02 / PERSISTENT FILTRATION TOMOGRAPHY (177 EPISODES)</text>
+<text x="734.0" y="154.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">Mean survival threshold P(x) across tonal repertoire</text>
+<text x="738.0" y="204.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">aged_paper</text>
+<rect x="885.0" y="190.0" width="235.0" height="20.0" fill="#f46a7e" stroke="#f46a7e" stroke-width="1"/>
+<text x="1130.0" y="205.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.382 INV</text>
+<text x="738.0" y="240.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">dark_midtone</text>
+<rect x="885.0" y="226.0" width="65.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="960.0" y="241.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.106 </text>
+<text x="738.0" y="276.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">warm_sepia</text>
+<rect x="885.0" y="262.0" width="55.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="950.0" y="277.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.090 </text>
+<text x="738.0" y="312.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">ink_linework</text>
+<rect x="885.0" y="298.0" width="44.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="939.0" y="313.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.072 </text>
+<text x="738.0" y="348.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">bright_cream</text>
+<rect x="885.0" y="334.0" width="40.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="935.0" y="349.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.066 </text>
+<text x="738.0" y="384.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">botanical_mid</text>
+<rect x="885.0" y="370.0" width="26.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="921.0" y="385.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.043 </text>
+<text x="738.0" y="420.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">deep_shadow</text>
+<rect x="885.0" y="406.0" width="19.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="914.0" y="421.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.031 </text>
+<text x="738.0" y="456.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">paper_highlight</text>
+<rect x="885.0" y="442.0" width="8.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="903.0" y="457.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.000 </text>
+<text x="734.0" y="498.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">Invariants (tau&gt;=0.14): aged_paper</text>
+<text x="48.0" y="578.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="15.5" font-weight="700">03 / LIVE KLOSTER ACCESSIBLE VOLUME TRAJECTORY  A_tau(p_t)</text>
+<text x="48.0" y="604.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">Cyan: A_0.004(p_t) [0..180]  ·  Gold: A_0.010(p_t) [0..60]  ·  Ruby marker: "RUN FOREVER" (8:36)</text>
+<rect x="92.0" y="628.0" width="1238.0" height="240.0" fill="#0c1420" stroke="#294058" stroke-width="1"/>
+<line x1="696.9" y1="628.0" x2="696.9" y2="868.0" stroke="#f46a7e" stroke-width="2"/>
+<text x="702.9" y="648.0" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="700">NEXUS (8:37)</text>
+<polyline points="92.0,713.8 99.0,725.1 106.1,784.2 113.1,771.6 120.1,785.4 127.2,776.6 134.2,794.2 141.2,781.6 148.3,771.6 155.3,769.1 162.3,764.1 169.4,767.8 176.4,771.6 183.4,777.9 190.5,771.6 197.5,756.5 204.5,791.7 211.6,775.4 218.6,769.1 225.6,769.1 232.7,756.5 239.7,764.1 246.8,750.3 253.8,755.3 260.8,771.6 267.9,769.1 274.9,770.3 281.9,803.0 289.0,766.6 296.0,759.0 303.0,769.1 310.1,769.1 317.1,754.0 324.1,762.8 331.2,742.7 338.2,764.1 345.2,766.6 352.3,767.8 359.3,786.7 366.3,787.9 373.4,775.4 380.4,772.9 387.4,779.1 394.5,771.6 401.5,755.3 408.5,741.5 415.6,767.8 422.6,752.8 429.6,747.7 436.7,737.7 443.7,754.0 450.7,761.6 457.8,751.5 464.8,746.5 471.8,751.5 478.9,750.3 485.9,754.0 492.9,760.3 500.0,770.3 507.0,756.5 514.0,759.0 521.1,764.1 528.1,735.2 535.1,765.3 542.2,765.3 549.2,765.3 556.2,761.6 563.3,792.9 570.3,767.8 577.4,760.3 584.4,735.2 591.4,731.4 598.5,787.9 605.5,731.4 612.5,761.6 619.6,774.1 626.6,764.1 633.6,747.7 640.7,705.1 647.7,777.9 654.7,741.5 661.8,754.0 668.8,754.0 675.8,732.7 682.9,756.5 689.9,766.6 696.9,765.3 704.0,779.1 711.0,737.7 718.0,767.8 725.1,769.1 732.1,777.9 739.1,809.3 746.2,785.4 753.2,780.4 760.2,813.0 767.3,790.4 774.3,757.8 781.3,799.2 788.4,757.8 795.4,774.1 802.4,780.4 809.5,779.1 816.5,769.1 823.5,792.9 830.6,794.2 837.6,795.5 844.6,782.9 851.7,785.4 858.7,785.4 865.8,784.2 872.8,782.9 879.8,781.6 886.9,776.6 893.9,777.9 900.9,779.1 908.0,771.6 915.0,787.9 922.0,790.4 929.1,771.6 936.1,761.6 943.1,765.3 950.2,769.1 957.2,765.3 964.2,766.6 971.3,780.4 978.3,777.9 985.3,777.9 992.4,787.9 999.4,776.6 1006.4,770.3 1013.5,776.6 1020.5,775.4 1027.5,760.3 1034.6,787.9 1041.6,787.9 1048.6,813.0 1055.7,800.5 1062.7,794.2 1069.7,815.5 1076.8,796.7 1083.8,798.0 1090.8,808.0 1097.9,765.3 1104.9,795.5 1111.9,795.5 1119.0,780.4 1126.0,766.6 1133.0,780.4 1140.1,771.6 1147.1,776.6 1154.1,804.2 1161.2,809.3 1168.2,806.8 1175.2,799.2 1182.3,795.5 1189.3,796.7 1196.4,786.7 1203.4,799.2 1210.4,792.9 1217.5,787.9 1224.5,787.9 1231.5,790.4 1238.6,780.4 1245.6,765.3 1252.6,810.5 1259.7,803.0 1266.7,725.1 1273.7,796.7 1280.8,796.7 1287.8,798.0 1294.8,805.5 1301.9,795.5 1308.9,803.0 1315.9,750.3 1323.0,798.0 1330.0,728.9" fill="none" stroke="#5edaf0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="92.0,850.7 99.0,798.0 106.1,771.6 113.1,756.5 120.1,775.4 127.2,775.4 134.2,767.8 141.2,775.4 148.3,771.6 155.3,771.6 162.3,779.1 169.4,767.8 176.4,771.6 183.4,767.8 190.5,764.1 197.5,779.1 204.5,745.2 211.6,711.3 218.6,745.2 225.6,745.2 232.7,722.6 239.7,764.1 246.8,771.6 253.8,786.7 260.8,764.1 267.9,760.3 274.9,760.3 281.9,752.8 289.0,760.3 296.0,771.6 303.0,749.0 310.1,756.5 317.1,779.1 324.1,752.8 331.2,760.3 338.2,741.5 345.2,771.6 352.3,745.2 359.3,745.2 366.3,756.5 373.4,760.3 380.4,771.6 387.4,760.3 394.5,756.5 401.5,798.0 408.5,790.4 415.6,779.1 422.6,767.8 429.6,782.9 436.7,790.4 443.7,760.3 450.7,767.8 457.8,790.4 464.8,782.9 471.8,779.1 478.9,771.6 485.9,775.4 492.9,764.1 500.0,771.6 507.0,771.6 514.0,782.9 521.1,737.7 528.1,756.5 535.1,726.4 542.2,730.2 549.2,756.5 556.2,749.0 563.3,711.3 570.3,767.8 577.4,760.3 584.4,767.8 591.4,801.7 598.5,707.6 605.5,775.4 612.5,764.1 619.6,767.8 626.6,749.0 633.6,749.0 640.7,831.9 647.7,741.5 654.7,775.4 661.8,767.8 668.8,775.4 675.8,764.1 682.9,790.4 689.9,775.4 696.9,752.8 704.0,767.8 711.0,767.8 718.0,760.3 725.1,752.8 732.1,775.4 739.1,760.3 746.2,745.2 753.2,752.8 760.2,775.4 767.3,726.4 774.3,775.4 781.3,767.8 788.4,767.8 795.4,771.6 802.4,752.8 809.5,760.3 816.5,779.1 823.5,741.5 830.6,752.8 837.6,760.3 844.6,767.8 851.7,752.8 858.7,760.3 865.8,764.1 872.8,764.1 879.8,760.3 886.9,760.3 893.9,779.1 900.9,771.6 908.0,775.4 915.0,775.4 922.0,779.1 929.1,775.4 936.1,775.4 943.1,782.9 950.2,786.7 957.2,786.7 964.2,786.7 971.3,779.1 978.3,779.1 985.3,779.1 992.4,790.4 999.4,764.1 1006.4,767.8 1013.5,767.8 1020.5,767.8 1027.5,782.9 1034.6,752.8 1041.6,752.8 1048.6,749.0 1055.7,730.2 1062.7,730.2 1069.7,760.3 1076.8,756.5 1083.8,749.0 1090.8,779.1 1097.9,760.3 1104.9,737.7 1111.9,733.9 1119.0,741.5 1126.0,782.9 1133.0,749.0 1140.1,756.5 1147.1,756.5 1154.1,733.9 1161.2,733.9 1168.2,726.4 1175.2,749.0 1182.3,749.0 1189.3,756.5 1196.4,733.9 1203.4,752.8 1210.4,752.8 1217.5,749.0 1224.5,756.5 1231.5,760.3 1238.6,726.4 1245.6,752.8 1252.6,756.5 1259.7,752.8 1266.7,828.1 1273.7,730.2 1280.8,733.9 1287.8,737.7 1294.8,737.7 1301.9,733.9 1308.9,733.9 1315.9,771.6 1323.0,752.8 1330.0,794.2" fill="none" stroke="#f2c45c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="78.0" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">0:00</text>
+<text x="325.6" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">3:32</text>
+<text x="573.2" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">7:05</text>
+<text x="820.8" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">10:38</text>
+<text x="1068.4" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">14:11</text>
+<text x="1316.0" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">17:44</text>
+<text x="48.0" y="912.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="600">A_0.010 mean=26.4 · max=41 · min=3 · H1 mean=6.83b · H2 mean=6.31b</text>
+<rect x="1062.0" y="18.0" width="310.0" height="60.0" fill="#0f1928" stroke="#5edaf0" stroke-width="1.5"/>
+<text x="1076.0" y="44.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="14.0" font-weight="700">A_0.10(p) = 2   GLYPH: ^_^</text>
+<text x="1076.0" y="66.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="11.0" font-weight="500">FIELDGLASS LOCAL TELEMETRY · 0 TOK</text>
+<text x="28.0" y="968.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="500">Fieldglass Specimen #25 · "Neruda and I" (2012–2013) Telemetry · 0 cloud tokens · executed=False</text>
+</svg>

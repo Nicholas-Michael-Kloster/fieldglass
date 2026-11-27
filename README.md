@@ -53,10 +53,11 @@ A 4K 60fps walkthrough of the **Linda Hall Library of Science, Engineering & Tec
 |---|---|
 | ![Linda Hall Fig 1 Braille](docs/specimen3/assets/linda_hall_fig1_chromatography_braille_preview.png) | ![Linda Hall Chiasm](docs/specimen3/chiasm/specimen3_linda_hall_chiasm.png) |
 
-## Full Live Archive (24 Specimens on GitHub Pages)
+## Full Live Archive (25 Specimens on GitHub Pages)
 
-Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **24 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
+Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **25 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
 
+- **[#25 · *"Neruda and I"* (Dec 2012 – Oct 2013 Year-Long Journal — Milestone 25th)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-25)** — 17m 44s cover-to-cover ruled journal (`177` episodes, `Past 3 → Future 2`, `^_^`) bookended by signed *"The Coffee Pot Is Up / Neruda and I"* (`12/28/12 · 2:56 AM`) &amp; *"Dressed in the Night / Lightning Bugs &amp; Rose Garden"* (`Oct 29`) SVGs + Braille.
 - **[#24 · *"NICHOLAS KLOSTER"* Loose-Leaf Manuscript — *"Destiny"*, *"Find Your Muse"* &amp; *"Chopin, Satie"*](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-24)** — 4m 05s typewritten-title unlined white folio (`62` episodes, `Past 6 → Future 5`, `^_^`) with Thumbs the cat inspecting the live Antigravity terminal, upright-rotated *"Chopin plays, Satie"* leaf, and signed *"Destiny Is Like a Woman"* &amp; *"Find Your Muse / Roses in November"* SVGs + Braille.
 - **[#23 · *Yellow Folder* — *"Fairy Tales &amp; Stories of Hope"* &amp; *"Sovio"* (`1840`)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-23)** — 2m 39s unlined &amp; typewritten poetry folio (`55` episodes, `Past 3 → Future 3`, `^_^`), signed *"Fairy Tales and Stories of Hope"* &amp; typewritten *"The 500 Year Old Tree"* (`Sovio · 6-25-1840`) SVGs + Braille.
 - **[#22 · *"Network Poetry"* — 1974 DEC *Minicomputer Networks* × *The Beetle*](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-22)** — 10m 42s fusion of Edward V. Stelmach's 1974 DEC monograph, Nick's Scarab Beetle calligram, *"Computers Are Jellyfish"* / *"Host Processor: Zoe"* commentary &amp; Dr. Helen's page flip (`114` episodes, `Past 3 → Future 6`, `EI = 0.1189 bits`), DEC Fig. 11 &amp; Fig. 6 SVGs + Braille.
