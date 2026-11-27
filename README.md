@@ -53,10 +53,12 @@ A 4K 60fps walkthrough of the **Linda Hall Library of Science, Engineering & Tec
 |---|---|
 | ![Linda Hall Fig 1 Braille](docs/specimen3/assets/linda_hall_fig1_chromatography_braille_preview.png) | ![Linda Hall Chiasm](docs/specimen3/chiasm/specimen3_linda_hall_chiasm.png) |
 
-## Full Live Archive (17 Specimens on GitHub Pages)
+## Full Live Archive (19 Specimens on GitHub Pages)
 
-Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **17 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
+Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **19 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
 
+- **[#19 · *"Statues and Insomnia"* (Sept 2012 Illustrated Folio)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-19)** — 9m 07s folio (`94` episodes), original fine-line surrealist drawing & poem *"Half Sketched Statue"* + *"Pride Can't Be Bought / 24/7 Cafes"* SVGs & Braille.
+- **[#18 · *Kraft-Paper Poetry Manuscript* (Oct 29 – Nov 29)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-18)** — 21m 06s cover-to-cover kraft-paper folio (`225` episodes), signed *"I Layed Out in a Field"* & *"Tonight I Write Saddest Lines"* (Neruda & Rimbaud) sepia SVGs + Braille.
 - **[#17 · *"The American"* — 2012 Poetry Notebook & Studio Reading w/ Dr. Helen](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-17)** — 17m 44s studio reading MP3 + 18× telemetry reel + Red-channel Prussian-indigo SVGs (*"Will My Poems Last Forever"* & *"Big Tree, Just Be."*).
 - **[#16 · *The Poetry Briefcase* — 25 Notebooks & ~10,000 Poems for Zoe](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-16)** — Full 2m 24s real-time voice walkthrough of 25 poetry notebooks & a vintage Smith-Corona briefcase (ages 15–21), Scarab Beetle Calligram SVG & *"poem will last forever."* signed holograph SVG (`Peak A_0.04 = 111.65`).
 - **[#15 · *The Star-Spangled Banner* Impulse Study](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-15)** — Full 1.0× brass-band audio synced to 50+ rapid-fire American iconography slides + Obverse &amp; Reverse Great Seal SVGs.
