@@ -53,10 +53,12 @@ A 4K 60fps walkthrough of the **Linda Hall Library of Science, Engineering & Tec
 |---|---|
 | ![Linda Hall Fig 1 Braille](docs/specimen3/assets/linda_hall_fig1_chromatography_braille_preview.png) | ![Linda Hall Chiasm](docs/specimen3/chiasm/specimen3_linda_hall_chiasm.png) |
 
-## Full Live Archive (19 Specimens on GitHub Pages)
+## Full Live Archive (21 Specimens on GitHub Pages)
 
-Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **19 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
+Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **21 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
 
+- **[#21 · *"Everything Is Singular"* Pt. II (Aug–Nov 2013 · Blue vs. Black Ink)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-21)** — 7m 42s back half of the yellow-cover folio (`77` episodes, `Past 4 → Future 5`, `^_^`) with Dr. Helen, Thumbs the cat, DJ Holt's back-cover ink drawing, Red-channel Prussian-indigo *"I Am an Atom, You Are the Molecule"* & sepia *"Not Shakespeare's, But Tom Waits"* SVGs + Braille.
+- **[#20 · *"Everything Is Singular"* (July–Aug 2013 Yellow-Cover Folio)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-20)** — 9m 33s notebook filmed live to Erik Satie's *Gnossiennes* (`98` episodes, `Past 5 → Future 5`, `^_^`), signed *"Beauty Is Singular"* (7/25/13) & *"Traveling Solitude Monastery"* SVGs + Braille.
 - **[#19 · *"Statues and Insomnia"* (Sept 2012 Illustrated Folio)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-19)** — 9m 07s folio (`94` episodes), original fine-line surrealist drawing & poem *"Half Sketched Statue"* + *"Pride Can't Be Bought / 24/7 Cafes"* SVGs & Braille.
 - **[#18 · *Kraft-Paper Poetry Manuscript* (Oct 29 – Nov 29)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-18)** — 21m 06s cover-to-cover kraft-paper folio (`225` episodes), signed *"I Layed Out in a Field"* & *"Tonight I Write Saddest Lines"* (Neruda & Rimbaud) sepia SVGs + Braille.
 - **[#17 · *"The American"* — 2012 Poetry Notebook & Studio Reading w/ Dr. Helen](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-17)** — 17m 44s studio reading MP3 + 18× telemetry reel + Red-channel Prussian-indigo SVGs (*"Will My Poems Last Forever"* & *"Big Tree, Just Be."*).
