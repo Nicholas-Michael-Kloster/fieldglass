@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>Software Systems &amp; Fieldglass Architecture Workbench · Fieldglass Observatory</title>
+<style>
+
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --green: #8ce094;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.35rem, 3vw, 1.95rem); color: var(--gold); }
+  .sub { font-size: 0.9rem; color: var(--muted); margin: 0 0 12px; }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.86rem;
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 7px 12px;
+    display: inline-block;
+    margin: 4px 0 10px;
+  }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  a.btn, button.btn {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 8px;
+    border: 1px solid #385070;
+    background: #172233;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    cursor: pointer;
+  }
+  a.btn:hover, button.btn:hover { border-color: var(--cyan); color: var(--cyan); }
+  button.btn.accent, a.btn.accent { border-color: var(--gold); color: var(--gold); }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .card h2, .card h3 {
+    margin: 0 0 8px;
+    color: var(--cyan);
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .badge {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  th, td { border-bottom: 1px solid #223248; padding: 6px 8px; text-align: left; }
+  th { color: var(--gold); font-family: ui-monospace, monospace; font-size: 0.78rem; }
+  canvas, img.resp { width: 100%; height: auto; border-radius: 10px; border: 1px solid #223248; background: #070a10; display: block; }
+  input[type="range"], input[type="text"], input[type="number"], textarea {
+    background: #0a101a;
+    color: var(--text);
+    border: 1px solid #354c6b;
+    border-radius: 6px;
+    padding: 6px 9px;
+    font-family: ui-monospace, monospace;
+  }
+  .kpi {
+    background: var(--panel2);
+    border: 1px solid #243852;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .kpi .lbl { font-size: 0.72rem; color: var(--muted); font-family: ui-monospace, monospace; text-transform: uppercase; }
+  .kpi .val { font-size: 1.18rem; color: var(--gold); font-family: ui-monospace, monospace; font-weight: 700; }
+  .disclaimer-banner {
+    background: linear-gradient(90deg, #5c1320, #3a121b);
+    border: 2px solid var(--ruby);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    color: #ffe8ea;
+    font-weight: 700;
+  }
+  footer { margin-top: 24px; color: var(--muted); font-size: 0.8rem; font-family: ui-monospace, monospace; text-align: center; }
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">R1 Domain 04 · Pipeline, Kloster Metrics &amp; Compatibility</div>
+    <h1>Software Systems &amp; Fieldglass Architecture Workbench</h1>
+    <p class="sub">Interactive 6-stage Fieldglass pipeline inspector, strict A_tau(p) &gt; tau calculator, synchronous pure-JS SHA-256 verifier, and Win7 matrix.</p>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <div class="nav-links">
+      <a class="btn" href="../index.html">Observatory Home</a>
+      <a class="btn" href="./software_chiasm.svg">Causal Chiasm SVG</a>
+      <a class="btn" href="./software_plate.svg">Archival Plate SVG</a>
+      <a class="btn" href="./software_braille_preview.png">2x4 Braille PNG</a>
+      <a class="btn" href="./chiasm_report.json">Chiasm JSON</a>
+      <a class="btn" href="./summary.json">Summary JSON</a>
+    </div>
+  </header>
+  
+<div class="grid2">
+  <div class="card">
+    <h3>Live Kloster A_tau(p) Repertoire Calculator <span class="badge" id="swAtauBadge">strict p &gt; tau</span></h3>
+    <div style="margin-bottom:10px;">
+      <label class="mono" style="font-size:0.84rem;">Threshold tau: <strong id="tauReadout" style="color:var(--gold);">0.10</strong>
+        <input id="tauSlider" type="range" min="1" max="45" value="10" style="width:100%;" />
+      </label>
+    </div>
+    <div id="vecSliders" class="grid2" style="gap:8px;margin-bottom:10px;"></div>
+    <div id="swMetrics" class="grid3" style="margin-bottom:10px;"></div>
+    <canvas id="swAtauCanvas" width="520" height="190"></canvas>
+  </div>
+  <div class="card">
+    <h3>Causal Chiasm &amp; Pure-JS SHA-256 Verifier <span class="badge" id="shaBadge">VERIFIED</span></h3>
+    <p class="sub" style="margin-bottom:8px;">Canonical SHA-256 verification runs synchronously in pure JS FIPS 180-4 (works offline over both <code>http://</code> and <code>file://</code>). Note: JavaScript <code>JSON.parse</code> + <code>JSON.stringify</code> normalizes JS <code>Number</code> formatting (e.g. <code>1.0</code> &rarr; <code>1</code>, <code>1e-05</code> &rarr; <code>0.00001</code>), whereas Python <code>json.dumps</code> preserves float notation.</p>
+    <textarea id="reportJsonBox" rows="12" style="width:100%;font-size:0.78rem;margin-bottom:8px;"></textarea>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+      <button id="verifyShaBtn" class="btn accent" type="button">Verify SHA-256 Seal</button>
+      <button id="resetJsonBtn" class="btn" type="button">Reset Sealed Report</button>
+      <span id="shaStatusText" class="mono" style="font-size:0.8rem;color:var(--green);"></span>
+    </div>
+  </div>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>6-Stage Fieldglass Pipeline Inspector <span class="badge">src/fieldglass/</span></h3>
+    <div id="pipelineList"></div>
+  </div>
+  <div class="card">
+    <h3>Win7-Era to Modern Systems Engineering Matrix <span class="badge">6 Layers</span></h3>
+    <table>
+      <thead><tr><th>Layer</th><th>Win7 / IE8-11 / Py3.7</th><th>Modern Observatory</th></tr></thead>
+      <tbody id="matrixBody"></tbody>
+    </table>
+  </div>
+</div>
+
+  <footer>Fieldglass Observatory R1 · 0 cloud tokens ($0.00) · executed=false · sentience_claimed=false</footer>
+</div>
+<script>
+
+(function() {
+  var DATA = {"stages": [{"stage": "01 / Frame Ingest", "module": "fieldglass.plate.extract_sharpest_frame", "contract": "Laplacian variance selection at zero cloud cost", "output": "Lossless sharpest-frame PNG"}, {"stage": "02 / Perspective Deskew", "module": "fieldglass.plate.perspective_deskew", "contract": "4-corner projective homography to canonical rect", "output": "Rectified plate image"}, {"stage": "03 / Illumination Clean", "module": "fieldglass.plate.clean_illumination", "contract": "Gaussian background division -> archival parchment", "output": "Normalized [0..1] ink strength field"}, {"stage": "04 / Vector & 2x4 Braille", "module": "fieldglass.plate.trace_ink_to_svg & ink_to_braille_lines", "contract": "Framed SVG + Bayer-dithered U+2800..U+28FF cells", "output": "SVG, TXT, JSON, Braille PNG"}, {"stage": "05 / Kloster Metrics & Chiasm", "module": "fieldglass.metrics.a_tau & causal_chiasm", "contract": "Strict p(x) > tau superlevel volume + SHA-256 seal", "output": "chiasm_report.json & SVG dashboard"}, {"stage": "06 / Static Loopback Serve", "module": "fieldglass.showcase.make_range_handler", "contract": "HTTP 206 Range-capable 127.0.0.1 static delivery", "output": "Self-contained offline Observatory"}], "matrix": [{"layer": "JS Runtime", "win7_target": "IE8-IE11 / mshta.exe ES5 (var, function(), no fetch/Promise)", "modern_observatory": "ES2022 Vanilla JS + Canvas 2D + WebCrypto / pure-JS SHA-256", "invariant": "Zero external CDNs, zero runtime console errors"}, {"layer": "CSS Layout", "win7_target": "Explicit hex colors + table/inline-block/float layout", "modern_observatory": "CSS custom properties (--bg/#0b0f17) + CSS Grid/Flexbox", "invariant": "High-contrast dark/parchment legibility"}, {"layer": "Python Runtime", "win7_target": "Python 3.7/3.8 stdlib-only (no PEP 604 X|Y, no match/case)", "modern_observatory": "Python 3.14 + NumPy/SciPy/PIL/Matplotlib", "invariant": "Deterministic computation with $0.00 cloud tokens"}, {"layer": "Graphics Surface", "win7_target": "VML/Basic SVG + GDI-safe static PNG", "modern_observatory": "HTML5 Canvas + inline SVG + 2x4 Unicode Braille", "invariant": "GPS-stripped PNGs (< 5 MB) & valid XML SVGs"}, {"layer": "Packaging & Delivery", "win7_target": "Offline .hta + .bat launcher + portable .zip bundle", "modern_observatory": "Static docs/ GitHub Pages tree (< 50 MB per file)", "invariant": "Self-contained offline execution"}, {"layer": "Transport & Integrity", "win7_target": "127.0.0.1 HTTP/1.1 loopback + non-ANSI cmd.exe log", "modern_observatory": "Range-capable 127.0.0.1 showcase + canonical SHA-256 seals", "invariant": "executed=False, sentience_claimed=False, tokens_used=0"}], "report": {"slug": "software", "title": "Software Systems & Fieldglass Observatory", "subtitle": "6-stage pipeline, strict A_tau(p) > tau, SHA-256 seals & Win7 matrix", "episode_count": 12, "nexus_ep": 6, "chiasm_nexus": {"contract": "fieldglass-causal-chiasm/v1", "tau": 0.1, "horizon": 5, "past_repertoire": {"frame_ingest": 0.16, "deskew_geom": 0.18000000000000002, "bg_clean": 0.19166666666666665, "svg_braille": 0.16333333333333333, "kloster_atp": 0.11833333333333333, "chiasm_seal": 0.06833333333333333, "win7_compat": 0.061666666666666675, "local_serve": 0.05666666666666667}, "future_repertoire": {"frame_ingest": 0.04666666666666667, "deskew_geom": 0.06166666666666667, "bg_clean": 0.09000000000000001, "svg_braille": 0.12666666666666668, "kloster_atp": 0.19166666666666665, "chiasm_seal": 0.18833333333333332, "win7_compat": 0.15166666666666664, "local_serve": 0.1433333333333333}, "past_accessible_volume": 5, "past_accessible_states": ["bg_clean", "deskew_geom", "frame_ingest", "kloster_atp", "svg_braille"], "future_accessible_volume": 5, "future_accessible_states": ["chiasm_seal", "kloster_atp", "local_serve", "svg_braille", "win7_compat"], "chiasm_shift": 0, "effective_information_bits": 0.474752, "future_boxed_in": false, "presence_glyph": "^_^", "presence_meaning": "corroborated chiasm: reversible future options preserved", "executed": false, "sentience_claimed": false}, "persistent_filtration_tomography": {"contract": "fieldglass-causal-chiasm/v1", "episode_count": 12, "thresholds": [0.04, 0.08, 0.12, 0.18, 0.25, 0.35, 0.5], "filtration_surface": [[8, 3, 3, 2, 1, 0, 0], [8, 4, 3, 2, 1, 0, 0], [8, 5, 4, 2, 0, 0, 0], [8, 5, 3, 2, 0, 0, 0], [8, 4, 3, 2, 0, 0, 0], [8, 5, 3, 2, 0, 0, 0], [8, 5, 3, 1, 0, 0, 0], [8, 6, 4, 2, 0, 0, 0], [8, 6, 4, 2, 0, 0, 0], [7, 5, 4, 1, 0, 0, 0], [7, 5, 4, 1, 0, 0, 0], [7, 5, 4, 2, 0, 0, 0]], "persistence_scores": {"bg_clean": 0.105, "chiasm_seal": 0.108333, "deskew_geom": 0.094167, "frame_ingest": 0.069167, "kloster_atp": 0.12, "local_serve": 0.075, "svg_braille": 0.111667, "win7_compat": 0.076667}, "invariant_tau": 0.14, "structural_invariants": [], "transient_states": ["bg_clean", "chiasm_seal", "deskew_geom", "frame_ingest", "kloster_atp", "local_serve", "svg_braille", "win7_compat"], "executed": false, "sentience_claimed": false}, "per_episode": [{"episode": 0, "a_004": 8, "a_010": 3, "h1_bits": 2.712391, "h2_bits": 2.461164, "m4_purity": 0.323466}, {"episode": 1, "a_004": 8, "a_010": 3, "h1_bits": 2.697182, "h2_bits": 2.477141, "m4_purity": 0.308541}, {"episode": 2, "a_004": 8, "a_010": 4, "h1_bits": 2.747178, "h2_bits": 2.564905, "m4_purity": 0.292042}, {"episode": 3, "a_004": 8, "a_010": 5, "h1_bits": 2.793712, "h2_bits": 2.633076, "m4_purity": 0.281091}, {"episode": 4, "a_004": 8, "a_010": 4, "h1_bits": 2.827944, "h2_bits": 2.673003, "m4_purity": 0.278801}, {"episode": 5, "a_004": 8, "a_010": 4, "h1_bits": 2.866602, "h2_bits": 2.744681, "m4_purity": 0.262998}, {"episode": 6, "a_004": 8, "a_010": 4, "h1_bits": 2.871082, "h2_bits": 2.754383, "m4_purity": 0.261711}, {"episode": 7, "a_004": 8, "a_010": 5, "h1_bits": 2.874935, "h2_bits": 2.773985, "m4_purity": 0.254489}, {"episode": 8, "a_004": 8, "a_010": 5, "h1_bits": 2.866618, "h2_bits": 2.768076, "m4_purity": 0.252825}, {"episode": 9, "a_004": 7, "a_010": 5, "h1_bits": 2.83838, "h2_bits": 2.731206, "m4_purity": 0.256716}, {"episode": 10, "a_004": 7, "a_010": 5, "h1_bits": 2.824074, "h2_bits": 2.714065, "m4_purity": 0.258049}, {"episode": 11, "a_004": 7, "a_010": 5, "h1_bits": 2.81104, "h2_bits": 2.693388, "m4_purity": 0.261423}], "h1_mean_bits": 2.8109, "h2_mean_bits": 2.6658, "m4_mean_purity": 0.2743, "scene_sha256": "fcf2cf744727476d833a85c2f930db5e0d745c4989f570a8e3c1055931ca295a", "contract": "fieldglass-causal-chiasm/v1", "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]", "executed": false, "sentience_claimed": false, "tokens_used": 0, "report_sha256": "d06c78b962ba5e84786208fc1966f4168f95ca8e88d841b942697ca0549d2fb7"}, "default_dist": {"frame_ingest": 0.04, "deskew_geom": 0.05, "bg_clean": 0.07, "svg_braille": 0.11, "kloster_atp": 0.17, "chiasm_seal": 0.18999999999999995, "win7_compat": 0.18, "local_serve": 0.19}};
+
+  // Compact pure-JS synchronous SHA-256 (FIPS 180-4) so file:// never throws on crypto.subtle
+  function sha256Hex(str) {
+    var utf8 = unescape(encodeURIComponent(str));
+    var words = [];
+    for (var i = 0; i < utf8.length; i++) {
+      words[i >> 2] |= (utf8.charCodeAt(i) & 0xff) << (24 - (i % 4) * 8);
+    }
+    var bitLen = utf8.length * 8;
+    words[bitLen >> 5] |= 0x80 << (24 - (bitLen % 32));
+    words[(((bitLen + 64) >> 9) << 4) + 15] = bitLen;
+    var K = [
+      0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+      0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+      0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+      0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+      0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+      0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+      0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+      0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2
+    ];
+    var H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+    function rotr(n, x) { return (x >>> n) | (x << (32 - n)); }
+    for (var b = 0; b < words.length; b += 16) {
+      var w = new Array(64);
+      for (var t = 0; t < 16; t++) w[t] = words[b + t] | 0;
+      for (var t2 = 16; t2 < 64; t2++) {
+        var s0 = rotr(7, w[t2-15]) ^ rotr(18, w[t2-15]) ^ (w[t2-15] >>> 3);
+        var s1 = rotr(17, w[t2-2]) ^ rotr(19, w[t2-2]) ^ (w[t2-2] >>> 10);
+        w[t2] = (w[t2-16] + s0 + w[t2-7] + s1) | 0;
+      }
+      var a=H[0],bb=H[1],c=H[2],d=H[3],e=H[4],f=H[5],g=H[6],h=H[7];
+      for (var t3 = 0; t3 < 64; t3++) {
+        var S1 = rotr(6,e) ^ rotr(11,e) ^ rotr(25,e);
+        var ch = (e & f) ^ ((~e) & g);
+        var temp1 = (h + S1 + ch + K[t3] + w[t3]) | 0;
+        var S0 = rotr(2,a) ^ rotr(13,a) ^ rotr(22,a);
+        var maj = (a & bb) ^ (a & c) ^ (bb & c);
+        var temp2 = (S0 + maj) | 0;
+        h=g; g=f; f=e; e=(d+temp1)|0; d=c; c=bb; bb=a; a=(temp1+temp2)|0;
+      }
+      H[0]=(H[0]+a)|0; H[1]=(H[1]+bb)|0; H[2]=(H[2]+c)|0; H[3]=(H[3]+d)|0;
+      H[4]=(H[4]+e)|0; H[5]=(H[5]+f)|0; H[6]=(H[6]+g)|0; H[7]=(H[7]+h)|0;
+    }
+    return H.map(function(v) { return (v >>> 0).toString(16).padStart(8, "0"); }).join("");
+  }
+
+  function sortKeysDeep(val) {
+    if (Array.isArray(val)) return val.map(sortKeysDeep);
+    if (val && typeof val === "object") {
+      var out = {};
+      Object.keys(val).sort().forEach(function(k) { out[k] = sortKeysDeep(val[k]); });
+      return out;
+    }
+    return val;
+  }
+
+  var weights = Object.assign({}, DATA.default_dist);
+  var keys = Object.keys(weights);
+  var vs = document.getElementById("vecSliders");
+  keys.forEach(function(k) {
+    var lbl = document.createElement("label");
+    lbl.className = "mono";
+    lbl.style.fontSize = "0.78rem";
+    lbl.innerHTML = k + ': <span id="w_' + k + '">' + weights[k].toFixed(3) + '</span>'
+      + '<input type="range" min="1" max="50" value="' + Math.round(weights[k]*100) + '" data-key="' + k + '" style="width:100%;" />';
+    vs.appendChild(lbl);
+  });
+
+  function updateKloster() {
+    var tau = Number(document.getElementById("tauSlider").value) / 100.0;
+    document.getElementById("tauReadout").textContent = tau.toFixed(2);
+    var total = keys.reduce(function(s, k) { return s + weights[k]; }, 0);
+    var probs = keys.map(function(k) { return weights[k] / total; });
+    var aTau = probs.filter(function(p) { return p > tau; }).length;
+    var h1 = -probs.reduce(function(s, p) { return p > 0 ? s + p * Math.log2(p) : s; }, 0);
+    var h2 = -Math.log2(Math.max(1e-12, probs.reduce(function(s, p) { return s + p*p; }, 0)));
+    var m4 = Math.pow(probs.reduce(function(s, p) { return s + Math.pow(p, 4); }, 0), 0.25);
+
+    document.getElementById("swAtauBadge").textContent = "A_" + tau.toFixed(2) + "(p) = " + aTau + " / " + probs.length;
+    document.getElementById("swMetrics").innerHTML = [
+      ["A_tau(p)", aTau + " states"],
+      ["H1 / H2", h1.toFixed(2) + " / " + h2.toFixed(2) + " b"],
+      ["M4^(1/4)", m4.toFixed(4)]
+    ].map(function(c) { return '<div class="kpi"><div class="lbl">' + c[0] + '</div><div class="val">' + c[1] + '</div></div>'; }).join("");
+
+    var cv = document.getElementById("swAtauCanvas");
+    var ctx = cv.getContext("2d");
+    ctx.fillStyle = "#080c14"; ctx.fillRect(0, 0, cv.width, cv.height);
+    var bw = (cv.width - 48) / probs.length;
+    var ymax = 0.45;
+    probs.forEach(function(p, idx) {
+      var bh = Math.min(1.0, p / ymax) * (cv.height - 46);
+      ctx.fillStyle = p > tau ? "#f2c45c" : "#385070";
+      ctx.fillRect(24 + idx * bw + 6, cv.height - 26 - bh, bw - 12, bh);
+    });
+    var ty = cv.height - 26 - Math.min(1.0, tau / ymax) * (cv.height - 46);
+    ctx.strokeStyle = "#f46a7e"; ctx.lineWidth = 2; ctx.setLineDash([6,4]);
+    ctx.beginPath(); ctx.moveTo(16, ty); ctx.lineTo(cv.width - 16, ty); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = "#f46a7e"; ctx.font = "12px monospace";
+    ctx.fillText("tau = " + tau.toFixed(2) + " (strict p > tau)", 22, Math.max(16, ty - 6));
+  }
+
+  vs.querySelectorAll("input").forEach(function(inp) {
+    inp.addEventListener("input", function(ev) {
+      var k = ev.target.getAttribute("data-key");
+      weights[k] = Number(ev.target.value) / 100.0;
+      document.getElementById("w_" + k).textContent = weights[k].toFixed(3);
+      updateKloster();
+    });
+  });
+  document.getElementById("tauSlider").addEventListener("input", updateKloster);
+
+  function verifyBox() {
+    var box = document.getElementById("reportJsonBox");
+    var badge = document.getElementById("shaBadge");
+    var txt = document.getElementById("shaStatusText");
+    try {
+      var obj = JSON.parse(box.value);
+      if (!obj || typeof obj !== "object" || Array.isArray(obj)) {
+        throw new Error("Expected JSON object");
+      }
+      var claimed = obj.report_sha256 || "";
+      var copy = Object.assign({}, obj);
+      delete copy.report_sha256;
+      var canonical = JSON.stringify(sortKeysDeep(copy)).replace(/[\u007f-\uffff]/g, function(ch) {
+        return "\\u" + ("0000" + ch.charCodeAt(0).toString(16)).slice(-4);
+      });
+      var recomputed = sha256Hex(canonical);
+      var ok = (claimed === recomputed) && obj.contract === "fieldglass-causal-chiasm/v1" && obj.executed === false && obj.sentience_claimed === false && obj.tokens_used === 0;
+      badge.textContent = ok ? "SHA-256 VERIFIED" : "SEAL MISMATCH";
+      badge.style.color = ok ? "#8ce094" : "#f46a7e";
+      txt.style.color = ok ? "#8ce094" : "#f46a7e";
+      txt.textContent = ok ? ("MATCH: " + recomputed.slice(0, 16) + "...") : ("MISMATCH (got " + recomputed.slice(0, 16) + "...)");
+    } catch (err) {
+      badge.textContent = "INVALID JSON";
+      badge.style.color = "#f46a7e";
+      txt.style.color = "#f46a7e";
+      txt.textContent = String(err);
+    }
+  }
+  document.getElementById("verifyShaBtn").addEventListener("click", verifyBox);
+  document.getElementById("resetJsonBtn").addEventListener("click", function() {
+    document.getElementById("reportJsonBox").value = JSON.stringify(DATA.report, null, 2);
+    verifyBox();
+  });
+
+  var pl = document.getElementById("pipelineList");
+  DATA.stages.forEach(function(st) {
+    var d = document.createElement("div");
+    d.className = "kpi";
+    d.style.marginBottom = "8px";
+    d.innerHTML = '<div class="lbl" style="color:var(--cyan);">' + st.stage + ' · ' + st.module + '</div><div style="font-size:0.84rem;">' + st.contract + ' &rarr; <span class="mono" style="color:var(--gold);">' + st.output + '</span></div>';
+    pl.appendChild(d);
+  });
+  var mb = document.getElementById("matrixBody");
+  DATA.matrix.forEach(function(r) {
+    var tr = document.createElement("tr");
+    tr.innerHTML = '<td class="mono" style="color:var(--gold);">' + r.layer + '</td><td>' + r.win7_target + '</td><td>' + r.modern_observatory + '</td>';
+    mb.appendChild(tr);
+  });
+
+  document.getElementById("reportJsonBox").value = JSON.stringify(DATA.report, null, 2);
+  updateKloster();
+  verifyBox();
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+  "schema_version": "fieldglass-summary/v1",
+  "milestone": "M2",
+  "slug": "chatgpt",
+  "display_name": "ChatGPT",
+  "title": "ChatGPT — Structured Improvement Dossier",
+  "tagline": "Typed tool contracts, entropy-bounded memory & calibrated uncertainty telemetry",
+  "category": "Frontier AI",
+  "domain_filter": "Frontier AI",
+  "accent_hex": "#5edaf0",
+  "index_html": "docs/improvements/chatgpt/index.html",
+  "preview_png": "docs/improvements/chatgpt/preview.png",
+  "braille_preview_png": "docs/improvements/chatgpt/chatgpt_braille_preview.png",
+  "architecture_svg": "docs/improvements/chatgpt/architecture.svg",
+  "chiasm_svg": "docs/improvements/chatgpt/chiasm.svg",
+  "chiasm_report": "docs/improvements/chatgpt/chiasm_report.json",
+  "data_json": "docs/improvements/chatgpt/data.json",
+  "summary_json": "docs/improvements/chatgpt/summary.json",
+  "improvement_count": 5,
+  "top_improvements": [
+    {
+      "id": "CGPT-01",
+      "title": "Typed Tool-Call Contracts & CanvasProof-v1 Replayable Merkle DAG",
+      "short_title": "Typed Contracts & DAG",
+      "impact": "11.4% -> <= 0.8%"
+    },
+    {
+      "id": "CGPT-02",
+      "title": "Kloster A_tau(p) Dynamic Stem Router & TTL-Scoped Memory Pinning",
+      "short_title": "A_tau Stem & Memory Gate",
+      "impact": "42% -> <= 8% (-38% net)"
+    },
+    {
+      "id": "CGPT-03",
+      "title": "Calibrated Uncertainty & Non-Sycophantic Refusal Telemetry",
+      "short_title": "Calibrated Truth Telemetry",
+      "impact": "18.5% -> <= 2.0%"
+    },
+    {
+      "id": "CGPT-04",
+      "title": "Local-First Edge Redaction & Offline Fallback Handoff",
+      "short_title": "Local Edge/Cloud Handoff",
+      "impact": "3.2% -> 0.0%"
+    },
+    {
+      "id": "CGPT-05",
+      "title": "Mid-Chain Invariant Checkpoints & 2x4 Braille Transcript Export",
+      "short_title": "Checkpoints + Braille Export",
+      "impact": "9.1% -> 0.0%"
+    }
+  ],
+  "kpis": [
+    {
+      "id": "CGPT-01",
+      "metric": "Tool-call schema retry rate",
+      "baseline": "11.4%",
+      "target": "<= 0.8%"
+    },
+    {
+      "id": "CGPT-02",
+      "metric": "Wasted heavy reasoning tokens",
+      "baseline": "42%",
+      "target": "<= 8% (-38% net)"
+    },
+    {
+      "id": "CGPT-03",
+      "metric": "Sycophantic reversal on valid facts",
+      "baseline": "18.5%",
+      "target": "<= 2.0%"
+    },
+    {
+      "id": "CGPT-04",
+      "metric": "Unredacted secret/PII egress",
+      "baseline": "3.2%",
+      "target": "0.0%"
+    },
+    {
+      "id": "CGPT-05",
+      "metric": "Pre-commit broken-build writes",
+      "baseline": "9.1%",
+      "target": "0.0%"
+    }
+  ],
+  "metrics": {
+    "episodes": 24,
+    "tau": 0.1,
+    "past_a_tau": 6,
+    "future_a_tau": 5,
+    "past_a014": 3,
+    "future_a014": 4,
+    "chiasm_shift": -1,
+    "effective_information_bits": 0.419955,
+    "h1_past_bits": 2.7849,
+    "h1_future_bits": 2.5296,
+    "m4_past_purity": 0.2975,
+    "m4_future_purity": 0.3045,
+    "presence_glyph": "^_^",
+    "structural_invariants": [
+      "det_sandbox"
+    ],
+    "scene_sha256": "6e139996b86c4ace8c544c38c266c2fcb092468ff31619dea628bab486a13da9",
+    "report_sha256": "9656b4aa7e923b988b59fc9c9a8baa744a56986bc93ce29b435c7ef7658eb6c7"
+  },
+  "clinical_use": false,
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

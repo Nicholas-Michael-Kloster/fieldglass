@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="1000" height="720">
+<rect x="0" y="0" width="1000" height="720" fill="#f6f1e4"/>
+<rect x="20" y="18" width="960" height="684" fill="none" stroke="#8c7f68" stroke-width="2"/>
+<rect x="28" y="26" width="944" height="668" fill="none" stroke="#c4b89f" stroke-width="1"/>
+<text x="500" y="64" text-anchor="middle" font-family="serif" font-size="22" font-weight="bold" fill="#1b1916">SOFTWARE SYSTEMS &amp;amp; OBSERVATORY ARCHITECTURE PLATE</text>
+<text x="500" y="88" text-anchor="middle" font-family="serif" font-size="13" font-style="italic" fill="#524a3d">Deterministic Pipeline, Kloster A_tau(p) &amp;amp; Win7-Era Compatibility Matrix</text>
+<line x1="60" y1="104" x2="940" y2="104" stroke="#8c7f68" stroke-width="1.2"/>
+<text x="64" y="138" font-family="monospace" font-size="15" font-weight="bold" fill="#1b1916">FIELDGLASS 6-STAGE DETERMINISTIC PIPELINE &amp; WIN7-TO-MODERN BOUNDARY</text>
+<rect x="64" y="160" width="424" height="74" fill="#efe7d4" stroke="#1b1916" stroke-width="2" rx="4"/>
+<text x="78" y="184" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">01 / Frame Ingest</text>
+<text x="78" y="204" font-family="monospace" font-size="11" fill="#524a3d">fieldglass.plate.extract_sharpest_frame</text>
+<text x="78" y="222" font-family="monospace" font-size="11" fill="#1b1916">Laplacian variance selection at zero cloud cost</text>
+<rect x="512" y="160" width="424" height="74" fill="#efe7d4" stroke="#1b1916" stroke-width="2" rx="4"/>
+<text x="526" y="184" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">02 / Perspective Deskew</text>
+<text x="526" y="204" font-family="monospace" font-size="11" fill="#524a3d">fieldglass.plate.perspective_deskew</text>
+<text x="526" y="222" font-family="monospace" font-size="11" fill="#1b1916">4-corner projective homography to canonical rect</text>
+<rect x="64" y="254" width="424" height="74" fill="#efe7d4" stroke="#1b1916" stroke-width="2" rx="4"/>
+<text x="78" y="278" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">03 / Illumination Clean</text>
+<text x="78" y="298" font-family="monospace" font-size="11" fill="#524a3d">fieldglass.plate.clean_illumination</text>
+<text x="78" y="316" font-family="monospace" font-size="11" fill="#1b1916">Gaussian background division -&gt; archival parchment</text>
+<rect x="512" y="254" width="424" height="74" fill="#efe7d4" stroke="#1b1916" stroke-width="2" rx="4"/>
+<text x="526" y="278" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">04 / Vector &amp; 2x4 Braille</text>
+<text x="526" y="298" font-family="monospace" font-size="11" fill="#524a3d">fieldglass.plate.trace_ink_to_svg &amp; ink_to_braille_lines</text>
+<text x="526" y="316" font-family="monospace" font-size="11" fill="#1b1916">Framed SVG + Bayer-dithered U+2800..U+28FF cells</text>
+<rect x="64" y="348" width="424" height="74" fill="#efe7d4" stroke="#1b1916" stroke-width="2" rx="4"/>
+<text x="78" y="372" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">05 / Kloster Metrics &amp; Chiasm</text>
+<text x="78" y="392" font-family="monospace" font-size="11" fill="#524a3d">fieldglass.metrics.a_tau &amp; causal_chiasm</text>
+<text x="78" y="410" font-family="monospace" font-size="11" fill="#1b1916">Strict p(x) &gt; tau superlevel volume + SHA-256 seal</text>
+<rect x="512" y="348" width="424" height="74" fill="#efe7d4" stroke="#1b1916" stroke-width="2" rx="4"/>
+<text x="526" y="372" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">06 / Static Loopback Serve</text>
+<text x="526" y="392" font-family="monospace" font-size="11" fill="#524a3d">fieldglass.showcase.make_range_handler</text>
+<text x="526" y="410" font-family="monospace" font-size="11" fill="#1b1916">HTTP 206 Range-capable 127.0.0.1 static delivery</text>
+<rect x="64" y="458" width="872" height="164" fill="#1b1916" rx="4"/>
+<text x="84" y="490" font-family="monospace" font-size="14" font-weight="bold" fill="#f6f1e4">KLOSTER SUPERLEVEL-SET &amp; SHA-256 INTEGRITY CONTRACT</text>
+<text x="84" y="520" font-family="monospace" font-size="13" fill="#f6f1e4">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]  (strict inequality: p == tau excluded)</text>
+<text x="84" y="550" font-family="monospace" font-size="12" fill="#d9cfba">Win7 Target: ES5 + IE8-IE11/HTA + Python 3.7/3.8 stdlib-only loopback (127.0.0.1)</text>
+<text x="84" y="576" font-family="monospace" font-size="12" fill="#d9cfba">Modern Target: Python 3.14 + NumPy/PIL/Matplotlib + HTML5 Canvas + pure-JS/WebCrypto SHA-256</text>
+<text x="84" y="602" font-family="monospace" font-size="12" fill="#f6f1e4">Invariants: executed=false | sentience_claimed=false | tokens_used=0 | zero external CDNs</text>
+<line x1="60" y1="648" x2="940" y2="648" stroke="#8c7f68" stroke-width="1.2"/>
+<text x="500" y="672" text-anchor="middle" font-family="monospace" font-size="12" fill="#1b1916">FIELDGLASS ARCHIVAL TECHNICAL PLATE · 0 CLOUD TOKENS · executed=False</text>
+</svg>

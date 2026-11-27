@@ -1,0 +1,36 @@
+{
+  "contract": "fieldglass-r1-summary/v1",
+  "domain": "msdos",
+  "slug": "msdos",
+  "title": "MS-DOS 6.22 & 8086 Real-Mode Simulator",
+  "subtitle": "16-bit 8086 registers, 640 KB memory map, 1.44 MB FAT12 & COMMAND.COM",
+  "route": "msdos/index.html",
+  "metrics": {
+    "episode_count": 12,
+    "past_a_010": 4,
+    "future_a_010": 6,
+    "effective_information_bits": 0.244684,
+    "presence_glyph": "^_^",
+    "h1_mean_bits": 2.8351,
+    "h2_mean_bits": 2.691,
+    "m4_mean_purity": 0.2769
+  },
+  "highlights": [
+    "16-bit 8086 registers & A20 real-mode physical address calculator",
+    "640 KB Conventional + 384 KB UMA + 64 KB HMA memory layout",
+    "1.44 MB FAT12 (2,880 x 512 B) volume & interactive COMMAND.COM shell"
+  ],
+  "assets": {
+    "index_html": "index.html",
+    "preview_png": "preview.png",
+    "chiasm_svg": "msdos_chiasm.svg",
+    "plate_svg": "msdos_plate.svg",
+    "braille_txt": "msdos_braille.txt",
+    "braille_json": "msdos_braille.json",
+    "braille_preview_png": "msdos_braille_preview.png",
+    "chiasm_report": "chiasm_report.json"
+  },
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

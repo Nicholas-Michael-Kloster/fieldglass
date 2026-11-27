@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>MS-DOS 6.22 &amp; 8086 Real-Mode Simulator · Fieldglass Observatory</title>
+<style>
+
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --green: #8ce094;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.35rem, 3vw, 1.95rem); color: var(--gold); }
+  .sub { font-size: 0.9rem; color: var(--muted); margin: 0 0 12px; }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.86rem;
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 7px 12px;
+    display: inline-block;
+    margin: 4px 0 10px;
+  }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  a.btn, button.btn {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 8px;
+    border: 1px solid #385070;
+    background: #172233;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    cursor: pointer;
+  }
+  a.btn:hover, button.btn:hover { border-color: var(--cyan); color: var(--cyan); }
+  button.btn.accent, a.btn.accent { border-color: var(--gold); color: var(--gold); }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .card h2, .card h3 {
+    margin: 0 0 8px;
+    color: var(--cyan);
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .badge {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  th, td { border-bottom: 1px solid #223248; padding: 6px 8px; text-align: left; }
+  th { color: var(--gold); font-family: ui-monospace, monospace; font-size: 0.78rem; }
+  canvas, img.resp { width: 100%; height: auto; border-radius: 10px; border: 1px solid #223248; background: #070a10; display: block; }
+  input[type="range"], input[type="text"], input[type="number"], textarea {
+    background: #0a101a;
+    color: var(--text);
+    border: 1px solid #354c6b;
+    border-radius: 6px;
+    padding: 6px 9px;
+    font-family: ui-monospace, monospace;
+  }
+  .kpi {
+    background: var(--panel2);
+    border: 1px solid #243852;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .kpi .lbl { font-size: 0.72rem; color: var(--muted); font-family: ui-monospace, monospace; text-transform: uppercase; }
+  .kpi .val { font-size: 1.18rem; color: var(--gold); font-family: ui-monospace, monospace; font-weight: 700; }
+  .disclaimer-banner {
+    background: linear-gradient(90deg, #5c1320, #3a121b);
+    border: 2px solid var(--ruby);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    color: #ffe8ea;
+    font-weight: 700;
+  }
+  footer { margin-top: 24px; color: var(--muted); font-size: 0.8rem; font-family: ui-monospace, monospace; text-align: center; }
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">R1 Domain 01 · Deterministic 16-Bit Systems</div>
+    <h1>MS-DOS 6.22 &amp; 8086 Real-Mode Simulator</h1>
+    <p class="sub">Interactive COMMAND.COM shell, 8086 registers &amp; flags, 640 KB conventional memory map, FAT12 geometry, and Kloster A_tau(p) telemetry.</p>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <div class="nav-links">
+      <a class="btn" href="../index.html">Observatory Home</a>
+      <a class="btn" href="./msdos_chiasm.svg">Causal Chiasm SVG</a>
+      <a class="btn" href="./msdos_plate.svg">Archival Plate SVG</a>
+      <a class="btn" href="./msdos_braille_preview.png">2x4 Braille PNG</a>
+      <a class="btn" href="./chiasm_report.json">Chiasm JSON</a>
+      <a class="btn" href="./summary.json">Summary JSON</a>
+    </div>
+  </header>
+  
+<div class="grid2">
+  <div class="card">
+    <h3>COMMAND.COM Interactive Shell <span class="badge">MS-DOS 6.22 · 8086</span></h3>
+    <pre id="dosTerm" class="mono" style="background:#06090f;border:1px solid #243852;border-radius:10px;padding:12px;height:320px;overflow:auto;font-size:0.82rem;margin:0 0 10px;color:#d6e4f2;"></pre>
+    <div style="display:flex;gap:8px;margin-bottom:10px;">
+      <span class="mono" style="padding:7px 4px;color:var(--gold);">C:\&gt;</span>
+      <input id="dosInput" type="text" value="HELP" style="flex:1;" aria-label="MS-DOS Command" />
+      <button id="dosRunBtn" class="btn accent" type="button">Run</button>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      <button class="btn dos-quick" data-cmd="DIR" type="button">DIR</button>
+      <button class="btn dos-quick" data-cmd="MEM" type="button">MEM</button>
+      <button class="btn dos-quick" data-cmd="CHKDSK" type="button">CHKDSK</button>
+      <button class="btn dos-quick" data-cmd="TYPE CONFIG.SYS" type="button">TYPE CONFIG.SYS</button>
+      <button class="btn dos-quick" data-cmd="TYPE FIELDGLS.TXT" type="button">TYPE FIELDGLS.TXT</button>
+      <button class="btn dos-quick" data-cmd="AUTOEXEC.BAT" type="button">AUTOEXEC.BAT</button>
+      <button class="btn dos-quick" data-cmd="STEP" type="button">STEP 8086</button>
+      <button class="btn dos-quick" data-cmd="VER" type="button">VER</button>
+      <button class="btn dos-quick" data-cmd="CLS" type="button">CLS</button>
+    </div>
+  </div>
+  <div class="card">
+    <h3>16-Bit 8086 Registers &amp; Physical Address <span class="badge" id="a20Badge">A20: ON</span></h3>
+    <div id="regGrid" class="grid3" style="margin-bottom:10px;"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;">
+      <button id="stepBtn" class="btn accent" type="button">Step Micro-Program</button>
+      <button id="a20Btn" class="btn" type="button">Toggle A20 Gate</button>
+      <span id="physReadout" class="mono" style="font-size:0.82rem;color:var(--cyan);">CS:IP phys = 0x08100</span>
+    </div>
+    <div id="flagsReadout" class="mono" style="font-size:0.8rem;color:var(--gold);background:#0a101a;padding:8px 10px;border-radius:8px;border:1px solid #243852;"></div>
+  </div>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>640 KB Conventional + UMA + HMA Memory Map <span class="badge">1,048,576 B Real Mode</span></h3>
+    <div id="memBars"></div>
+  </div>
+  <div class="card">
+    <h3>1.44 MB FAT12 Geometry &amp; Kloster Telemetry <span class="badge" id="dosAtauBadge">A_0.10</span></h3>
+    <div id="fat12Box" class="mono" style="font-size:0.82rem;margin-bottom:10px;"></div>
+    <canvas id="dosTelemCanvas" width="520" height="190"></canvas>
+  </div>
+</div>
+
+  <footer>Fieldglass Observatory R1 · 0 cloud tokens ($0.00) · executed=false · sentience_claimed=false</footer>
+</div>
+<script>
+
+(function() {
+  var DATA = {"memory": [{"region": "IVT", "area": "Conventional", "start": 0, "end": 1023, "bytes": 1024, "desc": "256 real-mode interrupt vectors"}, {"region": "BIOS_DATA", "area": "Conventional", "start": 1024, "end": 1279, "bytes": 256, "desc": "BIOS Data Area (COM/LPT/kbd buffer)"}, {"region": "DOS_COMM", "area": "Conventional", "start": 1280, "end": 1791, "bytes": 512, "desc": "DOS communication & PrintScreen status"}, {"region": "IO_MSDOS_SYS", "area": "Conventional", "start": 1792, "end": 28159, "bytes": 26368, "desc": "IO.SYS + MSDOS.SYS resident kernel"}, {"region": "COMMAND_RESIDENT", "area": "Conventional", "start": 28160, "end": 40959, "bytes": 12800, "desc": "COMMAND.COM resident stub & env"}, {"region": "FREE_TPA", "area": "Conventional", "start": 40960, "end": 655359, "bytes": 614400, "desc": "Free Transient Program Area (600 KB)"}, {"region": "VGA_VRAM", "area": "UMA", "start": 655360, "end": 786431, "bytes": 131072, "desc": "VGA planar graphics & CGA/MDA text"}, {"region": "UMB_HIMEM_EMM386", "area": "UMA", "start": 786432, "end": 983039, "bytes": 196608, "desc": "Upper Memory Blocks / option ROMs"}, {"region": "SYSTEM_BIOS", "area": "UMA", "start": 983040, "end": 1048575, "bytes": 65536, "desc": "POST & system ROM BIOS"}, {"region": "HMA_HIGH", "area": "HMA", "start": 1048576, "end": 1114095, "bytes": 65520, "desc": "High Memory Area (64 KB - 16 B, DOS=HIGH)"}], "fat12": {"bytes_per_sector": 512, "sectors_per_cluster": 1, "reserved_sectors": 1, "num_fats": 2, "sectors_per_fat": 9, "root_entries": 224, "root_sectors": 14, "data_start_sector": 33, "total_sectors": 2880, "total_bytes": 1474560, "data_clusters": 2847}, "files": [{"name": "IO.SYS", "bytes": 40774, "attr": "RHS", "date": "05-31-94", "time": "6:22a", "clusters": "2..81", "hidden": true, "content": null}, {"name": "MSDOS.SYS", "bytes": 38138, "attr": "RHS", "date": "05-31-94", "time": "6:22a", "clusters": "82..156", "hidden": true, "content": null}, {"name": "COMMAND.COM", "bytes": 54645, "attr": "A", "date": "05-31-94", "time": "6:22a", "clusters": "157..263", "hidden": false, "content": null}, {"name": "CONFIG.SYS", "bytes": 142, "attr": "A", "date": "05-31-94", "time": "6:22a", "clusters": "264", "hidden": false, "content": "DEVICE=C:\\DOS\\HIMEM.SYS\nDOS=HIGH,UMB\nFILES=40\nBUFFERS=20\nSHELL=C:\\COMMAND.COM C:\\ /P /E:512"}, {"name": "AUTOEXEC.BAT", "bytes": 168, "attr": "A", "date": "05-31-94", "time": "6:22a", "clusters": "265", "hidden": false, "content": "@ECHO OFF\nPROMPT $P$G\nPATH C:\\DOS;C:\\FIELDGLS\nLH C:\\DOS\\MSCDEX.EXE /D:MSCD001\nECHO Fieldglass 8086 Observatory Ready."}, {"name": "HIMEM.SYS", "bytes": 29136, "attr": "A", "date": "05-31-94", "time": "6:22a", "clusters": "266..322", "hidden": false, "content": null}, {"name": "FIELDGLS.TXT", "bytes": 418, "attr": "A", "date": "11-27-26", "time": "4:12a", "clusters": "323", "hidden": false, "content": "FIELDGLASS OBSERVATORY \u2014 8086 REAL-MODE SPECIMEN\nEquation: A_tau(p) = |{x in X : p(x) > tau}|\nConventional RAM: 640 KB (655,360 bytes)\nFree TPA: 600 KB (614,400 bytes) with DOS=HIGH\nZero cloud tokens ($0.00) \u00b7 executed=False"}, {"name": "CHIASM.DAT", "bytes": 256, "attr": "A", "date": "11-27-26", "time": "4:12a", "clusters": "324", "hidden": false, "content": "CONTRACT=fieldglass-causal-chiasm/v1\nTAU=0.10\nNEXUS_EP=6\nSUBSYSTEMS=ivt_bios,dos_kernel,command_shell,conv_free_tpa,video_uma,umb_rom,hma_high,fat12_io"}], "episodes": [{"episode": 0, "a_004": 7, "a_010": 5, "h1_bits": 2.667722, "h2_bits": 2.389867, "m4_purity": 0.34751}, {"episode": 1, "a_004": 7, "a_010": 5, "h1_bits": 2.77415, "h2_bits": 2.58554, "m4_purity": 0.298472}, {"episode": 2, "a_004": 8, "a_010": 4, "h1_bits": 2.810958, "h2_bits": 2.640254, "m4_purity": 0.286877}, {"episode": 3, "a_004": 8, "a_010": 4, "h1_bits": 2.893516, "h2_bits": 2.772013, "m4_purity": 0.267145}, {"episode": 4, "a_004": 8, "a_010": 6, "h1_bits": 2.92568, "h2_bits": 2.844769, "m4_purity": 0.247479}, {"episode": 5, "a_004": 8, "a_010": 5, "h1_bits": 2.915273, "h2_bits": 2.840629, "m4_purity": 0.241812}, {"episode": 6, "a_004": 8, "a_010": 5, "h1_bits": 2.868705, "h2_bits": 2.756331, "m4_purity": 0.258754}, {"episode": 7, "a_004": 8, "a_010": 5, "h1_bits": 2.852715, "h2_bits": 2.72738, "m4_purity": 0.26548}, {"episode": 8, "a_004": 8, "a_010": 6, "h1_bits": 2.8387, "h2_bits": 2.710284, "m4_purity": 0.26888}, {"episode": 9, "a_004": 8, "a_010": 5, "h1_bits": 2.830217, "h2_bits": 2.691523, "m4_purity": 0.2742}, {"episode": 10, "a_004": 8, "a_010": 6, "h1_bits": 2.827563, "h2_bits": 2.680382, "m4_purity": 0.279289}, {"episode": 11, "a_004": 8, "a_010": 6, "h1_bits": 2.815516, "h2_bits": 2.652901, "m4_purity": 0.286824}], "chiasm": {"contract": "fieldglass-causal-chiasm/v1", "tau": 0.1, "horizon": 5, "past_repertoire": {"ivt_bios": 0.19333333333333336, "dos_kernel": 0.20499999999999996, "command_shell": 0.09333333333333334, "conv_free_tpa": 0.14, "video_uma": 0.11833333333333333, "umb_rom": 0.09833333333333331, "hma_high": 0.07166666666666667, "fat12_io": 0.08}, "future_repertoire": {"ivt_bios": 0.056666666666666664, "dos_kernel": 0.13, "command_shell": 0.17833333333333334, "conv_free_tpa": 0.2416666666666667, "video_uma": 0.12166666666666666, "umb_rom": 0.05333333333333332, "hma_high": 0.11166666666666665, "fat12_io": 0.10666666666666667}, "past_accessible_volume": 4, "past_accessible_states": ["conv_free_tpa", "dos_kernel", "ivt_bios", "video_uma"], "future_accessible_volume": 6, "future_accessible_states": ["command_shell", "conv_free_tpa", "dos_kernel", "fat12_io", "hma_high", "video_uma"], "chiasm_shift": 2, "effective_information_bits": 0.244684, "future_boxed_in": false, "presence_glyph": "^_^", "presence_meaning": "corroborated chiasm: reversible future options preserved", "executed": false, "sentience_claimed": false}};
+  var state = {
+    a20: true,
+    pc: 0,
+    regs: {AX:0x0000,BX:0x0000,CX:0x00FF,DX:0x0000,SI:0x0100,DI:0x0200,BP:0x0000,SP:0xFFFE,CS:0x0800,DS:0x0800,ES:0x0800,SS:0x0800,IP:0x0100,FLAGS:0x0202}
+  };
+  var prog = [
+    ["MOV AX, 0900h", 3],
+    ["MOV DX, 0140h", 3],
+    ["INT 21h", 2],
+    ["ADD AX, 002Ah", 3],
+    ["CMP AX, 092Ah", 3],
+    ["NOP", 1]
+  ];
+  function hex4(v) { return (v & 0xFFFF).toString(16).toUpperCase().padStart(4, "0"); }
+  function physAddr(seg, off) {
+    var raw = ((seg & 0xFFFF) << 4) + (off & 0xFFFF);
+    return state.a20 ? raw : (raw & 0xFFFFF);
+  }
+  function renderRegs() {
+    var grid = document.getElementById("regGrid");
+    grid.innerHTML = "";
+    Object.keys(state.regs).forEach(function(k) {
+      var d = document.createElement("div");
+      d.className = "kpi";
+      d.innerHTML = '<div class="lbl">' + k + '</div><div class="val">' + hex4(state.regs[k]) + 'h</div>';
+      grid.appendChild(d);
+    });
+    var f = state.regs.FLAGS;
+    var masks = [["CF",1],["PF",4],["AF",16],["ZF",64],["SF",128],["TF",256],["IF",512],["DF",1024],["OF",2048]];
+    document.getElementById("flagsReadout").textContent = "FLAGS: " + masks.map(function(m) { return m[0] + "=" + ((f & m[1]) ? 1 : 0); }).join("  ");
+    var p = physAddr(state.regs.CS, state.regs.IP);
+    document.getElementById("physReadout").textContent = "CS:IP phys = 0x" + p.toString(16).toUpperCase().padStart(5, "0") + " | FFFF:0020 = 0x" + physAddr(0xFFFF, 0x0020).toString(16).toUpperCase().padStart(5, "0");
+    document.getElementById("a20Badge").textContent = "A20: " + (state.a20 ? "ON" : "OFF");
+  }
+  function updateArithFlags(result16, carry, overflow) {
+    var val = result16 & 0xFFFF;
+    var flags = state.regs.FLAGS & ~0x08C5;
+    if (carry) flags |= 0x0001;
+    if (val === 0) flags |= 0x0040;
+    if (val & 0x8000) flags |= 0x0080;
+    var low = val & 0xFF;
+    var ones = 0;
+    for (var b = 0; b < 8; b++) { if ((low >> b) & 1) ones++; }
+    if (ones % 2 === 0) flags |= 0x0004;
+    if (overflow) flags |= 0x0800;
+    state.regs.FLAGS = flags & 0xFFFF;
+  }
+  function stepCpu() {
+    var idx = state.pc % prog.length;
+    if (idx === 0) state.regs.AX = 0x0900;
+    else if (idx === 1) state.regs.DX = 0x0140;
+    else if (idx === 2) state.regs.AX = (state.regs.AX & 0xFF00) | 0x0024;
+    else if (idx === 3) {
+      var a = state.regs.AX;
+      var r = a + 0x002A;
+      state.regs.AX = r & 0xFFFF;
+      updateArithFlags(r, r > 0xFFFF, false);
+    } else if (idx === 4) {
+      var a2 = state.regs.AX;
+      var diff = (a2 - 0x092A) & 0xFFFF;
+      updateArithFlags(diff, a2 < 0x092A, false);
+    }
+    var ipOff = 0;
+    for (var i = 0; i <= idx; i++) ipOff += prog[i][1];
+    state.regs.IP = (0x0100 + ipOff) & 0xFFFF;
+    state.pc += 1;
+    renderRegs();
+    return "STEP #" + idx + ": " + prog[idx][0] + " -> AX=" + hex4(state.regs.AX) + "h IP=" + hex4(state.regs.IP) + "h";
+  }
+  var term = document.getElementById("dosTerm");
+  function appendTerm(lines) {
+    term.textContent += (term.textContent ? "\n" : "") + lines.join("\n");
+    term.scrollTop = term.scrollHeight;
+  }
+  function runCmd(raw) {
+    var line = (raw || "").trim();
+    if (!line) return;
+    var parts = line.split(/\s+/);
+    var verb = parts[0].toUpperCase();
+    var arg = (parts[1] || "").toUpperCase();
+    if (verb === "CLS") { term.textContent = ""; return; }
+    appendTerm(["C:\\>" + line]);
+    if (verb === "VER") appendTerm(["MS-DOS Version 6.22 (8086 Educational Real-Mode Model)"]);
+    else if (verb === "HELP") appendTerm(["Commands: DIR, MEM, CHKDSK, TYPE <FILE>, VER, AUTOEXEC.BAT, STEP, REGS, CLS, HELP"]);
+    else if (verb === "DIR") {
+      var vis = DATA.files.filter(function(f) { return !f.hidden; });
+      var total = DATA.files.reduce(function(s, f) { return s + f.bytes; }, 0);
+      var out = [" Volume in drive C is FIELDGLS622", " Directory of C:\\"];
+      vis.forEach(function(f) { out.push("  " + f.name.padEnd(14, " ") + String(f.bytes).padStart(9, " ") + "  " + f.date + "  [" + f.attr + "]"); });
+      out.push("  " + vis.length + " file(s) visible, " + (DATA.fat12.total_bytes - total).toLocaleString() + " bytes free");
+      appendTerm(out);
+    } else if (verb === "MEM") {
+      appendTerm([
+        "Memory Type        Total       Used       Free",
+        "Conventional         640K        40K       600K  (614,400 bytes)",
+        "Upper                384K       192K       192K  (393,216 bytes UMA)",
+        "Extended (XMS/HMA)    64K        47K        17K  (65,520 bytes HMA)"
+      ]);
+    } else if (verb === "CHKDSK") {
+      appendTerm([
+        "Volume Serial Number is 1994-0622",
+        "  1,474,560 bytes total disk space (2880 sectors x 512 B)",
+        "     78,912 bytes in 2 hidden files",
+        "     84,765 bytes in 6 user files",
+        "  1,310,883 bytes available on disk",
+        "    655,360 total bytes memory / 614,400 bytes free"
+      ]);
+    } else if (verb === "TYPE") {
+      var m = DATA.files.find(function(f) { return f.name === arg; });
+      if (!m) appendTerm(["File not found - " + (arg || "(missing)")]);
+      else if (!m.content) appendTerm([m.name + " is a binary system image (" + m.bytes + " bytes)."]);
+      else appendTerm(m.content.split("\n"));
+    } else if (verb === "AUTOEXEC.BAT") {
+      state.regs.AX = 0x0900; state.regs.DX = 0x0140; renderRegs();
+      appendTerm(["@ECHO OFF", "PROMPT $P$G", "PATH C:\\DOS;C:\\FIELDGLS", "Fieldglass 8086 Observatory Ready."]);
+    } else if (verb === "STEP") {
+      appendTerm([stepCpu()]);
+    } else if (verb === "REGS") {
+      appendTerm(["AX=" + hex4(state.regs.AX) + " BX=" + hex4(state.regs.BX) + " CX=" + hex4(state.regs.CX) + " DX=" + hex4(state.regs.DX) + " CS:IP=" + hex4(state.regs.CS) + ":" + hex4(state.regs.IP)]);
+    } else {
+      appendTerm(["Bad command or file name - " + verb]);
+    }
+  }
+
+  // Render Memory Map
+  var mb = document.getElementById("memBars");
+  DATA.memory.forEach(function(r) {
+    var pct = Math.max(4, Math.min(100, (r.bytes / 614400) * 100));
+    var col = r.area === "Conventional" ? "#5edaf0" : (r.area === "UMA" ? "#f2c45c" : "#f46a7e");
+    var row = document.createElement("div");
+    row.style.marginBottom = "7px";
+    row.innerHTML = '<div class="mono" style="font-size:0.78rem;display:flex;justify-content:space-between;"><span>' + r.region + ' (' + r.area + ')</span><span>' + r.bytes.toLocaleString() + ' B</span></div>'
+      + '<div style="background:#0a101a;border:1px solid #243852;height:12px;border-radius:4px;overflow:hidden;"><div style="width:' + pct.toFixed(1) + '%;height:100%;background:' + col + ';"></div></div>';
+    mb.appendChild(row);
+  });
+  document.getElementById("fat12Box").textContent = "FAT12 1.44 MB: " + DATA.fat12.total_sectors + " sectors x " + DATA.fat12.bytes_per_sector + " B = " + DATA.fat12.total_bytes.toLocaleString() + " B | Data Clusters: " + DATA.fat12.data_clusters;
+  document.getElementById("dosAtauBadge").textContent = "Future A_0.10=" + DATA.chiasm.future_accessible_volume + " · " + DATA.chiasm.presence_glyph;
+
+  // Draw Kloster telemetry canvas
+  var cv = document.getElementById("dosTelemCanvas");
+  var ctx = cv.getContext("2d");
+  ctx.fillStyle = "#080c14"; ctx.fillRect(0, 0, cv.width, cv.height);
+  ctx.strokeStyle = "#5edaf0"; ctx.lineWidth = 2.5; ctx.beginPath();
+  DATA.episodes.forEach(function(ep, i) {
+    var x = 24 + (i / (DATA.episodes.length - 1)) * (cv.width - 48);
+    var y = cv.height - 24 - (ep.a_010 / 8.0) * (cv.height - 52);
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.fillStyle = "#f2c45c"; ctx.font = "12px monospace";
+  ctx.fillText("12-Episode Boot-to-Shell A_0.10(p_t)  |  EI=" + DATA.chiasm.effective_information_bits + " bits", 18, 22);
+
+  document.getElementById("dosRunBtn").addEventListener("click", function() {
+    var inp = document.getElementById("dosInput");
+    runCmd(inp.value);
+  });
+  document.getElementById("dosInput").addEventListener("keydown", function(ev) {
+    if (ev.key === "Enter") runCmd(ev.target.value);
+  });
+  document.querySelectorAll(".dos-quick").forEach(function(btn) {
+    btn.addEventListener("click", function() { runCmd(btn.getAttribute("data-cmd")); });
+  });
+  document.getElementById("stepBtn").addEventListener("click", function() { appendTerm([stepCpu()]); });
+  document.getElementById("a20Btn").addEventListener("click", function() { state.a20 = !state.a20; renderRegs(); });
+
+  renderRegs();
+  appendTerm(["MS-DOS 6.22 Educational Shell Ready. Type HELP or click a command."]);
+  runCmd("MEM");
+})();
+
+</script>
+</body>
+</html>

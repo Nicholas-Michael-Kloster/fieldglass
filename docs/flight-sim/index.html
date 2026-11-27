@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>6-DOF Flight Dynamics &amp; Telemetry HUD · Fieldglass Observatory</title>
+<style>
+
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --green: #8ce094;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.35rem, 3vw, 1.95rem); color: var(--gold); }
+  .sub { font-size: 0.9rem; color: var(--muted); margin: 0 0 12px; }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.86rem;
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 7px 12px;
+    display: inline-block;
+    margin: 4px 0 10px;
+  }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  a.btn, button.btn {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 8px;
+    border: 1px solid #385070;
+    background: #172233;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    cursor: pointer;
+  }
+  a.btn:hover, button.btn:hover { border-color: var(--cyan); color: var(--cyan); }
+  button.btn.accent, a.btn.accent { border-color: var(--gold); color: var(--gold); }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .card h2, .card h3 {
+    margin: 0 0 8px;
+    color: var(--cyan);
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .badge {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  th, td { border-bottom: 1px solid #223248; padding: 6px 8px; text-align: left; }
+  th { color: var(--gold); font-family: ui-monospace, monospace; font-size: 0.78rem; }
+  canvas, img.resp { width: 100%; height: auto; border-radius: 10px; border: 1px solid #223248; background: #070a10; display: block; }
+  input[type="range"], input[type="text"], input[type="number"], textarea {
+    background: #0a101a;
+    color: var(--text);
+    border: 1px solid #354c6b;
+    border-radius: 6px;
+    padding: 6px 9px;
+    font-family: ui-monospace, monospace;
+  }
+  .kpi {
+    background: var(--panel2);
+    border: 1px solid #243852;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .kpi .lbl { font-size: 0.72rem; color: var(--muted); font-family: ui-monospace, monospace; text-transform: uppercase; }
+  .kpi .val { font-size: 1.18rem; color: var(--gold); font-family: ui-monospace, monospace; font-weight: 700; }
+  .disclaimer-banner {
+    background: linear-gradient(90deg, #5c1320, #3a121b);
+    border: 2px solid var(--ruby);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    color: #ffe8ea;
+    font-weight: 700;
+  }
+  footer { margin-top: 24px; color: var(--muted); font-size: 0.8rem; font-family: ui-monospace, monospace; text-align: center; }
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">R1 Domain 02 · Aerodynamics &amp; Attitude Kinematics</div>
+    <h1>6-DOF Flight Dynamics &amp; Telemetry HUD</h1>
+    <p class="sub">Interactive 6-DOF artificial horizon, six-pack flight instruments, stall/bank physics, and live Kloster A_tau(p_t) telemetry.</p>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <div class="nav-links">
+      <a class="btn" href="../index.html">Observatory Home</a>
+      <a class="btn" href="./flight_sim_chiasm.svg">Causal Chiasm SVG</a>
+      <a class="btn" href="./flight_sim_plate.svg">Archival Plate SVG</a>
+      <a class="btn" href="./flight_sim_braille_preview.png">2x4 Braille PNG</a>
+      <a class="btn" href="./chiasm_report.json">Chiasm JSON</a>
+      <a class="btn" href="./summary.json">Summary JSON</a>
+    </div>
+  </header>
+  
+<div class="grid2">
+  <div class="card">
+    <h3>6-DOF Artificial Horizon &amp; Six-Pack HUD <span class="badge" id="flightPhaseBadge">CRUISE</span></h3>
+    <canvas id="hudCanvas" width="540" height="360"></canvas>
+    <div id="sixPackGrid" class="grid3" style="margin-top:12px;"></div>
+  </div>
+  <div class="card">
+    <h3>Flight Controls &amp; Deterministic Integrator <span class="badge" id="flightAtauBadge">A_0.10</span></h3>
+    <div style="display:grid;gap:10px;margin-bottom:12px;">
+      <label class="mono" style="font-size:0.82rem;">Throttle: <span id="thrVal">72%</span>
+        <input id="thrSlider" type="range" min="0" max="100" value="72" style="width:100%;" />
+      </label>
+      <label class="mono" style="font-size:0.82rem;">Pitch Cmd: <span id="pitVal">0.00</span>
+        <input id="pitSlider" type="range" min="-100" max="100" value="0" style="width:100%;" />
+      </label>
+      <label class="mono" style="font-size:0.82rem;">Roll Cmd: <span id="rolVal">0.00</span>
+        <input id="rolSlider" type="range" min="-100" max="100" value="0" style="width:100%;" />
+      </label>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+      <button class="btn accent preset-btn" data-preset="cruise" type="button">Cruise</button>
+      <button class="btn preset-btn" data-preset="climb" type="button">Climb</button>
+      <button class="btn preset-btn" data-preset="turn30" type="button">30° Turn</button>
+      <button class="btn preset-btn" data-preset="approach" type="button">Approach</button>
+      <button id="stepFlightBtn" class="btn" type="button">Step +0.5s</button>
+      <button id="toggleRunBtn" class="btn" type="button">Pause Sim</button>
+    </div>
+    <canvas id="flightTelemCanvas" width="520" height="170"></canvas>
+  </div>
+</div>
+
+  <footer>Fieldglass Observatory R1 · 0 cloud tokens ($0.00) · executed=false · sentience_claimed=false</footer>
+</div>
+<script>
+
+(function() {
+  var TELEM = {"chiasm": {"contract": "fieldglass-causal-chiasm/v1", "tau": 0.1, "horizon": 8, "past_repertoire": {"airspeed_band": 0.15638236837315245, "climb_energy": 0.20930308385599894, "bank_authority": 0.061023000742544624, "pitch_stability": 0.08805946694607583, "aoa_margin": 0.14358035809604844, "thrust_reserve": 0.1814663450370001, "heading_sweep": 0.05339512564972655, "slip_damping": 0.1067902512994531}, "future_repertoire": {"airspeed_band": 0.17821849506132803, "climb_energy": 0.07121837960934027, "bank_authority": 0.11298621840012218, "pitch_stability": 0.1293226177470559, "aoa_margin": 0.15563664191135093, "thrust_reserve": 0.14143885379206717, "heading_sweep": 0.10732843784521287, "slip_damping": 0.10385035563352261}, "past_accessible_volume": 5, "past_accessible_states": ["airspeed_band", "aoa_margin", "climb_energy", "slip_damping", "thrust_reserve"], "future_accessible_volume": 7, "future_accessible_states": ["airspeed_band", "aoa_margin", "bank_authority", "heading_sweep", "pitch_stability", "slip_damping", "thrust_reserve"], "chiasm_shift": 2, "effective_information_bits": 0.166133, "future_boxed_in": false, "presence_glyph": "^_^", "presence_meaning": "corroborated chiasm: reversible future options preserved", "executed": false, "sentience_claimed": false}, "episodes": [{"episode": 0, "a_004": 8, "a_010": 5, "h1_bits": 2.841905, "h2_bits": 2.716816, "m4_purity": 0.264978}, {"episode": 1, "a_004": 8, "a_010": 5, "h1_bits": 2.843539, "h2_bits": 2.719418, "m4_purity": 0.264573}, {"episode": 2, "a_004": 8, "a_010": 5, "h1_bits": 2.843641, "h2_bits": 2.719895, "m4_purity": 0.264383}, {"episode": 3, "a_004": 8, "a_010": 5, "h1_bits": 2.843495, "h2_bits": 2.720041, "m4_purity": 0.264222}, {"episode": 4, "a_004": 8, "a_010": 5, "h1_bits": 2.843251, "h2_bits": 2.720018, "m4_purity": 0.264092}, {"episode": 5, "a_004": 8, "a_010": 5, "h1_bits": 2.843011, "h2_bits": 2.719977, "m4_purity": 0.263973}, {"episode": 6, "a_004": 8, "a_010": 6, "h1_bits": 2.895017, "h2_bits": 2.818689, "m4_purity": 0.242498}, {"episode": 7, "a_004": 8, "a_010": 6, "h1_bits": 2.913884, "h2_bits": 2.851424, "m4_purity": 0.236428}, {"episode": 8, "a_004": 8, "a_010": 6, "h1_bits": 2.913422, "h2_bits": 2.849485, "m4_purity": 0.237176}, {"episode": 9, "a_004": 8, "a_010": 6, "h1_bits": 2.911969, "h2_bits": 2.847235, "m4_purity": 0.237531}, {"episode": 10, "a_004": 8, "a_010": 6, "h1_bits": 2.967865, "h2_bits": 2.937036, "m4_purity": 0.223526}, {"episode": 11, "a_004": 8, "a_010": 6, "h1_bits": 2.907315, "h2_bits": 2.847344, "m4_purity": 0.236762}, {"episode": 12, "a_004": 7, "a_010": 6, "h1_bits": 2.86136, "h2_bits": 2.796138, "m4_purity": 0.242937}, {"episode": 13, "a_004": 8, "a_010": 5, "h1_bits": 2.87645, "h2_bits": 2.779258, "m4_purity": 0.25275}, {"episode": 14, "a_004": 8, "a_010": 6, "h1_bits": 2.897858, "h2_bits": 2.818402, "m4_purity": 0.244614}, {"episode": 15, "a_004": 8, "a_010": 6, "h1_bits": 2.886619, "h2_bits": 2.80404, "m4_purity": 0.245726}]};
+  var sim = { u:56.0, v:0.0, w:1.6, p:0.0, q:0.0, r:0.0, phi:0.0, theta:0.048, psi:Math.PI/2, alt:1500.0, thr:0.72, running:true, hist:[] };
+  function isaRho(h) { return 1.225 * Math.pow(Math.max(0.1, 1.0 - 2.25577e-5 * Math.max(0, h)), 4.25588); }
+  function stepSim(dt) {
+    var pcmd = Number(document.getElementById("pitSlider").value) / 100.0;
+    var rcmd = Number(document.getElementById("rolSlider").value) / 100.0;
+    sim.thr = Number(document.getElementById("thrSlider").value) / 100.0;
+    var va = Math.max(12.0, Math.hypot(sim.u, sim.v, sim.w));
+    var alpha = Math.atan2(sim.w, Math.max(5.0, sim.u));
+    var rho = isaRho(sim.alt);
+    var qbar = 0.5 * rho * va * va;
+    var stallRad = 15.0 * Math.PI / 180.0;
+    var cl;
+    if (Math.abs(alpha) <= stallRad) {
+      cl = 0.28 + 4.41 * alpha;
+    } else {
+      var excess = Math.abs(alpha) - stallRad;
+      var signA = alpha >= 0 ? 1.0 : -1.0;
+      var clPeak = 0.28 + 4.41 * signA * stallRad;
+      cl = clPeak * Math.exp(-3.5 * excess);
+    }
+    var cd = 0.027 + 0.054 * cl * cl;
+    var lift = qbar * 16.2 * cl;
+    var drag = qbar * 16.2 * cd;
+    var thrust = sim.thr * 2400.0 * Math.pow(rho / 1.225, 0.7);
+    var ca = Math.cos(alpha), sa = Math.sin(alpha);
+    var fx = -drag * ca + lift * sa + thrust - 1043.0 * 9.80665 * Math.sin(sim.theta);
+    var fz = -drag * sa - lift * ca + 1043.0 * 9.80665 * Math.cos(sim.theta) * Math.cos(sim.phi);
+    sim.u = Math.max(15.0, Math.min(115.0, sim.u + (fx / 1043.0 - sim.q * sim.w) * dt));
+    sim.w = Math.max(-18.0, Math.min(22.0, sim.w + (fz / 1043.0 + sim.q * sim.u) * dt));
+    sim.p += (3.2 * (rcmd * 0.73 - sim.phi) - 2.6 * sim.p) * dt;
+    sim.q += (2.4 * (0.05 + pcmd * 0.28 - sim.theta) - 2.8 * sim.q) * dt;
+    var turnR = (9.80665 / va) * Math.tan(Math.max(-1.0, Math.min(1.0, sim.phi)));
+    sim.r += 2.2 * (turnR - sim.r) * dt;
+    sim.phi = Math.max(-1.1, Math.min(1.1, sim.phi + sim.p * dt));
+    sim.theta = Math.max(-0.6, Math.min(0.6, sim.theta + sim.q * dt));
+    sim.psi = (sim.psi + sim.r * dt + Math.PI * 2) % (Math.PI * 2);
+    var vz = sim.u * Math.sin(sim.theta) - sim.w * Math.cos(sim.phi) * Math.cos(sim.theta);
+    sim.alt = Math.max(0.0, sim.alt + vz * dt);
+    var ias = va * 1.943844;
+    var vsi = vz * 196.8504;
+    var degPhi = sim.phi * 180 / Math.PI;
+    var degTheta = sim.theta * 180 / Math.PI;
+    var degHdg = (sim.psi * 180 / Math.PI) % 360;
+    var vec = [
+      Math.max(0.04, ias / 450), Math.max(0.03, 0.12 + vsi / 5000),
+      Math.max(0.03, 0.08 + Math.abs(degPhi) / 160), Math.max(0.04, 0.18 - Math.abs(degTheta) / 120),
+      Math.max(0.03, 0.22 - Math.abs(alpha * 180 / Math.PI) / 80), Math.max(0.04, 0.06 + sim.thr * 0.2),
+      Math.max(0.03, 0.07 + Math.abs(sim.r * 180 / Math.PI) / 30), 0.14
+    ];
+    var sum = vec.reduce(function(a,b){return a+b;},0);
+    var norm = vec.map(function(v){return v/sum;});
+    var a010 = norm.filter(function(p){return p > 0.10;}).length;
+    sim.hist.push(a010);
+    if (sim.hist.length > 48) sim.hist.shift();
+    document.getElementById("flightAtauBadge").textContent = "Live A_0.10(p)=" + a010;
+    return { ias:ias, altFt:sim.alt*3.28084, vsi:vsi, hdg:degHdg, pitch:degTheta, roll:degPhi, aoa:alpha*180/Math.PI, turn:sim.r*180/Math.PI };
+  }
+  function drawHud(h) {
+    var cv = document.getElementById("hudCanvas");
+    var ctx = cv.getContext("2d");
+    var w = cv.width, ht = cv.height, cx = w / 2, cy = ht / 2;
+    ctx.fillStyle = "#080c14"; ctx.fillRect(0, 0, w, ht);
+    ctx.save();
+    ctx.beginPath(); ctx.arc(cx, cy, 140, 0, Math.PI * 2); ctx.clip();
+    ctx.translate(cx, cy);
+    ctx.rotate(-sim.phi);
+    var pitchPx = h.pitch * 4.5;
+    ctx.fillStyle = "#1f5a96"; ctx.fillRect(-260, -260 + pitchPx, 520, 260);
+    ctx.fillStyle = "#6c482c"; ctx.fillRect(-260, pitchPx, 520, 260);
+    ctx.strokeStyle = "#eaeff5"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(-220, pitchPx); ctx.lineTo(220, pitchPx); ctx.stroke();
+    ctx.restore();
+    ctx.strokeStyle = "#f2c45c"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(cx, cy, 140, 0, Math.PI * 2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx - 46, cy); ctx.lineTo(cx - 14, cy); ctx.lineTo(cx, cy + 12); ctx.lineTo(cx + 14, cy); ctx.lineTo(cx + 46, cy); ctx.stroke();
+
+    var grid = document.getElementById("sixPackGrid");
+    var cards = [
+      ["Airspeed", h.ias.toFixed(1) + " kt"],
+      ["Altitude", h.altFt.toFixed(0) + " ft"],
+      ["VSI", (h.vsi >= 0 ? "+" : "") + h.vsi.toFixed(0) + " fpm"],
+      ["Heading", h.hdg.toFixed(0) + "°"],
+      ["Pitch / Roll", h.pitch.toFixed(1) + "° / " + h.roll.toFixed(1) + "°"],
+      ["AoA / Turn", h.aoa.toFixed(1) + "° / " + h.turn.toFixed(1) + "°/s"]
+    ];
+    grid.innerHTML = cards.map(function(c) {
+      return '<div class="kpi"><div class="lbl">' + c[0] + '</div><div class="val">' + c[1] + '</div></div>';
+    }).join("");
+
+    var tc = document.getElementById("flightTelemCanvas");
+    var tctx = tc.getContext("2d");
+    tctx.fillStyle = "#080c14"; tctx.fillRect(0, 0, tc.width, tc.height);
+    tctx.strokeStyle = "#5edaf0"; tctx.lineWidth = 2.5; tctx.beginPath();
+    sim.hist.forEach(function(v, i) {
+      var x = 20 + (i / Math.max(1, sim.hist.length - 1)) * (tc.width - 40);
+      var y = tc.height - 20 - (v / 8.0) * (tc.height - 48);
+      if (i === 0) tctx.moveTo(x, y); else tctx.lineTo(x, y);
+    });
+    tctx.stroke();
+    tctx.fillStyle = "#f2c45c"; tctx.font = "12px monospace";
+    tctx.fillText("Live Kloster A_0.10(p_t)  |  Sortie EI=" + TELEM.chiasm.effective_information_bits + " bits", 14, 20);
+  }
+  function setPreset(name) {
+    document.getElementById("flightPhaseBadge").textContent = name.toUpperCase();
+    if (name === "cruise") { sim.u=56; sim.w=1.6; sim.phi=0; sim.theta=0.048; sim.alt=1500; document.getElementById("thrSlider").value=72; document.getElementById("pitSlider").value=0; document.getElementById("rolSlider").value=0; }
+    if (name === "climb") { sim.u=46; sim.w=3.4; sim.phi=0; sim.theta=0.18; sim.alt=900; document.getElementById("thrSlider").value=95; document.getElementById("pitSlider").value=35; document.getElementById("rolSlider").value=0; }
+    if (name === "turn30") { sim.u=54; sim.w=2.4; sim.phi=0.52; sim.theta=0.07; sim.alt=1500; document.getElementById("thrSlider").value=78; document.getElementById("pitSlider").value=5; document.getElementById("rolSlider").value=72; }
+    if (name === "approach") { sim.u=38; sim.w=1.9; sim.phi=0; sim.theta=-0.04; sim.alt=450; document.getElementById("thrSlider").value=38; document.getElementById("pitSlider").value=-25; document.getElementById("rolSlider").value=0; }
+    syncLabels();
+    drawHud(stepSim(0.05));
+  }
+  function syncLabels() {
+    document.getElementById("thrVal").textContent = document.getElementById("thrSlider").value + "%";
+    document.getElementById("pitVal").textContent = (Number(document.getElementById("pitSlider").value)/100).toFixed(2);
+    document.getElementById("rolVal").textContent = (Number(document.getElementById("rolSlider").value)/100).toFixed(2);
+  }
+  ["thrSlider","pitSlider","rolSlider"].forEach(function(id) {
+    document.getElementById(id).addEventListener("input", syncLabels);
+  });
+  document.querySelectorAll(".preset-btn").forEach(function(b) {
+    b.addEventListener("click", function() { setPreset(b.getAttribute("data-preset")); });
+  });
+  document.getElementById("stepFlightBtn").addEventListener("click", function() {
+    for (var k = 0; k < 10; k++) drawHud(stepSim(0.05));
+  });
+  document.getElementById("toggleRunBtn").addEventListener("click", function(ev) {
+    sim.running = !sim.running;
+    ev.target.textContent = sim.running ? "Pause Sim" : "Resume Sim";
+  });
+  setPreset("cruise");
+  setInterval(function() { if (sim.running) drawHud(stepSim(0.05)); }, 100);
+})();
+
+</script>
+</body>
+</html>

@@ -11,7 +11,7 @@ import shutil
 import subprocess
 from typing import Any
 
-RANGE_RE = re.compile(r"bytes=(\d*)-(\d*)")
+RANGE_RE = re.compile(r"^bytes=(\d*)-(\d*)$")
 
 
 def make_range_handler(root: Path):
@@ -31,15 +31,30 @@ def make_range_handler(root: Path):
             m = RANGE_RE.match(range_hdr.strip())
             if not m:
                 return super().send_head()
+            start_s, end_s = m.groups()
+            if not start_s and not end_s:
+                return super().send_head()
             f = open(path, "rb")
             size = os.fstat(f.fileno()).st_size
-            start_s, end_s = m.groups()
-            start = int(start_s) if start_s else 0
-            end = min(int(end_s) if end_s else size - 1, size - 1)
-            if start > end or start >= size:
-                f.close()
-                self.send_error(HTTPStatus.REQUESTED_RANGE_NOT_SATISFIABLE)
-                return None
+            if not start_s:
+                suffix_len = int(end_s)
+                if suffix_len <= 0 or size == 0:
+                    f.close()
+                    self.send_error(HTTPStatus.REQUESTED_RANGE_NOT_SATISFIABLE)
+                    return None
+                start = max(0, size - suffix_len)
+                end = size - 1
+            else:
+                start = int(start_s)
+                if size == 0 or start >= size:
+                    f.close()
+                    self.send_error(HTTPStatus.REQUESTED_RANGE_NOT_SATISFIABLE)
+                    return None
+                end = min(int(end_s), size - 1) if end_s else size - 1
+                if start > end:
+                    f.close()
+                    self.send_error(HTTPStatus.REQUESTED_RANGE_NOT_SATISFIABLE)
+                    return None
             length = end - start + 1
             self.send_response(HTTPStatus.PARTIAL_CONTENT)
             self.send_header("Content-type", self.guess_type(path))

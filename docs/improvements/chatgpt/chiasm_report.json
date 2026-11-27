@@ -1,0 +1,374 @@
+{
+  "slug": "chatgpt",
+  "subject": "ChatGPT",
+  "title": "CHATGPT \u00b7 IMPROVEMENT CAUSAL CHIASM & FILTRATION TOMOGRAPHY",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "episode_count": 24,
+  "nexus_sec": 12,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 12,
+    "past_repertoire": {
+      "provenance_ok": 0.10956001244979635,
+      "det_sandbox": 0.13738824261752727,
+      "adaptive_stem": 0.10738824261752727,
+      "memory_scoped": 0.08738824261752727,
+      "tactile_export": 0.05391059409402182,
+      "unverified_mem": 0.2347905691944291,
+      "stale_bleed": 0.1439176360737091,
+      "opaque_overthink": 0.12565646033546182
+    },
+    "future_repertoire": {
+      "provenance_ok": 0.22043998755020355,
+      "det_sandbox": 0.20261175738247275,
+      "adaptive_stem": 0.17261175738247272,
+      "memory_scoped": 0.15261175738247273,
+      "tactile_export": 0.10608940590597819,
+      "unverified_mem": 0.06520943080557091,
+      "stale_bleed": 0.04608236392629091,
+      "opaque_overthink": 0.03434353966453818
+    },
+    "past_accessible_volume": 6,
+    "past_accessible_states": [
+      "adaptive_stem",
+      "det_sandbox",
+      "opaque_overthink",
+      "provenance_ok",
+      "stale_bleed",
+      "unverified_mem"
+    ],
+    "future_accessible_volume": 5,
+    "future_accessible_states": [
+      "adaptive_stem",
+      "det_sandbox",
+      "memory_scoped",
+      "provenance_ok",
+      "tactile_export"
+    ],
+    "chiasm_shift": -1,
+    "effective_information_bits": 0.419955,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 24,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        7,
+        5,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "adaptive_stem": 0.1175,
+      "det_sandbox": 0.145833,
+      "memory_scoped": 0.091667,
+      "opaque_overthink": 0.06,
+      "provenance_ok": 0.1325,
+      "stale_bleed": 0.068333,
+      "tactile_export": 0.058333,
+      "unverified_mem": 0.124167
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "det_sandbox"
+    ],
+    "transient_states": [
+      "adaptive_stem",
+      "memory_scoped",
+      "opaque_overthink",
+      "provenance_ok",
+      "stale_bleed",
+      "tactile_export",
+      "unverified_mem"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "per_episode_a004": [
+    84,
+    84,
+    84,
+    82,
+    85,
+    87,
+    89,
+    91,
+    91,
+    95,
+    89,
+    89,
+    85,
+    77,
+    69,
+    63,
+    59,
+    53,
+    53,
+    53,
+    53,
+    53,
+    53,
+    53
+  ],
+  "per_episode_a010": [
+    28,
+    28,
+    26,
+    26,
+    26,
+    24,
+    18,
+    20,
+    24,
+    22,
+    24,
+    26,
+    22,
+    22,
+    22,
+    27,
+    29,
+    29,
+    29,
+    29,
+    29,
+    29,
+    31,
+    31
+  ],
+  "h1_mean_bits": 2.7996,
+  "h2_mean_bits": 2.6786,
+  "m4_purity_mean": 0.2698,
+  "scene_sha256": "6e139996b86c4ace8c544c38c266c2fcb092468ff31619dea628bab486a13da9",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "9656b4aa7e923b988b59fc9c9a8baa744a56986bc93ce29b435c7ef7658eb6c7"
+}

@@ -1,0 +1,373 @@
+{
+  "slug": "anthropic",
+  "subject": "Anthropic",
+  "title": "ANTHROPIC \u00b7 IMPROVEMENT CAUSAL CHIASM & FILTRATION TOMOGRAPHY",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "episode_count": 24,
+  "nexus_sec": 12,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 12,
+    "past_repertoire": {
+      "policy_traceable": 0.09956001244979634,
+      "mcp_sandboxed": 0.1343435396645382,
+      "invariant_pinned": 0.14391059409402182,
+      "hermetic_ok": 0.07564941835577453,
+      "safe_alt_open": 0.08521647278525818,
+      "opaque_refusal": 0.19348469050319272,
+      "broad_mcp_scope": 0.14217881181195638,
+      "context_drift": 0.12565646033546182
+    },
+    "future_repertoire": {
+      "policy_traceable": 0.21043998755020366,
+      "mcp_sandboxed": 0.22565646033546183,
+      "invariant_pinned": 0.19608940590597815,
+      "hermetic_ok": 0.13435058164422542,
+      "safe_alt_open": 0.10478352721474182,
+      "opaque_refusal": 0.05651530949680727,
+      "broad_mcp_scope": 0.037821188188043635,
+      "context_drift": 0.03434353966453818
+    },
+    "past_accessible_volume": 5,
+    "past_accessible_states": [
+      "broad_mcp_scope",
+      "context_drift",
+      "invariant_pinned",
+      "mcp_sandboxed",
+      "opaque_refusal"
+    ],
+    "future_accessible_volume": 5,
+    "future_accessible_states": [
+      "hermetic_ok",
+      "invariant_pinned",
+      "mcp_sandboxed",
+      "policy_traceable",
+      "safe_alt_open"
+    ],
+    "chiasm_shift": 0,
+    "effective_information_bits": 0.389288,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 24,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        8,
+        5,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "broad_mcp_scope": 0.065,
+      "context_drift": 0.06,
+      "hermetic_ok": 0.083333,
+      "invariant_pinned": 0.145,
+      "mcp_sandboxed": 0.143333,
+      "opaque_refusal": 0.096667,
+      "policy_traceable": 0.123333,
+      "safe_alt_open": 0.078333
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "invariant_pinned",
+      "mcp_sandboxed"
+    ],
+    "transient_states": [
+      "broad_mcp_scope",
+      "context_drift",
+      "hermetic_ok",
+      "opaque_refusal",
+      "policy_traceable",
+      "safe_alt_open"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "per_episode_a004": [
+    91,
+    91,
+    91,
+    91,
+    91,
+    93,
+    93,
+    93,
+    93,
+    93,
+    89,
+    87,
+    85,
+    75,
+    63,
+    61,
+    53,
+    53,
+    53,
+    53,
+    53,
+    53,
+    53,
+    53
+  ],
+  "per_episode_a010": [
+    27,
+    25,
+    25,
+    27,
+    27,
+    23,
+    21,
+    19,
+    20,
+    22,
+    18,
+    18,
+    24,
+    27,
+    27,
+    29,
+    29,
+    29,
+    31,
+    31,
+    31,
+    31,
+    31,
+    31
+  ],
+  "h1_mean_bits": 2.8051,
+  "h2_mean_bits": 2.7005,
+  "m4_purity_mean": 0.2631,
+  "scene_sha256": "8ba45832f2678cf7ca3e57ad096a9c7d92dbb9e2e89692e9d52678c3975d7c79",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "ad310ccc7869eebf7ebd5d877b6da9eb6727ece2bd31d18e2e33f93bf009bfc1"
+}

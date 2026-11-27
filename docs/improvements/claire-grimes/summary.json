@@ -1,0 +1,108 @@
+{
+  "schema_version": "fieldglass-summary/v1",
+  "milestone": "M2",
+  "slug": "claire-grimes",
+  "display_name": "Claire (aka Grimes)",
+  "title": "Claire (aka Grimes) — Structured Improvement Dossier",
+  "tagline": "Cryptographic Elf.Tech stem provenance, bar-quantized stage failover & Braille cymatics",
+  "category": "Creative & Audio",
+  "domain_filter": "Creative & Audio",
+  "accent_hex": "#c896ff",
+  "index_html": "docs/improvements/claire-grimes/index.html",
+  "preview_png": "docs/improvements/claire-grimes/preview.png",
+  "braille_preview_png": "docs/improvements/claire-grimes/claire-grimes_braille_preview.png",
+  "architecture_svg": "docs/improvements/claire-grimes/architecture.svg",
+  "chiasm_svg": "docs/improvements/claire-grimes/chiasm.svg",
+  "chiasm_report": "docs/improvements/claire-grimes/chiasm_report.json",
+  "data_json": "docs/improvements/claire-grimes/data.json",
+  "summary_json": "docs/improvements/claire-grimes/summary.json",
+  "improvement_count": 5,
+  "top_improvements": [
+    {
+      "id": "GRIMES-01",
+      "title": "Cryptographic Elf.Tech Voice Provenance & 50/50 Consent Licensing Registry",
+      "short_title": "Elf.Tech Stem Provenance",
+      "impact": "31% -> 95%"
+    },
+    {
+      "id": "GRIMES-02",
+      "title": "Offline-First Stage Visuals & Bar-Quantized Modular Failover (StageChiasm-Sync)",
+      "short_title": "StageChiasm Live Failover",
+      "impact": "8.5% -> < 0.3%"
+    },
+    {
+      "id": "GRIMES-03",
+      "title": "Archival Lore, Score & 2x4 Braille Cymatics Preservation Vault",
+      "short_title": "Braille Cymatics Vault",
+      "impact": "0% -> 93%"
+    },
+    {
+      "id": "GRIMES-04",
+      "title": "Provenance-Tagged Fan Co-Creation Sandbox (LoreCoCreate-Gate)",
+      "short_title": "Fan Co-Creation Sandbox",
+      "impact": "41% -> 99%"
+    },
+    {
+      "id": "GRIMES-05",
+      "title": "Single-Take Studio Flow Capture & Immutable Patch DAG (LoreVault-DAG)",
+      "short_title": "Single-Take Patch DAG",
+      "impact": "240 min -> <= 4 min"
+    }
+  ],
+  "kpis": [
+    {
+      "id": "GRIMES-01",
+      "metric": "Remix / transcode stem attribution recovery",
+      "baseline": "31%",
+      "target": "95%"
+    },
+    {
+      "id": "GRIMES-02",
+      "metric": "Live modular/VST catastrophic dead-air risk",
+      "baseline": "8.5%",
+      "target": "< 0.3%"
+    },
+    {
+      "id": "GRIMES-03",
+      "metric": "Offline tactile/screen-reader sonic score access",
+      "baseline": "0%",
+      "target": "93%"
+    },
+    {
+      "id": "GRIMES-04",
+      "metric": "Canonical vs. remix lineage clarity",
+      "baseline": "41%",
+      "target": "99%"
+    },
+    {
+      "id": "GRIMES-05",
+      "metric": "Post-migration session reconstruction time",
+      "baseline": "240 min",
+      "target": "<= 4 min"
+    }
+  ],
+  "metrics": {
+    "episodes": 24,
+    "tau": 0.1,
+    "past_a_tau": 6,
+    "future_a_tau": 5,
+    "past_a014": 3,
+    "future_a014": 3,
+    "chiasm_shift": -1,
+    "effective_information_bits": 0.430585,
+    "h1_past_bits": 2.8176,
+    "h1_future_bits": 2.499,
+    "m4_past_purity": 0.2702,
+    "m4_future_purity": 0.3199,
+    "presence_glyph": "^_^",
+    "structural_invariants": [
+      "elf_stem_sealed"
+    ],
+    "scene_sha256": "bbfde6c93504c0699fc8064d761658297c73e2278339b95d95bb5c749626b4a7",
+    "report_sha256": "0ac1b31cc9d3e1581cbcdf7e27efa7d216507ce5748de306ae74d4b41ceeb2ba"
+  },
+  "clinical_use": false,
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

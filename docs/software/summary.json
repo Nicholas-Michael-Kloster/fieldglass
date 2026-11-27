@@ -1,0 +1,36 @@
+{
+  "contract": "fieldglass-r1-summary/v1",
+  "domain": "software",
+  "slug": "software",
+  "title": "Software Systems & Fieldglass Observatory",
+  "subtitle": "6-stage pipeline, strict A_tau(p) > tau, SHA-256 seals & Win7 matrix",
+  "route": "software/index.html",
+  "metrics": {
+    "episode_count": 12,
+    "past_a_010": 5,
+    "future_a_010": 5,
+    "effective_information_bits": 0.474752,
+    "presence_glyph": "^_^",
+    "h1_mean_bits": 2.8109,
+    "h2_mean_bits": 2.6658,
+    "m4_mean_purity": 0.2743
+  },
+  "highlights": [
+    "6-stage deterministic Fieldglass pipeline mapped to src/fieldglass/",
+    "Live strict p(x) > tau superlevel-set calculator & pure-JS SHA-256 seal verifier",
+    "6-layer Windows 7 SP1 / ES5 / Python 3.7-3.8 compatibility matrix"
+  ],
+  "assets": {
+    "index_html": "index.html",
+    "preview_png": "preview.png",
+    "chiasm_svg": "software_chiasm.svg",
+    "plate_svg": "software_plate.svg",
+    "braille_txt": "software_braille.txt",
+    "braille_json": "software_braille.json",
+    "braille_preview_png": "software_braille_preview.png",
+    "chiasm_report": "chiasm_report.json"
+  },
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

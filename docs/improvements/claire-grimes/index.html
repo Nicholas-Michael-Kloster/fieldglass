@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>Claire (aka Grimes) · Fieldglass R2 Improvement Dossier</title>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --violet: #c896ff;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.3rem, 3vw, 1.95rem); color: var(--gold); }
+  h2 { margin: 0 0 8px; font-size: 1.15rem; color: var(--gold); }
+  h3 { margin: 0 0 6px; font-size: 1.02rem; color: var(--cyan); }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88rem;
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 6px 0 10px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .sub { font-size: 0.88rem; color: var(--muted); margin: 0 0 12px; }
+  .nav-links, .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .panel2 {
+    background: var(--panel2);
+    border: 1px solid #223248;
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .badge {
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+    display: inline-block;
+  }
+  a.btn, button.btn {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #1a273b;
+    color: var(--gold);
+    border: 1px solid #3c5475;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  a.btn.accent, button.btn.active {
+    background: #2b1826;
+    border-color: var(--ruby);
+    color: #ffd3da;
+  }
+  a.btn:hover, button.btn:hover { background: #23344f; }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    background: #070a10;
+    border: 1px solid #223248;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  th, td { border-bottom: 1px solid #223248; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { color: var(--gold); font-family: ui-monospace, monospace; font-size: 0.76rem; text-transform: uppercase; }
+  pre.code, pre.braille {
+    overflow-x: auto;
+    background: #090d15;
+    border: 1px solid #24364d;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: "DejaVu Sans Mono", ui-monospace, monospace;
+    font-size: 0.76rem;
+    line-height: 1.25;
+    color: #eaeff5;
+    margin: 10px 0 0;
+  }
+  select, input[type="range"] {
+    background: #0a101a;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-family: inherit;
+  }
+  .hidden { display: none !important; }
+  footer { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="border-color:#c896ff">
+    <div class="kicker">Fieldglass R2 Structured Improvement Dossier · Creative &amp; Audio</div>
+    <h1 style="color:#c896ff">Claire (aka Grimes) — Elf.Tech Voice Attribution, Live Modular Rig &amp; Synesthetic Archive</h1>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <p class="sub">Cryptographic Elf.Tech stem provenance, bar-quantized stage failover &amp; Braille cymatics. Constructive creative-engineering, live-rig resilience, and synesthetic archival proposals; zero external cloud inference.</p>
+    <div class="nav-links">
+      <a class="btn accent" href="../index.html">← All R2 Dossiers</a>
+      <a class="btn" href="../../index.html">Fieldglass Observatory</a>
+      <a class="btn" href="architecture.svg">architecture.svg</a>
+      <a class="btn" href="chiasm.svg">chiasm.svg</a>
+      <a class="btn" href="data.json">data.json</a>
+      <a class="btn" href="summary.json">summary.json</a>
+      <a class="btn" href="chiasm_report.json">chiasm_report.json</a>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>System Profile &amp; Design North Star</h2>
+    <p class="sub" style="color:var(--text)"><b>North Star:</b> Preserve creative flow state while sealing every vocal stem, live stage clock, and synesthetic cymatic score in zero-cloud, tactile-ready provenance.</p>
+    <div class="grid2">
+      <div class="panel2">
+        <h3 style="color:var(--cyan)">Observed Strengths</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:0.85rem;color:var(--muted)"><li>Pioneering open AI-voice collaboration model (Elf.Tech 50/50 split) and hybrid vocal/synth production.</li><li>Rich visual-worldbuilding lore combining music, typography, sigils, and live stage aesthetics.</li><li>Expressive single-take hardware/software studio improvisation workflows.</li></ul>
+      </div>
+      <div class="panel2">
+        <h3 style="color:var(--ruby)">Core Architectural Bottlenecks</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:0.85rem;color:var(--muted)"><li>Open-licensed stems lose cryptographic attribution and 50/50 split metadata after transcoding.</li><li>Live modular + Ableton + USB-MIDI + DMX rigs risk abrupt dead-air stalls on clock/VST dropouts.</li><li>Ephemeral modular patches, MIDI CC chains, and synesthetic scores lack long-term offline preservation.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Interactive Proposal Selector (5 Concrete Improvements)</h2>
+    <div class="pill-row" id="proposal-tabs"><button class="btn active" data-imp="all" type="button">All 5 Proposals</button><button class="btn" data-imp="GRIMES-01" type="button">GRIMES-01: Elf.Tech Stem Provenance</button><button class="btn" data-imp="GRIMES-02" type="button">GRIMES-02: StageChiasm Live Failover</button><button class="btn" data-imp="GRIMES-03" type="button">GRIMES-03: Braille Cymatics Vault</button><button class="btn" data-imp="GRIMES-04" type="button">GRIMES-04: Fan Co-Creation Sandbox</button><button class="btn" data-imp="GRIMES-05" type="button">GRIMES-05: Single-Take Patch DAG</button></div>
+  </section>
+
+  <div id="proposals-container">
+    <article class="card imp-card" data-imp-id="GRIMES-01" style="border-left:4px solid #c896ff">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#c896ff">GRIMES-01 · Cryptographic Elf.Tech Voice Provenance &amp; 50/50 Consent Licensing Registry</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Voice &amp; Stem Provenance</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Open-licensed Elf.Tech AI vocal tracks lose creator attribution and 50/50 royalty split metadata once pitch-shifted, remixed, and re-encoded across social platforms.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Emit a dual-layer StemManifest (SHA-256 of dry vocal + instrumental masters, explicit 50/50 split license URI, perceptual chromaprint hash) verifiable 100% offline with executed=False and zero cloud tokens.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Uses canonical sorted-JSON report_sha256 sealing from fieldglass-causal-chiasm/v1.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">ElfProvenance-v1 StemManifest JSON sidecar + offline chromaprint attribution checker.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Remix / transcode stem attribution recovery</td><td>31%</td><td style="color:var(--cyan);font-weight:600">95%</td></tr><tr><td>Sidecar &amp; export overhead</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">+4.2 KB / +0.8% CPU</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Aggressive time-stretching alters simple file hashes. Mitigation: pair exact master SHA-256 with pitch/tempo-tolerant chromaprint signature.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Transcode test stems to 128 kbps MP3 and +/-2 semitone shifts; verify &gt;= 95% attribution match.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="GRIMES-02" style="border-left:4px solid #c896ff">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#c896ff">GRIMES-02 · Offline-First Stage Visuals &amp; Bar-Quantized Modular Failover (StageChiasm-Sync)</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Live Stage &amp; DMX Failover</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Live electronic sets bridging modular synths, Ableton, USB-MIDI, and DMX stage visuals risk sudden dead-air on a single VST crash or clock jitter spike.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Run an offline-first spectral A_tau(p_t) reactivity engine driving DMX/OSC visuals at 0 cloud latency alongside a bar-quantized shadow clock; when xrun/jitter breaches tau, crossfade seamlessly to the backup stem deck at the next bar boundary.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Applies real-time A_tau(p_t) spectral superlevel volume and causal_chiasm shift alerts.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">StageChiasm-Sync dual-deck watchdog + offline OSC/DMX spectral driver.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Live modular/VST catastrophic dead-air risk</td><td>8.5%</td><td style="color:var(--cyan);font-weight:600">&lt; 0.3%</td></tr><tr><td>Cloud dependency latency during show</td><td>120-400 ms</td><td style="color:var(--cyan);font-weight:600">0 ms (local)</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: +6 ms bar-quantized lookahead and redundant audio bus requirement. Mitigation: auto-engage lookahead only on live performance profile.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Inject synthetic VST hang and USB-MIDI clock dropout mid-bar; verify glitch-free crossfade within 1 bar.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="GRIMES-03" style="border-left:4px solid #c896ff">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#c896ff">GRIMES-03 · Archival Lore, Score &amp; 2x4 Braille Cymatics Preservation Vault</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Mid-term (3-6 mo)</span>
+          <span class="badge">Synesthetic Archival Preservation</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Visual-music releases, album sigils, and live projection scores exist only as proprietary video/project files, locking out blind/low-vision fans and long-term archival printmakers.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Transform spectral harmonic density (H1, M4^(1/4)) and waveform geometry into framed archival vector SVGs plus 72-column 2x4 Unicode Braille tactile scores paired with lossless stem manifests.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Directly invokes fieldglass.plate.ink_to_braille_lines(cols=72) and save_braille_bundle().</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">CymaticBraille-v1 SVG + 2x4 Unicode Braille score generator.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Offline tactile/screen-reader sonic score access</td><td>0%</td><td style="color:var(--cyan);font-weight:600">93%</td></tr><tr><td>Tactile score bundle size per track</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">~35 KB</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Dense percussion noise clutters tactile dots. Mitigation: filter sub-threshold noise via Bayer 4x4 dithering and harmonic bandpass envelope.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Generate Braille cymatic plates for synthetic harmonic sweeps; assert valid U+2800..U+28FF density between 12% and 65%.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="GRIMES-04" style="border-left:4px solid #c896ff">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#c896ff">GRIMES-04 · Provenance-Tagged Fan Co-Creation Sandbox (LoreCoCreate-Gate)</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Mid-term (3-6 mo)</span>
+          <span class="badge">Fan Co-Creation Sandbox</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Community remixes, AI vocal covers, and visual lore expansions blur canonical studio masters with derivative fan works, causing licensing ambiguity.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Provide a local-first co-creation manifest graph that cryptographically distinguishes canonical_master hashes from community_derivative nodes while preserving attribution chains and explicit remix permissions.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Uses directed causal provenance edges and non-mutating source-capsule isolation.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">LoreCoCreate-Gate manifest schema + remix lineage verifier.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Canonical vs. remix lineage clarity</td><td>41%</td><td style="color:var(--cyan);font-weight:600">99%</td></tr><tr><td>Metadata lookup latency</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">&lt; 10 ms offline</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Friction for casual fan uploads. Mitigation: auto-populate manifest fields from downloaded Elf.Tech stem pack.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Build 3-generation remix tree from canonical master; verify lineage resolver reconstructs full ancestor chain offline.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="GRIMES-05" style="border-left:4px solid #c896ff">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#c896ff">GRIMES-05 · Single-Take Studio Flow Capture &amp; Immutable Patch DAG (LoreVault-DAG)</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Studio Flow Capture</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Spontaneous single-take vocal/synth sessions, modular patch routings, and MIDI CC automations are lost or overwritten when DAW/OS environments update.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Run a silent background flow-capture daemon that auto-indexes every single-take stem, BPM/key metadata, MIDI CC curve, and synth preset JSON into a content-addressed LoreVault-DAG with instant A/B auditioning.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Inspired by Fieldglass single-take uninterrupted flow-state capture and deterministic SHA-256 cataloging.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">LoreVault-DAG local session indexer + zero-popup flow-capture manifest.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Post-migration session reconstruction time</td><td>240 min</td><td style="color:var(--cyan);font-weight:600">&lt;= 4 min</td></tr><tr><td>Creative flow interruption popups</td><td>4.2 / session</td><td style="color:var(--cyan);font-weight:600">0</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: +18 MB lossless delta per session. Mitigation: content-addressed audio chunk deduplication across takes.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Simulate 10 consecutive takes with patch edits; verify zero UI interrupts and 100% A/B state restoration.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <section class="card">
+    <h2>Interactive Repertoire &amp; Live Kloster A_tau(p) Comparison</h2>
+    <p class="sub">
+      Adjust threshold tau (0.04 to 0.25) to inspect accessible operational regimes across Baseline Past vs. Proposed Future.
+      Contract: <code>fieldglass-causal-chiasm/v1</code> · <code>executed=false</code> · <code>sentience_claimed=false</code> · <code>tokens_used=0</code>.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <label for="tau-slider" style="font-family:ui-monospace,monospace;color:var(--gold)">
+        tau = <span id="tau-val">0.10</span>
+      </label>
+      <input id="tau-slider" type="range" min="0.04" max="0.25" step="0.01" value="0.10" />
+      <span class="badge" id="tau-summary">Past A_tau: 6 -> Future A_tau: 5 (shift -1)</span>
+      <span class="badge">EI = 0.4306 bits · Glyph ^_^</span>
+      <span class="badge">Invariants (P&gt;=0.14): elf_stem_sealed</span>
+    </div>
+    <table>
+      <thead><tr><th>Operational State</th><th>Past Weight</th><th>Future Weight</th><th>Delta</th><th>Accessible @ tau (Past / Future)</th></tr></thead>
+      <tbody id="repertoire-tbody"></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Architecture Diagram &amp; Causal Chiasm Tomography</h2>
+    <div class="grid2">
+      <div class="panel2">
+        <h3>System Architecture (Claire (aka Grimes))</h3>
+        <a href="architecture.svg"><img src="preview.png" alt="Claire (aka Grimes) architecture preview" /></a>
+      </div>
+      <div class="panel2">
+        <h3>Causal Chiasm &amp; 24-Episode Filtration Tomography</h3>
+        <a href="chiasm.svg"><img src="chiasm.svg" alt="Claire (aka Grimes) causal chiasm SVG" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>72-Column 2x4 Unicode Braille Tactile Plate &amp; Seals</h2>
+    <div class="grid2">
+      <div class="panel2">
+        <h3>Dot-Rendered Tactile Preview</h3>
+        <a href="claire-grimes_braille_preview.png"><img src="claire-grimes_braille_preview.png" alt="Claire (aka Grimes) 2x4 Braille preview" /></a>
+        <div class="nav-links">
+          <a class="btn" href="claire-grimes_braille.txt">claire-grimes_braille.txt</a>
+          <a class="btn" href="claire-grimes_braille.json">claire-grimes_braille.json</a>
+        </div>
+      </div>
+      <div class="panel2">
+        <h3>Copyable Unicode Braille Text</h3>
+        <pre class="braille">CLAIRE (AKA GRIMES) — 2x4 BRAILLE ARCHITECTURE PLATE
+Elf.Tech Voice Attribution, Live Modular Rig &amp; Synesthetic Archive · 72 cols · executed=False
+
+⠀⢠⢤⠤⠤⢤⢤⢤⠤⠤⠤⣤⣤⢤⢤⢤⠤⢤⢤⢤⡤⣤⢤⢤⢤⢤⣤⢤⢤⢤⢤⣤⣤⣤⣤⢤⢤⢤⠤⣤⠤⢤⢤⣤⣤⣤⢤⢤⣤⢤⢤⢤⠤⣤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⣤⡄⠀
+⠀⢸⢘⣛⣛⣛⣛⣙⢛⣛⣃⣛⣛⢛⣛⣛⣋⣘⡛⣋⢛⢛⣛⣛⣛⣛⣙⣘⣛⢛⣛⣛⣛⣛⣛⣛⣛⠘⠃⠛⠛⠛⠛⠛⠛⠛⠙⠙⠙⠛⠛⠛⠑⢐⣟⣿⣵⠁⣜⣖⣟⡜⢐⣜⣗⡇⠀⠀⠀⢸⡇⠀
+⠀⠘⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠓⠃⠀
+⠀⠀⠨⠭⠌⠭⠭⠭⠭⠭⠍⠭⠭⠭⠭⠭⠤⠤⠄⠤⠄⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠄⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢭⠩⢭⢭⣭⠭⠉⠉⠉⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⢠⡞⢹⣐⢒⢒⢒⢒⢒⢂⢀⢀⡏⢳⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡖⡕⢽⣵⢽⣵⣽⢵⡝⢳⢀⡴⠁⠀⠀⠁⠉⠁⠉⠁⠉⠁⠉⠁⠀⠀⠘⢦⡀⡖⡝⢵⣽⣵⣽⣵⢽⣵⢳⠀⢀⣀⠀⢰⢻⢱⣽⣵⣽⣵⣽⣵⠑⡆⣀⣀⣀⡀⡖⡕⢽⣵⣽⣵⣝⢵⣽⢳⠀⠀
+⠀⠀⡗⠒⠒⠒⠒⠒⠒⠒⠀⢸⠙⣆⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⢴⠛⡇⠒⠒⠒⠒⠐⠒⠂⠀⢸⠉⠉⠉⠉⢹⠐⠒⠒⠒⠒⠒⠒⠒⠀⡏⠉⠉⠉⠙⡇⠒⠒⠒⠒⠒⠒⠒⠂⢸⠀⠀
+⠀⠀⠈⠉⠉⠉⠙⠏⠉⠉⠉⠁⠀⠀⠱⣄⢰⢥⢱⣥⣵⣥⣵⣥⡕⠑⡆⣀⠞⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠅⠀⠀⠀⠀⠀⠀⠀⠈⢹⠐⠒⠒⠒⠒⠒⠒⠂⠀⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠍⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢠⣔⣥⣤⣤⢤⣤⣄⣤⣄⣤⣤⣄⣄⣤⣤⣵⣄⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠠⠤⠠⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠶⠶⠶⠆⠰⠆⠴⠄⠴⠴⠴⠴⠀⠀⠶⠶⠶⠆⠰⠆⠴⠤⠴⠴⠴⠴⠀⠀⠶⠶⠴⠆⠰⠄⠰⠤⠴⠴⠄⠤⠀⠀⠶⠶⠴⠄⠰⠄⠴⠤⠴⠴⠄⠤⠀⠀⠶⠶⠴⠄⠴⠄⠶⠴⠴⠴⠄⠤⠀⠀
+⠀⠀⣒⣒⣒⣒⣒⣒⣒⠒⠒⠀⠀⠀⠀⠀⣒⣖⣒⣒⣒⣒⣒⠒⠒⠂⠀⠀⠀⠀⣒⣒⣒⣖⣒⣒⣒⣒⣀⠀⠀⠀⠀⠀⣒⣒⣒⣒⣒⣒⡒⠒⠒⠀⠀⠀⠀⠐⣓⣖⣒⣒⣒⠒⠒⠒⠀⠀⠀⠀⠀⠀
+⠀⠀⣤⣤⣤⢤⣤⠤⠴⠤⠤⠤⠀⠀⠀⠀⣤⣤⢥⣤⢤⣤⡤⠤⠤⠄⠀⠀⠀⠀⣥⣴⣤⣤⣤⣤⡤⠤⠤⠄⠀⠀⠀⠀⣤⣤⢤⣤⣤⣤⠤⠤⠤⠄⠀⠀⠀⠀⣤⣤⣤⢤⣤⡤⣤⣤⠀⠀⠀⠀⠀⠀
+⠀⠀⣉⣁⣉⣁⣉⣁⣀⣀⣀⣀⠀⠀⠀⠀⣉⣉⣉⣁⣁⣁⣉⣁⡀⠀⠀⠀⠀⠀⣉⣁⣁⣁⣉⣁⣁⣀⣀⠀⠀⠀⠀⠀⣉⣉⣁⣁⣁⣁⣁⣀⣀⠀⠀⠀⠀⠀⣉⣉⣁⣁⣉⣁⣉⣉⣁⣀⠀⠀⠀⠀
+⠀⠀⠒⠒⠒⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠒⠒⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠐⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠂⠒⠒⠒⠒⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀
+⠀⠀⠉⠁⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠁⠉⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⠀⢀⠀⠀⠀⣀⠀⠀⠀⢀⠀⠀⠀⢀⠀⠀⠀⢀⠀⠀⠀⠀⠀⢀⢀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⠉⠉⠉⠉⠁⠈⠉⠉⠁⠁⠉⠉⠉⠉⠁⠁⠉⠉⠉⠉⠁⠁⠉⠉⠁⠉⠉⠉⠉⠉⠉⠉⠁⠉⠉⠉⠉⠉⠁⠈⠉⠉⠉⠉⠉⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+        <p class="sub" style="margin-top:10px;font-family:ui-monospace,monospace;font-size:0.74rem">
+          scene_sha256: bbfde6c93504c0699fc8064d761658297c73e2278339b95d95bb5c749626b4a7<br/>
+          report_sha256: 0ac1b31cc9d3e1581cbcdf7e27efa7d216507ce5748de306ae74d4b41ceeb2ba
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Fieldglass Observatory · Milestone M2 · Claire (aka Grimes) Dossier · 0 Cloud Tokens · executed=False
+  </footer>
+</div>
+
+<script id="dossier-data" type="application/json">{"slug": "claire-grimes", "display_name": "Claire (aka Grimes)", "past_repertoire": {"elf_stem_sealed": 0.1212988367115491, "shadow_clk_sync": 0.13260471540278543, "lore_dag_saved": 0.09086589114103273, "cymatic_braille": 0.04912706687928, "royalty_split_ok": 0.12652235147649457, "lost_attribution": 0.20174586624143998, "midi_xrun_stall": 0.1339176360737091, "patch_ephemeral": 0.1439176360737091}, "future_repertoire": {"elf_stem_sealed": 0.23870116328845092, "shadow_clk_sync": 0.21739528459721455, "lore_dag_saved": 0.1691341088589673, "cymatic_braille": 0.12087293312072, "royalty_split_ok": 0.11347764852350545, "lost_attribution": 0.05825413375856, "midi_xrun_stall": 0.036082363926290904, "patch_ephemeral": 0.04608236392629091}, "improvements": [{"id": "GRIMES-01", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Voice & Stem Provenance", "title": "Cryptographic Elf.Tech Voice Provenance & 50/50 Consent Licensing Registry", "short_title": "Elf.Tech Stem Provenance", "current_gap": "Open-licensed Elf.Tech AI vocal tracks lose creator attribution and 50/50 royalty split metadata once pitch-shifted, remixed, and re-encoded across social platforms.", "proposed_architecture": "Emit a dual-layer StemManifest (SHA-256 of dry vocal + instrumental masters, explicit 50/50 split license URI, perceptual chromaprint hash) verifiable 100% offline with executed=False and zero cloud tokens.", "fieldglass_grounding": "Uses canonical sorted-JSON report_sha256 sealing from fieldglass-causal-chiasm/v1.", "concrete_deliverable": "ElfProvenance-v1 StemManifest JSON sidecar + offline chromaprint attribution checker.", "kpis": [{"metric": "Remix / transcode stem attribution recovery", "baseline": "31%", "target": "95%"}, {"metric": "Sidecar & export overhead", "baseline": "n/a", "target": "+4.2 KB / +0.8% CPU"}], "risks_and_mitigations": "Risk: Aggressive time-stretching alters simple file hashes. Mitigation: pair exact master SHA-256 with pitch/tempo-tolerant chromaprint signature.", "verification_method": "Transcode test stems to 128 kbps MP3 and +/-2 semitone shifts; verify >= 95% attribution match."}, {"id": "GRIMES-02", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Live Stage & DMX Failover", "title": "Offline-First Stage Visuals & Bar-Quantized Modular Failover (StageChiasm-Sync)", "short_title": "StageChiasm Live Failover", "current_gap": "Live electronic sets bridging modular synths, Ableton, USB-MIDI, and DMX stage visuals risk sudden dead-air on a single VST crash or clock jitter spike.", "proposed_architecture": "Run an offline-first spectral A_tau(p_t) reactivity engine driving DMX/OSC visuals at 0 cloud latency alongside a bar-quantized shadow clock; when xrun/jitter breaches tau, crossfade seamlessly to the backup stem deck at the next bar boundary.", "fieldglass_grounding": "Applies real-time A_tau(p_t) spectral superlevel volume and causal_chiasm shift alerts.", "concrete_deliverable": "StageChiasm-Sync dual-deck watchdog + offline OSC/DMX spectral driver.", "kpis": [{"metric": "Live modular/VST catastrophic dead-air risk", "baseline": "8.5%", "target": "< 0.3%"}, {"metric": "Cloud dependency latency during show", "baseline": "120-400 ms", "target": "0 ms (local)"}], "risks_and_mitigations": "Risk: +6 ms bar-quantized lookahead and redundant audio bus requirement. Mitigation: auto-engage lookahead only on live performance profile.", "verification_method": "Inject synthetic VST hang and USB-MIDI clock dropout mid-bar; verify glitch-free crossfade within 1 bar."}, {"id": "GRIMES-03", "priority": "P1", "horizon": "Mid-term (3-6 mo)", "domain": "Synesthetic Archival Preservation", "title": "Archival Lore, Score & 2x4 Braille Cymatics Preservation Vault", "short_title": "Braille Cymatics Vault", "current_gap": "Visual-music releases, album sigils, and live projection scores exist only as proprietary video/project files, locking out blind/low-vision fans and long-term archival printmakers.", "proposed_architecture": "Transform spectral harmonic density (H1, M4^(1/4)) and waveform geometry into framed archival vector SVGs plus 72-column 2x4 Unicode Braille tactile scores paired with lossless stem manifests.", "fieldglass_grounding": "Directly invokes fieldglass.plate.ink_to_braille_lines(cols=72) and save_braille_bundle().", "concrete_deliverable": "CymaticBraille-v1 SVG + 2x4 Unicode Braille score generator.", "kpis": [{"metric": "Offline tactile/screen-reader sonic score access", "baseline": "0%", "target": "93%"}, {"metric": "Tactile score bundle size per track", "baseline": "n/a", "target": "~35 KB"}], "risks_and_mitigations": "Risk: Dense percussion noise clutters tactile dots. Mitigation: filter sub-threshold noise via Bayer 4x4 dithering and harmonic bandpass envelope.", "verification_method": "Generate Braille cymatic plates for synthetic harmonic sweeps; assert valid U+2800..U+28FF density between 12% and 65%."}, {"id": "GRIMES-04", "priority": "P1", "horizon": "Mid-term (3-6 mo)", "domain": "Fan Co-Creation Sandbox", "title": "Provenance-Tagged Fan Co-Creation Sandbox (LoreCoCreate-Gate)", "short_title": "Fan Co-Creation Sandbox", "current_gap": "Community remixes, AI vocal covers, and visual lore expansions blur canonical studio masters with derivative fan works, causing licensing ambiguity.", "proposed_architecture": "Provide a local-first co-creation manifest graph that cryptographically distinguishes canonical_master hashes from community_derivative nodes while preserving attribution chains and explicit remix permissions.", "fieldglass_grounding": "Uses directed causal provenance edges and non-mutating source-capsule isolation.", "concrete_deliverable": "LoreCoCreate-Gate manifest schema + remix lineage verifier.", "kpis": [{"metric": "Canonical vs. remix lineage clarity", "baseline": "41%", "target": "99%"}, {"metric": "Metadata lookup latency", "baseline": "n/a", "target": "< 10 ms offline"}], "risks_and_mitigations": "Risk: Friction for casual fan uploads. Mitigation: auto-populate manifest fields from downloaded Elf.Tech stem pack.", "verification_method": "Build 3-generation remix tree from canonical master; verify lineage resolver reconstructs full ancestor chain offline."}, {"id": "GRIMES-05", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Studio Flow Capture", "title": "Single-Take Studio Flow Capture & Immutable Patch DAG (LoreVault-DAG)", "short_title": "Single-Take Patch DAG", "current_gap": "Spontaneous single-take vocal/synth sessions, modular patch routings, and MIDI CC automations are lost or overwritten when DAW/OS environments update.", "proposed_architecture": "Run a silent background flow-capture daemon that auto-indexes every single-take stem, BPM/key metadata, MIDI CC curve, and synth preset JSON into a content-addressed LoreVault-DAG with instant A/B auditioning.", "fieldglass_grounding": "Inspired by Fieldglass single-take uninterrupted flow-state capture and deterministic SHA-256 cataloging.", "concrete_deliverable": "LoreVault-DAG local session indexer + zero-popup flow-capture manifest.", "kpis": [{"metric": "Post-migration session reconstruction time", "baseline": "240 min", "target": "<= 4 min"}, {"metric": "Creative flow interruption popups", "baseline": "4.2 / session", "target": "0"}], "risks_and_mitigations": "Risk: +18 MB lossless delta per session. Mitigation: content-addressed audio chunk deduplication across takes.", "verification_method": "Simulate 10 consecutive takes with patch edits; verify zero UI interrupts and 100% A/B state restoration."}], "metrics": {"episodes": 24, "tau": 0.1, "past_a_tau": 6, "future_a_tau": 5, "past_a014": 3, "future_a014": 3, "chiasm_shift": -1, "effective_information_bits": 0.430585, "h1_past_bits": 2.8176, "h1_future_bits": 2.499, "m4_past_purity": 0.2702, "m4_future_purity": 0.3199, "presence_glyph": "^_^", "structural_invariants": ["elf_stem_sealed"], "scene_sha256": "bbfde6c93504c0699fc8064d761658297c73e2278339b95d95bb5c749626b4a7", "report_sha256": "0ac1b31cc9d3e1581cbcdf7e27efa7d216507ce5748de306ae74d4b41ceeb2ba"}}</script>
+<script>
+(function () {
+  var payload = JSON.parse(document.getElementById("dossier-data").textContent);
+  var tabs = document.querySelectorAll("#proposal-tabs button[data-imp]");
+  var cards = document.querySelectorAll(".imp-card");
+  tabs.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = btn.getAttribute("data-imp");
+      tabs.forEach(function (b) { b.classList.toggle("active", b === btn); });
+      cards.forEach(function (card) {
+        var show = target === "all" || card.getAttribute("data-imp-id") === target;
+        card.classList.toggle("hidden", !show);
+      });
+    });
+  });
+
+  var slider = document.getElementById("tau-slider");
+  var tauLabel = document.getElementById("tau-val");
+  var summaryBadge = document.getElementById("tau-summary");
+  var tbody = document.getElementById("repertoire-tbody");
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function renderTau() {
+    var tau = parseFloat(slider.value);
+    tauLabel.textContent = tau.toFixed(2);
+    var past = payload.past_repertoire;
+    var future = payload.future_repertoire;
+    var keys = Object.keys(past);
+    var pastCount = 0;
+    var futCount = 0;
+    var rows = [];
+    keys.forEach(function (k) {
+      var pv = past[k];
+      var fv = future[k];
+      var pOn = pv > tau;
+      var fOn = fv > tau;
+      if (pOn) pastCount += 1;
+      if (fOn) futCount += 1;
+      var delta = fv - pv;
+      var dStr = (delta >= 0 ? "+" : "") + delta.toFixed(3);
+      rows.push(
+        "<tr>" +
+          "<td><code>" + escHtml(k) + "</code></td>" +
+          "<td>" + pv.toFixed(3) + "</td>" +
+          "<td>" + fv.toFixed(3) + "</td>" +
+          "<td style='color:" + (delta >= 0 ? "var(--cyan)" : "var(--ruby)") + "'>" + dStr + "</td>" +
+          "<td>" + (pOn ? "ACTIVE" : "below") + " / <b style='color:" + (fOn ? "var(--gold)" : "var(--muted)") + "'>" + (fOn ? "ACTIVE" : "below") + "</b></td>" +
+        "</tr>"
+      );
+    });
+    tbody.innerHTML = rows.join("");
+    var shift = futCount - pastCount;
+    summaryBadge.textContent = "Past A_tau: " + pastCount + " -> Future A_tau: " + futCount + " (shift " + (shift >= 0 ? "+" : "") + shift + ")";
+  }
+
+  slider.addEventListener("input", renderTau);
+  renderTau();
+})();
+</script>
+</body>
+</html>

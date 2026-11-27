@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>Simulated Medical Equipment Physics &amp; Optics Sandbox · Fieldglass Observatory</title>
+<style>
+
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --green: #8ce094;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.35rem, 3vw, 1.95rem); color: var(--gold); }
+  .sub { font-size: 0.9rem; color: var(--muted); margin: 0 0 12px; }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.86rem;
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 7px 12px;
+    display: inline-block;
+    margin: 4px 0 10px;
+  }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  a.btn, button.btn {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 8px;
+    border: 1px solid #385070;
+    background: #172233;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    cursor: pointer;
+  }
+  a.btn:hover, button.btn:hover { border-color: var(--cyan); color: var(--cyan); }
+  button.btn.accent, a.btn.accent { border-color: var(--gold); color: var(--gold); }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .card h2, .card h3 {
+    margin: 0 0 8px;
+    color: var(--cyan);
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .badge {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  th, td { border-bottom: 1px solid #223248; padding: 6px 8px; text-align: left; }
+  th { color: var(--gold); font-family: ui-monospace, monospace; font-size: 0.78rem; }
+  canvas, img.resp { width: 100%; height: auto; border-radius: 10px; border: 1px solid #223248; background: #070a10; display: block; }
+  input[type="range"], input[type="text"], input[type="number"], textarea {
+    background: #0a101a;
+    color: var(--text);
+    border: 1px solid #354c6b;
+    border-radius: 6px;
+    padding: 6px 9px;
+    font-family: ui-monospace, monospace;
+  }
+  .kpi {
+    background: var(--panel2);
+    border: 1px solid #243852;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .kpi .lbl { font-size: 0.72rem; color: var(--muted); font-family: ui-monospace, monospace; text-transform: uppercase; }
+  .kpi .val { font-size: 1.18rem; color: var(--gold); font-family: ui-monospace, monospace; font-weight: 700; }
+  .disclaimer-banner {
+    background: linear-gradient(90deg, #5c1320, #3a121b);
+    border: 2px solid var(--ruby);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    color: #ffe8ea;
+    font-weight: 700;
+  }
+  footer { margin-top: 24px; color: var(--muted); font-size: 0.8rem; font-family: ui-monospace, monospace; text-align: center; }
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">R1 Domain 03 · Strictly Simulated / Educational / Non-Clinical</div>
+    <h1>Simulated Medical Equipment Physics &amp; Optics Sandbox</h1>
+    <p class="sub">Educational Beer-Lambert pulse oximetry, synthetic P-QRS-T, capnography, ventilator P-V loop, and dimensional-analysis infusion math.</p>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <div class="nav-links">
+      <a class="btn" href="../index.html">Observatory Home</a>
+      <a class="btn" href="./medical_sim_chiasm.svg">Causal Chiasm SVG</a>
+      <a class="btn" href="./medical_sim_plate.svg">Archival Plate SVG</a>
+      <a class="btn" href="./medical_sim_braille_preview.png">2x4 Braille PNG</a>
+      <a class="btn" href="./chiasm_report.json">Chiasm JSON</a>
+      <a class="btn" href="./summary.json">Summary JSON</a>
+    </div>
+  </header>
+  
+<div class="disclaimer-banner" role="alert">
+  STRICTLY SIMULATED / EDUCATIONAL SANDBOX ONLY — NOT FOR CLINICAL, DIAGNOSTIC, OR PATIENT-CARE USE.<br/>
+  <span class="mono" style="font-size:0.78rem;font-weight:400;">
+    clinical_use: false · educational_simulation_only: true · clinical_certification_claimed: false · executed: false · tokens_used: 0
+  </span>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Multiparameter Synthetic Waveform Scope <span class="badge">SIMULATED ONLY</span></h3>
+    <canvas id="medScopeCanvas" width="540" height="340"></canvas>
+    <div id="medKpis" class="grid3" style="margin-top:12px;"></div>
+  </div>
+  <div class="card">
+    <h3>Ventilator P-V Loop &amp; Educational Controls <span class="badge" id="medAtauBadge">NON-CLINICAL</span></h3>
+    <canvas id="pvCanvas" width="520" height="210" style="margin-bottom:10px;"></canvas>
+    <div class="grid2" style="gap:10px;">
+      <label class="mono" style="font-size:0.8rem;">Sim HR (bpm): <span id="hrLbl">72</span>
+        <input id="hrSlider" type="range" min="40" max="160" value="72" style="width:100%;" />
+      </label>
+      <label class="mono" style="font-size:0.8rem;">Beer-Lambert R-Ratio: <span id="rLbl">0.55</span>
+        <input id="rSlider" type="range" min="40" max="160" value="55" style="width:100%;" />
+      </label>
+      <label class="mono" style="font-size:0.8rem;">Sim RR (bpm): <span id="rrLbl">14</span>
+        <input id="rrSlider" type="range" min="8" max="30" value="14" style="width:100%;" />
+      </label>
+      <label class="mono" style="font-size:0.8rem;">Compliance (mL/cmH2O): <span id="cLbl">50</span>
+        <input id="cSlider" type="range" min="20" max="90" value="50" style="width:100%;" />
+      </label>
+      <label class="mono" style="font-size:0.8rem;">Tidal Vol Vt (mL): <span id="vtLbl">480</span>
+        <input id="vtSlider" type="range" min="250" max="750" value="480" style="width:100%;" />
+      </label>
+      <label class="mono" style="font-size:0.8rem;">PEEP (cmH2O): <span id="peepLbl">5</span>
+        <input id="peepSlider" type="range" min="0" max="15" value="5" style="width:100%;" />
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Educational Dimensional-Analysis Infusion Calculator <span class="badge">MATH SANDBOX ONLY</span></h3>
+  <div class="grid3">
+    <label class="mono" style="font-size:0.8rem;">Dose (mcg/kg/min)
+      <input id="infDose" type="number" step="0.5" value="5.0" style="width:100%;margin-top:4px;" />
+    </label>
+    <label class="mono" style="font-size:0.8rem;">Sim Mass (kg)
+      <input id="infWeight" type="number" step="1" value="70" style="width:100%;margin-top:4px;" />
+    </label>
+    <label class="mono" style="font-size:0.8rem;">Conc (mcg/mL)
+      <input id="infConc" type="number" step="50" value="1000" style="width:100%;margin-top:4px;" />
+    </label>
+  </div>
+  <div id="infOut" class="mono" style="margin-top:10px;padding:10px 12px;background:#0a101a;border:1px solid #243852;border-radius:8px;color:var(--gold);"></div>
+</div>
+
+  <footer>Fieldglass Observatory R1 · 0 cloud tokens ($0.00) · executed=false · sentience_claimed=false</footer>
+</div>
+<script>
+
+(function() {
+  var META = {"flags": {"clinical_use": false, "educational_simulation_only": true, "clinical_certification_claimed": false, "executed": false, "sentience_claimed": false, "tokens_used": 0, "disclaimer": "STRICTLY SIMULATED / EDUCATIONAL SANDBOX ONLY \u2014 NOT FOR CLINICAL, DIAGNOSTIC, OR PATIENT-CARE USE."}, "chiasm": {"contract": "fieldglass-causal-chiasm/v1", "tau": 0.1, "horizon": 8, "past_repertoire": {"pqrst_r_peak": 0.1449269693035947, "pqrst_st_t": 0.1076509719387759, "ppg_red_ac": 0.14424824244707155, "ppg_ir_dc": 0.14808783617075222, "capno_plateau": 0.12591057724161153, "capno_baseline": 0.07725985732181448, "pv_compliance": 0.15128072618430533, "pv_resistive": 0.10063481939207433}, "future_repertoire": {"pqrst_r_peak": 0.1412171089370041, "pqrst_st_t": 0.1081375862766536, "ppg_red_ac": 0.1427612363321656, "ppg_ir_dc": 0.15221277529019406, "capno_plateau": 0.12205936589484662, "capno_baseline": 0.07908103378547099, "pv_compliance": 0.13995889321260008, "pv_resistive": 0.11457200027106501}, "past_accessible_volume": 7, "past_accessible_states": ["capno_plateau", "ppg_ir_dc", "ppg_red_ac", "pqrst_r_peak", "pqrst_st_t", "pv_compliance", "pv_resistive"], "future_accessible_volume": 7, "future_accessible_states": ["capno_plateau", "ppg_ir_dc", "ppg_red_ac", "pqrst_r_peak", "pqrst_st_t", "pv_compliance", "pv_resistive"], "chiasm_shift": 0, "effective_information_bits": 0.00224, "future_boxed_in": false, "presence_glyph": "^_^", "presence_meaning": "corroborated chiasm: reversible future options preserved", "executed": false, "sentience_claimed": false}};
+  function ecgPqrst(t, hr) {
+    var phi = (t * (hr / 60.0)) % 1.0;
+    var w = [[0.16,0.15,0.032],[0.36,-0.14,0.012],[0.40,1.15,0.013],[0.44,-0.26,0.013],[0.64,0.32,0.048]];
+    var v = 0;
+    for (var i=0;i<w.length;i++) { var d = phi - w[i][0]; v += w[i][1] * Math.exp(-0.5 * (d/w[i][2])*(d/w[i][2])); }
+    return v;
+  }
+  function spo2Model(rRatio, t, hr) {
+    var spo2 = Math.max(70, Math.min(100, 110.0 - 25.0 * rRatio));
+    var phi = (t * (hr / 60.0)) % 1.0;
+    var pleth = Math.exp(-0.5 * Math.pow((phi-0.22)/0.09, 2)) + 0.42 * Math.exp(-0.5 * Math.pow((phi-0.44)/0.10, 2));
+    return { spo2: spo2, pleth: pleth };
+  }
+  function capno(t, rr, etco2) {
+    var phi = (t * (rr / 60.0)) % 1.0;
+    if (phi < 0.28) return 0;
+    if (phi < 0.40) { var u = (phi-0.28)/0.12; return etco2*0.90*(0.5 - 0.5*Math.cos(Math.PI*u)); }
+    if (phi < 0.72) { var u2 = (phi-0.40)/0.32; return etco2*(0.90 + 0.10*u2); }
+    if (phi < 0.80) { var u3 = (phi-0.72)/0.08; return etco2*(1.0 - 0.5*(1 - Math.cos(Math.PI*u3))); }
+    return 0;
+  }
+  function renderAll() {
+    var hr = Number(document.getElementById("hrSlider").value);
+    var rRatio = Number(document.getElementById("rSlider").value) / 100.0;
+    var rr = Number(document.getElementById("rrSlider").value);
+    var comp = Number(document.getElementById("cSlider").value);
+    var vt = Number(document.getElementById("vtSlider").value);
+    var peep = Number(document.getElementById("peepSlider").value);
+    document.getElementById("hrLbl").textContent = hr;
+    document.getElementById("rLbl").textContent = rRatio.toFixed(2);
+    document.getElementById("rrLbl").textContent = rr;
+    document.getElementById("cLbl").textContent = comp;
+    document.getElementById("vtLbl").textContent = vt;
+    document.getElementById("peepLbl").textContent = peep;
+
+    var cv = document.getElementById("medScopeCanvas");
+    var ctx = cv.getContext("2d");
+    ctx.fillStyle = "#070a10"; ctx.fillRect(0, 0, cv.width, cv.height);
+
+    // ECG trace
+    ctx.strokeStyle = "#8ce094"; ctx.lineWidth = 2; ctx.beginPath();
+    for (var i=0;i<240;i++) {
+      var x = 16 + (i/239)*(cv.width-32);
+      var y = 84 - ecgPqrst(i*2.4/240, hr)*50;
+      if (i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+
+    // Pleth trace
+    ctx.strokeStyle = "#5edaf0"; ctx.lineWidth = 2; ctx.beginPath();
+    for (var j=0;j<240;j++) {
+      var x2 = 16 + (j/239)*(cv.width-32);
+      var y2 = 200 - spo2Model(rRatio, j*2.4/240, hr).pleth*60;
+      if (j===0) ctx.moveTo(x2,y2); else ctx.lineTo(x2,y2);
+    }
+    ctx.stroke();
+
+    // Capno trace
+    ctx.strokeStyle = "#f2c45c"; ctx.lineWidth = 2; ctx.beginPath();
+    for (var k=0;k<240;k++) {
+      var x3 = 16 + (k/239)*(cv.width-32);
+      var y3 = 315 - (capno(k*9.0/240, rr, 38.0)/45.0)*72;
+      if (k===0) ctx.moveTo(x3,y3); else ctx.lineTo(x3,y3);
+    }
+    ctx.stroke();
+    ctx.fillStyle = "#93a6be"; ctx.font = "11px monospace";
+    ctx.fillText("SIMULATED ECG (mV)", 16, 20);
+    ctx.fillText("SIMULATED BEER-LAMBERT PLETH (660/940nm)", 16, 134);
+    ctx.fillText("SIMULATED CAPNOGRAPHY (mmHg)", 16, 240);
+
+    // P-V Loop
+    var pvc = document.getElementById("pvCanvas");
+    var pctx = pvc.getContext("2d");
+    pctx.fillStyle = "#070a10"; pctx.fillRect(0, 0, pvc.width, pvc.height);
+    pctx.strokeStyle = "#f46a7e"; pctx.lineWidth = 2.5; pctx.beginPath();
+    var pPeak = 0;
+    for (var m=0;m<=80;m++) {
+      var th = 2*Math.PI*(m/80);
+      var v = 0.5*vt*(1 - Math.cos(th));
+      var flow = 0.55*Math.sin(th);
+      var p = peep + v/comp + 8.0*flow;
+      if (p > pPeak) pPeak = p;
+      var px = 30 + (p/38.0)*(pvc.width-60);
+      var py = pvc.height - 20 - (v/800.0)*(pvc.height-42);
+      if (m===0) pctx.moveTo(px,py); else pctx.lineTo(px,py);
+    }
+    pctx.stroke();
+    pctx.fillStyle = "#f2c45c"; pctx.font = "12px monospace";
+    pctx.fillText("Simulated P-V Loop (P_peak = " + pPeak.toFixed(1) + " cmH2O)", 16, 20);
+
+    var spo2Val = spo2Model(rRatio, 0.22, hr).spo2;
+    document.getElementById("medKpis").innerHTML = [
+      ["Sim HR", hr + " bpm"],
+      ["Sim SpO2 (Beer-Lambert)", spo2Val.toFixed(1) + " %"],
+      ["Sim Peak Pressure", pPeak.toFixed(1) + " cmH2O"]
+    ].map(function(c) { return '<div class="kpi"><div class="lbl">' + c[0] + '</div><div class="val">' + c[1] + '</div></div>'; }).join("");
+    document.getElementById("medAtauBadge").textContent = "A_0.10=" + META.chiasm.future_accessible_volume + " · NON-CLINICAL";
+
+    var rawDose = document.getElementById("infDose").value.trim();
+    var rawWt = document.getElementById("infWeight").value.trim();
+    var rawConc = document.getElementById("infConc").value.trim();
+    var dose = rawDose === "" ? NaN : Number(rawDose);
+    var wt = rawWt === "" ? NaN : Number(rawWt);
+    var conc = rawConc === "" ? NaN : Number(rawConc);
+    var infOut = document.getElementById("infOut");
+    if (!Number.isFinite(dose) || !Number.isFinite(wt) || !Number.isFinite(conc) || dose < 0 || wt <= 0) {
+      infOut.style.color = "var(--ruby)";
+      infOut.textContent = "Validation error: Enter finite positive values (Dose >= 0, Mass > 0, Concentration > 0) — STRICTLY SIMULATED / NON-CLINICAL";
+    } else if (conc <= 0) {
+      infOut.style.color = "var(--ruby)";
+      infOut.textContent = "Validation error: Concentration must be > 0 — STRICTLY SIMULATED / NON-CLINICAL";
+    } else {
+      var mlHr = (dose * wt * 60.0) / conc;
+      var gttMin = (mlHr * 20) / 60.0;
+      if (!Number.isFinite(mlHr) || !Number.isFinite(gttMin)) {
+        infOut.style.color = "var(--ruby)";
+        infOut.textContent = "Validation error: Calculated rate exceeds finite bounds — STRICTLY SIMULATED / NON-CLINICAL";
+      } else {
+        infOut.style.color = "var(--gold)";
+        infOut.textContent = "Educational Formula Rate: " + mlHr.toFixed(2) + " mL/hr (" + gttMin.toFixed(2) + " gtt/min @ 20 gtt/mL) — STRICTLY SIMULATED / NON-CLINICAL";
+      }
+    }
+  }
+  ["hrSlider","rSlider","rrSlider","cSlider","vtSlider","peepSlider","infDose","infWeight","infConc"].forEach(function(id) {
+    document.getElementById(id).addEventListener("input", renderAll);
+  });
+  renderAll();
+})();
+
+</script>
+</body>
+</html>

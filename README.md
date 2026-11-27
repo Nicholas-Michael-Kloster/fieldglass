@@ -4,6 +4,7 @@
 
 > **Live Interactive Showcase (GitHub Pages):** **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)**
 > **Step-by-Step Guide ("How It Works & Do It Yourself"):** **[HOW_IT_WORKS.md](HOW_IT_WORKS.md)**
+> **Observatory Expansion Presentation (R1–R4):** **[Fieldglass_Observatory_Expansion.pptx](Fieldglass_Observatory_Expansion.pptx)** (`docs/Fieldglass_Observatory_Expansion.pptx`)
 
 ---
 
@@ -82,6 +83,25 @@ Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas
 
 ---
 
+## Observatory Expansion (R1–R4)
+
+In addition to the 29 research specimens above, Fieldglass includes four deterministic educational & engineering expansion tracks (R1–R4), each instrumented with Kloster $A_\tau(p)$, vector SVGs, 2×4 Unicode Braille, and SHA-256 sealed Causal Chiasm reports (`executed=False`, `sentience_claimed=False`, `tokens_used=0`):
+
+- **R1 · Educational Simulators & Observatory Workbench** (`src/fieldglass/observatory_r1.py`, `examples/build_r1_observatory.py`):
+  - **MS-DOS 6.22 & 8086 Real-Mode Simulator** (`docs/msdos/`): 16-bit 8086 registers, A20 address calculator, 640 KB Conventional + 384 KB UMA + 64 KB HMA memory layout, 1.44 MB FAT12 geometry, and `COMMAND.COM` shell (`12` episodes, `Past 4 → Future 6`, `EI = 0.2447 bits`).
+  - **6-DOF Flight Dynamics & Telemetry HUD** (`docs/flight-sim/`): ISA air density $\rho(h)$, stall-bounded aerodynamics, bank-to-turn integrator, and six-pack cockpit gauges (`16` episodes, `Past 5 → Future 7`, `EI = 0.1661 bits`).
+  - **Simulated Medical Equipment Sandbox — Strictly Non-Clinical** (`docs/medical-sim/`): **STRICTLY SIMULATED / EDUCATIONAL ONLY — NOT FOR CLINICAL, DIAGNOSTIC, OR PATIENT-CARE USE** (`clinical_use=false`, `educational_simulation_only=true`, `clinical_certification_claimed=false`). Synthetic ECG PQRST, Beer-Lambert 660/940 nm $\text{SpO}_2$, capnography, P-V loop, and dimensional infusion math (`16` episodes, `Past 7 → Future 7`, `EI = 0.00224 bits`).
+  - **Software Systems & Observatory Workbench** (`docs/software/`): 6-stage deterministic pipeline, strict $p(x) > \tau$ superlevel calculator, pure-JS SHA-256 verifier, and Windows 7-to-modern compatibility matrix (`12` episodes, `Past 5 → Future 5`, `EI = 0.4748 bits`).
+- **R2 · Five Structured Improvement Dossiers** (`docs/improvements/`, `examples/build_r2_improvements.py`):
+  - Dedicated architectural & KPI dossiers (`5` proposals each = `25` total, `24` episodes each) for **[ChatGPT](docs/improvements/chatgpt/index.html)**, **[Anthropic](docs/improvements/anthropic/index.html)**, **[Grok](docs/improvements/grok/index.html)**, **[SpaceX](docs/improvements/spacex/index.html)**, and **[Claire (aka Grimes)](docs/improvements/claire-grimes/index.html)**.
+- **R3 · Zoe Hospital Edition (Windows 7-Era, Strictly Non-Clinical)** (`docs/zoe-hospital/`, `examples/build_r3_zoe_hospital.py`):
+  - **STRICTLY SIMULATED / EDUCATIONAL ONLY — NOT FOR CLINICAL, DIAGNOSTIC, OR PATIENT-CARE USE. No clinical certification claimed.**
+  - Engineered for legacy **Windows 7 SP1 (`NT 6.1`)** era healthcare workstations via zero-CDN ES5/IE8–IE11 HTML & `mshta.exe` HTA (`zoe_hospital_kiosk.html`, `zoe_hospital_kiosk.hta`), Python 3.7/3.8+ stdlib-only loopback HTTP/1.1 server (`zoe_hospital_win7.py` on `127.0.0.1`, zero raw ANSI escapes), `launch_win7.bat`, and portable `zoe_hospital_win7_bundle.zip` (`16` episodes, `Past 4 → Future 3`, `EI = 0.0954 bits`).
+- **R4 · PowerPoint Deliverable (`.pptx`)** (`examples/build_observatory_r1_r4_pptx.py`):
+  - 16-slide 16:9 presentation written identically to `Fieldglass_Observatory_Expansion.pptx` and `docs/Fieldglass_Observatory_Expansion.pptx` (`< 50 MB`, 0 GPS metadata, LibreOffice + `pdftoppm` visually verified).
+
+---
+
 ## Quickstart
 
 ### Install locally
@@ -112,14 +132,25 @@ fieldglass serve out/ --port 8776
 fieldglass push out/ --name fieldglass --port 8776
 ```
 
-### Run tests
+### Build Observatory Expansion & Run Tests (`/usr/bin/python3`)
 ```bash
-pytest -v
+# Build R1–R3 modules (using /usr/bin/python3)
+PYTHONPATH=src /usr/bin/python3 examples/build_r1_observatory.py
+PYTHONPATH=src /usr/bin/python3 examples/build_r2_improvements.py
+PYTHONPATH=src /usr/bin/python3 examples/build_r3_zoe_hospital.py
+
+# Build the 16-slide R1–R4 PowerPoint deck (standalone /usr/bin/python3 with conditional sys.path fallback)
+/usr/bin/python3 examples/build_observatory_r1_r4_pptx.py
+
+# Run test suite (core + R1–R4 verification)
+PYTHONPATH=src:/home/cowboy/security-tools/lib/python3.14/site-packages /usr/bin/python3 -m pytest tests/test_fieldglass.py tests/test_r1_observatory.py tests/test_r2_improvements.py tests/test_r3_zoe_hospital.py tests/test_r4_pptx_and_links.py -v
 ```
 
 ---
 
-## Design & Epistemic Invariants
+## Design, Epistemic & Repository Constraints (R5)
 - **100% local & offline** (`tokens_used = 0`, no cloud APIs, loopback-only default server `127.0.0.1`).
-- **Transparent measurement** (`executed = False`, `sentience_claimed = False`, `auto_flash_allowed = False`).
+- **Transparent & non-clinical measurement** (`executed = False`, `sentience_claimed = False`, `auto_flash_allowed = False`; `medical-sim` and `zoe-hospital` enforce `clinical_use = False`, `educational_simulation_only = True`, `clinical_certification_claimed = False`).
+- **Media & size hygiene**: Every file under `docs/` is strictly `< 50 MB` (`52,428,800` bytes), and all media assets strip GPS/EXIF metadata (`-map_metadata -1` / metadata-free encoding).
+- **Repository & publishing gates**: Never run `git add -A` (always stage explicit files); never touch external local `zoe-monorepo` checkouts; any update to `Nicholas-Michael-Kloster/Zoe` `README.md` uses **only** the GitHub Git Data API.
 - **Companion monorepo integration**: mirrored in [Nicholas-Michael-Kloster/zoe](https://github.com/Nicholas-Michael-Kloster/zoe) alongside `guiai.gem.chiasm` and `guiai.gem.zoe_braille_studio`.

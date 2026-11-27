@@ -1,0 +1,108 @@
+{
+  "schema_version": "fieldglass-summary/v1",
+  "milestone": "M2",
+  "slug": "spacex",
+  "display_name": "SpaceX",
+  "title": "SpaceX — Structured Improvement Dossier",
+  "tagline": "Read-only Countdown Chiasm triage, SHA-256 HIL provenance & LEO handover buffers",
+  "category": "Aerospace & Telemetry",
+  "domain_filter": "Aerospace & Telemetry",
+  "accent_hex": "#5edaf0",
+  "index_html": "docs/improvements/spacex/index.html",
+  "preview_png": "docs/improvements/spacex/preview.png",
+  "braille_preview_png": "docs/improvements/spacex/spacex_braille_preview.png",
+  "architecture_svg": "docs/improvements/spacex/architecture.svg",
+  "chiasm_svg": "docs/improvements/spacex/chiasm.svg",
+  "chiasm_report": "docs/improvements/spacex/chiasm_report.json",
+  "data_json": "docs/improvements/spacex/data.json",
+  "summary_json": "docs/improvements/spacex/summary.json",
+  "improvement_count": 5,
+  "top_improvements": [
+    {
+      "id": "SPX-01",
+      "title": "Read-Only Superlevel-Set A_tau(p_t) Mode-Transition Chiasm Advisor",
+      "short_title": "Countdown Chiasm Advisor",
+      "impact": "38 s -> 21 s (-45%)"
+    },
+    {
+      "id": "SPX-02",
+      "title": "SHA-256 Sealed HIL, Monte Carlo & Webcast Flight-Frame Provenance",
+      "short_title": "SHA-256 HIL & Frame Seal",
+      "impact": "18% (OCR) -> 100% (SHA-256)"
+    },
+    {
+      "id": "SPX-03",
+      "title": "Persistent Filtration GSE & Cryo Quick-Disconnect Drift Watch",
+      "short_title": "GSE Cryo Filtration Watch",
+      "impact": "0 cycles -> >= 3 cycles prior"
+    },
+    {
+      "id": "SPX-04",
+      "title": "Starlink LEO Handover HTTP 206 Ring Buffer & Conjunction Explainability",
+      "short_title": "LEO 206 Buffer + Conjunctions",
+      "impact": "2.40% -> < 0.05%"
+    },
+    {
+      "id": "SPX-05",
+      "title": "High-Contrast Dark-Observatory Anomaly HUD & 2x4 Braille Trajectory Plates",
+      "short_title": "Anomaly HUD + Braille Flight",
+      "impact": "5% -> 92%"
+    }
+  ],
+  "kpis": [
+    {
+      "id": "SPX-01",
+      "metric": "Simulated multi-console triage time",
+      "baseline": "38 s",
+      "target": "21 s (-45%)"
+    },
+    {
+      "id": "SPX-02",
+      "metric": "Post-flight frame-to-telemetry verifiability",
+      "baseline": "18% (OCR)",
+      "target": "100% (SHA-256)"
+    },
+    {
+      "id": "SPX-03",
+      "metric": "Valve hysteresis early-warning lead",
+      "baseline": "0 cycles",
+      "target": ">= 3 cycles prior"
+    },
+    {
+      "id": "SPX-04",
+      "metric": "Telemetry packet loss across LEO handover",
+      "baseline": "2.40%",
+      "target": "< 0.05%"
+    },
+    {
+      "id": "SPX-05",
+      "metric": "Blind/low-vision flight milestone comprehension",
+      "baseline": "5%",
+      "target": "92%"
+    }
+  ],
+  "metrics": {
+    "episodes": 24,
+    "tau": 0.1,
+    "past_a_tau": 6,
+    "future_a_tau": 5,
+    "past_a014": 3,
+    "future_a014": 4,
+    "chiasm_shift": -1,
+    "effective_information_bits": 0.386209,
+    "h1_past_bits": 2.7798,
+    "h1_future_bits": 2.5337,
+    "m4_past_purity": 0.2735,
+    "m4_future_purity": 0.3036,
+    "presence_glyph": "^_^",
+    "structural_invariants": [
+      "chiasm_margin_ok"
+    ],
+    "scene_sha256": "09dbd716f2ff6b51d8b90a01aa9b952bc4eae1498efe295734df7c1181c972ba",
+    "report_sha256": "6084f1c26e113bb035d3a676439cb9fe11cac91268d49c47d851d6d4c9e97111"
+  },
+  "clinical_use": false,
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

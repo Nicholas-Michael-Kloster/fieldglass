@@ -1,0 +1,50 @@
+{
+  "id": "zoe-hospital",
+  "slug": "zoe-hospital",
+  "title": "Zoe Hospital Edition (Windows 7-Era, Non-Clinical)",
+  "subtitle": "Offline ES5/HTA Kiosk & Python 3.7/3.8+ Stdlib Loopback Sandbox for Legacy Healthcare Workstations",
+  "milestone": "M3",
+  "requirement": "R3",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "entry_html": "index.html",
+  "kiosk_html": "zoe_hospital_kiosk.html",
+  "kiosk_hta": "zoe_hospital_kiosk.hta",
+  "server_py": "zoe_hospital_win7.py",
+  "launch_bat": "launch_win7.bat",
+  "preview_png": "preview.png",
+  "chiasm_svg": "chiasm_tomography.svg",
+  "chiasm_report": "chiasm_report.json",
+  "manifest": "manifest.json",
+  "bundle_zip": "zoe_hospital_win7_bundle.zip",
+  "readme_txt": "README_WIN7.txt",
+  "min_windows_version": "Windows 7 SP1 (NT 6.1)",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "clinical_use": false,
+  "educational_simulation_only": true,
+  "clinical_certification_claimed": false,
+  "disclaimer": "STRICTLY SIMULATED / EDUCATIONAL ONLY - NOT FOR CLINICAL, DIAGNOSTIC, OR PATIENT-CARE USE. No clinical certification claimed.",
+  "metrics": {
+    "episode_count": 16,
+    "tau": 0.1,
+    "past_accessible_volume": 4,
+    "future_accessible_volume": 3,
+    "chiasm_shift": -1,
+    "effective_information_bits": 0.095381,
+    "presence_glyph": "^_^",
+    "structural_invariants": [
+      "botanical_mid",
+      "warm_sepia"
+    ],
+    "mean_h1_bits": 2.753068,
+    "mean_m4_purity": 0.28915
+  },
+  "highlights": [
+    "Zero-CDN ES5 + HTA (mshta.exe) kiosk compatible with IE8-IE11 on Windows 7 SP1 (NT 6.1)",
+    "Standalone Python 3.7/3.8+ stdlib-only HTTP/1.1 loopback server (127.0.0.1, zero ANSI escapes)",
+    "Simulated hospital communication board, 2x4 Unicode Braille converter, Kloster A_tau(p) ward-calm simulator, and training checklist",
+    "Strictly simulated/educational non-clinical framing across UI, manifests, and SHA-256 sealed Chiasm reports"
+  ],
+  "report_sha256": "0d7c6de4e21b456d3a357a61eabbfcfcb6ddd4bd92cdd8ddd61e82bdc8dd16be"
+}

@@ -1,0 +1,204 @@
+{
+  "schema_version": "fieldglass-r2-dossier/v1",
+  "slug": "claire-grimes",
+  "display_name": "Claire (aka Grimes)",
+  "subtitle": "Elf.Tech Voice Attribution, Live Modular Rig & Synesthetic Archive",
+  "category": "Creative & Audio",
+  "accent_hex": "#c896ff",
+  "scope_note": "Constructive creative-engineering, live-rig resilience, and synesthetic archival proposals; zero external cloud inference.",
+  "system_profile": {
+    "primary_strengths": [
+      "Pioneering open AI-voice collaboration model (Elf.Tech 50/50 split) and hybrid vocal/synth production.",
+      "Rich visual-worldbuilding lore combining music, typography, sigils, and live stage aesthetics.",
+      "Expressive single-take hardware/software studio improvisation workflows."
+    ],
+    "core_bottlenecks": [
+      "Open-licensed stems lose cryptographic attribution and 50/50 split metadata after transcoding.",
+      "Live modular + Ableton + USB-MIDI + DMX rigs risk abrupt dead-air stalls on clock/VST dropouts.",
+      "Ephemeral modular patches, MIDI CC chains, and synesthetic scores lack long-term offline preservation."
+    ],
+    "design_north_star": "Preserve creative flow state while sealing every vocal stem, live stage clock, and synesthetic cymatic score in zero-cloud, tactile-ready provenance."
+  },
+  "improvements": [
+    {
+      "id": "GRIMES-01",
+      "priority": "P0",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Voice & Stem Provenance",
+      "title": "Cryptographic Elf.Tech Voice Provenance & 50/50 Consent Licensing Registry",
+      "short_title": "Elf.Tech Stem Provenance",
+      "current_gap": "Open-licensed Elf.Tech AI vocal tracks lose creator attribution and 50/50 royalty split metadata once pitch-shifted, remixed, and re-encoded across social platforms.",
+      "proposed_architecture": "Emit a dual-layer StemManifest (SHA-256 of dry vocal + instrumental masters, explicit 50/50 split license URI, perceptual chromaprint hash) verifiable 100% offline with executed=False and zero cloud tokens.",
+      "fieldglass_grounding": "Uses canonical sorted-JSON report_sha256 sealing from fieldglass-causal-chiasm/v1.",
+      "concrete_deliverable": "ElfProvenance-v1 StemManifest JSON sidecar + offline chromaprint attribution checker.",
+      "kpis": [
+        {
+          "metric": "Remix / transcode stem attribution recovery",
+          "baseline": "31%",
+          "target": "95%"
+        },
+        {
+          "metric": "Sidecar & export overhead",
+          "baseline": "n/a",
+          "target": "+4.2 KB / +0.8% CPU"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Aggressive time-stretching alters simple file hashes. Mitigation: pair exact master SHA-256 with pitch/tempo-tolerant chromaprint signature.",
+      "verification_method": "Transcode test stems to 128 kbps MP3 and +/-2 semitone shifts; verify >= 95% attribution match."
+    },
+    {
+      "id": "GRIMES-02",
+      "priority": "P0",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Live Stage & DMX Failover",
+      "title": "Offline-First Stage Visuals & Bar-Quantized Modular Failover (StageChiasm-Sync)",
+      "short_title": "StageChiasm Live Failover",
+      "current_gap": "Live electronic sets bridging modular synths, Ableton, USB-MIDI, and DMX stage visuals risk sudden dead-air on a single VST crash or clock jitter spike.",
+      "proposed_architecture": "Run an offline-first spectral A_tau(p_t) reactivity engine driving DMX/OSC visuals at 0 cloud latency alongside a bar-quantized shadow clock; when xrun/jitter breaches tau, crossfade seamlessly to the backup stem deck at the next bar boundary.",
+      "fieldglass_grounding": "Applies real-time A_tau(p_t) spectral superlevel volume and causal_chiasm shift alerts.",
+      "concrete_deliverable": "StageChiasm-Sync dual-deck watchdog + offline OSC/DMX spectral driver.",
+      "kpis": [
+        {
+          "metric": "Live modular/VST catastrophic dead-air risk",
+          "baseline": "8.5%",
+          "target": "< 0.3%"
+        },
+        {
+          "metric": "Cloud dependency latency during show",
+          "baseline": "120-400 ms",
+          "target": "0 ms (local)"
+        }
+      ],
+      "risks_and_mitigations": "Risk: +6 ms bar-quantized lookahead and redundant audio bus requirement. Mitigation: auto-engage lookahead only on live performance profile.",
+      "verification_method": "Inject synthetic VST hang and USB-MIDI clock dropout mid-bar; verify glitch-free crossfade within 1 bar."
+    },
+    {
+      "id": "GRIMES-03",
+      "priority": "P1",
+      "horizon": "Mid-term (3-6 mo)",
+      "domain": "Synesthetic Archival Preservation",
+      "title": "Archival Lore, Score & 2x4 Braille Cymatics Preservation Vault",
+      "short_title": "Braille Cymatics Vault",
+      "current_gap": "Visual-music releases, album sigils, and live projection scores exist only as proprietary video/project files, locking out blind/low-vision fans and long-term archival printmakers.",
+      "proposed_architecture": "Transform spectral harmonic density (H1, M4^(1/4)) and waveform geometry into framed archival vector SVGs plus 72-column 2x4 Unicode Braille tactile scores paired with lossless stem manifests.",
+      "fieldglass_grounding": "Directly invokes fieldglass.plate.ink_to_braille_lines(cols=72) and save_braille_bundle().",
+      "concrete_deliverable": "CymaticBraille-v1 SVG + 2x4 Unicode Braille score generator.",
+      "kpis": [
+        {
+          "metric": "Offline tactile/screen-reader sonic score access",
+          "baseline": "0%",
+          "target": "93%"
+        },
+        {
+          "metric": "Tactile score bundle size per track",
+          "baseline": "n/a",
+          "target": "~35 KB"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Dense percussion noise clutters tactile dots. Mitigation: filter sub-threshold noise via Bayer 4x4 dithering and harmonic bandpass envelope.",
+      "verification_method": "Generate Braille cymatic plates for synthetic harmonic sweeps; assert valid U+2800..U+28FF density between 12% and 65%."
+    },
+    {
+      "id": "GRIMES-04",
+      "priority": "P1",
+      "horizon": "Mid-term (3-6 mo)",
+      "domain": "Fan Co-Creation Sandbox",
+      "title": "Provenance-Tagged Fan Co-Creation Sandbox (LoreCoCreate-Gate)",
+      "short_title": "Fan Co-Creation Sandbox",
+      "current_gap": "Community remixes, AI vocal covers, and visual lore expansions blur canonical studio masters with derivative fan works, causing licensing ambiguity.",
+      "proposed_architecture": "Provide a local-first co-creation manifest graph that cryptographically distinguishes canonical_master hashes from community_derivative nodes while preserving attribution chains and explicit remix permissions.",
+      "fieldglass_grounding": "Uses directed causal provenance edges and non-mutating source-capsule isolation.",
+      "concrete_deliverable": "LoreCoCreate-Gate manifest schema + remix lineage verifier.",
+      "kpis": [
+        {
+          "metric": "Canonical vs. remix lineage clarity",
+          "baseline": "41%",
+          "target": "99%"
+        },
+        {
+          "metric": "Metadata lookup latency",
+          "baseline": "n/a",
+          "target": "< 10 ms offline"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Friction for casual fan uploads. Mitigation: auto-populate manifest fields from downloaded Elf.Tech stem pack.",
+      "verification_method": "Build 3-generation remix tree from canonical master; verify lineage resolver reconstructs full ancestor chain offline."
+    },
+    {
+      "id": "GRIMES-05",
+      "priority": "P0",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Studio Flow Capture",
+      "title": "Single-Take Studio Flow Capture & Immutable Patch DAG (LoreVault-DAG)",
+      "short_title": "Single-Take Patch DAG",
+      "current_gap": "Spontaneous single-take vocal/synth sessions, modular patch routings, and MIDI CC automations are lost or overwritten when DAW/OS environments update.",
+      "proposed_architecture": "Run a silent background flow-capture daemon that auto-indexes every single-take stem, BPM/key metadata, MIDI CC curve, and synth preset JSON into a content-addressed LoreVault-DAG with instant A/B auditioning.",
+      "fieldglass_grounding": "Inspired by Fieldglass single-take uninterrupted flow-state capture and deterministic SHA-256 cataloging.",
+      "concrete_deliverable": "LoreVault-DAG local session indexer + zero-popup flow-capture manifest.",
+      "kpis": [
+        {
+          "metric": "Post-migration session reconstruction time",
+          "baseline": "240 min",
+          "target": "<= 4 min"
+        },
+        {
+          "metric": "Creative flow interruption popups",
+          "baseline": "4.2 / session",
+          "target": "0"
+        }
+      ],
+      "risks_and_mitigations": "Risk: +18 MB lossless delta per session. Mitigation: content-addressed audio chunk deduplication across takes.",
+      "verification_method": "Simulate 10 consecutive takes with patch edits; verify zero UI interrupts and 100% A/B state restoration."
+    }
+  ],
+  "telemetry_profile": {
+    "repertoire_states": [
+      "elf_stem_sealed",
+      "shadow_clk_sync",
+      "lore_dag_saved",
+      "cymatic_braille",
+      "royalty_split_ok",
+      "lost_attribution",
+      "midi_xrun_stall",
+      "patch_ephemeral"
+    ],
+    "past_weights": {
+      "elf_stem_sealed": 0.09,
+      "shadow_clk_sync": 0.11,
+      "lore_dag_saved": 0.07,
+      "cymatic_braille": 0.03,
+      "royalty_split_ok": 0.13,
+      "lost_attribution": 0.24,
+      "midi_xrun_stall": 0.16,
+      "patch_ephemeral": 0.17
+    },
+    "future_weights": {
+      "elf_stem_sealed": 0.27,
+      "shadow_clk_sync": 0.24,
+      "lore_dag_saved": 0.19,
+      "cymatic_braille": 0.14,
+      "royalty_split_ok": 0.11,
+      "lost_attribution": 0.02,
+      "midi_xrun_stall": 0.01,
+      "patch_ephemeral": 0.02
+    },
+    "episode_count": 24,
+    "nexus_episode": 12,
+    "routing_policy": "midi_xrun_stall > tau or chiasm_shift < 0 -> bar-quantized crossfade to shadow stem deck; export -> ElfProvenance-v1 + CymaticBraille"
+  },
+  "artifacts": {
+    "html": "index.html",
+    "preview_png": "preview.png",
+    "architecture_svg": "architecture.svg",
+    "chiasm_svg": "chiasm.svg",
+    "chiasm_report": "chiasm_report.json",
+    "summary_json": "summary.json",
+    "braille_txt": "claire-grimes_braille.txt",
+    "braille_json": "claire-grimes_braille.json",
+    "braille_preview_png": "claire-grimes_braille_preview.png"
+  },
+  "clinical_use": false,
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

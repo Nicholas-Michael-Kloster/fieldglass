@@ -1,0 +1,310 @@
+{
+  "slug": "software",
+  "title": "Software Systems & Fieldglass Observatory",
+  "subtitle": "6-stage pipeline, strict A_tau(p) > tau, SHA-256 seals & Win7 matrix",
+  "episode_count": 12,
+  "nexus_ep": 6,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 5,
+    "past_repertoire": {
+      "frame_ingest": 0.16,
+      "deskew_geom": 0.18000000000000002,
+      "bg_clean": 0.19166666666666665,
+      "svg_braille": 0.16333333333333333,
+      "kloster_atp": 0.11833333333333333,
+      "chiasm_seal": 0.06833333333333333,
+      "win7_compat": 0.061666666666666675,
+      "local_serve": 0.05666666666666667
+    },
+    "future_repertoire": {
+      "frame_ingest": 0.04666666666666667,
+      "deskew_geom": 0.06166666666666667,
+      "bg_clean": 0.09000000000000001,
+      "svg_braille": 0.12666666666666668,
+      "kloster_atp": 0.19166666666666665,
+      "chiasm_seal": 0.18833333333333332,
+      "win7_compat": 0.15166666666666664,
+      "local_serve": 0.1433333333333333
+    },
+    "past_accessible_volume": 5,
+    "past_accessible_states": [
+      "bg_clean",
+      "deskew_geom",
+      "frame_ingest",
+      "kloster_atp",
+      "svg_braille"
+    ],
+    "future_accessible_volume": 5,
+    "future_accessible_states": [
+      "chiasm_seal",
+      "kloster_atp",
+      "local_serve",
+      "svg_braille",
+      "win7_compat"
+    ],
+    "chiasm_shift": 0,
+    "effective_information_bits": 0.474752,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 12,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        8,
+        3,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        3,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        4,
+        3,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        3,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "bg_clean": 0.105,
+      "chiasm_seal": 0.108333,
+      "deskew_geom": 0.094167,
+      "frame_ingest": 0.069167,
+      "kloster_atp": 0.12,
+      "local_serve": 0.075,
+      "svg_braille": 0.111667,
+      "win7_compat": 0.076667
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [],
+    "transient_states": [
+      "bg_clean",
+      "chiasm_seal",
+      "deskew_geom",
+      "frame_ingest",
+      "kloster_atp",
+      "local_serve",
+      "svg_braille",
+      "win7_compat"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "per_episode": [
+    {
+      "episode": 0,
+      "a_004": 8,
+      "a_010": 3,
+      "h1_bits": 2.712391,
+      "h2_bits": 2.461164,
+      "m4_purity": 0.323466
+    },
+    {
+      "episode": 1,
+      "a_004": 8,
+      "a_010": 3,
+      "h1_bits": 2.697182,
+      "h2_bits": 2.477141,
+      "m4_purity": 0.308541
+    },
+    {
+      "episode": 2,
+      "a_004": 8,
+      "a_010": 4,
+      "h1_bits": 2.747178,
+      "h2_bits": 2.564905,
+      "m4_purity": 0.292042
+    },
+    {
+      "episode": 3,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.793712,
+      "h2_bits": 2.633076,
+      "m4_purity": 0.281091
+    },
+    {
+      "episode": 4,
+      "a_004": 8,
+      "a_010": 4,
+      "h1_bits": 2.827944,
+      "h2_bits": 2.673003,
+      "m4_purity": 0.278801
+    },
+    {
+      "episode": 5,
+      "a_004": 8,
+      "a_010": 4,
+      "h1_bits": 2.866602,
+      "h2_bits": 2.744681,
+      "m4_purity": 0.262998
+    },
+    {
+      "episode": 6,
+      "a_004": 8,
+      "a_010": 4,
+      "h1_bits": 2.871082,
+      "h2_bits": 2.754383,
+      "m4_purity": 0.261711
+    },
+    {
+      "episode": 7,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.874935,
+      "h2_bits": 2.773985,
+      "m4_purity": 0.254489
+    },
+    {
+      "episode": 8,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.866618,
+      "h2_bits": 2.768076,
+      "m4_purity": 0.252825
+    },
+    {
+      "episode": 9,
+      "a_004": 7,
+      "a_010": 5,
+      "h1_bits": 2.83838,
+      "h2_bits": 2.731206,
+      "m4_purity": 0.256716
+    },
+    {
+      "episode": 10,
+      "a_004": 7,
+      "a_010": 5,
+      "h1_bits": 2.824074,
+      "h2_bits": 2.714065,
+      "m4_purity": 0.258049
+    },
+    {
+      "episode": 11,
+      "a_004": 7,
+      "a_010": 5,
+      "h1_bits": 2.81104,
+      "h2_bits": 2.693388,
+      "m4_purity": 0.261423
+    }
+  ],
+  "h1_mean_bits": 2.8109,
+  "h2_mean_bits": 2.6658,
+  "m4_mean_purity": 0.2743,
+  "scene_sha256": "fcf2cf744727476d833a85c2f930db5e0d745c4989f570a8e3c1055931ca295a",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "d06c78b962ba5e84786208fc1966f4168f95ca8e88d841b942697ca0549d2fb7"
+}

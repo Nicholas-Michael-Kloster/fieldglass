@@ -1,0 +1,374 @@
+{
+  "slug": "claire-grimes",
+  "subject": "Claire (aka Grimes)",
+  "title": "CLAIRE (AKA GRIMES) \u00b7 IMPROVEMENT CAUSAL CHIASM & FILTRATION TOMOGRAPHY",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "episode_count": 24,
+  "nexus_sec": 12,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 12,
+    "past_repertoire": {
+      "elf_stem_sealed": 0.1212988367115491,
+      "shadow_clk_sync": 0.13260471540278543,
+      "lore_dag_saved": 0.09086589114103273,
+      "cymatic_braille": 0.04912706687928,
+      "royalty_split_ok": 0.12652235147649457,
+      "lost_attribution": 0.20174586624143998,
+      "midi_xrun_stall": 0.1339176360737091,
+      "patch_ephemeral": 0.1439176360737091
+    },
+    "future_repertoire": {
+      "elf_stem_sealed": 0.23870116328845092,
+      "shadow_clk_sync": 0.21739528459721455,
+      "lore_dag_saved": 0.1691341088589673,
+      "cymatic_braille": 0.12087293312072,
+      "royalty_split_ok": 0.11347764852350545,
+      "lost_attribution": 0.05825413375856,
+      "midi_xrun_stall": 0.036082363926290904,
+      "patch_ephemeral": 0.04608236392629091
+    },
+    "past_accessible_volume": 6,
+    "past_accessible_states": [
+      "elf_stem_sealed",
+      "lost_attribution",
+      "midi_xrun_stall",
+      "patch_ephemeral",
+      "royalty_split_ok",
+      "shadow_clk_sync"
+    ],
+    "future_accessible_volume": 5,
+    "future_accessible_states": [
+      "cymatic_braille",
+      "elf_stem_sealed",
+      "lore_dag_saved",
+      "royalty_split_ok",
+      "shadow_clk_sync"
+    ],
+    "chiasm_shift": -1,
+    "effective_information_bits": 0.430585,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 24,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        6,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        3,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        3,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        3,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        3,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        4,
+        3,
+        1,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "cymatic_braille": 0.065,
+      "elf_stem_sealed": 0.152917,
+      "lore_dag_saved": 0.105833,
+      "lost_attribution": 0.100833,
+      "midi_xrun_stall": 0.061667,
+      "patch_ephemeral": 0.068333,
+      "royalty_split_ok": 0.1,
+      "shadow_clk_sync": 0.139167
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "elf_stem_sealed"
+    ],
+    "transient_states": [
+      "cymatic_braille",
+      "lore_dag_saved",
+      "lost_attribution",
+      "midi_xrun_stall",
+      "patch_ephemeral",
+      "royalty_split_ok",
+      "shadow_clk_sync"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "per_episode_a004": [
+    85,
+    85,
+    85,
+    85,
+    83,
+    87,
+    91,
+    91,
+    93,
+    91,
+    91,
+    87,
+    83,
+    79,
+    69,
+    61,
+    55,
+    53,
+    53,
+    53,
+    53,
+    53,
+    51,
+    51
+  ],
+  "per_episode_a010": [
+    27,
+    27,
+    25,
+    27,
+    25,
+    28,
+    24,
+    20,
+    22,
+    23,
+    23,
+    21,
+    21,
+    23,
+    25,
+    27,
+    29,
+    29,
+    29,
+    29,
+    29,
+    29,
+    29,
+    29
+  ],
+  "h1_mean_bits": 2.8004,
+  "h2_mean_bits": 2.6868,
+  "m4_purity_mean": 0.2668,
+  "scene_sha256": "bbfde6c93504c0699fc8064d761658297c73e2278339b95d95bb5c749626b4a7",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "0ac1b31cc9d3e1581cbcdf7e27efa7d216507ce5748de306ae74d4b41ceeb2ba"
+}

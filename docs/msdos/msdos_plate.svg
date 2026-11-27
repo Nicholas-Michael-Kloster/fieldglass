@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="1000" height="720">
+<rect x="0" y="0" width="1000" height="720" fill="#f6f1e4"/>
+<rect x="20" y="18" width="960" height="684" fill="none" stroke="#8c7f68" stroke-width="2"/>
+<rect x="28" y="26" width="944" height="668" fill="none" stroke="#c4b89f" stroke-width="1"/>
+<text x="500" y="64" text-anchor="middle" font-family="serif" font-size="22" font-weight="bold" fill="#1b1916">MS-DOS 6.22 / 8086 ARCHITECTURE PLATE</text>
+<text x="500" y="88" text-anchor="middle" font-family="serif" font-size="13" font-style="italic" fill="#524a3d">16-bit Real-Mode Registers, 640 KB TPA &amp;amp; FAT12 Cluster Geometry</text>
+<line x1="60" y1="104" x2="940" y2="104" stroke="#8c7f68" stroke-width="1.2"/>
+<text x="64" y="136" font-family="monospace" font-size="15" font-weight="bold" fill="#1b1916">8086 REAL-MODE 1 MB + HMA MEMORY MAP (640 KB CONVENTIONAL = 655,360 B)</text>
+<text x="64" y="170" font-family="monospace" font-size="12" fill="#1b1916">00000..003FF  IVT               </text>
+<rect x="330" y="156" width="24" height="20" fill="#1b1916" stroke="#1b1916" stroke-width="1"/>
+<text x="366" y="170" font-family="monospace" font-size="12" fill="#1b1916">  1,024 B (Conventional)</text>
+<text x="64" y="206" font-family="monospace" font-size="12" fill="#1b1916">00400..004FF  BIOS_DATA         </text>
+<rect x="330" y="192" width="24" height="20" fill="#1b1916" stroke="#1b1916" stroke-width="1"/>
+<text x="366" y="206" font-family="monospace" font-size="12" fill="#1b1916">    256 B (Conventional)</text>
+<text x="64" y="242" font-family="monospace" font-size="12" fill="#1b1916">00500..006FF  DOS_COMM          </text>
+<rect x="330" y="228" width="24" height="20" fill="#1b1916" stroke="#1b1916" stroke-width="1"/>
+<text x="366" y="242" font-family="monospace" font-size="12" fill="#1b1916">    512 B (Conventional)</text>
+<text x="64" y="278" font-family="monospace" font-size="12" fill="#1b1916">00700..06DFF  IO_MSDOS_SYS      </text>
+<rect x="330" y="264" width="24" height="20" fill="#1b1916" stroke="#1b1916" stroke-width="1"/>
+<text x="366" y="278" font-family="monospace" font-size="12" fill="#1b1916"> 26,368 B (Conventional)</text>
+<text x="64" y="314" font-family="monospace" font-size="12" fill="#1b1916">06E00..09FFF  COMMAND_RESIDENT  </text>
+<rect x="330" y="300" width="24" height="20" fill="#1b1916" stroke="#1b1916" stroke-width="1"/>
+<text x="366" y="314" font-family="monospace" font-size="12" fill="#1b1916"> 12,800 B (Conventional)</text>
+<text x="64" y="350" font-family="monospace" font-size="12" fill="#1b1916">0A000..9FFFF  FREE_TPA          </text>
+<rect x="330" y="336" width="320" height="20" fill="#1b1916" stroke="#1b1916" stroke-width="1"/>
+<text x="662" y="350" font-family="monospace" font-size="12" fill="#1b1916">614,400 B (Conventional)</text>
+<text x="64" y="386" font-family="monospace" font-size="12" fill="#1b1916">A0000..BFFFF  VGA_VRAM          </text>
+<rect x="330" y="372" width="68" height="20" fill="#524a3d" stroke="#1b1916" stroke-width="1"/>
+<text x="410" y="386" font-family="monospace" font-size="12" fill="#1b1916">131,072 B (UMA)</text>
+<text x="64" y="422" font-family="monospace" font-size="12" fill="#1b1916">C0000..EFFFF  UMB_HIMEM_EMM386  </text>
+<rect x="330" y="408" width="102" height="20" fill="#524a3d" stroke="#1b1916" stroke-width="1"/>
+<text x="444" y="422" font-family="monospace" font-size="12" fill="#1b1916">196,608 B (UMA)</text>
+<text x="64" y="458" font-family="monospace" font-size="12" fill="#1b1916">F0000..FFFFF  SYSTEM_BIOS       </text>
+<rect x="330" y="444" width="34" height="20" fill="#524a3d" stroke="#1b1916" stroke-width="1"/>
+<text x="376" y="458" font-family="monospace" font-size="12" fill="#1b1916"> 65,536 B (UMA)</text>
+<text x="64" y="494" font-family="monospace" font-size="12" fill="#1b1916">100000..10FFEF  HMA_HIGH          </text>
+<rect x="330" y="480" width="34" height="20" fill="#786f5f" stroke="#1b1916" stroke-width="1"/>
+<text x="376" y="494" font-family="monospace" font-size="12" fill="#1b1916"> 65,520 B (HMA)</text>
+<text x="64" y="544" font-family="monospace" font-size="15" font-weight="bold" fill="#1b1916">1.44 MB FAT12 DISK GEOMETRY (2,880 SECTORS x 512 B = 1,474,560 B)</text>
+<rect x="64" y="560" width="90" height="44" fill="#d9cfba" stroke="#1b1916" stroke-width="1.5"/>
+<text x="109" y="586" text-anchor="middle" font-family="monospace" font-size="11" fill="#1b1916">BOOT (1)</text>
+<rect x="154" y="560" width="140" height="44" fill="#c4b89f" stroke="#1b1916" stroke-width="1.5"/>
+<text x="224" y="586" text-anchor="middle" font-family="monospace" font-size="11" fill="#1b1916">FAT1 + FAT2 (18)</text>
+<rect x="294" y="560" width="140" height="44" fill="#d9cfba" stroke="#1b1916" stroke-width="1.5"/>
+<text x="364" y="586" text-anchor="middle" font-family="monospace" font-size="11" fill="#1b1916">ROOT DIR (14)</text>
+<rect x="434" y="560" width="500" height="44" fill="#1b1916" stroke="#1b1916" stroke-width="1.5"/>
+<text x="684" y="586" text-anchor="middle" font-family="monospace" font-size="12" fill="#f6f1e4">DATA CLUSTERS 2..2848 (2,847 SECTORS = 1,457,664 B)</text>
+<line x1="60" y1="648" x2="940" y2="648" stroke="#8c7f68" stroke-width="1.2"/>
+<text x="500" y="672" text-anchor="middle" font-family="monospace" font-size="12" fill="#1b1916">FIELDGLASS ARCHIVAL TECHNICAL PLATE · 0 CLOUD TOKENS · executed=False</text>
+</svg>

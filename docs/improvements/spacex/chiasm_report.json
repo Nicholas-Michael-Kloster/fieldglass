@@ -1,0 +1,374 @@
+{
+  "slug": "spacex",
+  "subject": "SpaceX",
+  "title": "SPACEX \u00b7 IMPROVEMENT CAUSAL CHIASM & FILTRATION TOMOGRAPHY",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "episode_count": 24,
+  "nexus_sec": 12,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 12,
+    "past_repertoire": {
+      "chiasm_margin_ok": 0.1839105940940218,
+      "signed_hil_ok": 0.11260471540278544,
+      "gse_filtration": 0.12391059409402182,
+      "leo_206_buffered": 0.07738824261752726,
+      "braille_hud_ok": 0.03912706687927999,
+      "console_siloed": 0.20174586624143998,
+      "handover_drop": 0.1439176360737091,
+      "opaque_hud_only": 0.11739528459721459
+    },
+    "future_repertoire": {
+      "chiasm_margin_ok": 0.23608940590597816,
+      "signed_hil_ok": 0.19739528459721456,
+      "gse_filtration": 0.1760894059059782,
+      "leo_206_buffered": 0.14261175738247273,
+      "braille_hud_ok": 0.11087293312072,
+      "console_siloed": 0.05825413375856,
+      "handover_drop": 0.04608236392629091,
+      "opaque_hud_only": 0.03260471540278546
+    },
+    "past_accessible_volume": 6,
+    "past_accessible_states": [
+      "chiasm_margin_ok",
+      "console_siloed",
+      "gse_filtration",
+      "handover_drop",
+      "opaque_hud_only",
+      "signed_hil_ok"
+    ],
+    "future_accessible_volume": 5,
+    "future_accessible_states": [
+      "braille_hud_ok",
+      "chiasm_margin_ok",
+      "gse_filtration",
+      "leo_206_buffered",
+      "signed_hil_ok"
+    ],
+    "chiasm_shift": -1,
+    "effective_information_bits": 0.386209,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 24,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        5,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        5,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        5,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        5,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        5,
+        3,
+        0,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "braille_hud_ok": 0.055,
+      "chiasm_margin_ok": 0.165,
+      "console_siloed": 0.100833,
+      "gse_filtration": 0.125,
+      "handover_drop": 0.068333,
+      "leo_206_buffered": 0.086667,
+      "opaque_hud_only": 0.055,
+      "signed_hil_ok": 0.129167
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "chiasm_margin_ok"
+    ],
+    "transient_states": [
+      "braille_hud_ok",
+      "console_siloed",
+      "gse_filtration",
+      "handover_drop",
+      "leo_206_buffered",
+      "opaque_hud_only",
+      "signed_hil_ok"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "per_episode_a004": [
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    86,
+    86,
+    87,
+    89,
+    91,
+    89,
+    83,
+    73,
+    71,
+    63,
+    57,
+    55,
+    55,
+    55,
+    55,
+    55,
+    55,
+    55
+  ],
+  "per_episode_a010": [
+    29,
+    27,
+    27,
+    25,
+    24,
+    26,
+    24,
+    20,
+    24,
+    22,
+    20,
+    20,
+    22,
+    24,
+    24,
+    25,
+    29,
+    31,
+    31,
+    33,
+    33,
+    33,
+    33,
+    33
+  ],
+  "h1_mean_bits": 2.7856,
+  "h2_mean_bits": 2.6692,
+  "m4_purity_mean": 0.2683,
+  "scene_sha256": "09dbd716f2ff6b51d8b90a01aa9b952bc4eae1498efe295734df7c1181c972ba",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "6084f1c26e113bb035d3a676439cb9fe11cac91268d49c47d851d6d4c9e97111"
+}

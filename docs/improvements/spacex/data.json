@@ -1,0 +1,204 @@
+{
+  "schema_version": "fieldglass-r2-dossier/v1",
+  "slug": "spacex",
+  "display_name": "SpaceX",
+  "subtitle": "Launch Operations, Flight Software Provenance & Starlink Telemetry",
+  "category": "Aerospace & Telemetry",
+  "accent_hex": "#5edaf0",
+  "scope_note": "Strictly advisory, non-actuating telemetry observability and ground/orbital link resilience proposals (executed=False, zero flight-computer actuation).",
+  "system_profile": {
+    "primary_strengths": [
+      "High-cadence reusable launch operations, rapid pad turnaround, and global Starlink constellation.",
+      "Rich multi-vehicle telemetry streams spanning propulsion, avionics, GSE, and orbital links.",
+      "Iterative hardware-in-the-loop (HIL) and flight-proven telemetry review culture."
+    ],
+    "core_bottlenecks": [
+      "Siloed terminal-count operator consoles obscure slow cross-subsystem margin collapse.",
+      "80-400 ms Starlink LEO beam handovers drop unbuffered telemetry and rigid transfers.",
+      "Compressed webcast/HUD video lacks frame-locked cryptographic telemetry provenance and tactile access."
+    ],
+    "design_north_star": "Read-only A_tau(p_t) Causal Chiasm triage, SHA-256 sealed HIL-to-flight provenance, and range-resumable orbital buffers."
+  },
+  "improvements": [
+    {
+      "id": "SPX-01",
+      "priority": "P0",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Propulsion & Avionics Triage",
+      "title": "Read-Only Superlevel-Set A_tau(p_t) Mode-Transition Chiasm Advisor",
+      "short_title": "Countdown Chiasm Advisor",
+      "current_gap": "Terminal count and ascent operators track dozens of siloed propellant, valve, avionics, and range screens where transient noise is hard to separate from irreversible margin collapse.",
+      "proposed_architecture": "Fold 8 normalized subsystem margin regimes into a strictly read-only (executed=False, air-gapped telemetry tap, zero flight-computer actuation) Causal Chiasm HUD surfacing A_tau(p_t) repertoire collapse and hold-point bottleneck alerts.",
+      "fieldglass_grounding": "Uses causal_chiasm() future_boxed_in and persistent_filtration_tomography() invariants across scrub vs. nominal rehearsals.",
+      "concrete_deliverable": "CountdownChiasm-v1 read-only advisory panel + 10 Hz replayable telemetry evaluator.",
+      "kpis": [
+        {
+          "metric": "Simulated multi-console triage time",
+          "baseline": "38 s",
+          "target": "21 s (-45%)"
+        },
+        {
+          "metric": "Advisory compute latency per tick",
+          "baseline": "n/a",
+          "target": "< 5 ms @ 10 Hz"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Advisory alert fatigue during nominal transients. Mitigation: require persistence across >= 3 consecutive 10 Hz frames before elevating HUD state.",
+      "verification_method": "Replay historical/synthetic scrub vs. nominal rehearsal traces; verify < 5 ms tick budget and zero actuation interfaces."
+    },
+    {
+      "id": "SPX-02",
+      "priority": "P0",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "HIL & Flight Provenance",
+      "title": "SHA-256 Sealed HIL, Monte Carlo & Webcast Flight-Frame Provenance",
+      "short_title": "SHA-256 HIL & Frame Seal",
+      "current_gap": "Compressed webcast HUD pixels lose exact mission-time provenance, and Monte Carlo / HIL campaigns lack compact cryptographic manifests linking flight software builds to telemetry.",
+      "proposed_architecture": "Emit a frame_sha256-keyed JSON sidecar (t_mission_s, alt_km, vel_km_s, q_kpa, stage_state, flight_sw_sha256) linking HIL Monte Carlo runs and launch webcasts to immutable build hashes.",
+      "fieldglass_grounding": "Extends fieldglass-causal-chiasm/v1 report_sha256 canonical JSON sealing to flight archives.",
+      "concrete_deliverable": "FlightFrameSeal sidecar generator + offline anomaly diff CLI.",
+      "kpis": [
+        {
+          "metric": "Post-flight frame-to-telemetry verifiability",
+          "baseline": "18% (OCR)",
+          "target": "100% (SHA-256)"
+        },
+        {
+          "metric": "Archive overhead per 15-min flight",
+          "baseline": "n/a",
+          "target": "~1.2 MB compressed"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Public webcast timing offset vs. internal mission clock. Mitigation: publish clean public-tier quantized 10 Hz sidecar with explicit T-0 alignment.",
+      "verification_method": "Verify 100% deterministic SHA-256 round-trip across simulated 900 s launch telemetry logs."
+    },
+    {
+      "id": "SPX-03",
+      "priority": "P1",
+      "horizon": "Mid-term (3-6 mo)",
+      "domain": "GSE Predictive Maintenance",
+      "title": "Persistent Filtration GSE & Cryo Quick-Disconnect Drift Watch",
+      "short_title": "GSE Cryo Filtration Watch",
+      "current_gap": "High-cadence launch turnarounds stress LOX/CH4 valves, cryo quick-disconnects, and helium purge lines, where subtle cycle-to-cycle hysteresis precedes hard faults.",
+      "proposed_architecture": "Compute cross-campaign persistent_filtration_tomography() over normalized valve actuation times and seal-pressure decay signatures to flag P(x) < 0.14 invariant erosion early.",
+      "fieldglass_grounding": "Monitors structural_invariants vs. transient_states across static-fire and launch cycles.",
+      "concrete_deliverable": "CryoFiltrationWatch pad-health trend report generator.",
+      "kpis": [
+        {
+          "metric": "Valve hysteresis early-warning lead",
+          "baseline": "0 cycles",
+          "target": ">= 3 cycles prior"
+        },
+        {
+          "metric": "Unplanned pad-recycle valve holds",
+          "baseline": "6.5%",
+          "target": "<= 1.8%"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Ambient temperature swings mimic seal drift. Mitigation: normalize actuation curves against pad cryo-manifold temperature bins.",
+      "verification_method": "Inject synthetic 2-8% valve-sluggishness ramp over 24 cycles; verify tomography flags drift by cycle 12."
+    },
+    {
+      "id": "SPX-04",
+      "priority": "P0",
+      "horizon": "Mid-term (3-6 mo)",
+      "domain": "Starlink Edge & Conjunctions",
+      "title": "Starlink LEO Handover HTTP 206 Ring Buffer & Conjunction Explainability",
+      "short_title": "LEO 206 Buffer + Conjunctions",
+      "current_gap": "80-400 ms LEO satellite beam handovers drop unbuffered telemetry and rigid transfers, while autonomous conjunction-avoidance logs lack concise operator maneuver rationales.",
+      "proposed_architecture": "Deploy a 64 MB terminal edge ring buffer supporting HTTP 206 Partial Content range-resume with SHA-256 checkpoints, paired with an interpretable ConjunctionLedger detailing ephemeris uncertainty cones and delta-V tradeoff rationale.",
+      "fieldglass_grounding": "Mirrors fieldglass.showcase.make_range_handler() HTTP 206 Byte-Range resumption.",
+      "concrete_deliverable": "OrbitalHandoverBuffer proxy spec + ConjunctionLedger JSON schema.",
+      "kpis": [
+        {
+          "metric": "Telemetry packet loss across LEO handover",
+          "baseline": "2.40%",
+          "target": "< 0.05%"
+        },
+        {
+          "metric": "Conjunction maneuver audit clarity",
+          "baseline": "48%",
+          "target": "94%"
+        }
+      ],
+      "risks_and_mitigations": "Risk: +64 MB terminal RAM and +15 ms jitter smoothing. Mitigation: bypass ring buffer for ultra-low-latency voice while protecting telemetry/bulk streams.",
+      "verification_method": "Simulate 250 ms link blackouts against HTTP 206 range server; assert 0 lost bytes."
+    },
+    {
+      "id": "SPX-05",
+      "priority": "P1",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Operator HUD & Accessibility",
+      "title": "High-Contrast Dark-Observatory Anomaly HUD & 2x4 Braille Trajectory Plates",
+      "short_title": "Anomaly HUD + Braille Flight",
+      "current_gap": "Dense multi-color console displays increase cognitive load during off-nominal events, and purely visual flight curves exclude blind/low-vision engineers and enthusiasts.",
+      "proposed_architecture": "Standardize a low-glare dark-observatory anomaly HUD (#0b0f17, cyan/gold/ruby semantic severity) and co-emit 72-column 2x4 Unicode Braille ascent/landing trajectory plates with ARIA milestone callouts (Max-Q, MECO, Entry Burn, Catch).",
+      "fieldglass_grounding": "Uses fieldglass.plate.ink_to_braille_lines(cols=72) and dark-observatory palette.",
+      "concrete_deliverable": "BrailleTrajectory exporter + dark-observatory operator alert stylesheet.",
+      "kpis": [
+        {
+          "metric": "Blind/low-vision flight milestone comprehension",
+          "baseline": "5%",
+          "target": "92%"
+        },
+        {
+          "metric": "Braille plate bundle footprint",
+          "baseline": "n/a",
+          "target": "+12 KB / phase"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Rapidly changing curves blur at 72x28 resolution. Mitigation: emit discrete phase-keyed altitude/velocity plates at Max-Q, MECO, and Landing.",
+      "verification_method": "Verify generated trajectory Braille plates preserve clear ascent/booster curves and pass WCAG contrast >= 7:1."
+    }
+  ],
+  "telemetry_profile": {
+    "repertoire_states": [
+      "chiasm_margin_ok",
+      "signed_hil_ok",
+      "gse_filtration",
+      "leo_206_buffered",
+      "braille_hud_ok",
+      "console_siloed",
+      "handover_drop",
+      "opaque_hud_only"
+    ],
+    "past_weights": {
+      "chiasm_margin_ok": 0.17,
+      "signed_hil_ok": 0.09,
+      "gse_filtration": 0.11,
+      "leo_206_buffered": 0.06,
+      "braille_hud_ok": 0.02,
+      "console_siloed": 0.24,
+      "handover_drop": 0.17,
+      "opaque_hud_only": 0.14
+    },
+    "future_weights": {
+      "chiasm_margin_ok": 0.25,
+      "signed_hil_ok": 0.22,
+      "gse_filtration": 0.19,
+      "leo_206_buffered": 0.16,
+      "braille_hud_ok": 0.13,
+      "console_siloed": 0.02,
+      "handover_drop": 0.02,
+      "opaque_hud_only": 0.01
+    },
+    "episode_count": 24,
+    "nexus_episode": 12,
+    "routing_policy": "Advisory-only (executed=False): A_0.14 < 3 -> highlight hold-point margin bottleneck; beam handover -> HTTP 206 ring buffer resume"
+  },
+  "artifacts": {
+    "html": "index.html",
+    "preview_png": "preview.png",
+    "architecture_svg": "architecture.svg",
+    "chiasm_svg": "chiasm.svg",
+    "chiasm_report": "chiasm_report.json",
+    "summary_json": "summary.json",
+    "braille_txt": "spacex_braille.txt",
+    "braille_json": "spacex_braille.json",
+    "braille_preview_png": "spacex_braille_preview.png"
+  },
+  "clinical_use": false,
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

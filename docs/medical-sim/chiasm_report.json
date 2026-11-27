@@ -1,0 +1,386 @@
+{
+  "slug": "medical_sim",
+  "title": "Simulated Medical Equipment Sandbox (Non-Clinical)",
+  "subtitle": "Strictly simulated / educational biomedical waveforms & Beer-Lambert optics",
+  "episode_count": 16,
+  "nexus_ep": 8,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 8,
+    "past_repertoire": {
+      "pqrst_r_peak": 0.1449269693035947,
+      "pqrst_st_t": 0.1076509719387759,
+      "ppg_red_ac": 0.14424824244707155,
+      "ppg_ir_dc": 0.14808783617075222,
+      "capno_plateau": 0.12591057724161153,
+      "capno_baseline": 0.07725985732181448,
+      "pv_compliance": 0.15128072618430533,
+      "pv_resistive": 0.10063481939207433
+    },
+    "future_repertoire": {
+      "pqrst_r_peak": 0.1412171089370041,
+      "pqrst_st_t": 0.1081375862766536,
+      "ppg_red_ac": 0.1427612363321656,
+      "ppg_ir_dc": 0.15221277529019406,
+      "capno_plateau": 0.12205936589484662,
+      "capno_baseline": 0.07908103378547099,
+      "pv_compliance": 0.13995889321260008,
+      "pv_resistive": 0.11457200027106501
+    },
+    "past_accessible_volume": 7,
+    "past_accessible_states": [
+      "capno_plateau",
+      "ppg_ir_dc",
+      "ppg_red_ac",
+      "pqrst_r_peak",
+      "pqrst_st_t",
+      "pv_compliance",
+      "pv_resistive"
+    ],
+    "future_accessible_volume": 7,
+    "future_accessible_states": [
+      "capno_plateau",
+      "ppg_ir_dc",
+      "ppg_red_ac",
+      "pqrst_r_peak",
+      "pqrst_st_t",
+      "pv_compliance",
+      "pv_resistive"
+    ],
+    "chiasm_shift": 0,
+    "effective_information_bits": 0.00224,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 16,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "capno_baseline": 0.06,
+      "capno_plateau": 0.1025,
+      "ppg_ir_dc": 0.12,
+      "ppg_red_ac": 0.12,
+      "pqrst_r_peak": 0.12375,
+      "pqrst_st_t": 0.08,
+      "pv_compliance": 0.12,
+      "pv_resistive": 0.0875
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [],
+    "transient_states": [
+      "capno_baseline",
+      "capno_plateau",
+      "ppg_ir_dc",
+      "ppg_red_ac",
+      "pqrst_r_peak",
+      "pqrst_st_t",
+      "pv_compliance",
+      "pv_resistive"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "per_episode": [
+    {
+      "episode": 0,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.929521,
+      "h2_bits": 2.87244,
+      "m4_purity": 0.235084
+    },
+    {
+      "episode": 1,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.96138,
+      "h2_bits": 2.93032,
+      "m4_purity": 0.223053
+    },
+    {
+      "episode": 2,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.971315,
+      "h2_bits": 2.946228,
+      "m4_purity": 0.220689
+    },
+    {
+      "episode": 3,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.976641,
+      "h2_bits": 2.95411,
+      "m4_purity": 0.219893
+    },
+    {
+      "episode": 4,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.95335,
+      "h2_bits": 2.920139,
+      "m4_purity": 0.223989
+    },
+    {
+      "episode": 5,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.965588,
+      "h2_bits": 2.938251,
+      "m4_purity": 0.221516
+    },
+    {
+      "episode": 6,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.970297,
+      "h2_bits": 2.943456,
+      "m4_purity": 0.221541
+    },
+    {
+      "episode": 7,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.979981,
+      "h2_bits": 2.960767,
+      "m4_purity": 0.218462
+    },
+    {
+      "episode": 8,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.950779,
+      "h2_bits": 2.913292,
+      "m4_purity": 0.225947
+    },
+    {
+      "episode": 9,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.967343,
+      "h2_bits": 2.939659,
+      "m4_purity": 0.221851
+    },
+    {
+      "episode": 10,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.97738,
+      "h2_bits": 2.956945,
+      "m4_purity": 0.218868
+    },
+    {
+      "episode": 11,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.982867,
+      "h2_bits": 2.967006,
+      "m4_purity": 0.216934
+    },
+    {
+      "episode": 12,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.958624,
+      "h2_bits": 2.929723,
+      "m4_purity": 0.222184
+    },
+    {
+      "episode": 13,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.971908,
+      "h2_bits": 2.949236,
+      "m4_purity": 0.219667
+    },
+    {
+      "episode": 14,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.979076,
+      "h2_bits": 2.960094,
+      "m4_purity": 0.218278
+    },
+    {
+      "episode": 15,
+      "a_004": 8,
+      "a_010": 7,
+      "h1_bits": 2.984345,
+      "h2_bits": 2.969299,
+      "m4_purity": 0.216696
+    }
+  ],
+  "h1_mean_bits": 2.9675,
+  "h2_mean_bits": 2.9407,
+  "m4_mean_purity": 0.2215,
+  "scene_sha256": "6cd05b694e94f35142d56a4b30f16ddf9febe80d677f9a15a1673f341430628c",
+  "clinical_use": false,
+  "educational_simulation_only": true,
+  "clinical_certification_claimed": false,
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "disclaimer": "STRICTLY SIMULATED / EDUCATIONAL SANDBOX ONLY \u2014 NOT FOR CLINICAL, DIAGNOSTIC, OR PATIENT-CARE USE.",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "report_sha256": "92fe8627b34cafc0078cb944841509afb3365eda4b8eaee5f70e35f4fc2c28b0"
+}

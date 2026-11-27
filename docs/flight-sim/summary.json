@@ -1,0 +1,36 @@
+{
+  "contract": "fieldglass-r1-summary/v1",
+  "domain": "flight-sim",
+  "slug": "flight_sim",
+  "title": "6-DOF Flight Dynamics & Telemetry HUD",
+  "subtitle": "ISA atmosphere, stall-bounded aerodynamics, bank-to-turn & six-pack HUD",
+  "route": "flight-sim/index.html",
+  "metrics": {
+    "episode_count": 16,
+    "past_a_010": 5,
+    "future_a_010": 7,
+    "effective_information_bits": 0.166133,
+    "presence_glyph": "^_^",
+    "h1_mean_bits": 2.8807,
+    "h2_mean_bits": 2.7916,
+    "m4_mean_purity": 0.2491
+  },
+  "highlights": [
+    "ISA air density rho(h) & 6-DOF semi-implicit aerodynamic integrator",
+    "Interactive Canvas artificial horizon + six-pack flight gauges",
+    "16-episode sortie coupled into Kloster A_tau(p_t) & Causal Chiasm"
+  ],
+  "assets": {
+    "index_html": "index.html",
+    "preview_png": "preview.png",
+    "chiasm_svg": "flight_sim_chiasm.svg",
+    "plate_svg": "flight_sim_plate.svg",
+    "braille_txt": "flight_sim_braille.txt",
+    "braille_json": "flight_sim_braille.json",
+    "braille_preview_png": "flight_sim_braille_preview.png",
+    "chiasm_report": "chiasm_report.json"
+  },
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

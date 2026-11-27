@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 920" width="1400" height="920">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#5edaf0"/>
+</marker>
+<marker id="arrow-fb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#f46a7e"/>
+</marker>
+</defs>
+<rect width="1400" height="920" fill="#0b0f17"/>
+<rect x="16" y="14" width="1368" height="892" rx="12" fill="#0d131e" stroke="#263850" stroke-width="1.5"/>
+<rect x="30" y="26" width="1340" height="68" rx="10" fill="#121926" stroke="#c896ff" stroke-width="2"/>
+<text x="48" y="54" fill="#c896ff" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold">CLAIRE (AKA GRIMES) · IMPROVEMENT ARCHITECTURE &amp; TELEMETRY PIPELINE</text>
+<text x="48" y="79" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="13">Elf.Tech Voice Attribution, Live Modular Rig &amp; Synesthetic Archive  |  Creative &amp; Audio</text>
+<rect x="1030" y="34" width="324" height="52" rx="8" fill="#0b0f17" stroke="#f46a7e" stroke-width="1.5"/>
+<text x="1046" y="56" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">CHIASM ^_^ · A_0.10: 6 -&gt; 5 (-1)</text>
+<text x="1046" y="75" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="11.5">EI=0.431b · exec=False · tokens=0</text>
+<rect x="30" y="106" width="1340" height="414" rx="10" fill="#101724" stroke="#263850" stroke-width="1.5"/>
+<text x="48" y="129" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="bold">01 / SYSTEM ARCHITECTURE TOPOLOGY</text>
+<text x="48" y="147" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Policy: midi_xrun_stall &gt; tau or chiasm_shift &lt; 0 -&gt; bar-quantized crossfade to shadow stem deck; export -&gt; ElfProvenance-v1 + CymaticBraille</text>
+<path d="M 226.0 286.0 C 277.0 286.0, 277.0 204.0, 328.0 204.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 226.0 286.0 C 277.0 286.0, 277.0 366.0, 328.0 366.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 508.0 204.0 C 559.0 204.0, 559.0 286.0, 610.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 508.0 366.0 C 559.0 366.0, 559.0 286.0, 610.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 790.0 286.0 C 841.0 286.0, 841.0 286.0, 892.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 1072.0 286.0 C 1123.0 286.0, 1123.0 286.0, 1174.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 418.0 402.0 L 418.0 472 L 136.0 472 L 136.0 326.0" fill="none" stroke="#f46a7e" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow-fb)"/>
+<rect data-role="node" x="46" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#c896ff" stroke-width="2"/>
+<text x="56" y="273" fill="#c896ff" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N1</text>
+<text x="82" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">Vocal + Modular Rig</text>
+<text x="56" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Mic, Eurorack, Ableton, DMX</text>
+<rect data-role="node" x="328" y="168" width="180" height="72" rx="9" fill="#121926" stroke="#f2c45c" stroke-width="2"/>
+<text x="338" y="191" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N2</text>
+<text x="364" y="191" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">Flow Capture</text>
+<text x="338" y="217" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Zero-friction auto-index</text>
+<rect data-role="node" x="328" y="330" width="180" height="72" rx="9" fill="#121926" stroke="#f46a7e" stroke-width="2"/>
+<text x="338" y="353" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N3</text>
+<text x="364" y="353" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">StageChiasm-Sync</text>
+<text x="338" y="379" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Bar-quantized shadow deck</text>
+<rect data-role="node" x="610" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#5edaf0" stroke-width="2"/>
+<text x="620" y="273" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N4</text>
+<text x="646" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">ElfProvenance + Gate</text>
+<text x="620" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">50/50 stem SHA + lineage</text>
+<rect data-role="node" x="892" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#c896ff" stroke-width="2"/>
+<text x="902" y="273" fill="#c896ff" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N5</text>
+<text x="928" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">LoreVault-DAG Store</text>
+<text x="902" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Patch JSON + MIDI CC + stems</text>
+<rect data-role="node" x="1174" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#f2c45c" stroke-width="2"/>
+<text x="1184" y="273" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N6</text>
+<text x="1210" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">CymaticBraille + DMX</text>
+<text x="1184" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">2x4 tactile score + offline FX</text>
+<rect data-role="edge-label" x="246.5" y="227.0" width="61.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="277.0" y="238.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">raw take</text>
+<rect data-role="edge-label" x="243.5" y="308.0" width="67.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="277.0" y="319.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">MIDI/xrun</text>
+<rect data-role="edge-label" x="525.5" y="227.0" width="67.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="559.0" y="238.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">stem hash</text>
+<rect data-role="edge-label" x="528.5" y="308.0" width="61.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="559.0" y="319.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">clock ok</text>
+<rect data-role="edge-label" x="814.0" y="268.0" width="54.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="841.0" y="279.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">sealed</text>
+<rect data-role="edge-label" x="1083.0" y="268.0" width="80.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="1123.0" y="279.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">SVG/Braille</text>
+<rect data-role="edge-label" x="95.0" y="460" width="364.0" height="22" rx="5" fill="#18121b" stroke="#f46a7e" stroke-width="1"/>
+<text x="277.0" y="475" text-anchor="middle" fill="#ffd3da" font-family="DejaVu Sans Mono, monospace" font-size="11">Bar-quantized shadow-deck crossfade on xrun breach</text>
+<text x="48" y="550" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold">02 / FIVE STRUCTURED IMPROVEMENTS &amp; MEASURABLE ACCEPTANCE TARGETS</text>
+<rect x="30" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="30" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="42" y="585" fill="#c896ff" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">GRIMES-01 · P0</text>
+<text x="274" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Near-term (0-3 mo)</text>
+<text x="42" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Elf.Tech Stem Provenance</text>
+<text x="42" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Voice &amp; Stem Provenance</text>
+<text x="42" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Open-licensed Elf.Tech AI vocal</text>
+<text x="42" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">tracks lose creator...</text>
+<rect x="40" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="46" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Remix / transcode stem attribution...</text>
+<text x="46" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">31% -&gt; 95%</text>
+<rect x="40" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="46" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Sidecar &amp; export overhead</text>
+<text x="46" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">n/a -&gt; +4.2 KB / +0.8% CPU</text>
+<rect x="301" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="301" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="313" y="585" fill="#c896ff" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">GRIMES-02 · P0</text>
+<text x="545" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Near-term (0-3 mo)</text>
+<text x="313" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">StageChiasm Live Failover</text>
+<text x="313" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Live Stage &amp; DMX Failover</text>
+<text x="313" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Live electronic sets bridging</text>
+<text x="313" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">modular synths, Ableton,...</text>
+<rect x="311" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="317" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Live modular/VST catastrophic...</text>
+<text x="317" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">8.5% -&gt; &lt; 0.3%</text>
+<rect x="311" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="317" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Cloud dependency latency during show</text>
+<text x="317" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">120-400 ms -&gt; 0 ms (local)</text>
+<rect x="572" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="572" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="584" y="585" fill="#c896ff" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">GRIMES-03 · P1</text>
+<text x="816" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Mid-term (3-6 mo)</text>
+<text x="584" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Braille Cymatics Vault</text>
+<text x="584" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Synesthetic Archival Preservation</text>
+<text x="584" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Visual-music releases, album</text>
+<text x="584" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">sigils, and live projection...</text>
+<rect x="582" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="588" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Offline tactile/screen-reader sonic...</text>
+<text x="588" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">0% -&gt; 93%</text>
+<rect x="582" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="588" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Tactile score bundle size per track</text>
+<text x="588" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">n/a -&gt; ~35 KB</text>
+<rect x="843" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="843" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="855" y="585" fill="#c896ff" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">GRIMES-04 · P1</text>
+<text x="1087" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Mid-term (3-6 mo)</text>
+<text x="855" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Fan Co-Creation Sandbox</text>
+<text x="855" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Fan Co-Creation Sandbox</text>
+<text x="855" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Community remixes, AI vocal</text>
+<text x="855" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">covers, and visual lore...</text>
+<rect x="853" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="859" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Canonical vs. remix lineage clarity</text>
+<text x="859" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">41% -&gt; 99%</text>
+<rect x="853" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="859" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Metadata lookup latency</text>
+<text x="859" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">n/a -&gt; &lt; 10 ms offline</text>
+<rect x="1114" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="1114" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="1126" y="585" fill="#c896ff" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">GRIMES-05 · P0</text>
+<text x="1358" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Near-term (0-3 mo)</text>
+<text x="1126" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Single-Take Patch DAG</text>
+<text x="1126" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Studio Flow Capture</text>
+<text x="1126" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Spontaneous single-take</text>
+<text x="1126" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">vocal/synth sessions, modular...</text>
+<rect x="1124" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1130" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Post-migration session reconstruction...</text>
+<text x="1130" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">240 min -&gt; &lt;= 4 min</text>
+<rect x="1124" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1130" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Creative flow interruption popups</text>
+<text x="1130" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">4.2 / session -&gt; 0</text>
+<text x="32" y="886" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="12">Fieldglass R2 · H1 2.818 -&gt; 2.499 bits · M4^(1/4) 0.2702 -&gt; 0.3199 · Invariants(P&gt;=0.14): elf_stem_sealed · executed=False · tokens_used=0</text>
+</svg>

@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 920" width="1400" height="920">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#5edaf0"/>
+</marker>
+<marker id="arrow-fb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#f46a7e"/>
+</marker>
+</defs>
+<rect width="1400" height="920" fill="#0b0f17"/>
+<rect x="16" y="14" width="1368" height="892" rx="12" fill="#0d131e" stroke="#263850" stroke-width="1.5"/>
+<rect x="30" y="26" width="1340" height="68" rx="10" fill="#121926" stroke="#f46a7e" stroke-width="2"/>
+<text x="48" y="54" fill="#f46a7e" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold">GROK · IMPROVEMENT ARCHITECTURE &amp; TELEMETRY PIPELINE</text>
+<text x="48" y="79" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="13">xAI Real-Time Intelligence, Social RAG &amp; Multimodal Systems  |  Real-Time &amp; Social</text>
+<rect x="1030" y="34" width="324" height="52" rx="8" fill="#0b0f17" stroke="#f46a7e" stroke-width="1.5"/>
+<text x="1046" y="56" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">CHIASM ^_^ · A_0.10: 5 -&gt; 5 (+0)</text>
+<text x="1046" y="75" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="11.5">EI=0.468b · exec=False · tokens=0</text>
+<rect x="30" y="106" width="1340" height="414" rx="10" fill="#101724" stroke="#263850" stroke-width="1.5"/>
+<text x="48" y="129" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="bold">01 / SYSTEM ARCHITECTURE TOPOLOGY</text>
+<text x="48" y="147" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Policy: EI(Primary, Social) &lt; 0.25 or cone conflict -&gt; emit ?? Split-View Badge; code/math claim -&gt; SandboxedVerifyLoop prior to emit</text>
+<path d="M 226.0 286.0 C 277.0 286.0, 277.0 204.0, 328.0 204.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 226.0 286.0 C 277.0 286.0, 277.0 366.0, 328.0 366.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 508.0 204.0 C 559.0 204.0, 559.0 286.0, 610.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 508.0 366.0 C 559.0 366.0, 559.0 286.0, 610.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 790.0 286.0 C 841.0 286.0, 841.0 286.0, 892.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 1072.0 286.0 C 1123.0 286.0, 1123.0 286.0, 1174.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 982.0 322.0 L 982.0 472 L 418.0 472 L 418.0 406.0" fill="none" stroke="#f46a7e" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow-fb)"/>
+<rect data-role="node" x="46" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#f46a7e" stroke-width="2"/>
+<text x="56" y="273" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N1</text>
+<text x="82" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">Live X + Web + Media</text>
+<text x="56" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Real-time multimodal stream</text>
+<rect data-role="node" x="328" y="168" width="180" height="72" rx="9" fill="#121926" stroke="#5edaf0" stroke-width="2"/>
+<text x="338" y="191" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N2a</text>
+<text x="364" y="191" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">PrimaryEvidenceCone</text>
+<text x="338" y="217" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Docs, advisories, timestamps</text>
+<rect data-role="node" x="328" y="330" width="180" height="72" rx="9" fill="#121926" stroke="#f46a7e" stroke-width="2"/>
+<text x="338" y="353" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N2b</text>
+<text x="364" y="353" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">SocialPulseCone</text>
+<text x="338" y="379" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Live posts + SpectralDeEcho</text>
+<rect data-role="node" x="610" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#f2c45c" stroke-width="2"/>
+<text x="620" y="273" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N3</text>
+<text x="646" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">TimeDecay &amp; Audit</text>
+<text x="620" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Freshness lambda + chart OCR</text>
+<rect data-role="node" x="892" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#f46a7e" stroke-width="2"/>
+<text x="902" y="273" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N4</text>
+<text x="928" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">Dual-Cone Chiasm</text>
+<text x="902" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">EI check + sandbox verify</text>
+<rect data-role="node" x="1174" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#5edaf0" stroke-width="2"/>
+<text x="1184" y="273" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N5</text>
+<text x="1210" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">ClaimLedger + Braille</text>
+<text x="1184" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Split ?? badge + 2x4 digest</text>
+<rect data-role="edge-label" x="249.5" y="227.0" width="55.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="277.0" y="238.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">primary</text>
+<rect data-role="edge-label" x="250.0" y="308.0" width="54.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="277.0" y="319.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">social</text>
+<rect data-role="edge-label" x="532.0" y="227.0" width="54.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="559.0" y="238.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">decay</text>
+<rect data-role="edge-label" x="522.0" y="308.0" width="74.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="559.0" y="319.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">H2 de-echo</text>
+<rect data-role="edge-label" x="810.5" y="268.0" width="61.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="841.0" y="279.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">verified</text>
+<rect data-role="edge-label" x="1096.0" y="268.0" width="54.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="1123.0" y="279.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">ledger</text>
+<rect data-role="edge-label" x="521.5" y="460" width="357.0" height="22" rx="5" fill="#18121b" stroke="#f46a7e" stroke-width="1"/>
+<text x="700.0" y="475" text-anchor="middle" fill="#ffd3da" font-family="DejaVu Sans Mono, monospace" font-size="11">Flag ?? cone conflict &amp; re-query primary evidence</text>
+<text x="48" y="550" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold">02 / FIVE STRUCTURED IMPROVEMENTS &amp; MEASURABLE ACCEPTANCE TARGETS</text>
+<rect x="30" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="30" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="42" y="585" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">GROK-01 · P0</text>
+<text x="274" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Near-term (0-3 mo)</text>
+<text x="42" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Dual-Cone + Time Decay</text>
+<text x="42" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Temporal Primary Grounding</text>
+<text x="42" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Real-time retrieval conflates</text>
+<text x="42" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">viral jokes and rumors with...</text>
+<rect x="40" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="46" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Breaking-query viral rumor conflation</text>
+<text x="46" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">19.2% -&gt; 3.8%</text>
+<rect x="40" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="46" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Stale incident/CVE status errors</text>
+<text x="46" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">23.5% -&gt; 6.1% (-74%)</text>
+<rect x="301" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="301" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="313" y="585" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">GROK-02 · P0</text>
+<text x="545" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Near-term (0-3 mo)</text>
+<text x="313" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Multimodal Chart Audit</text>
+<text x="313" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Multimodal Frame &amp; Chart Audit</text>
+<text x="313" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Social media charts and video</text>
+<text x="313" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">screenshots frequently use...</text>
+<rect x="311" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="317" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Misread truncated-axis chart rate</text>
+<text x="317" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">27.0% -&gt; &lt;= 4.5%</text>
+<rect x="311" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="317" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Pre-summary audit latency</text>
+<text x="317" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">n/a -&gt; +22 ms / image</text>
+<rect x="572" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="572" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="584" y="585" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">GROK-03 · P0</text>
+<text x="816" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Near-term (0-3 mo)</text>
+<text x="584" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Spectral Bot De-Echo</text>
+<text x="584" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Anti-Echo &amp; Bot Damping</text>
+<text x="584" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Coordinated copy-pasta repost</text>
+<text x="584" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">campaigns inflate raw...</text>
+<rect x="582" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="588" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Precision@10 under bot-echo bursts</text>
+<text x="588" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">54% -&gt; 76% (+41% rel.)</text>
+<rect x="582" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="588" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Echo-cluster collapse accuracy</text>
+<text x="588" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">n/a -&gt; &gt;= 91%</text>
+<rect x="843" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="843" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="855" y="585" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">GROK-04 · P1</text>
+<text x="1087" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Mid-term (3-6 mo)</text>
+<text x="855" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Sandboxed Verify Loop</text>
+<text x="855" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Closed-Loop Verification</text>
+<text x="855" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Fast technical responses</text>
+<text x="855" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">sometimes emit...</text>
+<rect x="853" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="859" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Executable snippet first-run pass rate</text>
+<text x="859" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">74% -&gt; 96%</text>
+<rect x="853" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="859" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Unit/dimensional calculation errors</text>
+<text x="859" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">8.9% -&gt; &lt; 1.0%</text>
+<rect x="1114" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="1114" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="1126" y="585" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">GROK-05 · P1</text>
+<text x="1358" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Near-term (0-3 mo)</text>
+<text x="1126" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">ClaimLedger + Braille</text>
+<text x="1126" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Open-Audit Telemetry &amp; Accessibility</text>
+<text x="1126" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Witty conversational framing</text>
+<text x="1126" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">obscures which statements are...</text>
+<rect x="1124" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1130" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Factual auditability &amp; ARIA clarity</text>
+<text x="1130" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">52% -&gt; 91%</text>
+<rect x="1124" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1130" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Sidecar footprint per digest</text>
+<text x="1130" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">n/a -&gt; +240 B ledger</text>
+<text x="32" y="886" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="12">Fieldglass R2 · H1 2.754 -&gt; 2.523 bits · M4^(1/4) 0.2924 -&gt; 0.3110 · Invariants(P&gt;=0.14): primary_grounded · executed=False · tokens_used=0</text>
+</svg>

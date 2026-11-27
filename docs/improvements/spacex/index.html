@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>SpaceX · Fieldglass R2 Improvement Dossier</title>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --violet: #c896ff;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.3rem, 3vw, 1.95rem); color: var(--gold); }
+  h2 { margin: 0 0 8px; font-size: 1.15rem; color: var(--gold); }
+  h3 { margin: 0 0 6px; font-size: 1.02rem; color: var(--cyan); }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88rem;
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 6px 0 10px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .sub { font-size: 0.88rem; color: var(--muted); margin: 0 0 12px; }
+  .nav-links, .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .panel2 {
+    background: var(--panel2);
+    border: 1px solid #223248;
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .badge {
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+    display: inline-block;
+  }
+  a.btn, button.btn {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #1a273b;
+    color: var(--gold);
+    border: 1px solid #3c5475;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  a.btn.accent, button.btn.active {
+    background: #2b1826;
+    border-color: var(--ruby);
+    color: #ffd3da;
+  }
+  a.btn:hover, button.btn:hover { background: #23344f; }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    background: #070a10;
+    border: 1px solid #223248;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  th, td { border-bottom: 1px solid #223248; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { color: var(--gold); font-family: ui-monospace, monospace; font-size: 0.76rem; text-transform: uppercase; }
+  pre.code, pre.braille {
+    overflow-x: auto;
+    background: #090d15;
+    border: 1px solid #24364d;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: "DejaVu Sans Mono", ui-monospace, monospace;
+    font-size: 0.76rem;
+    line-height: 1.25;
+    color: #eaeff5;
+    margin: 10px 0 0;
+  }
+  select, input[type="range"] {
+    background: #0a101a;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-family: inherit;
+  }
+  .hidden { display: none !important; }
+  footer { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="border-color:#5edaf0">
+    <div class="kicker">Fieldglass R2 Structured Improvement Dossier · Aerospace &amp; Telemetry</div>
+    <h1 style="color:#5edaf0">SpaceX — Launch Operations, Flight Software Provenance &amp; Starlink Telemetry</h1>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <p class="sub">Read-only Countdown Chiasm triage, SHA-256 HIL provenance &amp; LEO handover buffers. Strictly advisory, non-actuating telemetry observability and ground/orbital link resilience proposals (executed=False, zero flight-computer actuation).</p>
+    <div class="nav-links">
+      <a class="btn accent" href="../index.html">← All R2 Dossiers</a>
+      <a class="btn" href="../../index.html">Fieldglass Observatory</a>
+      <a class="btn" href="architecture.svg">architecture.svg</a>
+      <a class="btn" href="chiasm.svg">chiasm.svg</a>
+      <a class="btn" href="data.json">data.json</a>
+      <a class="btn" href="summary.json">summary.json</a>
+      <a class="btn" href="chiasm_report.json">chiasm_report.json</a>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>System Profile &amp; Design North Star</h2>
+    <p class="sub" style="color:var(--text)"><b>North Star:</b> Read-only A_tau(p_t) Causal Chiasm triage, SHA-256 sealed HIL-to-flight provenance, and range-resumable orbital buffers.</p>
+    <div class="grid2">
+      <div class="panel2">
+        <h3 style="color:var(--cyan)">Observed Strengths</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:0.85rem;color:var(--muted)"><li>High-cadence reusable launch operations, rapid pad turnaround, and global Starlink constellation.</li><li>Rich multi-vehicle telemetry streams spanning propulsion, avionics, GSE, and orbital links.</li><li>Iterative hardware-in-the-loop (HIL) and flight-proven telemetry review culture.</li></ul>
+      </div>
+      <div class="panel2">
+        <h3 style="color:var(--ruby)">Core Architectural Bottlenecks</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:0.85rem;color:var(--muted)"><li>Siloed terminal-count operator consoles obscure slow cross-subsystem margin collapse.</li><li>80-400 ms Starlink LEO beam handovers drop unbuffered telemetry and rigid transfers.</li><li>Compressed webcast/HUD video lacks frame-locked cryptographic telemetry provenance and tactile access.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Interactive Proposal Selector (5 Concrete Improvements)</h2>
+    <div class="pill-row" id="proposal-tabs"><button class="btn active" data-imp="all" type="button">All 5 Proposals</button><button class="btn" data-imp="SPX-01" type="button">SPX-01: Countdown Chiasm Advisor</button><button class="btn" data-imp="SPX-02" type="button">SPX-02: SHA-256 HIL &amp; Frame Seal</button><button class="btn" data-imp="SPX-03" type="button">SPX-03: GSE Cryo Filtration Watch</button><button class="btn" data-imp="SPX-04" type="button">SPX-04: LEO 206 Buffer + Conjunctions</button><button class="btn" data-imp="SPX-05" type="button">SPX-05: Anomaly HUD + Braille Flight</button></div>
+  </section>
+
+  <div id="proposals-container">
+    <article class="card imp-card" data-imp-id="SPX-01" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">SPX-01 · Read-Only Superlevel-Set A_tau(p_t) Mode-Transition Chiasm Advisor</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Propulsion &amp; Avionics Triage</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Terminal count and ascent operators track dozens of siloed propellant, valve, avionics, and range screens where transient noise is hard to separate from irreversible margin collapse.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Fold 8 normalized subsystem margin regimes into a strictly read-only (executed=False, air-gapped telemetry tap, zero flight-computer actuation) Causal Chiasm HUD surfacing A_tau(p_t) repertoire collapse and hold-point bottleneck alerts.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Uses causal_chiasm() future_boxed_in and persistent_filtration_tomography() invariants across scrub vs. nominal rehearsals.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">CountdownChiasm-v1 read-only advisory panel + 10 Hz replayable telemetry evaluator.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Simulated multi-console triage time</td><td>38 s</td><td style="color:var(--cyan);font-weight:600">21 s (-45%)</td></tr><tr><td>Advisory compute latency per tick</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">&lt; 5 ms @ 10 Hz</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Advisory alert fatigue during nominal transients. Mitigation: require persistence across &gt;= 3 consecutive 10 Hz frames before elevating HUD state.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Replay historical/synthetic scrub vs. nominal rehearsal traces; verify &lt; 5 ms tick budget and zero actuation interfaces.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="SPX-02" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">SPX-02 · SHA-256 Sealed HIL, Monte Carlo &amp; Webcast Flight-Frame Provenance</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">HIL &amp; Flight Provenance</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Compressed webcast HUD pixels lose exact mission-time provenance, and Monte Carlo / HIL campaigns lack compact cryptographic manifests linking flight software builds to telemetry.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Emit a frame_sha256-keyed JSON sidecar (t_mission_s, alt_km, vel_km_s, q_kpa, stage_state, flight_sw_sha256) linking HIL Monte Carlo runs and launch webcasts to immutable build hashes.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Extends fieldglass-causal-chiasm/v1 report_sha256 canonical JSON sealing to flight archives.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">FlightFrameSeal sidecar generator + offline anomaly diff CLI.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Post-flight frame-to-telemetry verifiability</td><td>18% (OCR)</td><td style="color:var(--cyan);font-weight:600">100% (SHA-256)</td></tr><tr><td>Archive overhead per 15-min flight</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">~1.2 MB compressed</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Public webcast timing offset vs. internal mission clock. Mitigation: publish clean public-tier quantized 10 Hz sidecar with explicit T-0 alignment.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Verify 100% deterministic SHA-256 round-trip across simulated 900 s launch telemetry logs.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="SPX-03" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">SPX-03 · Persistent Filtration GSE &amp; Cryo Quick-Disconnect Drift Watch</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Mid-term (3-6 mo)</span>
+          <span class="badge">GSE Predictive Maintenance</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">High-cadence launch turnarounds stress LOX/CH4 valves, cryo quick-disconnects, and helium purge lines, where subtle cycle-to-cycle hysteresis precedes hard faults.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Compute cross-campaign persistent_filtration_tomography() over normalized valve actuation times and seal-pressure decay signatures to flag P(x) &lt; 0.14 invariant erosion early.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Monitors structural_invariants vs. transient_states across static-fire and launch cycles.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">CryoFiltrationWatch pad-health trend report generator.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Valve hysteresis early-warning lead</td><td>0 cycles</td><td style="color:var(--cyan);font-weight:600">&gt;= 3 cycles prior</td></tr><tr><td>Unplanned pad-recycle valve holds</td><td>6.5%</td><td style="color:var(--cyan);font-weight:600">&lt;= 1.8%</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Ambient temperature swings mimic seal drift. Mitigation: normalize actuation curves against pad cryo-manifold temperature bins.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Inject synthetic 2-8% valve-sluggishness ramp over 24 cycles; verify tomography flags drift by cycle 12.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="SPX-04" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">SPX-04 · Starlink LEO Handover HTTP 206 Ring Buffer &amp; Conjunction Explainability</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Mid-term (3-6 mo)</span>
+          <span class="badge">Starlink Edge &amp; Conjunctions</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">80-400 ms LEO satellite beam handovers drop unbuffered telemetry and rigid transfers, while autonomous conjunction-avoidance logs lack concise operator maneuver rationales.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Deploy a 64 MB terminal edge ring buffer supporting HTTP 206 Partial Content range-resume with SHA-256 checkpoints, paired with an interpretable ConjunctionLedger detailing ephemeris uncertainty cones and delta-V tradeoff rationale.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Mirrors fieldglass.showcase.make_range_handler() HTTP 206 Byte-Range resumption.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">OrbitalHandoverBuffer proxy spec + ConjunctionLedger JSON schema.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Telemetry packet loss across LEO handover</td><td>2.40%</td><td style="color:var(--cyan);font-weight:600">&lt; 0.05%</td></tr><tr><td>Conjunction maneuver audit clarity</td><td>48%</td><td style="color:var(--cyan);font-weight:600">94%</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: +64 MB terminal RAM and +15 ms jitter smoothing. Mitigation: bypass ring buffer for ultra-low-latency voice while protecting telemetry/bulk streams.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Simulate 250 ms link blackouts against HTTP 206 range server; assert 0 lost bytes.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="SPX-05" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">SPX-05 · High-Contrast Dark-Observatory Anomaly HUD &amp; 2x4 Braille Trajectory Plates</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Operator HUD &amp; Accessibility</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Dense multi-color console displays increase cognitive load during off-nominal events, and purely visual flight curves exclude blind/low-vision engineers and enthusiasts.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Standardize a low-glare dark-observatory anomaly HUD (#0b0f17, cyan/gold/ruby semantic severity) and co-emit 72-column 2x4 Unicode Braille ascent/landing trajectory plates with ARIA milestone callouts (Max-Q, MECO, Entry Burn, Catch).</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Uses fieldglass.plate.ink_to_braille_lines(cols=72) and dark-observatory palette.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">BrailleTrajectory exporter + dark-observatory operator alert stylesheet.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Blind/low-vision flight milestone comprehension</td><td>5%</td><td style="color:var(--cyan);font-weight:600">92%</td></tr><tr><td>Braille plate bundle footprint</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">+12 KB / phase</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Rapidly changing curves blur at 72x28 resolution. Mitigation: emit discrete phase-keyed altitude/velocity plates at Max-Q, MECO, and Landing.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Verify generated trajectory Braille plates preserve clear ascent/booster curves and pass WCAG contrast &gt;= 7:1.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <section class="card">
+    <h2>Interactive Repertoire &amp; Live Kloster A_tau(p) Comparison</h2>
+    <p class="sub">
+      Adjust threshold tau (0.04 to 0.25) to inspect accessible operational regimes across Baseline Past vs. Proposed Future.
+      Contract: <code>fieldglass-causal-chiasm/v1</code> · <code>executed=false</code> · <code>sentience_claimed=false</code> · <code>tokens_used=0</code>.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <label for="tau-slider" style="font-family:ui-monospace,monospace;color:var(--gold)">
+        tau = <span id="tau-val">0.10</span>
+      </label>
+      <input id="tau-slider" type="range" min="0.04" max="0.25" step="0.01" value="0.10" />
+      <span class="badge" id="tau-summary">Past A_tau: 6 -> Future A_tau: 5 (shift -1)</span>
+      <span class="badge">EI = 0.3862 bits · Glyph ^_^</span>
+      <span class="badge">Invariants (P&gt;=0.14): chiasm_margin_ok</span>
+    </div>
+    <table>
+      <thead><tr><th>Operational State</th><th>Past Weight</th><th>Future Weight</th><th>Delta</th><th>Accessible @ tau (Past / Future)</th></tr></thead>
+      <tbody id="repertoire-tbody"></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Architecture Diagram &amp; Causal Chiasm Tomography</h2>
+    <div class="grid2">
+      <div class="panel2">
+        <h3>System Architecture (SpaceX)</h3>
+        <a href="architecture.svg"><img src="preview.png" alt="SpaceX architecture preview" /></a>
+      </div>
+      <div class="panel2">
+        <h3>Causal Chiasm &amp; 24-Episode Filtration Tomography</h3>
+        <a href="chiasm.svg"><img src="chiasm.svg" alt="SpaceX causal chiasm SVG" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>72-Column 2x4 Unicode Braille Tactile Plate &amp; Seals</h2>
+    <div class="grid2">
+      <div class="panel2">
+        <h3>Dot-Rendered Tactile Preview</h3>
+        <a href="spacex_braille_preview.png"><img src="spacex_braille_preview.png" alt="SpaceX 2x4 Braille preview" /></a>
+        <div class="nav-links">
+          <a class="btn" href="spacex_braille.txt">spacex_braille.txt</a>
+          <a class="btn" href="spacex_braille.json">spacex_braille.json</a>
+        </div>
+      </div>
+      <div class="panel2">
+        <h3>Copyable Unicode Braille Text</h3>
+        <pre class="braille">SPACEX — 2x4 BRAILLE ARCHITECTURE PLATE
+Launch Operations, Flight Software Provenance &amp; Starlink Telemetry · 72 cols · executed=False
+
+⠀⢠⢤⢤⠤⣤⣤⠤⢤⢤⢤⡤⣤⢤⢤⣤⢤⣤⢤⢤⢤⢤⣤⣤⣤⣤⢤⢤⢤⠤⣤⠤⢤⢤⣤⣤⣤⢤⢤⣤⠤⢤⢤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⣤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⣤⡄⠀
+⠀⢸⢘⣛⣛⣛⣛⣋⣙⡛⣋⣛⡛⣛⣛⣛⢛⣙⣘⣛⡛⣛⣛⣛⣛⢛⣛⣛⣘⢃⣛⣛⣛⣛⣛⣛⣛⣙⣙⠙⠛⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠐⢐⣟⣿⣵⠁⣜⣖⣟⡜⢐⣜⣗⡇⠀⠀⠀⢸⡇⠀
+⠀⠘⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠓⠃⠀
+⠀⠀⠨⠭⠌⠭⠭⠭⠭⠭⠭⠭⠭⠭⠭⠩⠤⠤⠤⠄⠤⠤⠤⠤⠤⠤⠄⠤⠤⠤⠤⠤⠄⠤⠤⠤⠤⠄⠤⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢭⠩⢭⢭⢭⢭⢭⠭⠍⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⡞⢹⣐⢒⢒⢒⢒⢒⢒⢒⢂⡏⠳⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡖⡕⢽⣵⣽⣵⢽⡕⠙⢳⢀⡴⠁⠀⠀⠁⠉⠁⠉⠁⠉⠁⠉⠁⠀⠀⠘⢦⡀⡖⡝⢵⣽⣵⣽⣵⣽⠕⢳⠀⣀⣀⡀⢰⢿⢱⣽⣵⣽⣵⡽⠑⠑⡆⠀⣀⡀⠀⡖⡕⢽⣵⣽⣵⣽⢵⣽⣷⠀⠀
+⠀⠀⡇⠒⠒⠒⠒⠒⠒⠒⠀⢸⠙⣆⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡴⠛⡇⠒⠒⠒⠒⠒⠒⠒⠂⢸⠉⠉⠉⠉⢹⠐⠐⠒⠒⠒⠒⠒⠀⠀⡏⠉⠉⠉⠙⡗⠒⠒⠒⠒⠒⠒⠒⠂⢸⠀⠀
+⠀⠀⠈⠉⠉⠉⠙⠏⠉⠉⠉⠁⠀⠀⠱⣄⢰⢥⢱⣥⣵⣥⣵⣥⣵⠑⡆⣀⠞⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠅⠀⠀⠀⠀⠀⠀⠀⠈⢹⠐⠒⠒⠒⠒⠒⠒⠀⠀⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠍⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠄⣤⣄⣴⢥⣤⣤⢤⣤⢤⣤⣤⣄⢤⣤⣤⣄⣤⣵⣤⣤⡄⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠠⠤⠠⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠶⠶⠆⠰⠄⠀⠴⠄⠴⠴⠴⠴⠀⠀⠶⠴⠆⠰⠄⠀⠴⠤⠴⠴⠴⠴⠀⠀⠶⠴⠆⠴⠀⠀⠰⠤⠴⠴⠄⠤⠀⠀⠶⠴⠄⠴⠀⠀⠴⠤⠴⠴⠄⠤⠀⠀⠶⠴⠄⠴⠀⠀⠶⠴⠴⠴⠄⠤⠀⠀
+⠀⠀⣒⣒⣒⣒⣒⣒⣒⡒⠒⠒⠀⠀⠀⠀⣒⣒⣒⣒⣒⣒⡒⠒⠒⠂⠀⠀⠀⠀⣒⣒⣒⣒⣒⣒⣒⡒⠒⠀⠀⠀⠀⠀⣒⣒⣒⣒⣓⣒⣒⡒⠒⠒⠒⠀⠀⠐⣒⣒⣒⣒⣒⣒⣒⡒⠒⠖⠂⠀⠀⠀
+⠀⠀⢤⣥⣤⣤⢤⣤⣤⠥⠤⠀⠀⠀⠀⠀⣤⢤⣥⣤⣤⣤⡤⠤⠤⠤⠄⠀⠀⠀⣤⣴⣤⣤⢤⣤⢤⡤⠤⠤⠄⠀⠀⠀⣤⣴⣴⣤⢤⣥⣤⡤⠤⠄⠀⠀⠀⠀⣥⣤⣤⣤⣤⣤⣤⠥⠄⠀⠀⠀⠀⠀
+⠀⠀⣉⣉⣁⣉⣉⣁⣁⣁⣀⡀⠀⠀⠀⠀⣉⣁⣁⣉⣉⣁⣉⣀⠀⠀⠀⠀⠀⠀⣁⣁⣉⣁⣉⣁⣁⣁⣀⡀⠀⠀⠀⠀⣉⣁⣁⣉⣁⣁⣁⣁⣀⠀⠀⠀⠀⠀⣉⣉⣉⣁⣁⣁⣉⣁⡀⠀⠀⠀⠀⠀
+⠀⠀⠒⠒⠒⠒⠒⠒⠒⠀⠀⠀⠀⠀⠀⠀⠒⠒⠓⠒⠒⠒⠐⠒⠒⠂⠀⠀⠀⠀⠒⠒⠒⠐⠒⠒⠒⠒⠒⠒⠀⠀⠀⠀⠒⠒⠐⠒⠒⠒⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀
+⠀⠀⠉⠁⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠉⠁⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⠀⢀⡀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⢀⠀⠀⠀⢀⠀⠀⠀⠀⠀⢀⢀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⠉⠉⠉⠉⠁⠈⠉⠉⠁⠁⠉⠉⠉⠉⠁⠁⠉⠉⠉⠉⠁⠁⠉⠉⠁⠉⠉⠉⠉⠉⠉⠉⠁⠉⠉⠉⠉⠉⠉⠀⠉⠉⠉⠉⠉⠁⠈⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+        <p class="sub" style="margin-top:10px;font-family:ui-monospace,monospace;font-size:0.74rem">
+          scene_sha256: 09dbd716f2ff6b51d8b90a01aa9b952bc4eae1498efe295734df7c1181c972ba<br/>
+          report_sha256: 6084f1c26e113bb035d3a676439cb9fe11cac91268d49c47d851d6d4c9e97111
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Fieldglass Observatory · Milestone M2 · SpaceX Dossier · 0 Cloud Tokens · executed=False
+  </footer>
+</div>
+
+<script id="dossier-data" type="application/json">{"slug": "spacex", "display_name": "SpaceX", "past_repertoire": {"chiasm_margin_ok": 0.1839105940940218, "signed_hil_ok": 0.11260471540278544, "gse_filtration": 0.12391059409402182, "leo_206_buffered": 0.07738824261752726, "braille_hud_ok": 0.03912706687927999, "console_siloed": 0.20174586624143998, "handover_drop": 0.1439176360737091, "opaque_hud_only": 0.11739528459721459}, "future_repertoire": {"chiasm_margin_ok": 0.23608940590597816, "signed_hil_ok": 0.19739528459721456, "gse_filtration": 0.1760894059059782, "leo_206_buffered": 0.14261175738247273, "braille_hud_ok": 0.11087293312072, "console_siloed": 0.05825413375856, "handover_drop": 0.04608236392629091, "opaque_hud_only": 0.03260471540278546}, "improvements": [{"id": "SPX-01", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Propulsion & Avionics Triage", "title": "Read-Only Superlevel-Set A_tau(p_t) Mode-Transition Chiasm Advisor", "short_title": "Countdown Chiasm Advisor", "current_gap": "Terminal count and ascent operators track dozens of siloed propellant, valve, avionics, and range screens where transient noise is hard to separate from irreversible margin collapse.", "proposed_architecture": "Fold 8 normalized subsystem margin regimes into a strictly read-only (executed=False, air-gapped telemetry tap, zero flight-computer actuation) Causal Chiasm HUD surfacing A_tau(p_t) repertoire collapse and hold-point bottleneck alerts.", "fieldglass_grounding": "Uses causal_chiasm() future_boxed_in and persistent_filtration_tomography() invariants across scrub vs. nominal rehearsals.", "concrete_deliverable": "CountdownChiasm-v1 read-only advisory panel + 10 Hz replayable telemetry evaluator.", "kpis": [{"metric": "Simulated multi-console triage time", "baseline": "38 s", "target": "21 s (-45%)"}, {"metric": "Advisory compute latency per tick", "baseline": "n/a", "target": "< 5 ms @ 10 Hz"}], "risks_and_mitigations": "Risk: Advisory alert fatigue during nominal transients. Mitigation: require persistence across >= 3 consecutive 10 Hz frames before elevating HUD state.", "verification_method": "Replay historical/synthetic scrub vs. nominal rehearsal traces; verify < 5 ms tick budget and zero actuation interfaces."}, {"id": "SPX-02", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "HIL & Flight Provenance", "title": "SHA-256 Sealed HIL, Monte Carlo & Webcast Flight-Frame Provenance", "short_title": "SHA-256 HIL & Frame Seal", "current_gap": "Compressed webcast HUD pixels lose exact mission-time provenance, and Monte Carlo / HIL campaigns lack compact cryptographic manifests linking flight software builds to telemetry.", "proposed_architecture": "Emit a frame_sha256-keyed JSON sidecar (t_mission_s, alt_km, vel_km_s, q_kpa, stage_state, flight_sw_sha256) linking HIL Monte Carlo runs and launch webcasts to immutable build hashes.", "fieldglass_grounding": "Extends fieldglass-causal-chiasm/v1 report_sha256 canonical JSON sealing to flight archives.", "concrete_deliverable": "FlightFrameSeal sidecar generator + offline anomaly diff CLI.", "kpis": [{"metric": "Post-flight frame-to-telemetry verifiability", "baseline": "18% (OCR)", "target": "100% (SHA-256)"}, {"metric": "Archive overhead per 15-min flight", "baseline": "n/a", "target": "~1.2 MB compressed"}], "risks_and_mitigations": "Risk: Public webcast timing offset vs. internal mission clock. Mitigation: publish clean public-tier quantized 10 Hz sidecar with explicit T-0 alignment.", "verification_method": "Verify 100% deterministic SHA-256 round-trip across simulated 900 s launch telemetry logs."}, {"id": "SPX-03", "priority": "P1", "horizon": "Mid-term (3-6 mo)", "domain": "GSE Predictive Maintenance", "title": "Persistent Filtration GSE & Cryo Quick-Disconnect Drift Watch", "short_title": "GSE Cryo Filtration Watch", "current_gap": "High-cadence launch turnarounds stress LOX/CH4 valves, cryo quick-disconnects, and helium purge lines, where subtle cycle-to-cycle hysteresis precedes hard faults.", "proposed_architecture": "Compute cross-campaign persistent_filtration_tomography() over normalized valve actuation times and seal-pressure decay signatures to flag P(x) < 0.14 invariant erosion early.", "fieldglass_grounding": "Monitors structural_invariants vs. transient_states across static-fire and launch cycles.", "concrete_deliverable": "CryoFiltrationWatch pad-health trend report generator.", "kpis": [{"metric": "Valve hysteresis early-warning lead", "baseline": "0 cycles", "target": ">= 3 cycles prior"}, {"metric": "Unplanned pad-recycle valve holds", "baseline": "6.5%", "target": "<= 1.8%"}], "risks_and_mitigations": "Risk: Ambient temperature swings mimic seal drift. Mitigation: normalize actuation curves against pad cryo-manifold temperature bins.", "verification_method": "Inject synthetic 2-8% valve-sluggishness ramp over 24 cycles; verify tomography flags drift by cycle 12."}, {"id": "SPX-04", "priority": "P0", "horizon": "Mid-term (3-6 mo)", "domain": "Starlink Edge & Conjunctions", "title": "Starlink LEO Handover HTTP 206 Ring Buffer & Conjunction Explainability", "short_title": "LEO 206 Buffer + Conjunctions", "current_gap": "80-400 ms LEO satellite beam handovers drop unbuffered telemetry and rigid transfers, while autonomous conjunction-avoidance logs lack concise operator maneuver rationales.", "proposed_architecture": "Deploy a 64 MB terminal edge ring buffer supporting HTTP 206 Partial Content range-resume with SHA-256 checkpoints, paired with an interpretable ConjunctionLedger detailing ephemeris uncertainty cones and delta-V tradeoff rationale.", "fieldglass_grounding": "Mirrors fieldglass.showcase.make_range_handler() HTTP 206 Byte-Range resumption.", "concrete_deliverable": "OrbitalHandoverBuffer proxy spec + ConjunctionLedger JSON schema.", "kpis": [{"metric": "Telemetry packet loss across LEO handover", "baseline": "2.40%", "target": "< 0.05%"}, {"metric": "Conjunction maneuver audit clarity", "baseline": "48%", "target": "94%"}], "risks_and_mitigations": "Risk: +64 MB terminal RAM and +15 ms jitter smoothing. Mitigation: bypass ring buffer for ultra-low-latency voice while protecting telemetry/bulk streams.", "verification_method": "Simulate 250 ms link blackouts against HTTP 206 range server; assert 0 lost bytes."}, {"id": "SPX-05", "priority": "P1", "horizon": "Near-term (0-3 mo)", "domain": "Operator HUD & Accessibility", "title": "High-Contrast Dark-Observatory Anomaly HUD & 2x4 Braille Trajectory Plates", "short_title": "Anomaly HUD + Braille Flight", "current_gap": "Dense multi-color console displays increase cognitive load during off-nominal events, and purely visual flight curves exclude blind/low-vision engineers and enthusiasts.", "proposed_architecture": "Standardize a low-glare dark-observatory anomaly HUD (#0b0f17, cyan/gold/ruby semantic severity) and co-emit 72-column 2x4 Unicode Braille ascent/landing trajectory plates with ARIA milestone callouts (Max-Q, MECO, Entry Burn, Catch).", "fieldglass_grounding": "Uses fieldglass.plate.ink_to_braille_lines(cols=72) and dark-observatory palette.", "concrete_deliverable": "BrailleTrajectory exporter + dark-observatory operator alert stylesheet.", "kpis": [{"metric": "Blind/low-vision flight milestone comprehension", "baseline": "5%", "target": "92%"}, {"metric": "Braille plate bundle footprint", "baseline": "n/a", "target": "+12 KB / phase"}], "risks_and_mitigations": "Risk: Rapidly changing curves blur at 72x28 resolution. Mitigation: emit discrete phase-keyed altitude/velocity plates at Max-Q, MECO, and Landing.", "verification_method": "Verify generated trajectory Braille plates preserve clear ascent/booster curves and pass WCAG contrast >= 7:1."}], "metrics": {"episodes": 24, "tau": 0.1, "past_a_tau": 6, "future_a_tau": 5, "past_a014": 3, "future_a014": 4, "chiasm_shift": -1, "effective_information_bits": 0.386209, "h1_past_bits": 2.7798, "h1_future_bits": 2.5337, "m4_past_purity": 0.2735, "m4_future_purity": 0.3036, "presence_glyph": "^_^", "structural_invariants": ["chiasm_margin_ok"], "scene_sha256": "09dbd716f2ff6b51d8b90a01aa9b952bc4eae1498efe295734df7c1181c972ba", "report_sha256": "6084f1c26e113bb035d3a676439cb9fe11cac91268d49c47d851d6d4c9e97111"}}</script>
+<script>
+(function () {
+  var payload = JSON.parse(document.getElementById("dossier-data").textContent);
+  var tabs = document.querySelectorAll("#proposal-tabs button[data-imp]");
+  var cards = document.querySelectorAll(".imp-card");
+  tabs.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = btn.getAttribute("data-imp");
+      tabs.forEach(function (b) { b.classList.toggle("active", b === btn); });
+      cards.forEach(function (card) {
+        var show = target === "all" || card.getAttribute("data-imp-id") === target;
+        card.classList.toggle("hidden", !show);
+      });
+    });
+  });
+
+  var slider = document.getElementById("tau-slider");
+  var tauLabel = document.getElementById("tau-val");
+  var summaryBadge = document.getElementById("tau-summary");
+  var tbody = document.getElementById("repertoire-tbody");
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function renderTau() {
+    var tau = parseFloat(slider.value);
+    tauLabel.textContent = tau.toFixed(2);
+    var past = payload.past_repertoire;
+    var future = payload.future_repertoire;
+    var keys = Object.keys(past);
+    var pastCount = 0;
+    var futCount = 0;
+    var rows = [];
+    keys.forEach(function (k) {
+      var pv = past[k];
+      var fv = future[k];
+      var pOn = pv > tau;
+      var fOn = fv > tau;
+      if (pOn) pastCount += 1;
+      if (fOn) futCount += 1;
+      var delta = fv - pv;
+      var dStr = (delta >= 0 ? "+" : "") + delta.toFixed(3);
+      rows.push(
+        "<tr>" +
+          "<td><code>" + escHtml(k) + "</code></td>" +
+          "<td>" + pv.toFixed(3) + "</td>" +
+          "<td>" + fv.toFixed(3) + "</td>" +
+          "<td style='color:" + (delta >= 0 ? "var(--cyan)" : "var(--ruby)") + "'>" + dStr + "</td>" +
+          "<td>" + (pOn ? "ACTIVE" : "below") + " / <b style='color:" + (fOn ? "var(--gold)" : "var(--muted)") + "'>" + (fOn ? "ACTIVE" : "below") + "</b></td>" +
+        "</tr>"
+      );
+    });
+    tbody.innerHTML = rows.join("");
+    var shift = futCount - pastCount;
+    summaryBadge.textContent = "Past A_tau: " + pastCount + " -> Future A_tau: " + futCount + " (shift " + (shift >= 0 ? "+" : "") + shift + ")";
+  }
+
+  slider.addEventListener("input", renderTau);
+  renderTau();
+})();
+</script>
+</body>
+</html>

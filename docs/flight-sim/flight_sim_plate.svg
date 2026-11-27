@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="1000" height="720">
+<rect x="0" y="0" width="1000" height="720" fill="#f6f1e4"/>
+<rect x="20" y="18" width="960" height="684" fill="none" stroke="#8c7f68" stroke-width="2"/>
+<rect x="28" y="26" width="944" height="668" fill="none" stroke="#c4b89f" stroke-width="1"/>
+<text x="500" y="64" text-anchor="middle" font-family="serif" font-size="22" font-weight="bold" fill="#1b1916">6-DOF FLIGHT DYNAMICS &amp;amp; SIX-PACK HUD PLATE</text>
+<text x="500" y="88" text-anchor="middle" font-family="serif" font-size="13" font-style="italic" fill="#524a3d">ISA Atmosphere, Lift/Drag/Stall Model &amp;amp; Bank-to-Turn Kinematics</text>
+<line x1="60" y1="104" x2="940" y2="104" stroke="#8c7f68" stroke-width="1.2"/>
+<circle cx="210" cy="250" r="88" fill="#efe7d4" stroke="#1b1916" stroke-width="3"/>
+<circle cx="210" cy="250" r="76" fill="none" stroke="#786f5f" stroke-width="1.2"/>
+<text x="210" y="360" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">AIRSPEED (KT)</text>
+<line x1="276.0" y1="250.0" x2="286.0" y2="250.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="267.2" y1="283.0" x2="275.8" y2="288.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="243.0" y1="307.2" x2="248.0" y2="315.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="210.0" y1="316.0" x2="210.0" y2="326.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="177.0" y1="307.2" x2="172.0" y2="315.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="152.8" y1="283.0" x2="144.2" y2="288.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="144.0" y1="250.0" x2="134.0" y2="250.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="152.8" y1="217.0" x2="144.2" y2="212.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="177.0" y1="192.8" x2="172.0" y2="184.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="210.0" y1="184.0" x2="210.0" y2="174.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="243.0" y1="192.8" x2="248.0" y2="184.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="267.2" y1="217.0" x2="275.8" y2="212.0" stroke="#1b1916" stroke-width="2"/>
+<circle cx="490" cy="250" r="88" fill="#efe7d4" stroke="#1b1916" stroke-width="3"/>
+<circle cx="490" cy="250" r="76" fill="none" stroke="#786f5f" stroke-width="1.2"/>
+<text x="490" y="360" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">ATTITUDE HORIZON</text>
+<line x1="556.0" y1="250.0" x2="566.0" y2="250.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="547.2" y1="283.0" x2="555.8" y2="288.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="523.0" y1="307.2" x2="528.0" y2="315.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="490.0" y1="316.0" x2="490.0" y2="326.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="457.0" y1="307.2" x2="452.0" y2="315.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="432.8" y1="283.0" x2="424.2" y2="288.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="424.0" y1="250.0" x2="414.0" y2="250.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="432.8" y1="217.0" x2="424.2" y2="212.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="457.0" y1="192.8" x2="452.0" y2="184.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="490.0" y1="184.0" x2="490.0" y2="174.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="523.0" y1="192.8" x2="528.0" y2="184.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="547.2" y1="217.0" x2="555.8" y2="212.0" stroke="#1b1916" stroke-width="2"/>
+<circle cx="770" cy="250" r="88" fill="#efe7d4" stroke="#1b1916" stroke-width="3"/>
+<circle cx="770" cy="250" r="76" fill="none" stroke="#786f5f" stroke-width="1.2"/>
+<text x="770" y="360" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">ALTIMETER (FT)</text>
+<line x1="836.0" y1="250.0" x2="846.0" y2="250.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="827.2" y1="283.0" x2="835.8" y2="288.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="803.0" y1="307.2" x2="808.0" y2="315.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="770.0" y1="316.0" x2="770.0" y2="326.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="737.0" y1="307.2" x2="732.0" y2="315.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="712.8" y1="283.0" x2="704.2" y2="288.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="704.0" y1="250.0" x2="694.0" y2="250.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="712.8" y1="217.0" x2="704.2" y2="212.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="737.0" y1="192.8" x2="732.0" y2="184.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="770.0" y1="184.0" x2="770.0" y2="174.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="803.0" y1="192.8" x2="808.0" y2="184.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="827.2" y1="217.0" x2="835.8" y2="212.0" stroke="#1b1916" stroke-width="2"/>
+<circle cx="210" cy="485" r="88" fill="#efe7d4" stroke="#1b1916" stroke-width="3"/>
+<circle cx="210" cy="485" r="76" fill="none" stroke="#786f5f" stroke-width="1.2"/>
+<text x="210" y="595" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">TURN / SLIP</text>
+<line x1="276.0" y1="485.0" x2="286.0" y2="485.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="267.2" y1="518.0" x2="275.8" y2="523.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="243.0" y1="542.2" x2="248.0" y2="550.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="210.0" y1="551.0" x2="210.0" y2="561.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="177.0" y1="542.2" x2="172.0" y2="550.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="152.8" y1="518.0" x2="144.2" y2="523.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="144.0" y1="485.0" x2="134.0" y2="485.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="152.8" y1="452.0" x2="144.2" y2="447.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="177.0" y1="427.8" x2="172.0" y2="419.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="210.0" y1="419.0" x2="210.0" y2="409.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="243.0" y1="427.8" x2="248.0" y2="419.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="267.2" y1="452.0" x2="275.8" y2="447.0" stroke="#1b1916" stroke-width="2"/>
+<circle cx="490" cy="485" r="88" fill="#efe7d4" stroke="#1b1916" stroke-width="3"/>
+<circle cx="490" cy="485" r="76" fill="none" stroke="#786f5f" stroke-width="1.2"/>
+<text x="490" y="595" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">HEADING GYRO</text>
+<line x1="556.0" y1="485.0" x2="566.0" y2="485.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="547.2" y1="518.0" x2="555.8" y2="523.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="523.0" y1="542.2" x2="528.0" y2="550.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="490.0" y1="551.0" x2="490.0" y2="561.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="457.0" y1="542.2" x2="452.0" y2="550.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="432.8" y1="518.0" x2="424.2" y2="523.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="424.0" y1="485.0" x2="414.0" y2="485.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="432.8" y1="452.0" x2="424.2" y2="447.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="457.0" y1="427.8" x2="452.0" y2="419.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="490.0" y1="419.0" x2="490.0" y2="409.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="523.0" y1="427.8" x2="528.0" y2="419.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="547.2" y1="452.0" x2="555.8" y2="447.0" stroke="#1b1916" stroke-width="2"/>
+<circle cx="770" cy="485" r="88" fill="#efe7d4" stroke="#1b1916" stroke-width="3"/>
+<circle cx="770" cy="485" r="76" fill="none" stroke="#786f5f" stroke-width="1.2"/>
+<text x="770" y="595" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#1b1916">VSI (FPM)</text>
+<line x1="836.0" y1="485.0" x2="846.0" y2="485.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="827.2" y1="518.0" x2="835.8" y2="523.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="803.0" y1="542.2" x2="808.0" y2="550.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="770.0" y1="551.0" x2="770.0" y2="561.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="737.0" y1="542.2" x2="732.0" y2="550.8" stroke="#1b1916" stroke-width="2"/>
+<line x1="712.8" y1="518.0" x2="704.2" y2="523.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="704.0" y1="485.0" x2="694.0" y2="485.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="712.8" y1="452.0" x2="704.2" y2="447.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="737.0" y1="427.8" x2="732.0" y2="419.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="770.0" y1="419.0" x2="770.0" y2="409.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="803.0" y1="427.8" x2="808.0" y2="419.2" stroke="#1b1916" stroke-width="2"/>
+<line x1="827.2" y1="452.0" x2="835.8" y2="447.0" stroke="#1b1916" stroke-width="2"/>
+<line x1="422" y1="250" x2="558" y2="250" stroke="#1b1916" stroke-width="3"/>
+<line x1="455" y1="224" x2="525" y2="224" stroke="#524a3d" stroke-width="2"/>
+<line x1="455" y1="276" x2="525" y2="276" stroke="#524a3d" stroke-width="2"/>
+<polyline points="462,250 482,250 490,260 498,250 518,250" fill="none" stroke="#1b1916" stroke-width="3"/>
+<line x1="210" y1="250" x2="262" y2="208" stroke="#1b1916" stroke-width="3.5"/>
+<line x1="770" y1="250" x2="770" y2="188" stroke="#1b1916" stroke-width="3.5"/>
+<line x1="210" y1="485" x2="255" y2="448" stroke="#1b1916" stroke-width="3.5"/>
+<polygon points="490,420 506,485 490,542 474,485" fill="none" stroke="#1b1916" stroke-width="2.5"/>
+<line x1="770" y1="485" x2="828" y2="452" stroke="#1b1916" stroke-width="3.5"/>
+<line x1="60" y1="648" x2="940" y2="648" stroke="#8c7f68" stroke-width="1.2"/>
+<text x="500" y="672" text-anchor="middle" font-family="monospace" font-size="12" fill="#1b1916">FIELDGLASS ARCHIVAL TECHNICAL PLATE · 0 CLOUD TOKENS · executed=False</text>
+</svg>

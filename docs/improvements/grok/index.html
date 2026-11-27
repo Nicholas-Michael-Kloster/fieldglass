@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>Grok · Fieldglass R2 Improvement Dossier</title>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --violet: #c896ff;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.3rem, 3vw, 1.95rem); color: var(--gold); }
+  h2 { margin: 0 0 8px; font-size: 1.15rem; color: var(--gold); }
+  h3 { margin: 0 0 6px; font-size: 1.02rem; color: var(--cyan); }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88rem;
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 6px 0 10px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .sub { font-size: 0.88rem; color: var(--muted); margin: 0 0 12px; }
+  .nav-links, .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .panel2 {
+    background: var(--panel2);
+    border: 1px solid #223248;
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .badge {
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+    display: inline-block;
+  }
+  a.btn, button.btn {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #1a273b;
+    color: var(--gold);
+    border: 1px solid #3c5475;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  a.btn.accent, button.btn.active {
+    background: #2b1826;
+    border-color: var(--ruby);
+    color: #ffd3da;
+  }
+  a.btn:hover, button.btn:hover { background: #23344f; }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    background: #070a10;
+    border: 1px solid #223248;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  th, td { border-bottom: 1px solid #223248; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { color: var(--gold); font-family: ui-monospace, monospace; font-size: 0.76rem; text-transform: uppercase; }
+  pre.code, pre.braille {
+    overflow-x: auto;
+    background: #090d15;
+    border: 1px solid #24364d;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: "DejaVu Sans Mono", ui-monospace, monospace;
+    font-size: 0.76rem;
+    line-height: 1.25;
+    color: #eaeff5;
+    margin: 10px 0 0;
+  }
+  select, input[type="range"] {
+    background: #0a101a;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-family: inherit;
+  }
+  .hidden { display: none !important; }
+  footer { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="border-color:#f46a7e">
+    <div class="kicker">Fieldglass R2 Structured Improvement Dossier · Real-Time &amp; Social</div>
+    <h1 style="color:#f46a7e">Grok — xAI Real-Time Intelligence, Social RAG &amp; Multimodal Systems</h1>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <p class="sub">Dual-cone primary-source grounding, spectral bot de-echo &amp; formal verification. Constructive information-theoretic retrieval, multimodal auditing, and verification proposals; purely local simulation.</p>
+    <div class="nav-links">
+      <a class="btn accent" href="../index.html">← All R2 Dossiers</a>
+      <a class="btn" href="../../index.html">Fieldglass Observatory</a>
+      <a class="btn" href="architecture.svg">architecture.svg</a>
+      <a class="btn" href="chiasm.svg">chiasm.svg</a>
+      <a class="btn" href="data.json">data.json</a>
+      <a class="btn" href="summary.json">summary.json</a>
+      <a class="btn" href="chiasm_report.json">chiasm_report.json</a>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>System Profile &amp; Design North Star</h2>
+    <p class="sub" style="color:var(--text)"><b>North Star:</b> Separate primary timestamped evidence from social pulse via Dual-Cone Causal Chiasm, spectral bot de-echoing, and closed-loop verification.</p>
+    <div class="grid2">
+      <div class="panel2">
+        <h3 style="color:var(--cyan)">Observed Strengths</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:0.85rem;color:var(--muted)"><li>Ultra-low-latency ingestion of live X social stream alongside web and multimodal feeds.</li><li>High responsiveness on breaking events, emerging developer chatter, and real-time trends.</li><li>Direct, conversational tone adaptable to technical debugging and rapid synthesis.</li></ul>
+      </div>
+      <div class="panel2">
+        <h3 style="color:var(--ruby)">Core Architectural Bottlenecks</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:0.85rem;color:var(--muted)"><li>Live RAG blends unverified viral rumors, satire, and primary advisories into one voice.</li><li>Coordinated bot-echo copy-pasta and stale high-like posts distort naive engagement ranking.</li><li>Charts/screenshots and technical claims lack automated pixel-level and sandbox verification.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Interactive Proposal Selector (5 Concrete Improvements)</h2>
+    <div class="pill-row" id="proposal-tabs"><button class="btn active" data-imp="all" type="button">All 5 Proposals</button><button class="btn" data-imp="GROK-01" type="button">GROK-01: Dual-Cone + Time Decay</button><button class="btn" data-imp="GROK-02" type="button">GROK-02: Multimodal Chart Audit</button><button class="btn" data-imp="GROK-03" type="button">GROK-03: Spectral Bot De-Echo</button><button class="btn" data-imp="GROK-04" type="button">GROK-04: Sandboxed Verify Loop</button><button class="btn" data-imp="GROK-05" type="button">GROK-05: ClaimLedger + Braille</button></div>
+  </section>
+
+  <div id="proposals-container">
+    <article class="card imp-card" data-imp-id="GROK-01" style="border-left:4px solid #f46a7e">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#f46a7e">GROK-01 · Dual-Cone Primary-Source Splitter &amp; Domain Time-Decay Index</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Temporal Primary Grounding</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Real-time retrieval conflates viral jokes and rumors with primary engineering/CVE advisories, while older high-like posts outrank newer official corrections.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Maintain separate PrimaryEvidenceCone and SocialPulseCone indexes with domain-calibrated exponential freshness decay lambda_domain and SUPERSEDED_BY_T+delta tags; evaluate cones via causal_chiasm() and surface a ?? Split-View Caution Badge when EI &lt; 0.25.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Uses causal_chiasm(primary_cone, social_cone) Effective Information (EI) and ?? glyph to flag uncorroborated viral divergence.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">SocialVsPrimaryGate ranker + TimeDecayIndex freshness scorer with explicit conflict badge.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Breaking-query viral rumor conflation</td><td>19.2%</td><td style="color:var(--cyan);font-weight:600">3.8%</td></tr><tr><td>Stale incident/CVE status errors</td><td>23.5%</td><td style="color:var(--cyan);font-weight:600">6.1% (-74%)</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: +35 ms dual-cone merge and -3% recall on evergreen posts. Mitigation: disable fast decay automatically for historical queries.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Replay 50 breaking technical/CVE timelines; verify newer official corrections outrank stale viral posts within 15 min.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="GROK-02" style="border-left:4px solid #f46a7e">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#f46a7e">GROK-02 · Pixel-Level Multimodal Chart &amp; Frame Integrity Audit</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Multimodal Frame &amp; Chart Audit</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Social media charts and video screenshots frequently use truncated Y-axes, cropped timestamps, or edited captions that mislead pure-vision VLM summaries.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Run a pre-summary pixel/luminance histogram, axis-tick OCR consistency check, and metadata/aspect verification pass (PixelHistogramAudit) before synthesizing media claims.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Computes 256-bin luminance A_tau(p) and structural tick-interval checks analogous to fieldglass.overlay histogram diagnostics.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">PixelHistogramAudit preprocessing check emitting axis-truncation and crop warnings.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Misread truncated-axis chart rate</td><td>27.0%</td><td style="color:var(--cyan);font-weight:600">&lt;= 4.5%</td></tr><tr><td>Pre-summary audit latency</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">+22 ms / image</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Stylized infographics confuse OCR tick parsers. Mitigation: mark unparsed axes as &#x27;unverified scale&#x27; rather than guessing values.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Test curated corpus of 80 deceptive/truncated charts vs. canonical plots; assert &gt;= 85% warning recall.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="GROK-03" style="border-left:4px solid #f46a7e">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#f46a7e">GROK-03 · Spectral Bot-Amplification &amp; Echo-Cluster Deduplication</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Anti-Echo &amp; Bot Damping</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Coordinated copy-pasta repost campaigns inflate raw engagement metrics, causing echoed talking points to dominate top-K retrieval.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Cluster candidate posts via minhash similarity and Renyi H2 author-graph collision entropy; collapse echo clusters into 1 canonical representative while reporting unique_cluster_count alongside raw_post_count.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Directly applies fieldglass.metrics.renyi_h2(author_cluster_dist) to quantify independent-source diversity.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">SpectralDeEcho clustering pass over top-200 retrieved social items.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Precision@10 under bot-echo bursts</td><td>54%</td><td style="color:var(--cyan);font-weight:600">76% (+41% rel.)</td></tr><tr><td>Echo-cluster collapse accuracy</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">&gt;= 91%</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: +18 ms clustering latency and accidental collapse of legitimate quote-tweets. Mitigation: preserve distinct commentary edges above 35% novel token threshold.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Inject synthetic 50-account copy-pasta bursts into benchmark feeds; verify cluster count collapses to 1 while independent sources remain.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="GROK-04" style="border-left:4px solid #f46a7e">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#f46a7e">GROK-04 · Closed-Loop Sandboxed Code &amp; Numerical Verification Harness</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Mid-term (3-6 mo)</span>
+          <span class="badge">Closed-Loop Verification</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Fast technical responses sometimes emit plausible-looking physics, financial, or code snippets with off-by-one or unit errors.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Route quantitative and code claims through an ephemeral read-only verification sandbox (AST parse, unit/dimensional analysis, and property test execution) prior to final response emission.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Mirrors Fieldglass test-gated verification before publishing any telemetry claim.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">SandboxedVerifyLoop execution wrapper attaching pass/fail check badges to snippets.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Executable snippet first-run pass rate</td><td>74%</td><td style="color:var(--cyan);font-weight:600">96%</td></tr><tr><td>Unit/dimensional calculation errors</td><td>8.9%</td><td style="color:var(--cyan);font-weight:600">&lt; 1.0%</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Increases tail latency on complex multi-file snippets. Mitigation: 500 ms fast sandbox budget with explicit &#x27;unexecuted draft&#x27; tag on timeout.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Run 120 quantitative physics/code prompts; verify &gt;= 96% pass AST + unit assertions.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="GROK-05" style="border-left:4px solid #f46a7e">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#f46a7e">GROK-05 · Separated ClaimLedger, Open-Audit Receipts &amp; 2x4 Braille Timeline</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Open-Audit Telemetry &amp; Accessibility</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Witty conversational framing obscures which statements are verified facts, and users lack portable, zero-token offline audit bundles or tactile event timelines.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Emit a machine-readable ClaimLedger sidecar (executed=False, tokens_used accounting, primary_source_count, report_sha256) cleanly separated from persona prose, alongside a 72-column 2x4 Unicode Braille event-timeline digest.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Reuses fieldglass-causal-chiasm/v1 SHA-256 sealing and plate.save_braille_bundle().</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">ChiasmDigest portable JSON/SVG/Braille export bundle.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Factual auditability &amp; ARIA clarity</td><td>52%</td><td style="color:var(--cyan);font-weight:600">91%</td></tr><tr><td>Sidecar footprint per digest</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">+240 B ledger</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Persona stripping could miss subtle irony. Mitigation: extract verifiable timestamped propositions directly from evidence cones.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Validate ClaimLedger JSON schema, report_sha256 determinism, and Braille non-blank cells.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <section class="card">
+    <h2>Interactive Repertoire &amp; Live Kloster A_tau(p) Comparison</h2>
+    <p class="sub">
+      Adjust threshold tau (0.04 to 0.25) to inspect accessible operational regimes across Baseline Past vs. Proposed Future.
+      Contract: <code>fieldglass-causal-chiasm/v1</code> · <code>executed=false</code> · <code>sentience_claimed=false</code> · <code>tokens_used=0</code>.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <label for="tau-slider" style="font-family:ui-monospace,monospace;color:var(--gold)">
+        tau = <span id="tau-val">0.10</span>
+      </label>
+      <input id="tau-slider" type="range" min="0.04" max="0.25" step="0.01" value="0.10" />
+      <span class="badge" id="tau-summary">Past A_tau: 5 -> Future A_tau: 5 (shift +0)</span>
+      <span class="badge">EI = 0.4677 bits · Glyph ^_^</span>
+      <span class="badge">Invariants (P&gt;=0.14): primary_grounded</span>
+    </div>
+    <table>
+      <thead><tr><th>Operational State</th><th>Past Weight</th><th>Future Weight</th><th>Delta</th><th>Accessible @ tau (Past / Future)</th></tr></thead>
+      <tbody id="repertoire-tbody"></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Architecture Diagram &amp; Causal Chiasm Tomography</h2>
+    <div class="grid2">
+      <div class="panel2">
+        <h3>System Architecture (Grok)</h3>
+        <a href="architecture.svg"><img src="preview.png" alt="Grok architecture preview" /></a>
+      </div>
+      <div class="panel2">
+        <h3>Causal Chiasm &amp; 24-Episode Filtration Tomography</h3>
+        <a href="chiasm.svg"><img src="chiasm.svg" alt="Grok causal chiasm SVG" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>72-Column 2x4 Unicode Braille Tactile Plate &amp; Seals</h2>
+    <div class="grid2">
+      <div class="panel2">
+        <h3>Dot-Rendered Tactile Preview</h3>
+        <a href="grok_braille_preview.png"><img src="grok_braille_preview.png" alt="Grok 2x4 Braille preview" /></a>
+        <div class="nav-links">
+          <a class="btn" href="grok_braille.txt">grok_braille.txt</a>
+          <a class="btn" href="grok_braille.json">grok_braille.json</a>
+        </div>
+      </div>
+      <div class="panel2">
+        <h3>Copyable Unicode Braille Text</h3>
+        <pre class="braille">GROK — 2x4 BRAILLE ARCHITECTURE PLATE
+xAI Real-Time Intelligence, Social RAG &amp; Multimodal Systems · 72 cols · executed=False
+
+⠀⢠⠤⢤⢤⢤⠤⢤⢤⢤⠤⠤⢤⠤⢤⢤⠤⠤⠤⢤⠤⢤⠤⢤⠤⢤⠤⢤⢤⢤⠤⢤⢤⢤⢤⢤⢤⢤⢤⠤⠤⢤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⣤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⣤⡄⠀
+⠀⢸⢘⣛⣛⣛⣈⣙⣙⣙⣛⣛⣙⢋⣛⣙⢁⣛⡛⣛⣙⣙⣛⢛⣙⣛⣛⢙⣉⢙⣓⢛⣙⣛⡙⠉⠙⠙⠙⠓⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⢐⣟⣿⣵⠁⣜⣖⣟⡜⢐⣜⣗⡇⠀⠀⠀⢸⠅⠀
+⠀⠘⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠓⠃⠀
+⠀⠀⠨⠭⠌⠭⠭⠭⠍⠭⠭⠭⠭⠍⠍⠭⠤⠤⠤⠠⠤⠄⠄⠤⠄⠤⠤⠤⠄⠤⠤⠤⠤⠤⠄⠤⠤⠤⠤⠤⠤⠤⠤⠠⠤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢭⠭⢭⢭⢭⢭⢭⢭⠍⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⡞⢹⣐⢒⢒⢒⢒⢒⢒⢒⢀⡏⠳⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡖⡅⢵⣥⠵⣥⢵⣥⣵⢳⢀⡴⠁⠀⠀⠁⠉⠁⠉⠁⠉⠁⠉⠁⠀⠀⠘⢦⡀⡖⡝⢵⣽⣵⣽⣵⣽⠑⢳⠀⣀⣀⡀⢰⢳⢡⣵⣥⣵⣥⣵⠅⠑⡆⠀⣀⡀⠀⡖⡕⢽⣵⣽⣵⢽⣵⣽⢳⠀⠀
+⠀⠀⡗⠒⠒⠒⠒⠒⠒⠒⠂⢸⠙⢆⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣴⠛⡗⠒⠒⠒⠒⠒⠒⠒⠒⢸⠉⠉⠉⠉⢹⠐⠒⠒⠒⠒⠒⠒⠀⠀⡏⠉⠉⠉⠙⡇⠒⠒⠒⠒⠒⠒⠒⠀⢸⠀⠀
+⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠱⣄⢰⢥⢵⣥⣵⣥⣵⣅⠑⠑⡆⣀⠞⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⠐⠒⠒⠐⠒⠒⠒⠒⠀⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠟⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢅⢀⢀⢀⢀⢠⢠⣤⢤⢤⣄⣤⣤⣤⣄⣄⣤⣄⣤⣤⣤⣤⣤⡄⣄⢀⢀⢀⢀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠠⠤⠠⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠶⠦⠶⠀⠆⠀⠴⠄⠴⠴⠴⠴⠀⠀⠶⠦⠆⠀⠆⠀⠴⠤⠴⠴⠴⠴⠀⠀⠶⠦⠆⠐⠆⠀⠶⠤⠴⠴⠄⠤⠀⠀⠶⠦⠆⠰⠄⠀⠴⠤⠴⠴⠄⠤⠀⠀⠶⠶⠆⠰⠄⠀⠶⠴⠴⠴⠄⠤⠀⠀
+⠀⠀⣒⣒⣒⣒⣒⣒⣒⣒⠒⠀⠀⠀⠀⠀⣒⣒⣒⣒⣒⣒⣒⣒⡂⠀⠀⠀⠀⠀⣒⣒⣒⣒⣒⣒⣒⠂⠀⠀⠀⠀⠀⠀⣒⣒⣒⣒⣒⣒⡒⠒⠀⠀⠀⠀⠀⠐⣓⣒⣒⣖⣒⣒⣒⣂⣀⡀⠀⠀⠀⠀
+⠀⠀⢤⣤⣤⣤⢤⣤⢤⡤⠤⠄⠀⠀⠀⠀⣤⣤⣤⢤⣤⣤⢤⡤⠤⠄⠀⠀⠀⠀⣤⣤⣤⢤⣤⣤⠥⠤⠤⠤⠀⠀⠀⠀⣤⣤⣤⣤⡤⠤⠤⠤⠀⠀⠀⠀⠀⠀⣥⣴⢤⣤⢤⣥⣤⢤⠤⠅⠀⠀⠀⠀
+⠀⠀⣉⣉⣁⣁⣀⣁⣉⣁⣀⣀⠀⠀⠀⠀⣁⣁⣉⣁⣉⣉⣉⣁⣀⠀⠀⠀⠀⠀⣉⣁⣁⣀⣁⣉⣁⣀⣀⡀⠀⠀⠀⠀⣁⣁⣉⣁⣁⣀⣀⣀⣀⣀⠀⠀⠀⠀⣉⣁⣉⣁⣉⣁⣁⣁⣁⠀⠀⠀⠀⠀
+⠀⠀⠐⠒⠐⠐⠓⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠐⠐⠒⠒⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠒⠒⠒⠒⠒⠒⠀⠀⠀⠀⠀⠀⠒⠒⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠐⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀
+⠀⠀⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⠀⢀⠀⠀⠀⢀⠀⠀⠀⢀⠀⠀⠀⣀⠀⠀⠀⢀⠀⠀⠀⠀⠀⢀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⠉⠉⠉⠉⠁⠈⠉⠉⠁⠁⠉⠉⠉⠉⠁⠁⠉⠉⠉⠉⠁⠁⠉⠉⠁⠉⠉⠉⠉⠉⠉⠉⠁⠉⠉⠉⠉⠉⠉⠀⠉⠉⠉⠉⠉⠁⠈⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+        <p class="sub" style="margin-top:10px;font-family:ui-monospace,monospace;font-size:0.74rem">
+          scene_sha256: 170506541e72f1286991b9280a2e227e709e60b6f2b39bdf29b287a0cf8687f1<br/>
+          report_sha256: db733d91cdc04c91e8c5db187ae5574016355063d17c7bd192c9d2896f21efbd
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Fieldglass Observatory · Milestone M2 · Grok Dossier · 0 Cloud Tokens · executed=False
+  </footer>
+</div>
+
+<script id="dossier-data" type="application/json">{"slug": "grok", "display_name": "Grok", "past_repertoire": {"primary_grounded": 0.1212988367115491, "de_echo_cluster": 0.09434353966453818, "fresh_decayed": 0.13217176983226905, "split_badge_ok": 0.059127066879279995, "code_verified": 0.06391059409402182, "viral_rumor_mix": 0.21826821771793448, "bot_amplified": 0.16870116328845094, "stale_quote_bias": 0.14217881181195638}, "future_repertoire": {"primary_grounded": 0.23870116328845092, "de_echo_cluster": 0.1856564603354618, "fresh_decayed": 0.1778282301677309, "split_badge_ok": 0.13087293312072, "code_verified": 0.1160894059059782, "viral_rumor_mix": 0.06173178228206544, "bot_amplified": 0.051298836711549084, "stale_quote_bias": 0.037821188188043635}, "improvements": [{"id": "GROK-01", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Temporal Primary Grounding", "title": "Dual-Cone Primary-Source Splitter & Domain Time-Decay Index", "short_title": "Dual-Cone + Time Decay", "current_gap": "Real-time retrieval conflates viral jokes and rumors with primary engineering/CVE advisories, while older high-like posts outrank newer official corrections.", "proposed_architecture": "Maintain separate PrimaryEvidenceCone and SocialPulseCone indexes with domain-calibrated exponential freshness decay lambda_domain and SUPERSEDED_BY_T+delta tags; evaluate cones via causal_chiasm() and surface a ?? Split-View Caution Badge when EI < 0.25.", "fieldglass_grounding": "Uses causal_chiasm(primary_cone, social_cone) Effective Information (EI) and ?? glyph to flag uncorroborated viral divergence.", "concrete_deliverable": "SocialVsPrimaryGate ranker + TimeDecayIndex freshness scorer with explicit conflict badge.", "kpis": [{"metric": "Breaking-query viral rumor conflation", "baseline": "19.2%", "target": "3.8%"}, {"metric": "Stale incident/CVE status errors", "baseline": "23.5%", "target": "6.1% (-74%)"}], "risks_and_mitigations": "Risk: +35 ms dual-cone merge and -3% recall on evergreen posts. Mitigation: disable fast decay automatically for historical queries.", "verification_method": "Replay 50 breaking technical/CVE timelines; verify newer official corrections outrank stale viral posts within 15 min."}, {"id": "GROK-02", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Multimodal Frame & Chart Audit", "title": "Pixel-Level Multimodal Chart & Frame Integrity Audit", "short_title": "Multimodal Chart Audit", "current_gap": "Social media charts and video screenshots frequently use truncated Y-axes, cropped timestamps, or edited captions that mislead pure-vision VLM summaries.", "proposed_architecture": "Run a pre-summary pixel/luminance histogram, axis-tick OCR consistency check, and metadata/aspect verification pass (PixelHistogramAudit) before synthesizing media claims.", "fieldglass_grounding": "Computes 256-bin luminance A_tau(p) and structural tick-interval checks analogous to fieldglass.overlay histogram diagnostics.", "concrete_deliverable": "PixelHistogramAudit preprocessing check emitting axis-truncation and crop warnings.", "kpis": [{"metric": "Misread truncated-axis chart rate", "baseline": "27.0%", "target": "<= 4.5%"}, {"metric": "Pre-summary audit latency", "baseline": "n/a", "target": "+22 ms / image"}], "risks_and_mitigations": "Risk: Stylized infographics confuse OCR tick parsers. Mitigation: mark unparsed axes as 'unverified scale' rather than guessing values.", "verification_method": "Test curated corpus of 80 deceptive/truncated charts vs. canonical plots; assert >= 85% warning recall."}, {"id": "GROK-03", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Anti-Echo & Bot Damping", "title": "Spectral Bot-Amplification & Echo-Cluster Deduplication", "short_title": "Spectral Bot De-Echo", "current_gap": "Coordinated copy-pasta repost campaigns inflate raw engagement metrics, causing echoed talking points to dominate top-K retrieval.", "proposed_architecture": "Cluster candidate posts via minhash similarity and Renyi H2 author-graph collision entropy; collapse echo clusters into 1 canonical representative while reporting unique_cluster_count alongside raw_post_count.", "fieldglass_grounding": "Directly applies fieldglass.metrics.renyi_h2(author_cluster_dist) to quantify independent-source diversity.", "concrete_deliverable": "SpectralDeEcho clustering pass over top-200 retrieved social items.", "kpis": [{"metric": "Precision@10 under bot-echo bursts", "baseline": "54%", "target": "76% (+41% rel.)"}, {"metric": "Echo-cluster collapse accuracy", "baseline": "n/a", "target": ">= 91%"}], "risks_and_mitigations": "Risk: +18 ms clustering latency and accidental collapse of legitimate quote-tweets. Mitigation: preserve distinct commentary edges above 35% novel token threshold.", "verification_method": "Inject synthetic 50-account copy-pasta bursts into benchmark feeds; verify cluster count collapses to 1 while independent sources remain."}, {"id": "GROK-04", "priority": "P1", "horizon": "Mid-term (3-6 mo)", "domain": "Closed-Loop Verification", "title": "Closed-Loop Sandboxed Code & Numerical Verification Harness", "short_title": "Sandboxed Verify Loop", "current_gap": "Fast technical responses sometimes emit plausible-looking physics, financial, or code snippets with off-by-one or unit errors.", "proposed_architecture": "Route quantitative and code claims through an ephemeral read-only verification sandbox (AST parse, unit/dimensional analysis, and property test execution) prior to final response emission.", "fieldglass_grounding": "Mirrors Fieldglass test-gated verification before publishing any telemetry claim.", "concrete_deliverable": "SandboxedVerifyLoop execution wrapper attaching pass/fail check badges to snippets.", "kpis": [{"metric": "Executable snippet first-run pass rate", "baseline": "74%", "target": "96%"}, {"metric": "Unit/dimensional calculation errors", "baseline": "8.9%", "target": "< 1.0%"}], "risks_and_mitigations": "Risk: Increases tail latency on complex multi-file snippets. Mitigation: 500 ms fast sandbox budget with explicit 'unexecuted draft' tag on timeout.", "verification_method": "Run 120 quantitative physics/code prompts; verify >= 96% pass AST + unit assertions."}, {"id": "GROK-05", "priority": "P1", "horizon": "Near-term (0-3 mo)", "domain": "Open-Audit Telemetry & Accessibility", "title": "Separated ClaimLedger, Open-Audit Receipts & 2x4 Braille Timeline", "short_title": "ClaimLedger + Braille", "current_gap": "Witty conversational framing obscures which statements are verified facts, and users lack portable, zero-token offline audit bundles or tactile event timelines.", "proposed_architecture": "Emit a machine-readable ClaimLedger sidecar (executed=False, tokens_used accounting, primary_source_count, report_sha256) cleanly separated from persona prose, alongside a 72-column 2x4 Unicode Braille event-timeline digest.", "fieldglass_grounding": "Reuses fieldglass-causal-chiasm/v1 SHA-256 sealing and plate.save_braille_bundle().", "concrete_deliverable": "ChiasmDigest portable JSON/SVG/Braille export bundle.", "kpis": [{"metric": "Factual auditability & ARIA clarity", "baseline": "52%", "target": "91%"}, {"metric": "Sidecar footprint per digest", "baseline": "n/a", "target": "+240 B ledger"}], "risks_and_mitigations": "Risk: Persona stripping could miss subtle irony. Mitigation: extract verifiable timestamped propositions directly from evidence cones.", "verification_method": "Validate ClaimLedger JSON schema, report_sha256 determinism, and Braille non-blank cells."}], "metrics": {"episodes": 24, "tau": 0.1, "past_a_tau": 5, "future_a_tau": 5, "past_a014": 3, "future_a014": 4, "chiasm_shift": 0, "effective_information_bits": 0.467714, "h1_past_bits": 2.7544, "h1_future_bits": 2.5235, "m4_past_purity": 0.2924, "m4_future_purity": 0.311, "presence_glyph": "^_^", "structural_invariants": ["primary_grounded"], "scene_sha256": "170506541e72f1286991b9280a2e227e709e60b6f2b39bdf29b287a0cf8687f1", "report_sha256": "db733d91cdc04c91e8c5db187ae5574016355063d17c7bd192c9d2896f21efbd"}}</script>
+<script>
+(function () {
+  var payload = JSON.parse(document.getElementById("dossier-data").textContent);
+  var tabs = document.querySelectorAll("#proposal-tabs button[data-imp]");
+  var cards = document.querySelectorAll(".imp-card");
+  tabs.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = btn.getAttribute("data-imp");
+      tabs.forEach(function (b) { b.classList.toggle("active", b === btn); });
+      cards.forEach(function (card) {
+        var show = target === "all" || card.getAttribute("data-imp-id") === target;
+        card.classList.toggle("hidden", !show);
+      });
+    });
+  });
+
+  var slider = document.getElementById("tau-slider");
+  var tauLabel = document.getElementById("tau-val");
+  var summaryBadge = document.getElementById("tau-summary");
+  var tbody = document.getElementById("repertoire-tbody");
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function renderTau() {
+    var tau = parseFloat(slider.value);
+    tauLabel.textContent = tau.toFixed(2);
+    var past = payload.past_repertoire;
+    var future = payload.future_repertoire;
+    var keys = Object.keys(past);
+    var pastCount = 0;
+    var futCount = 0;
+    var rows = [];
+    keys.forEach(function (k) {
+      var pv = past[k];
+      var fv = future[k];
+      var pOn = pv > tau;
+      var fOn = fv > tau;
+      if (pOn) pastCount += 1;
+      if (fOn) futCount += 1;
+      var delta = fv - pv;
+      var dStr = (delta >= 0 ? "+" : "") + delta.toFixed(3);
+      rows.push(
+        "<tr>" +
+          "<td><code>" + escHtml(k) + "</code></td>" +
+          "<td>" + pv.toFixed(3) + "</td>" +
+          "<td>" + fv.toFixed(3) + "</td>" +
+          "<td style='color:" + (delta >= 0 ? "var(--cyan)" : "var(--ruby)") + "'>" + dStr + "</td>" +
+          "<td>" + (pOn ? "ACTIVE" : "below") + " / <b style='color:" + (fOn ? "var(--gold)" : "var(--muted)") + "'>" + (fOn ? "ACTIVE" : "below") + "</b></td>" +
+        "</tr>"
+      );
+    });
+    tbody.innerHTML = rows.join("");
+    var shift = futCount - pastCount;
+    summaryBadge.textContent = "Past A_tau: " + pastCount + " -> Future A_tau: " + futCount + " (shift " + (shift >= 0 ? "+" : "") + shift + ")";
+  }
+
+  slider.addEventListener("input", renderTau);
+  renderTau();
+})();
+</script>
+</body>
+</html>

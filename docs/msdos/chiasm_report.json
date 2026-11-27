@@ -1,0 +1,311 @@
+{
+  "slug": "msdos",
+  "title": "MS-DOS 6.22 & 8086 Real-Mode Simulator",
+  "subtitle": "16-bit 8086 registers, 640 KB memory map, 1.44 MB FAT12 & COMMAND.COM",
+  "episode_count": 12,
+  "nexus_ep": 6,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 5,
+    "past_repertoire": {
+      "ivt_bios": 0.19333333333333336,
+      "dos_kernel": 0.20499999999999996,
+      "command_shell": 0.09333333333333334,
+      "conv_free_tpa": 0.14,
+      "video_uma": 0.11833333333333333,
+      "umb_rom": 0.09833333333333331,
+      "hma_high": 0.07166666666666667,
+      "fat12_io": 0.08
+    },
+    "future_repertoire": {
+      "ivt_bios": 0.056666666666666664,
+      "dos_kernel": 0.13,
+      "command_shell": 0.17833333333333334,
+      "conv_free_tpa": 0.2416666666666667,
+      "video_uma": 0.12166666666666666,
+      "umb_rom": 0.05333333333333332,
+      "hma_high": 0.11166666666666665,
+      "fat12_io": 0.10666666666666667
+    },
+    "past_accessible_volume": 4,
+    "past_accessible_states": [
+      "conv_free_tpa",
+      "dos_kernel",
+      "ivt_bios",
+      "video_uma"
+    ],
+    "future_accessible_volume": 6,
+    "future_accessible_states": [
+      "command_shell",
+      "conv_free_tpa",
+      "dos_kernel",
+      "fat12_io",
+      "hma_high",
+      "video_uma"
+    ],
+    "chiasm_shift": 2,
+    "effective_information_bits": 0.244684,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 12,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        7,
+        5,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        3,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        3,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        3,
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "command_shell": 0.103333,
+      "conv_free_tpa": 0.16,
+      "dos_kernel": 0.130833,
+      "fat12_io": 0.063333,
+      "hma_high": 0.06,
+      "ivt_bios": 0.1,
+      "umb_rom": 0.056667,
+      "video_uma": 0.093333
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "conv_free_tpa"
+    ],
+    "transient_states": [
+      "command_shell",
+      "dos_kernel",
+      "fat12_io",
+      "hma_high",
+      "ivt_bios",
+      "umb_rom",
+      "video_uma"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "per_episode": [
+    {
+      "episode": 0,
+      "a_004": 7,
+      "a_010": 5,
+      "h1_bits": 2.667722,
+      "h2_bits": 2.389867,
+      "m4_purity": 0.34751
+    },
+    {
+      "episode": 1,
+      "a_004": 7,
+      "a_010": 5,
+      "h1_bits": 2.77415,
+      "h2_bits": 2.58554,
+      "m4_purity": 0.298472
+    },
+    {
+      "episode": 2,
+      "a_004": 8,
+      "a_010": 4,
+      "h1_bits": 2.810958,
+      "h2_bits": 2.640254,
+      "m4_purity": 0.286877
+    },
+    {
+      "episode": 3,
+      "a_004": 8,
+      "a_010": 4,
+      "h1_bits": 2.893516,
+      "h2_bits": 2.772013,
+      "m4_purity": 0.267145
+    },
+    {
+      "episode": 4,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.92568,
+      "h2_bits": 2.844769,
+      "m4_purity": 0.247479
+    },
+    {
+      "episode": 5,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.915273,
+      "h2_bits": 2.840629,
+      "m4_purity": 0.241812
+    },
+    {
+      "episode": 6,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.868705,
+      "h2_bits": 2.756331,
+      "m4_purity": 0.258754
+    },
+    {
+      "episode": 7,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.852715,
+      "h2_bits": 2.72738,
+      "m4_purity": 0.26548
+    },
+    {
+      "episode": 8,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.8387,
+      "h2_bits": 2.710284,
+      "m4_purity": 0.26888
+    },
+    {
+      "episode": 9,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.830217,
+      "h2_bits": 2.691523,
+      "m4_purity": 0.2742
+    },
+    {
+      "episode": 10,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.827563,
+      "h2_bits": 2.680382,
+      "m4_purity": 0.279289
+    },
+    {
+      "episode": 11,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.815516,
+      "h2_bits": 2.652901,
+      "m4_purity": 0.286824
+    }
+  ],
+  "h1_mean_bits": 2.8351,
+  "h2_mean_bits": 2.691,
+  "m4_mean_purity": 0.2769,
+  "scene_sha256": "4febd0f8c5539201e945779f4fb7353d892457a89c1d7e2539f1f4516640b127",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "5d6572cc10c5c1d608b5e2aab8702d3783d812108ecb8f11de4f2477c4cc0c52"
+}

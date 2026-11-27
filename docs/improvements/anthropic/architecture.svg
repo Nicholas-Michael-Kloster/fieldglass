@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 920" width="1400" height="920">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#5edaf0"/>
+</marker>
+<marker id="arrow-fb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#f46a7e"/>
+</marker>
+</defs>
+<rect width="1400" height="920" fill="#0b0f17"/>
+<rect x="16" y="14" width="1368" height="892" rx="12" fill="#0d131e" stroke="#263850" stroke-width="1.5"/>
+<rect x="30" y="26" width="1340" height="68" rx="10" fill="#121926" stroke="#f2c45c" stroke-width="2"/>
+<text x="48" y="54" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold">ANTHROPIC · IMPROVEMENT ARCHITECTURE &amp; TELEMETRY PIPELINE</text>
+<text x="48" y="79" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="13">Claude Constitutional, Interpretability &amp; Coding Agent Systems  |  Constitutional &amp; Coding AI</text>
+<rect x="1030" y="34" width="324" height="52" rx="8" fill="#0b0f17" stroke="#f46a7e" stroke-width="1.5"/>
+<text x="1046" y="56" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">CHIASM ^_^ · A_0.10: 5 -&gt; 5 (+0)</text>
+<text x="1046" y="75" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="11.5">EI=0.389b · exec=False · tokens=0</text>
+<rect x="30" y="106" width="1340" height="414" rx="10" fill="#101724" stroke="#263850" stroke-width="1.5"/>
+<text x="48" y="129" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="bold">01 / SYSTEM ARCHITECTURE TOPOLOGY</text>
+<text x="48" y="147" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Policy: chiasm_shift &lt; 0 -&gt; MCP dry_run_gate (executed=False); P(x) &gt;= 0.14 -&gt; pin InvariantHeader; boundary trigger -&gt; ConstraintTrace sidecar</text>
+<path d="M 226.0 286.0 C 277.0 286.0, 277.0 204.0, 328.0 204.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 226.0 286.0 C 277.0 286.0, 277.0 366.0, 328.0 366.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 508.0 204.0 C 559.0 204.0, 559.0 286.0, 610.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 508.0 366.0 C 559.0 366.0, 559.0 286.0, 610.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 790.0 286.0 C 841.0 286.0, 841.0 204.0, 892.0 204.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 790.0 286.0 C 841.0 286.0, 841.0 366.0, 892.0 366.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 1072.0 204.0 C 1123.0 204.0, 1123.0 286.0, 1174.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 1072.0 366.0 C 1123.0 366.0, 1123.0 286.0, 1174.0 286.0" fill="none" stroke="#5edaf0" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M 700.0 322.0 L 700.0 472 L 418.0 472 L 418.0 406.0" fill="none" stroke="#f46a7e" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow-fb)"/>
+<rect data-role="node" x="46" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#f2c45c" stroke-width="2"/>
+<text x="56" y="273" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N1</text>
+<text x="82" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">200K+ Context Window</text>
+<text x="56" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Session turns + specs</text>
+<rect data-role="node" x="328" y="168" width="180" height="72" rx="9" fill="#121926" stroke="#5edaf0" stroke-width="2"/>
+<text x="338" y="191" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N2</text>
+<text x="364" y="191" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">FiltrationAnchor</text>
+<text x="338" y="217" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">P(x)&gt;=0.14 InvariantHeader</text>
+<rect data-role="node" x="328" y="330" width="180" height="72" rx="9" fill="#121926" stroke="#f2c45c" stroke-width="2"/>
+<text x="338" y="353" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N3</text>
+<text x="364" y="353" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">FeatureAtlas &amp; Policy</text>
+<text x="338" y="379" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Sparse SAE + rule tier</text>
+<rect data-role="node" x="610" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#f46a7e" stroke-width="2"/>
+<text x="620" y="273" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N4</text>
+<text x="646" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">MCP-ChiasmSandbox</text>
+<text x="620" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Dry-run gate (exec=False)</text>
+<rect data-role="node" x="892" y="168" width="180" height="72" rx="9" fill="#121926" stroke="#5edaf0" stroke-width="2"/>
+<text x="902" y="191" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N5</text>
+<text x="928" y="191" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">Scoped MCP Lease</text>
+<text x="902" y="217" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Path/egress/TTL cap token</text>
+<rect data-role="node" x="892" y="330" width="180" height="72" rx="9" fill="#121926" stroke="#f2c45c" stroke-width="2"/>
+<text x="902" y="353" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N6</text>
+<text x="928" y="353" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">ArtifactSeal + Replay</text>
+<text x="902" y="379" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">Zero-CDN + seeded CI hash</text>
+<rect data-role="node" x="1174" y="250" width="180" height="72" rx="9" fill="#121926" stroke="#f2c45c" stroke-width="2"/>
+<text x="1184" y="273" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.2" font-weight="bold">N7</text>
+<text x="1210" y="273" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="10.5" font-weight="bold">Sealed Output + Trace</text>
+<text x="1184" y="299" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="9.8">ConstraintTrace + span SHA</text>
+<rect data-role="edge-label" x="240.0" y="227.0" width="74.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="277.0" y="238.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">pin &gt;=0.14</text>
+<rect data-role="edge-label" x="250.0" y="308.0" width="54.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="277.0" y="319.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">attrib</text>
+<rect data-role="edge-label" x="522.0" y="227.0" width="74.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="559.0" y="238.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">invariants</text>
+<rect data-role="edge-label" x="525.5" y="308.0" width="67.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="559.0" y="319.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">rule tier</text>
+<rect data-role="edge-label" x="810.5" y="227.0" width="61.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="841.0" y="238.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">lease ok</text>
+<rect data-role="edge-label" x="807.5" y="308.0" width="67.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="841.0" y="319.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">seal HTML</text>
+<rect data-role="edge-label" x="1089.5" y="227.0" width="67.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="1123.0" y="238.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">diff hash</text>
+<rect data-role="edge-label" x="1092.5" y="308.0" width="61.0" height="16" rx="4" fill="#0b0f17" stroke="#263850" stroke-width="1"/>
+<text x="1123.0" y="319.5" text-anchor="middle" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="9.5">manifest</text>
+<rect data-role="edge-label" x="367.0" y="460" width="384.0" height="22" rx="5" fill="#18121b" stroke="#f46a7e" stroke-width="1"/>
+<text x="559.0" y="475" text-anchor="middle" fill="#ffd3da" font-family="DejaVu Sans Mono, monospace" font-size="11">Emit ConstraintTrace safe alternatives when shift &lt; 0</text>
+<text x="48" y="550" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.5" font-weight="bold">02 / FIVE STRUCTURED IMPROVEMENTS &amp; MEASURABLE ACCEPTANCE TARGETS</text>
+<rect x="30" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="30" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="42" y="585" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">ANTH-01 · P1</text>
+<text x="274" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Mid-term (3-6 mo)</text>
+<text x="42" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Interpretability HUD</text>
+<text x="42" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Mechanistic Interpretability</text>
+<text x="42" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Safety and reasoning evaluations</text>
+<text x="42" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">treat model generations as...</text>
+<rect x="40" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="46" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Pre-output anomaly detection recall</text>
+<text x="46" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">34% -&gt; 86%</text>
+<rect x="40" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="46" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Telemetry sidecar overhead</text>
+<text x="46" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">n/a -&gt; &lt; 2.5% latency</text>
+<rect x="301" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="301" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="313" y="585" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">ANTH-02 · P0</text>
+<text x="545" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Near-term (0-3 mo)</text>
+<text x="313" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Scoped MCP + Dry-Run Gate</text>
+<text x="313" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Agentic Sandboxing</text>
+<text x="313" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Persistent MCP server grants</text>
+<text x="313" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">expose broad workspace paths...</text>
+<rect x="311" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="317" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Out-of-scope MCP writes under injection</text>
+<text x="317" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">4.2% -&gt; 0.0%</text>
+<rect x="311" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="317" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Capability verification latency</text>
+<text x="317" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">n/a -&gt; +8 ms / call</text>
+<rect x="572" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="572" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="584" y="585" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">ANTH-03 · P0</text>
+<text x="816" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Near-term (0-3 mo)</text>
+<text x="584" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Span Hash + Context Anchor</text>
+<text x="584" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Long-Context Provenance</text>
+<text x="584" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Long-session compaction evicts</text>
+<text x="584" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">early schema contracts and...</text>
+<rect x="582" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="588" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Late-turn contract recall...</text>
+<text x="588" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">71% -&gt; 96%</text>
+<rect x="582" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="588" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Citation paraphrase drift errors</text>
+<text x="588" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">5.8% -&gt; 0.0%</text>
+<rect x="843" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="843" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="855" y="585" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">ANTH-04 · P1</text>
+<text x="1087" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Near-term (0-3 mo)</text>
+<text x="855" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Seeded Replay + ArtifactSeal</text>
+<text x="855" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Deterministic Replay &amp; Offline Artifacts</text>
+<text x="855" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Non-deterministic tool</text>
+<text x="855" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">trajectories complicate safety...</text>
+<rect x="853" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="859" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Air-gapped Artifact render success</text>
+<text x="859" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">44% -&gt; 99.5%</text>
+<rect x="853" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="859" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Safety eval replay hash reproducibility</text>
+<text x="859" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">68% -&gt; 100%</text>
+<rect x="1114" y="564" width="256" height="282" rx="9" fill="#121926" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="1114" y="564" width="256" height="32" rx="9" fill="#172233"/>
+<text x="1126" y="585" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="bold">ANTH-05 · P1</text>
+<text x="1358" y="585" text-anchor="end" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Mid-term (3-6 mo)</text>
+<text x="1126" y="619" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="bold">Constitutional Conflict Ledger</text>
+<text x="1126" y="640" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10.2">Constitutional Auditability</text>
+<text x="1126" y="666" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">Gap: Overlapping Constitutional,</text>
+<text x="1126" y="682" fill="#93a6be" font-family="DejaVu Sans, sans-serif" font-size="10.5">system-prompt, and tool-policy...</text>
+<rect x="1124" y="700" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1130" y="718" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="10">Developer retry loops on opaque refusals</text>
+<text x="1130" y="738" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">3.4 turns -&gt; 1.3 turns (-62%)</text>
+<rect x="1124" y="770" width="236" height="62" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1130" y="788" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="10">Valid dual-use safe-alternative rate</text>
+<text x="1130" y="808" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="bold">58% -&gt; 92%</text>
+<text x="32" y="886" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="12">Fieldglass R2 · H1 2.869 -&gt; 2.474 bits · M4^(1/4) 0.2611 -&gt; 0.3148 · Invariants(P&gt;=0.14): invariant_pinned, mcp_sandboxed · executed=False · tokens_used=0</text>
+</svg>

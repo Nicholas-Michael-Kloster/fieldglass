@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
+<rect width="1400" height="1000" fill="#0b0f17"/>
+<rect x="28" y="96" width="658" height="424" fill="#121926" stroke="#f46a7e" stroke-width="2" rx="6"/>
+<rect x="714" y="96" width="658" height="424" fill="#121926" stroke="#294058" stroke-width="1.5" rx="6"/>
+<rect x="28" y="544" width="1344" height="382" fill="#121926" stroke="#294058" stroke-width="1.5" rx="6"/>
+<text x="28" y="44" fill="#f46a7e" font-family="monospace" font-size="24" font-weight="bold">SIMULATED MEDICAL EQUIPMENT SANDBOX (NON-CLINICAL) · CAUSAL CHIASM &amp; FILTRATION TOMOGRAPHY</text>
+<text x="28" y="74" fill="#f2c45c" font-family="monospace" font-size="14">Strictly simulated / educational biomedical waveforms &amp; Beer-Lambert optics</text>
+<rect x="1062" y="18" width="310" height="64" fill="#121926" stroke="#f46a7e" stroke-width="2" rx="4"/>
+<polygon points="1090,34 1106,50 1090,66 1074,50" fill="none" stroke="#f46a7e" stroke-width="2"/>
+<polygon points="1090,42 1098,50 1090,58 1082,50" fill="#f46a7e" stroke="#f2c45c" stroke-width="1"/>
+<text x="1118" y="42" fill="#f2c45c" font-family="monospace" font-size="13" font-weight="bold">FIELDGLASS HUD · ^_^</text>
+<text x="1118" y="64" fill="#5edaf0" font-family="monospace" font-size="12">A_tau(0.10)=7 · exec=False</text>
+<text x="48" y="128" fill="#5edaf0" font-family="monospace" font-size="16" font-weight="bold">01 / CAUSAL CHIASM NEXUS (t = 8s)</text>
+<text x="52" y="164" fill="#5edaf0" font-family="monospace" font-size="13">PAST A_tau = 7</text>
+<text x="456" y="164" fill="#f2c45c" font-family="monospace" font-size="13">FUTURE A_tau = 7</text>
+<polyline points="88,216 309,275.8 357,308" fill="none" stroke="#5edaf0" stroke-width="2"/>
+<polyline points="357,308 405,340.2 626,400" fill="none" stroke="#f2c45c" stroke-width="2"/>
+<polyline points="88,264 309,292.6 357,308" fill="none" stroke="#5edaf0" stroke-width="2"/>
+<polyline points="357,308 405,323.4 626,352" fill="none" stroke="#f46a7e" stroke-width="2"/>
+<polyline points="88,352 309,323.4 357,308" fill="none" stroke="#f2c45c" stroke-width="2"/>
+<polyline points="357,308 405,292.6 626,264" fill="none" stroke="#5edaf0" stroke-width="2"/>
+<polyline points="88,400 309,340.2 357,308" fill="none" stroke="#f46a7e" stroke-width="2"/>
+<polyline points="357,308 405,275.8 626,216" fill="none" stroke="#f2c45c" stroke-width="2"/>
+<polygon points="357,274 391,308 357,342 323,308" fill="#0b0f17" stroke="#f46a7e" stroke-width="2.5"/>
+<text x="281" y="366" fill="#f2c45c" font-family="monospace" font-size="13">PRESENT NEXUS (t = 8s)</text>
+<text x="48" y="492" fill="#eaeff5" font-family="monospace" font-size="13">EI = 0.0022 bits · shift = +0 · boxed_in = False</text>
+<text x="734" y="128" fill="#5edaf0" font-family="monospace" font-size="16" font-weight="bold">02 / PERSISTENT FILTRATION TOMOGRAPHY (16 EPISODES)</text>
+<text x="734" y="154" fill="#93a6be" font-family="monospace" font-size="12">Mean survival threshold P(x) across episode distributions</text>
+<text x="738" y="204" fill="#eaeff5" font-family="monospace" font-size="12">pqrst_r_peak</text>
+<rect x="885" y="190" width="76" height="20" fill="#5edaf0" rx="2"/>
+<text x="971" y="205" fill="#f2c45c" font-family="monospace" font-size="12">P=0.124</text>
+<text x="738" y="240" fill="#eaeff5" font-family="monospace" font-size="12">ppg_ir_dc</text>
+<rect x="885" y="226" width="74" height="20" fill="#5edaf0" rx="2"/>
+<text x="969" y="241" fill="#f2c45c" font-family="monospace" font-size="12">P=0.120</text>
+<text x="738" y="276" fill="#eaeff5" font-family="monospace" font-size="12">ppg_red_ac</text>
+<rect x="885" y="262" width="74" height="20" fill="#5edaf0" rx="2"/>
+<text x="969" y="277" fill="#f2c45c" font-family="monospace" font-size="12">P=0.120</text>
+<text x="738" y="312" fill="#eaeff5" font-family="monospace" font-size="12">pv_compliance</text>
+<rect x="885" y="298" width="74" height="20" fill="#5edaf0" rx="2"/>
+<text x="969" y="313" fill="#f2c45c" font-family="monospace" font-size="12">P=0.120</text>
+<text x="738" y="348" fill="#eaeff5" font-family="monospace" font-size="12">capno_plateau</text>
+<rect x="885" y="334" width="63" height="20" fill="#5edaf0" rx="2"/>
+<text x="958" y="349" fill="#f2c45c" font-family="monospace" font-size="12">P=0.102</text>
+<text x="738" y="384" fill="#eaeff5" font-family="monospace" font-size="12">pv_resistive</text>
+<rect x="885" y="370" width="54" height="20" fill="#5edaf0" rx="2"/>
+<text x="949" y="385" fill="#f2c45c" font-family="monospace" font-size="12">P=0.087</text>
+<text x="738" y="420" fill="#eaeff5" font-family="monospace" font-size="12">pqrst_st_t</text>
+<rect x="885" y="406" width="49" height="20" fill="#5edaf0" rx="2"/>
+<text x="944" y="421" fill="#f2c45c" font-family="monospace" font-size="12">P=0.080</text>
+<text x="738" y="456" fill="#eaeff5" font-family="monospace" font-size="12">capno_baseline</text>
+<rect x="885" y="442" width="37" height="20" fill="#5edaf0" rx="2"/>
+<text x="932" y="457" fill="#f2c45c" font-family="monospace" font-size="12">P=0.060</text>
+<text x="734" y="498" fill="#f2c45c" font-family="monospace" font-size="12">Invariants (tau &gt;= 0.14): none</text>
+<text x="48" y="578" fill="#5edaf0" font-family="monospace" font-size="16" font-weight="bold">03 / KLOSTER ACCESSIBLE VOLUME TRAJECTORY  A_tau(p_t) = sum_x 1[p_t(x) &gt; tau]</text>
+<text x="48" y="604" fill="#93a6be" font-family="monospace" font-size="12">Cyan: A_0.004(p_t)  ·  Gold: A_0.010(p_t)  ·  Ruby marker: Nexus second</text>
+<rect x="92" y="628" width="1238" height="240" fill="#090d15" stroke="#294058"/>
+<line x1="752.3" y1="628" x2="752.3" y2="868" stroke="#f46a7e" stroke-width="2"/>
+<polyline points="92.0,850.7 174.5,850.7 257.1,850.7 339.6,850.7 422.1,850.7 504.7,850.7 587.2,850.7 669.7,850.7 752.3,850.7 834.8,850.7 917.3,850.7 999.9,850.7 1082.4,850.7 1164.9,850.7 1247.5,850.7 1330.0,850.7" fill="none" stroke="#5edaf0" stroke-width="2"/>
+<polyline points="92.0,834.9 174.5,834.9 257.1,834.9 339.6,830.4 422.1,830.4 504.7,830.4 587.2,830.4 669.7,830.4 752.3,830.4 834.8,830.4 917.3,830.4 999.9,830.4 1082.4,830.4 1164.9,830.4 1247.5,830.4 1330.0,830.4" fill="none" stroke="#f2c45c" stroke-width="3"/>
+<text x="28" y="968" fill="#93a6be" font-family="monospace" font-size="13">Fieldglass · Kloster Operational Metacognition · 0 cloud tokens · executed=False</text>
+</svg>

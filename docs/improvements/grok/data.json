@@ -1,0 +1,204 @@
+{
+  "schema_version": "fieldglass-r2-dossier/v1",
+  "slug": "grok",
+  "display_name": "Grok",
+  "subtitle": "xAI Real-Time Intelligence, Social RAG & Multimodal Systems",
+  "category": "Real-Time & Social",
+  "accent_hex": "#f46a7e",
+  "scope_note": "Constructive information-theoretic retrieval, multimodal auditing, and verification proposals; purely local simulation.",
+  "system_profile": {
+    "primary_strengths": [
+      "Ultra-low-latency ingestion of live X social stream alongside web and multimodal feeds.",
+      "High responsiveness on breaking events, emerging developer chatter, and real-time trends.",
+      "Direct, conversational tone adaptable to technical debugging and rapid synthesis."
+    ],
+    "core_bottlenecks": [
+      "Live RAG blends unverified viral rumors, satire, and primary advisories into one voice.",
+      "Coordinated bot-echo copy-pasta and stale high-like posts distort naive engagement ranking.",
+      "Charts/screenshots and technical claims lack automated pixel-level and sandbox verification."
+    ],
+    "design_north_star": "Separate primary timestamped evidence from social pulse via Dual-Cone Causal Chiasm, spectral bot de-echoing, and closed-loop verification."
+  },
+  "improvements": [
+    {
+      "id": "GROK-01",
+      "priority": "P0",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Temporal Primary Grounding",
+      "title": "Dual-Cone Primary-Source Splitter & Domain Time-Decay Index",
+      "short_title": "Dual-Cone + Time Decay",
+      "current_gap": "Real-time retrieval conflates viral jokes and rumors with primary engineering/CVE advisories, while older high-like posts outrank newer official corrections.",
+      "proposed_architecture": "Maintain separate PrimaryEvidenceCone and SocialPulseCone indexes with domain-calibrated exponential freshness decay lambda_domain and SUPERSEDED_BY_T+delta tags; evaluate cones via causal_chiasm() and surface a ?? Split-View Caution Badge when EI < 0.25.",
+      "fieldglass_grounding": "Uses causal_chiasm(primary_cone, social_cone) Effective Information (EI) and ?? glyph to flag uncorroborated viral divergence.",
+      "concrete_deliverable": "SocialVsPrimaryGate ranker + TimeDecayIndex freshness scorer with explicit conflict badge.",
+      "kpis": [
+        {
+          "metric": "Breaking-query viral rumor conflation",
+          "baseline": "19.2%",
+          "target": "3.8%"
+        },
+        {
+          "metric": "Stale incident/CVE status errors",
+          "baseline": "23.5%",
+          "target": "6.1% (-74%)"
+        }
+      ],
+      "risks_and_mitigations": "Risk: +35 ms dual-cone merge and -3% recall on evergreen posts. Mitigation: disable fast decay automatically for historical queries.",
+      "verification_method": "Replay 50 breaking technical/CVE timelines; verify newer official corrections outrank stale viral posts within 15 min."
+    },
+    {
+      "id": "GROK-02",
+      "priority": "P0",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Multimodal Frame & Chart Audit",
+      "title": "Pixel-Level Multimodal Chart & Frame Integrity Audit",
+      "short_title": "Multimodal Chart Audit",
+      "current_gap": "Social media charts and video screenshots frequently use truncated Y-axes, cropped timestamps, or edited captions that mislead pure-vision VLM summaries.",
+      "proposed_architecture": "Run a pre-summary pixel/luminance histogram, axis-tick OCR consistency check, and metadata/aspect verification pass (PixelHistogramAudit) before synthesizing media claims.",
+      "fieldglass_grounding": "Computes 256-bin luminance A_tau(p) and structural tick-interval checks analogous to fieldglass.overlay histogram diagnostics.",
+      "concrete_deliverable": "PixelHistogramAudit preprocessing check emitting axis-truncation and crop warnings.",
+      "kpis": [
+        {
+          "metric": "Misread truncated-axis chart rate",
+          "baseline": "27.0%",
+          "target": "<= 4.5%"
+        },
+        {
+          "metric": "Pre-summary audit latency",
+          "baseline": "n/a",
+          "target": "+22 ms / image"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Stylized infographics confuse OCR tick parsers. Mitigation: mark unparsed axes as 'unverified scale' rather than guessing values.",
+      "verification_method": "Test curated corpus of 80 deceptive/truncated charts vs. canonical plots; assert >= 85% warning recall."
+    },
+    {
+      "id": "GROK-03",
+      "priority": "P0",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Anti-Echo & Bot Damping",
+      "title": "Spectral Bot-Amplification & Echo-Cluster Deduplication",
+      "short_title": "Spectral Bot De-Echo",
+      "current_gap": "Coordinated copy-pasta repost campaigns inflate raw engagement metrics, causing echoed talking points to dominate top-K retrieval.",
+      "proposed_architecture": "Cluster candidate posts via minhash similarity and Renyi H2 author-graph collision entropy; collapse echo clusters into 1 canonical representative while reporting unique_cluster_count alongside raw_post_count.",
+      "fieldglass_grounding": "Directly applies fieldglass.metrics.renyi_h2(author_cluster_dist) to quantify independent-source diversity.",
+      "concrete_deliverable": "SpectralDeEcho clustering pass over top-200 retrieved social items.",
+      "kpis": [
+        {
+          "metric": "Precision@10 under bot-echo bursts",
+          "baseline": "54%",
+          "target": "76% (+41% rel.)"
+        },
+        {
+          "metric": "Echo-cluster collapse accuracy",
+          "baseline": "n/a",
+          "target": ">= 91%"
+        }
+      ],
+      "risks_and_mitigations": "Risk: +18 ms clustering latency and accidental collapse of legitimate quote-tweets. Mitigation: preserve distinct commentary edges above 35% novel token threshold.",
+      "verification_method": "Inject synthetic 50-account copy-pasta bursts into benchmark feeds; verify cluster count collapses to 1 while independent sources remain."
+    },
+    {
+      "id": "GROK-04",
+      "priority": "P1",
+      "horizon": "Mid-term (3-6 mo)",
+      "domain": "Closed-Loop Verification",
+      "title": "Closed-Loop Sandboxed Code & Numerical Verification Harness",
+      "short_title": "Sandboxed Verify Loop",
+      "current_gap": "Fast technical responses sometimes emit plausible-looking physics, financial, or code snippets with off-by-one or unit errors.",
+      "proposed_architecture": "Route quantitative and code claims through an ephemeral read-only verification sandbox (AST parse, unit/dimensional analysis, and property test execution) prior to final response emission.",
+      "fieldglass_grounding": "Mirrors Fieldglass test-gated verification before publishing any telemetry claim.",
+      "concrete_deliverable": "SandboxedVerifyLoop execution wrapper attaching pass/fail check badges to snippets.",
+      "kpis": [
+        {
+          "metric": "Executable snippet first-run pass rate",
+          "baseline": "74%",
+          "target": "96%"
+        },
+        {
+          "metric": "Unit/dimensional calculation errors",
+          "baseline": "8.9%",
+          "target": "< 1.0%"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Increases tail latency on complex multi-file snippets. Mitigation: 500 ms fast sandbox budget with explicit 'unexecuted draft' tag on timeout.",
+      "verification_method": "Run 120 quantitative physics/code prompts; verify >= 96% pass AST + unit assertions."
+    },
+    {
+      "id": "GROK-05",
+      "priority": "P1",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Open-Audit Telemetry & Accessibility",
+      "title": "Separated ClaimLedger, Open-Audit Receipts & 2x4 Braille Timeline",
+      "short_title": "ClaimLedger + Braille",
+      "current_gap": "Witty conversational framing obscures which statements are verified facts, and users lack portable, zero-token offline audit bundles or tactile event timelines.",
+      "proposed_architecture": "Emit a machine-readable ClaimLedger sidecar (executed=False, tokens_used accounting, primary_source_count, report_sha256) cleanly separated from persona prose, alongside a 72-column 2x4 Unicode Braille event-timeline digest.",
+      "fieldglass_grounding": "Reuses fieldglass-causal-chiasm/v1 SHA-256 sealing and plate.save_braille_bundle().",
+      "concrete_deliverable": "ChiasmDigest portable JSON/SVG/Braille export bundle.",
+      "kpis": [
+        {
+          "metric": "Factual auditability & ARIA clarity",
+          "baseline": "52%",
+          "target": "91%"
+        },
+        {
+          "metric": "Sidecar footprint per digest",
+          "baseline": "n/a",
+          "target": "+240 B ledger"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Persona stripping could miss subtle irony. Mitigation: extract verifiable timestamped propositions directly from evidence cones.",
+      "verification_method": "Validate ClaimLedger JSON schema, report_sha256 determinism, and Braille non-blank cells."
+    }
+  ],
+  "telemetry_profile": {
+    "repertoire_states": [
+      "primary_grounded",
+      "de_echo_cluster",
+      "fresh_decayed",
+      "split_badge_ok",
+      "code_verified",
+      "viral_rumor_mix",
+      "bot_amplified",
+      "stale_quote_bias"
+    ],
+    "past_weights": {
+      "primary_grounded": 0.09,
+      "de_echo_cluster": 0.07,
+      "fresh_decayed": 0.12,
+      "split_badge_ok": 0.04,
+      "code_verified": 0.05,
+      "viral_rumor_mix": 0.26,
+      "bot_amplified": 0.2,
+      "stale_quote_bias": 0.17
+    },
+    "future_weights": {
+      "primary_grounded": 0.27,
+      "de_echo_cluster": 0.21,
+      "fresh_decayed": 0.19,
+      "split_badge_ok": 0.15,
+      "code_verified": 0.13,
+      "viral_rumor_mix": 0.02,
+      "bot_amplified": 0.02,
+      "stale_quote_bias": 0.01
+    },
+    "episode_count": 24,
+    "nexus_episode": 12,
+    "routing_policy": "EI(Primary, Social) < 0.25 or cone conflict -> emit ?? Split-View Badge; code/math claim -> SandboxedVerifyLoop prior to emit"
+  },
+  "artifacts": {
+    "html": "index.html",
+    "preview_png": "preview.png",
+    "architecture_svg": "architecture.svg",
+    "chiasm_svg": "chiasm.svg",
+    "chiasm_report": "chiasm_report.json",
+    "summary_json": "summary.json",
+    "braille_txt": "grok_braille.txt",
+    "braille_json": "grok_braille.json",
+    "braille_preview_png": "grok_braille_preview.png"
+  },
+  "clinical_use": false,
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

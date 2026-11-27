@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+<rect width="1400" height="900" fill="#0b0f17"/>
+<rect x="16" y="14" width="1368" height="872" rx="12" fill="#0d131e" stroke="#2a3c55" stroke-width="1.5"/>
+<rect x="30" y="26" width="1340" height="66" rx="10" fill="#121926" stroke="#f46a7e" stroke-width="2"/>
+<text x="48" y="54" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold">FIELDGLASS R2 · FIVE STRUCTURED IMPROVEMENT DOSSIERS (25 PROPOSALS)</text>
+<text x="48" y="78" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="12.5">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]  ·  executed=False · sentience_claimed=False · tokens_used=0</text>
+<rect x="30" y="106" width="656" height="356" rx="10" fill="#121926" stroke="#294058" stroke-width="1.5"/>
+<text x="48" y="134" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="14" font-weight="bold">01 / ACCESSIBLE REPERTOIRE A_0.14(p) PAST -&gt; FUTURE &amp; PURITY M4^(1/4)</text>
+<text x="48" y="156" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="11.5">Muted Slate: Past Baseline A_0.14  ·  Subject Accent: Proposed Future A_0.14 (max 8 regimes)</text>
+<text x="48" y="197" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="bold">ChatGPT</text>
+<rect x="195" y="182" width="90" height="12" rx="3" fill="#3a4c66"/>
+<rect x="195" y="198" width="120" height="14" rx="3" fill="#5edaf0"/>
+<text x="455" y="200" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12">A_0.14: 3 -&gt; 4  |  M4: 0.304</text>
+<text x="48" y="251" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="bold">Anthropic</text>
+<rect x="195" y="236" width="90" height="12" rx="3" fill="#3a4c66"/>
+<rect x="195" y="252" width="120" height="14" rx="3" fill="#f2c45c"/>
+<text x="455" y="254" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12">A_0.14: 3 -&gt; 4  |  M4: 0.315</text>
+<text x="48" y="305" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="bold">Grok</text>
+<rect x="195" y="290" width="90" height="12" rx="3" fill="#3a4c66"/>
+<rect x="195" y="306" width="120" height="14" rx="3" fill="#f46a7e"/>
+<text x="455" y="308" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12">A_0.14: 3 -&gt; 4  |  M4: 0.311</text>
+<text x="48" y="359" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="bold">SpaceX</text>
+<rect x="195" y="344" width="90" height="12" rx="3" fill="#3a4c66"/>
+<rect x="195" y="360" width="120" height="14" rx="3" fill="#5edaf0"/>
+<text x="455" y="362" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12">A_0.14: 3 -&gt; 4  |  M4: 0.304</text>
+<text x="48" y="413" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="bold">Claire (aka Grimes)</text>
+<rect x="195" y="398" width="90" height="12" rx="3" fill="#3a4c66"/>
+<rect x="195" y="414" width="90" height="14" rx="3" fill="#c896ff"/>
+<text x="455" y="416" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12">A_0.14: 3 -&gt; 3  |  M4: 0.320</text>
+<rect x="714" y="106" width="656" height="356" rx="10" fill="#121926" stroke="#294058" stroke-width="1.5"/>
+<text x="732" y="134" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="14" font-weight="bold">02 / CAUSAL CHIASM EI (BITS) &amp; PERSISTENT INVARIANTS (P &gt;= 0.14)</text>
+<text x="732" y="156" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="11.5">24-episode trajectory per subject (Nexus t = 12) · fieldglass-causal-chiasm/v1</text>
+<text x="732" y="198" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="bold">ChatGPT</text>
+<rect x="890" y="185" width="58" height="16" rx="3" fill="#5edaf0"/>
+<text x="958" y="198" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11.5">EI=0.420b (^_^)</text>
+<text x="890" y="217" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">INV: det_sandbox</text>
+<text x="732" y="252" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="bold">Anthropic</text>
+<rect x="890" y="239" width="54" height="16" rx="3" fill="#f2c45c"/>
+<text x="954" y="252" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11.5">EI=0.389b (^_^)</text>
+<text x="890" y="271" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">INV: invariant_pinned, mcp_sandboxed</text>
+<text x="732" y="306" fill="#f46a7e" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="bold">Grok</text>
+<rect x="890" y="293" width="65" height="16" rx="3" fill="#f46a7e"/>
+<text x="965" y="306" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11.5">EI=0.468b (^_^)</text>
+<text x="890" y="325" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">INV: primary_grounded</text>
+<text x="732" y="360" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="bold">SpaceX</text>
+<rect x="890" y="347" width="54" height="16" rx="3" fill="#5edaf0"/>
+<text x="954" y="360" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11.5">EI=0.386b (^_^)</text>
+<text x="890" y="379" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">INV: chiasm_margin_ok</text>
+<text x="732" y="414" fill="#c896ff" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="bold">Claire (aka Grimes)</text>
+<rect x="890" y="401" width="60" height="16" rx="3" fill="#c896ff"/>
+<text x="960" y="414" fill="#eaeff5" font-family="DejaVu Sans Mono, monospace" font-size="11.5">EI=0.431b (^_^)</text>
+<text x="890" y="433" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">INV: elf_stem_sealed</text>
+<text x="34" y="492" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="14" font-weight="bold">03 / CROSS-SUBJECT DOSSIER MATRIX · 5 SUBJECTS × 5 CONCRETE IMPROVEMENTS = 25 PROPOSALS</text>
+<rect x="30" y="506" width="256" height="344" rx="9" fill="#121926" stroke="#5edaf0" stroke-width="1.5"/>
+<rect x="30" y="506" width="256" height="46" rx="9" fill="#172233"/>
+<text x="42" y="528" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="bold">ChatGPT</text>
+<text x="42" y="545" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Frontier AI · 5 items</text>
+<rect x="40" y="560" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="45" y="576" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">CGPT-01</text>
+<text x="104" y="576" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Typed Contracts &amp; DAG</text>
+<text x="45" y="595" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">11.4% -&gt; &lt;= 0.8%</text>
+<rect x="40" y="613" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="45" y="629" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">CGPT-02</text>
+<text x="104" y="629" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">A_tau Stem &amp; Memory Gate</text>
+<text x="45" y="648" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">42% -&gt; &lt;= 8% (-38% net)</text>
+<rect x="40" y="666" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="45" y="682" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">CGPT-03</text>
+<text x="104" y="682" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Calibrated Truth Telemetry</text>
+<text x="45" y="701" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">18.5% -&gt; &lt;= 2.0%</text>
+<rect x="40" y="719" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="45" y="735" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">CGPT-04</text>
+<text x="104" y="735" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Local Edge/Cloud Handoff</text>
+<text x="45" y="754" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">3.2% -&gt; 0.0%</text>
+<rect x="40" y="772" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="45" y="788" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">CGPT-05</text>
+<text x="104" y="788" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Checkpoints + Braille Export</text>
+<text x="45" y="807" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">9.1% -&gt; 0.0%</text>
+<rect x="301" y="506" width="256" height="344" rx="9" fill="#121926" stroke="#f2c45c" stroke-width="1.5"/>
+<rect x="301" y="506" width="256" height="46" rx="9" fill="#172233"/>
+<text x="313" y="528" fill="#f2c45c" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="bold">Anthropic</text>
+<text x="313" y="545" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Constitutional &amp; Coding AI · 5 items</text>
+<rect x="311" y="560" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="316" y="576" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">ANTH-01</text>
+<text x="375" y="576" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Interpretability HUD</text>
+<text x="316" y="595" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">34% -&gt; 86%</text>
+<rect x="311" y="613" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="316" y="629" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">ANTH-02</text>
+<text x="375" y="629" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Scoped MCP + Dry-Run Gate</text>
+<text x="316" y="648" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">4.2% -&gt; 0.0%</text>
+<rect x="311" y="666" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="316" y="682" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">ANTH-03</text>
+<text x="375" y="682" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Span Hash + Context Anchor</text>
+<text x="316" y="701" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">71% -&gt; 96%</text>
+<rect x="311" y="719" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="316" y="735" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">ANTH-04</text>
+<text x="375" y="735" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Seeded Replay + ArtifactSeal</text>
+<text x="316" y="754" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">44% -&gt; 99.5%</text>
+<rect x="311" y="772" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="316" y="788" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">ANTH-05</text>
+<text x="375" y="788" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Constitutional Conflict Ledger</text>
+<text x="316" y="807" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">3.4 turns -&gt; 1.3 turns (-62%)</text>
+<rect x="572" y="506" width="256" height="344" rx="9" fill="#121926" stroke="#f46a7e" stroke-width="1.5"/>
+<rect x="572" y="506" width="256" height="46" rx="9" fill="#172233"/>
+<text x="584" y="528" fill="#f46a7e" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="bold">Grok</text>
+<text x="584" y="545" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Real-Time &amp; Social · 5 items</text>
+<rect x="582" y="560" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="587" y="576" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">GROK-01</text>
+<text x="646" y="576" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Dual-Cone + Time Decay</text>
+<text x="587" y="595" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">19.2% -&gt; 3.8%</text>
+<rect x="582" y="613" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="587" y="629" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">GROK-02</text>
+<text x="646" y="629" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Multimodal Chart Audit</text>
+<text x="587" y="648" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">27.0% -&gt; &lt;= 4.5%</text>
+<rect x="582" y="666" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="587" y="682" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">GROK-03</text>
+<text x="646" y="682" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Spectral Bot De-Echo</text>
+<text x="587" y="701" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">54% -&gt; 76% (+41% rel.)</text>
+<rect x="582" y="719" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="587" y="735" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">GROK-04</text>
+<text x="646" y="735" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Sandboxed Verify Loop</text>
+<text x="587" y="754" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">74% -&gt; 96%</text>
+<rect x="582" y="772" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="587" y="788" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">GROK-05</text>
+<text x="646" y="788" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">ClaimLedger + Braille</text>
+<text x="587" y="807" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">52% -&gt; 91%</text>
+<rect x="843" y="506" width="256" height="344" rx="9" fill="#121926" stroke="#5edaf0" stroke-width="1.5"/>
+<rect x="843" y="506" width="256" height="46" rx="9" fill="#172233"/>
+<text x="855" y="528" fill="#5edaf0" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="bold">SpaceX</text>
+<text x="855" y="545" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Aerospace &amp; Telemetry · 5 items</text>
+<rect x="853" y="560" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="858" y="576" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">SPX-01</text>
+<text x="917" y="576" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Countdown Chiasm Advisor</text>
+<text x="858" y="595" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">38 s -&gt; 21 s (-45%)</text>
+<rect x="853" y="613" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="858" y="629" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">SPX-02</text>
+<text x="917" y="629" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">SHA-256 HIL &amp; Frame Seal</text>
+<text x="858" y="648" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">18% (OCR) -&gt; 100% (SHA-256)</text>
+<rect x="853" y="666" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="858" y="682" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">SPX-03</text>
+<text x="917" y="682" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">GSE Cryo Filtration Watch</text>
+<text x="858" y="701" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">0 cycles -&gt; &gt;= 3 cycles prior</text>
+<rect x="853" y="719" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="858" y="735" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">SPX-04</text>
+<text x="917" y="735" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">LEO 206 Buffer + Conjunctions</text>
+<text x="858" y="754" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">2.40% -&gt; &lt; 0.05%</text>
+<rect x="853" y="772" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="858" y="788" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">SPX-05</text>
+<text x="917" y="788" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Anomaly HUD + Braille Flight</text>
+<text x="858" y="807" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">5% -&gt; 92%</text>
+<rect x="1114" y="506" width="256" height="344" rx="9" fill="#121926" stroke="#c896ff" stroke-width="1.5"/>
+<rect x="1114" y="506" width="256" height="46" rx="9" fill="#172233"/>
+<text x="1126" y="528" fill="#c896ff" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="bold">Claire (aka Grimes)</text>
+<text x="1126" y="545" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="10.5">Creative &amp; Audio · 5 items</text>
+<rect x="1124" y="560" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1129" y="576" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">GRIMES-01</text>
+<text x="1188" y="576" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Elf.Tech Stem Provenance</text>
+<text x="1129" y="595" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">31% -&gt; 95%</text>
+<rect x="1124" y="613" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1129" y="629" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">GRIMES-02</text>
+<text x="1188" y="629" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">StageChiasm Live Failover</text>
+<text x="1129" y="648" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">8.5% -&gt; &lt; 0.3%</text>
+<rect x="1124" y="666" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1129" y="682" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">GRIMES-03</text>
+<text x="1188" y="682" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Braille Cymatics Vault</text>
+<text x="1129" y="701" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">0% -&gt; 93%</text>
+<rect x="1124" y="719" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1129" y="735" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">GRIMES-04</text>
+<text x="1188" y="735" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Fan Co-Creation Sandbox</text>
+<text x="1129" y="754" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">41% -&gt; 99%</text>
+<rect x="1124" y="772" width="236" height="45" rx="6" fill="#0b0f17" stroke="#24364d"/>
+<text x="1129" y="788" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="9.2" font-weight="bold">GRIMES-05</text>
+<text x="1188" y="788" fill="#eaeff5" font-family="DejaVu Sans, sans-serif" font-size="9.5" font-weight="bold">Single-Take Patch DAG</text>
+<text x="1129" y="807" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="9.5">240 min -&gt; &lt;= 4 min</text>
+<text x="32" y="874" fill="#93a6be" font-family="DejaVu Sans Mono, monospace" font-size="12">Fieldglass Observatory · Milestone M2 Hub · 100% Self-Contained Static Assets · Zero External CDNs · Zero GPS Metadata</text>
+</svg>

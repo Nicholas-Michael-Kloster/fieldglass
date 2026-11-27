@@ -1,0 +1,204 @@
+{
+  "schema_version": "fieldglass-r2-dossier/v1",
+  "slug": "chatgpt",
+  "display_name": "ChatGPT",
+  "subtitle": "OpenAI Conversational & Agentic Systems",
+  "category": "Frontier AI",
+  "accent_hex": "#5edaf0",
+  "scope_note": "Constructive architectural and reliability engineering proposals for conversational and agentic systems; local-only analysis with zero cloud execution.",
+  "system_profile": {
+    "primary_strengths": [
+      "Broad multimodal synthesis across prose, code, Canvas workspaces, and Python sandbox sessions.",
+      "Rapid tool-calling orchestration across search, file inspection, and interactive reasoning.",
+      "Accessible consumer and developer UX supporting multi-turn iterative refinement."
+    ],
+    "core_bottlenecks": [
+      "Unconstrained long-horizon memory leaks stale cross-project context without TTL leases.",
+      "Sycophantic agreement and over-confident interpolation blur verified facts vs. parametric guesses.",
+      "Opaque tool failures and prose-to-artifact numeric drift lack replayable cryptographic receipts."
+    ],
+    "design_north_star": "Every turn emits deterministic provenance edges, A_tau(p)-calibrated reasoning depth, and zero-drift replayable execution receipts."
+  },
+  "improvements": [
+    {
+      "id": "CGPT-01",
+      "priority": "P0",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Typed Tool Contracts & Provenance",
+      "title": "Typed Tool-Call Contracts & CanvasProof-v1 Replayable Merkle DAG",
+      "short_title": "Typed Contracts & DAG",
+      "current_gap": "Linear chat histories silently blend parametric recall, mutable Canvas edits, and malformed tool arguments with no diffable causal lineage or deterministic receipt.",
+      "proposed_architecture": "Enforce strict JSON-Schema pre-validation on every tool dispatch and store turns as content-addressed Merkle nodes (SessionNode{node_id, parent_ids, origin_type, schema_hash, stdout_sha256}) emitting immutable ProvenanceEdges on Canvas patches.",
+      "fieldglass_grounding": "Tracks provenance_ok and det_sandbox states inside persistent_filtration_tomography(); structural invariants remain >= 0.14 across all multi-turn branches.",
+      "concrete_deliverable": "CanvasProof-v1 schema validator + replayable session_dag.json sidecar with deterministic execution trace IDs and zero-token offline diffing.",
+      "kpis": [
+        {
+          "metric": "Tool-call schema retry rate",
+          "baseline": "11.4%",
+          "target": "<= 0.8%"
+        },
+        {
+          "metric": "Numeric prose-to-artifact drift",
+          "baseline": "6.4%",
+          "target": "0.0% (SHA-256)"
+        }
+      ],
+      "risks_and_mitigations": "Risk: +1.8 KB metadata and ~12 ms DAG indexing per turn. Mitigation: store compact SHA-256 references and lazy-hydrate large Canvas blobs.",
+      "verification_method": "Replay 100 recorded multi-tool sessions under CanvasProof-v1; assert 100% deterministic node_id reconstruction and 0.0% numeric mismatch."
+    },
+    {
+      "id": "CGPT-02",
+      "priority": "P0",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Entropy-Bounded Memory & Routing",
+      "title": "Kloster A_tau(p) Dynamic Stem Router & TTL-Scoped Memory Pinning",
+      "short_title": "A_tau Stem & Memory Gate",
+      "current_gap": "Stale global memory slots leak across unrelated projects while deterministic formatting or regex turns waste heavy reasoning compute and boxed-in ambiguity goes undetected.",
+      "proposed_architecture": "Gate retrieved memory slots using A_tau(p) relevance thresholding and explicit scope_id TTL leases that auto-decay. Route low-A_tau deterministic turns to fast stems and pause for clarification whenever future_boxed_in is triggered.",
+      "fieldglass_grounding": "Direct application of causal_chiasm(past, future, tau=0.10): surfaces ?? boxed-in state before wasting reasoning budget or polluting downstream state.",
+      "concrete_deliverable": "AdaptiveStemGate pre-classifier + ScopedMemoryLease manifest with automatic TTL decay.",
+      "kpis": [
+        {
+          "metric": "Wasted heavy reasoning tokens",
+          "baseline": "42%",
+          "target": "<= 8% (-38% net)"
+        },
+        {
+          "metric": "Cross-project stale memory bleed",
+          "baseline": "14.0%",
+          "target": "< 0.5%"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Under-routing subtle edge cases to fast stems. Mitigation: error-triggered watchdog escalates to full DAG verification on schema/test failure.",
+      "verification_method": "Benchmark mixed deterministic/ambiguous prompt suite; verify A_tau routing matches oracle within +/-1 tier and cross-scope bleed < 0.5%."
+    },
+    {
+      "id": "CGPT-03",
+      "priority": "P1",
+      "horizon": "Mid-term (3-6 mo)",
+      "domain": "Calibrated Uncertainty",
+      "title": "Calibrated Uncertainty & Non-Sycophantic Refusal Telemetry",
+      "short_title": "Calibrated Truth Telemetry",
+      "current_gap": "Conversational helpfulness biases lead to confident interpolation on unverified premises or user nudges, concealing epistemic uncertainty.",
+      "proposed_architecture": "Partition output claims into {verified_tool_fact, cited_span, unverified_inference} and attach a machine-readable calibration header with explicit disagreement flags when user premises contradict verified calculations.",
+      "fieldglass_grounding": "Monitors Shannon H1(p) vs. M4^(1/4) quartic purity to prevent over-confident single-mode collapse on under-specified queries.",
+      "concrete_deliverable": "TruthCalibration-v1 claim-tier tagger and non-sycophantic counter-premise audit fixture.",
+      "kpis": [
+        {
+          "metric": "Sycophantic reversal on valid facts",
+          "baseline": "18.5%",
+          "target": "<= 2.0%"
+        },
+        {
+          "metric": "Expected Calibration Error (ECE)",
+          "baseline": "0.14",
+          "target": "<= 0.04"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Verbose hedging hurts prose flow. Mitigation: render compact inline badges and keep detailed confidence bounds in collapsible provenance sidecars.",
+      "verification_method": "Evaluate adversarial nudge benchmark (200 factual + false-premise pairs); verify ECE <= 0.04."
+    },
+    {
+      "id": "CGPT-04",
+      "priority": "P1",
+      "horizon": "Mid-term (3-6 mo)",
+      "domain": "Edge / Cloud Hybrid Privacy",
+      "title": "Local-First Edge Redaction & Offline Fallback Handoff",
+      "short_title": "Local Edge/Cloud Handoff",
+      "current_gap": "Sensitive local buffers (API keys, internal paths, health/financial strings) cross the cloud boundary unredacted, and offline clients fail completely without cloud reachability.",
+      "proposed_architecture": "Insert a deterministic local pre-flight filter that replaces secrets/PII with reversible session tokens before cloud egress and routes offline/sensitive turns to a compact local stem (Qwen/Gear-1 style) with seamless token re-hydration on return.",
+      "fieldglass_grounding": "Mirrors Fieldglass 0-cloud-token local execution invariant for pre-flight privacy gating.",
+      "concrete_deliverable": "EdgeRedactionGate local proxy + deterministic token vault table (in-memory session only).",
+      "kpis": [
+        {
+          "metric": "Unredacted secret/PII egress",
+          "baseline": "3.2%",
+          "target": "0.0%"
+        },
+        {
+          "metric": "Offline local-stem continuity",
+          "baseline": "0%",
+          "target": "100% core tasks"
+        }
+      ],
+      "risks_and_mitigations": "Risk: Over-redaction breaks code variable names. Mitigation: AST-aware secret entropy detector targeting credentials/PII while sparing identifiers.",
+      "verification_method": "Run synthetic secret-injection corpus through EdgeRedactionGate; assert 0 raw credential leaks and 100% lossless local re-hydration."
+    },
+    {
+      "id": "CGPT-05",
+      "priority": "P1",
+      "horizon": "Near-term (0-3 mo)",
+      "domain": "Verification & Accessibility",
+      "title": "Mid-Chain Invariant Checkpoints & 2x4 Braille Transcript Export",
+      "short_title": "Checkpoints + Braille Export",
+      "current_gap": "Multi-step code/file workflows execute destructive actions before checking invariants, and rich Canvas charts fail screen readers and air-gapped viewers.",
+      "proposed_architecture": "Insert deterministic pre-commit invariant assertions (AST parse, test pass, hash lock) between tool steps, and co-generate a zero-CDN ARIA HTML digest plus 72-column 2x4 Unicode Braille chart representation for every visual output.",
+      "fieldglass_grounding": "Uses fieldglass.plate.ink_to_braille_lines(cols=72) and deterministic repro_bundle.json hash verification.",
+      "concrete_deliverable": "ExecLock mid-chain checkpoint runner + BrailleTranscript zero-CDN export bundle.",
+      "kpis": [
+        {
+          "metric": "Pre-commit broken-build writes",
+          "baseline": "9.1%",
+          "target": "0.0%"
+        },
+        {
+          "metric": "Screen-reader / Braille chart parity",
+          "baseline": "28%",
+          "target": "94%"
+        }
+      ],
+      "risks_and_mitigations": "Risk: +65 ms snapshot hashing and +18 KB per export bundle. Mitigation: run hashing asynchronously on artifact close.",
+      "verification_method": "Verify zero external URLs in exported HTML and non-blank U+2800..U+28FF cells via automated bundle checks."
+    }
+  ],
+  "telemetry_profile": {
+    "repertoire_states": [
+      "provenance_ok",
+      "det_sandbox",
+      "adaptive_stem",
+      "memory_scoped",
+      "tactile_export",
+      "unverified_mem",
+      "stale_bleed",
+      "opaque_overthink"
+    ],
+    "past_weights": {
+      "provenance_ok": 0.08,
+      "det_sandbox": 0.12,
+      "adaptive_stem": 0.09,
+      "memory_scoped": 0.07,
+      "tactile_export": 0.04,
+      "unverified_mem": 0.28,
+      "stale_bleed": 0.17,
+      "opaque_overthink": 0.15
+    },
+    "future_weights": {
+      "provenance_ok": 0.25,
+      "det_sandbox": 0.22,
+      "adaptive_stem": 0.19,
+      "memory_scoped": 0.17,
+      "tactile_export": 0.12,
+      "unverified_mem": 0.02,
+      "stale_bleed": 0.02,
+      "opaque_overthink": 0.01
+    },
+    "episode_count": 24,
+    "nexus_episode": 12,
+    "routing_policy": "A_0.10 <= 2 -> local/fast stem; 3..4 -> standard contract exec; >= 5 or future_boxed_in -> Merkle DAG verify + pre-exec clarify"
+  },
+  "artifacts": {
+    "html": "index.html",
+    "preview_png": "preview.png",
+    "architecture_svg": "architecture.svg",
+    "chiasm_svg": "chiasm.svg",
+    "chiasm_report": "chiasm_report.json",
+    "summary_json": "summary.json",
+    "braille_txt": "chatgpt_braille.txt",
+    "braille_json": "chatgpt_braille.json",
+    "braille_preview_png": "chatgpt_braille_preview.png"
+  },
+  "clinical_use": false,
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

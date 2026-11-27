@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
+from collections.abc import Sequence as AbcSequence
 import json
+import math
+import numbers
 from pathlib import Path
 import subprocess
 import tempfile
@@ -104,7 +107,97 @@ def _perspective_coeffs(
         matrix.append([0.0, 0.0, 0.0, x, y, 1.0, -v * x, -v * y])
     A = np.asarray(matrix, dtype=np.float64)
     B = np.asarray([c for pt in src_pts for c in pt], dtype=np.float64)
-    return [float(c) for c in np.linalg.solve(A, B)]
+    try:
+        solved = np.linalg.solve(A, B)
+    except np.linalg.LinAlgError as exc:
+        raise ValueError("corners_norm must form a non-degenerate quadrilateral") from exc
+    if not np.all(np.isfinite(solved)):
+        raise ValueError("corners_norm must form a non-degenerate quadrilateral")
+    return [float(c) for c in solved]
+
+
+def _contains_bool(obj: Any) -> bool:
+    """Return True if obj is or contains a Python bool or numpy.bool_."""
+    if isinstance(obj, (bool, np.bool_)):
+        return True
+    if isinstance(obj, np.ndarray):
+        if obj.dtype == np.bool_:
+            return True
+        if obj.dtype == object:
+            return any(_contains_bool(x) for x in obj.flat)
+        return False
+    if isinstance(obj, AbcSequence) and not isinstance(obj, (str, bytes, bytearray)):
+        return any(_contains_bool(x) for x in obj)
+    return False
+
+
+def _require_finite_coord(val: Any, name: str) -> float:
+    if isinstance(val, (bool, np.bool_)):
+        raise ValueError(f"{name} must be a finite real number, not bool")
+    if isinstance(val, np.ndarray):
+        cur: Any = val
+        seen: set[int] = set()
+        while isinstance(cur, np.ndarray):
+            obj_id = id(cur)
+            if obj_id in seen:
+                raise ValueError(f"{name} must be a scalar finite real number")
+            seen.add(obj_id)
+            if cur.ndim != 0:
+                raise ValueError(f"{name} must be a scalar finite real number")
+            if cur.dtype == np.bool_:
+                raise ValueError(f"{name} must be a finite real number, not bool")
+            if cur.dtype == object:
+                cur = cur.item()
+            else:
+                break
+        if isinstance(cur, (bool, np.bool_)):
+            raise ValueError(f"{name} must be a finite real number, not bool")
+    try:
+        num = float(val)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{name} must be a finite real number") from exc
+    if not math.isfinite(num):
+        raise ValueError(f"{name} must be finite")
+    return num
+
+
+def _require_positive_int_dim(val: Any, name: str) -> int:
+    if isinstance(val, (bool, np.bool_)):
+        raise ValueError(f"{name} must be a positive integer, not bool")
+    if isinstance(val, np.ndarray):
+        if val.ndim != 0:
+            raise ValueError(f"{name} must be a scalar positive integer")
+        if val.dtype == np.bool_:
+            raise ValueError(f"{name} must be a positive integer, not bool")
+        if val.dtype == object:
+            cur: Any = val
+            seen: set[int] = set()
+            while isinstance(cur, np.ndarray):
+                obj_id = id(cur)
+                if obj_id in seen:
+                    raise ValueError(f"{name} must be a scalar positive integer")
+                seen.add(obj_id)
+                if cur.ndim != 0:
+                    raise ValueError(f"{name} must be a scalar positive integer")
+                if cur.dtype == np.bool_:
+                    raise ValueError(f"{name} must be a positive integer, not bool")
+                if cur.dtype == object:
+                    cur = cur.item()
+                else:
+                    break
+            if isinstance(cur, (bool, np.bool_)):
+                raise ValueError(f"{name} must be a positive integer, not bool")
+            raise ValueError(f"{name} must be a positive integer")
+        if not np.issubdtype(val.dtype, np.integer):
+            raise ValueError(f"{name} must be a positive integer")
+        iv = int(val)
+    elif isinstance(val, numbers.Integral):
+        iv = int(val)
+    else:
+        raise ValueError(f"{name} must be a positive integer")
+    if iv <= 0:
+        raise ValueError(f"{name} dimensions must be positive")
+    return iv
 
 
 def perspective_deskew(
@@ -114,14 +207,29 @@ def perspective_deskew(
     out_size: tuple[int, int] = (1500, 2250),
 ) -> Image.Image:
     """Warp a 4-corner quadrilateral (normalized 0..1 TL, TR, BR, BL) into a flat rectangular scan."""
+    w, h = image.size
+    if w <= 0 or h <= 0:
+        raise ValueError("image dimensions must be positive")
+    if (
+        not isinstance(out_size, AbcSequence)
+        or isinstance(out_size, (str, bytes, bytearray))
+        or len(out_size) != 2
+    ):
+        raise ValueError("out_size must be a (width, height) pair")
+    ow = _require_positive_int_dim(out_size[0], "out_size[0]")
+    oh = _require_positive_int_dim(out_size[1], "out_size[1]")
     if len(corners_norm) != 4:
         raise ValueError("corners_norm must contain exactly 4 (x_frac, y_frac) points: TL, TR, BR, BL")
-    w, h = image.size
-    src_pts = [(x * w, y * h) for x, y in corners_norm]
-    ow, oh = out_size
+    src_pts: list[tuple[float, float]] = []
+    for idx, corner in enumerate(corners_norm):
+        if len(corner) != 2:
+            raise ValueError(f"corners_norm[{idx}] must be an (x, y) pair")
+        cx = _require_finite_coord(corner[0], f"corners_norm[{idx}][0]")
+        cy = _require_finite_coord(corner[1], f"corners_norm[{idx}][1]")
+        src_pts.append((cx * w, cy * h))
     dst_pts = [(0.0, 0.0), (float(ow), 0.0), (float(ow), float(oh)), (0.0, float(oh))]
     coeffs = _perspective_coeffs(dst_pts, src_pts)
-    return image.transform((ow, oh), Image.Transform.PERSPECTIVE, coeffs, resample=Image.Resampling.BICUBIC)
+    return image.transform((int(ow), int(oh)), Image.Transform.PERSPECTIVE, coeffs, resample=Image.Resampling.BICUBIC)
 
 
 def clean_illumination(
@@ -149,6 +257,24 @@ def clean_illumination(
     return ink, Image.fromarray(archival), Image.fromarray(bw)
 
 
+def _validate_ink_map_2d(ink_map: Any) -> np.ndarray:
+    """Validate a non-empty, finite, non-boolean 2D numeric ink map."""
+    if _contains_bool(ink_map):
+        raise ValueError("ink_map must be a 2D finite numeric array, not bool")
+    raw = np.asarray(ink_map)
+    if raw.dtype == np.bool_ or (raw.dtype == object and any(_contains_bool(x) for x in raw.flat)):
+        raise ValueError("ink_map must be a 2D finite numeric array, not bool")
+    try:
+        arr = np.asarray(raw, dtype=np.float32)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("ink_map must be a 2D finite numeric array") from exc
+    if arr.ndim != 2 or arr.size == 0:
+        raise ValueError("ink_map must be a non-empty 2D array")
+    if not np.all(np.isfinite(arr)):
+        raise ValueError("ink_map must contain only finite values")
+    return arr
+
+
 def trace_ink_to_svg(
     ink_map: np.ndarray,
     svg_path: str | Path,
@@ -159,6 +285,8 @@ def trace_ink_to_svg(
     levels: tuple[float, float, float] = (0.075, 0.21, 1.2),
 ) -> Path:
     """Trace a cleaned [0..1] ink field into a framed two-tone archival vector SVG."""
+    arr = _validate_ink_map_2d(ink_map)
+
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -167,14 +295,14 @@ def trace_ink_to_svg(
     dst.parent.mkdir(parents=True, exist_ok=True)
 
     # Remove tiny isolated dust specks (< 4 px)
-    mask = ink_map > 0.16
+    mask = arr > 0.16
     labeled, n_comp = ndimage.label(mask)
     if n_comp > 0:
         sizes = ndimage.sum(mask, labeled, range(1, n_comp + 1))
         keep = sizes >= 4
-        cleaned = np.where(keep[labeled - 1] & mask, ink_map, 0.0)
+        cleaned = np.where(keep[labeled - 1] & mask, arr, 0.0)
     else:
-        cleaned = ink_map
+        cleaned = arr
 
     ah, aw = cleaned.shape
     vec_h = max(16, int(round(ah * (vec_width / max(1, aw)))))
@@ -210,12 +338,13 @@ def trace_ink_to_svg(
 
 def ink_to_braille_lines(ink_map: np.ndarray, *, cols: int = 72) -> list[str]:
     """Convert a [0..1] ink strength array into crisp 2x4 Unicode Braille lines (U+2800..U+28FF)."""
+    arr = _validate_ink_map_2d(ink_map)
     cols = max(16, min(120, int(cols)))
-    ah, aw = ink_map.shape
+    ah, aw = arr.shape
     w_px = cols * 2
     h_px = max(8, (int(round(w_px * (ah / max(1, aw)))) // 4) * 4)
 
-    boosted = ndimage.grey_dilation(ink_map, size=(3, 3))
+    boosted = ndimage.grey_dilation(arr, size=(3, 3))
     small = np.asarray(
         Image.fromarray((boosted * 255.0).clip(0, 255).astype(np.uint8)).resize(
             (w_px, h_px), Image.Resampling.BOX

@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>Fieldglass R2 · Five Structured Improvement Dossiers</title>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --violet: #c896ff;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.3rem, 3vw, 1.95rem); color: var(--gold); }
+  h2 { margin: 0 0 8px; font-size: 1.15rem; color: var(--gold); }
+  h3 { margin: 0 0 6px; font-size: 1.02rem; color: var(--cyan); }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88rem;
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 6px 0 10px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .sub { font-size: 0.88rem; color: var(--muted); margin: 0 0 12px; }
+  .nav-links, .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .panel2 {
+    background: var(--panel2);
+    border: 1px solid #223248;
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .badge {
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+    display: inline-block;
+  }
+  a.btn, button.btn {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #1a273b;
+    color: var(--gold);
+    border: 1px solid #3c5475;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  a.btn.accent, button.btn.active {
+    background: #2b1826;
+    border-color: var(--ruby);
+    color: #ffd3da;
+  }
+  a.btn:hover, button.btn:hover { background: #23344f; }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    background: #070a10;
+    border: 1px solid #223248;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  th, td { border-bottom: 1px solid #223248; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { color: var(--gold); font-family: ui-monospace, monospace; font-size: 0.76rem; text-transform: uppercase; }
+  pre.code, pre.braille {
+    overflow-x: auto;
+    background: #090d15;
+    border: 1px solid #24364d;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: "DejaVu Sans Mono", ui-monospace, monospace;
+    font-size: 0.76rem;
+    line-height: 1.25;
+    color: #eaeff5;
+    margin: 10px 0 0;
+  }
+  select, input[type="range"] {
+    background: #0a101a;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-family: inherit;
+  }
+  .hidden { display: none !important; }
+  footer { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Fieldglass Observatory · Milestone M2 (R2 Structured Improvement Dossiers)</div>
+    <h1>R2 · ChatGPT, Anthropic, Grok, SpaceX &amp; Claire (aka Grimes)</h1>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <p class="sub">
+      25 concrete, domain-grounded architectural and reliability improvements across 5 dossiers, paired with
+      24-episode Causal Chiasm &amp; Persistent Filtration Tomography reports, bespoke dark-observatory SVGs,
+      and 72-column 2×4 Unicode Braille tactile plates. 0 cloud tokens · executed=false · sentience_claimed=false.
+    </p>
+    <div class="nav-links">
+      <a class="btn accent" href="../index.html">← Back to Fieldglass Observatory</a>
+      <a class="btn" href="hub_overview.svg">hub_overview.svg</a>
+      <a class="btn" href="preview.png">preview.png</a>
+      <a class="btn" href="summary.json">summary.json</a>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>Cross-Subject Observatory Synthesis</h2>
+    <a href="hub_overview.svg"><img src="preview.png" alt="Fieldglass R2 Cross-Subject Overview" /></a>
+  </section>
+
+  <section class="card">
+    <h2>Interactive Domain Filter &amp; Live Kloster A_tau(p) Slider</h2>
+    <div class="pill-row" id="domain-pills"><button class="btn active" data-domain="all" type="button">All (5)</button><button class="btn" data-domain="Frontier AI" type="button">Frontier AI</button><button class="btn" data-domain="Real-Time &amp; Social" type="button">Real-Time &amp; Social</button><button class="btn" data-domain="Aerospace &amp; Telemetry" type="button">Aerospace &amp; Telemetry</button><button class="btn" data-domain="Creative &amp; Audio" type="button">Creative &amp; Audio</button></div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:12px">
+      <label for="hub-tau-slider" style="font-family:ui-monospace,monospace;color:var(--gold)">
+        Live tau = <span id="hub-tau-val">0.10</span>
+      </label>
+      <input id="hub-tau-slider" type="range" min="0.04" max="0.25" step="0.01" value="0.10" />
+      <span class="sub" style="margin:0">Recomputes Past -&gt; Future A_tau(p) across all 5 subjects in real time.</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Cross-Subject Causal Chiasm &amp; Metric Matrix</h2>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th><th>Domain</th><th>A_tau (Past-&gt;Fut)</th><th>A_0.14</th>
+            <th>EI (bits)</th><th>H1 (bits)</th><th>M4^(1/4)</th><th>Persistent Invariants</th><th>Assets</th>
+          </tr>
+        </thead>
+        <tbody><tr class="subject-row" data-domain="Frontier AI" data-slug="chatgpt">
+        <td><a href="chatgpt/index.html" style="color:#5edaf0;font-weight:700;text-decoration:none">ChatGPT</a></td>
+        <td><span class="badge">Frontier AI</span></td>
+        <td class="dyn-a-tau" data-slug="chatgpt">6 -> 5 (-1)</td>
+        <td>3 -> 4</td>
+        <td>0.4200 b</td>
+        <td>2.78 -> 2.53</td>
+        <td>0.297 -> 0.304</td>
+        <td style="font-family:ui-monospace,monospace;font-size:0.75rem">det_sandbox</td>
+        <td>
+          <a class="btn" href="chatgpt/index.html">Dossier</a>
+          <a class="btn" href="chatgpt/chiasm.svg">Chiasm</a>
+          <a class="btn" href="chatgpt/chatgpt_braille_preview.png">Braille</a>
+        </td>
+      </tr><tr class="subject-row" data-domain="Frontier AI" data-slug="anthropic">
+        <td><a href="anthropic/index.html" style="color:#f2c45c;font-weight:700;text-decoration:none">Anthropic</a></td>
+        <td><span class="badge">Frontier AI</span></td>
+        <td class="dyn-a-tau" data-slug="anthropic">5 -> 5 (+0)</td>
+        <td>3 -> 4</td>
+        <td>0.3893 b</td>
+        <td>2.87 -> 2.47</td>
+        <td>0.261 -> 0.315</td>
+        <td style="font-family:ui-monospace,monospace;font-size:0.75rem">invariant_pinned, mcp_sandboxed</td>
+        <td>
+          <a class="btn" href="anthropic/index.html">Dossier</a>
+          <a class="btn" href="anthropic/chiasm.svg">Chiasm</a>
+          <a class="btn" href="anthropic/anthropic_braille_preview.png">Braille</a>
+        </td>
+      </tr><tr class="subject-row" data-domain="Real-Time &amp; Social" data-slug="grok">
+        <td><a href="grok/index.html" style="color:#f46a7e;font-weight:700;text-decoration:none">Grok</a></td>
+        <td><span class="badge">Real-Time &amp; Social</span></td>
+        <td class="dyn-a-tau" data-slug="grok">5 -> 5 (+0)</td>
+        <td>3 -> 4</td>
+        <td>0.4677 b</td>
+        <td>2.75 -> 2.52</td>
+        <td>0.292 -> 0.311</td>
+        <td style="font-family:ui-monospace,monospace;font-size:0.75rem">primary_grounded</td>
+        <td>
+          <a class="btn" href="grok/index.html">Dossier</a>
+          <a class="btn" href="grok/chiasm.svg">Chiasm</a>
+          <a class="btn" href="grok/grok_braille_preview.png">Braille</a>
+        </td>
+      </tr><tr class="subject-row" data-domain="Aerospace &amp; Telemetry" data-slug="spacex">
+        <td><a href="spacex/index.html" style="color:#5edaf0;font-weight:700;text-decoration:none">SpaceX</a></td>
+        <td><span class="badge">Aerospace &amp; Telemetry</span></td>
+        <td class="dyn-a-tau" data-slug="spacex">6 -> 5 (-1)</td>
+        <td>3 -> 4</td>
+        <td>0.3862 b</td>
+        <td>2.78 -> 2.53</td>
+        <td>0.274 -> 0.304</td>
+        <td style="font-family:ui-monospace,monospace;font-size:0.75rem">chiasm_margin_ok</td>
+        <td>
+          <a class="btn" href="spacex/index.html">Dossier</a>
+          <a class="btn" href="spacex/chiasm.svg">Chiasm</a>
+          <a class="btn" href="spacex/spacex_braille_preview.png">Braille</a>
+        </td>
+      </tr><tr class="subject-row" data-domain="Creative &amp; Audio" data-slug="claire-grimes">
+        <td><a href="claire-grimes/index.html" style="color:#c896ff;font-weight:700;text-decoration:none">Claire (aka Grimes)</a></td>
+        <td><span class="badge">Creative &amp; Audio</span></td>
+        <td class="dyn-a-tau" data-slug="claire-grimes">6 -> 5 (-1)</td>
+        <td>3 -> 3</td>
+        <td>0.4306 b</td>
+        <td>2.82 -> 2.50</td>
+        <td>0.270 -> 0.320</td>
+        <td style="font-family:ui-monospace,monospace;font-size:0.75rem">elf_stem_sealed</td>
+        <td>
+          <a class="btn" href="claire-grimes/index.html">Dossier</a>
+          <a class="btn" href="claire-grimes/chiasm.svg">Chiasm</a>
+          <a class="btn" href="claire-grimes/claire-grimes_braille_preview.png">Braille</a>
+        </td>
+      </tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Interactive Subject A vs. Subject B Comparison</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:12px">
+      <label>Subject A: <select id="cmp-a"><option value="chatgpt" selected>ChatGPT</option><option value="anthropic">Anthropic</option><option value="grok">Grok</option><option value="spacex">SpaceX</option><option value="claire-grimes">Claire (aka Grimes)</option></select></label>
+      <label>Subject B: <select id="cmp-b"><option value="chatgpt">ChatGPT</option><option value="anthropic" selected>Anthropic</option><option value="grok">Grok</option><option value="spacex">SpaceX</option><option value="claire-grimes">Claire (aka Grimes)</option></select></label>
+    </div>
+    <div class="grid2" id="cmp-grid"></div>
+  </section>
+
+  <div class="grid2" id="cards-grid">
+    <article class="card subject-card" data-domain="Frontier AI" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">ChatGPT · Frontier AI</h3>
+        <span class="badge">5 Improvements · Glyph ^_^ · EI 0.420b</span>
+      </div>
+      <p class="sub">Typed tool contracts, entropy-bounded memory &amp; calibrated uncertainty telemetry</p>
+      <a href="chatgpt/index.html"><img src="chatgpt/preview.png" alt="ChatGPT architecture preview" /></a>
+      <div class="pill-row" style="margin-top:10px"><span class="badge" style="border-color:#5edaf0">CGPT-01: Typed Contracts &amp; DAG</span><span class="badge" style="border-color:#5edaf0">CGPT-02: A_tau Stem &amp; Memory Gate</span><span class="badge" style="border-color:#5edaf0">CGPT-03: Calibrated Truth Telemetry</span><span class="badge" style="border-color:#5edaf0">CGPT-04: Local Edge/Cloud Handoff</span><span class="badge" style="border-color:#5edaf0">CGPT-05: Checkpoints + Braille Export</span></div>
+      <div class="nav-links" style="margin-top:10px">
+        <a class="btn accent" href="chatgpt/index.html">Open ChatGPT Dossier →</a>
+        <a class="btn" href="chatgpt/architecture.svg">architecture.svg</a>
+        <a class="btn" href="chatgpt/chiasm.svg">chiasm.svg</a>
+        <a class="btn" href="chatgpt/chiasm_report.json">chiasm_report.json</a>
+        <a class="btn" href="chatgpt/data.json">data.json</a>
+      </div>
+    </article><article class="card subject-card" data-domain="Frontier AI" style="border-left:4px solid #f2c45c">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px">
+        <h3 style="margin:0;color:#f2c45c">Anthropic · Constitutional &amp; Coding AI</h3>
+        <span class="badge">5 Improvements · Glyph ^_^ · EI 0.389b</span>
+      </div>
+      <p class="sub">Mechanistic telemetry, least-privilege MCP leases &amp; filtration context anchoring</p>
+      <a href="anthropic/index.html"><img src="anthropic/preview.png" alt="Anthropic architecture preview" /></a>
+      <div class="pill-row" style="margin-top:10px"><span class="badge" style="border-color:#f2c45c">ANTH-01: Interpretability HUD</span><span class="badge" style="border-color:#f2c45c">ANTH-02: Scoped MCP + Dry-Run Gate</span><span class="badge" style="border-color:#f2c45c">ANTH-03: Span Hash + Context Anchor</span><span class="badge" style="border-color:#f2c45c">ANTH-04: Seeded Replay + ArtifactSeal</span><span class="badge" style="border-color:#f2c45c">ANTH-05: Constitutional Conflict Ledger</span></div>
+      <div class="nav-links" style="margin-top:10px">
+        <a class="btn accent" href="anthropic/index.html">Open Anthropic Dossier →</a>
+        <a class="btn" href="anthropic/architecture.svg">architecture.svg</a>
+        <a class="btn" href="anthropic/chiasm.svg">chiasm.svg</a>
+        <a class="btn" href="anthropic/chiasm_report.json">chiasm_report.json</a>
+        <a class="btn" href="anthropic/data.json">data.json</a>
+      </div>
+    </article><article class="card subject-card" data-domain="Real-Time &amp; Social" style="border-left:4px solid #f46a7e">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px">
+        <h3 style="margin:0;color:#f46a7e">Grok · Real-Time &amp; Social</h3>
+        <span class="badge">5 Improvements · Glyph ^_^ · EI 0.468b</span>
+      </div>
+      <p class="sub">Dual-cone primary-source grounding, spectral bot de-echo &amp; formal verification</p>
+      <a href="grok/index.html"><img src="grok/preview.png" alt="Grok architecture preview" /></a>
+      <div class="pill-row" style="margin-top:10px"><span class="badge" style="border-color:#f46a7e">GROK-01: Dual-Cone + Time Decay</span><span class="badge" style="border-color:#f46a7e">GROK-02: Multimodal Chart Audit</span><span class="badge" style="border-color:#f46a7e">GROK-03: Spectral Bot De-Echo</span><span class="badge" style="border-color:#f46a7e">GROK-04: Sandboxed Verify Loop</span><span class="badge" style="border-color:#f46a7e">GROK-05: ClaimLedger + Braille</span></div>
+      <div class="nav-links" style="margin-top:10px">
+        <a class="btn accent" href="grok/index.html">Open Grok Dossier →</a>
+        <a class="btn" href="grok/architecture.svg">architecture.svg</a>
+        <a class="btn" href="grok/chiasm.svg">chiasm.svg</a>
+        <a class="btn" href="grok/chiasm_report.json">chiasm_report.json</a>
+        <a class="btn" href="grok/data.json">data.json</a>
+      </div>
+    </article><article class="card subject-card" data-domain="Aerospace &amp; Telemetry" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">SpaceX · Aerospace &amp; Telemetry</h3>
+        <span class="badge">5 Improvements · Glyph ^_^ · EI 0.386b</span>
+      </div>
+      <p class="sub">Read-only Countdown Chiasm triage, SHA-256 HIL provenance &amp; LEO handover buffers</p>
+      <a href="spacex/index.html"><img src="spacex/preview.png" alt="SpaceX architecture preview" /></a>
+      <div class="pill-row" style="margin-top:10px"><span class="badge" style="border-color:#5edaf0">SPX-01: Countdown Chiasm Advisor</span><span class="badge" style="border-color:#5edaf0">SPX-02: SHA-256 HIL &amp; Frame Seal</span><span class="badge" style="border-color:#5edaf0">SPX-03: GSE Cryo Filtration Watch</span><span class="badge" style="border-color:#5edaf0">SPX-04: LEO 206 Buffer + Conjunctions</span><span class="badge" style="border-color:#5edaf0">SPX-05: Anomaly HUD + Braille Flight</span></div>
+      <div class="nav-links" style="margin-top:10px">
+        <a class="btn accent" href="spacex/index.html">Open SpaceX Dossier →</a>
+        <a class="btn" href="spacex/architecture.svg">architecture.svg</a>
+        <a class="btn" href="spacex/chiasm.svg">chiasm.svg</a>
+        <a class="btn" href="spacex/chiasm_report.json">chiasm_report.json</a>
+        <a class="btn" href="spacex/data.json">data.json</a>
+      </div>
+    </article><article class="card subject-card" data-domain="Creative &amp; Audio" style="border-left:4px solid #c896ff">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px">
+        <h3 style="margin:0;color:#c896ff">Claire (aka Grimes) · Creative &amp; Audio</h3>
+        <span class="badge">5 Improvements · Glyph ^_^ · EI 0.431b</span>
+      </div>
+      <p class="sub">Cryptographic Elf.Tech stem provenance, bar-quantized stage failover &amp; Braille cymatics</p>
+      <a href="claire-grimes/index.html"><img src="claire-grimes/preview.png" alt="Claire (aka Grimes) architecture preview" /></a>
+      <div class="pill-row" style="margin-top:10px"><span class="badge" style="border-color:#c896ff">GRIMES-01: Elf.Tech Stem Provenance</span><span class="badge" style="border-color:#c896ff">GRIMES-02: StageChiasm Live Failover</span><span class="badge" style="border-color:#c896ff">GRIMES-03: Braille Cymatics Vault</span><span class="badge" style="border-color:#c896ff">GRIMES-04: Fan Co-Creation Sandbox</span><span class="badge" style="border-color:#c896ff">GRIMES-05: Single-Take Patch DAG</span></div>
+      <div class="nav-links" style="margin-top:10px">
+        <a class="btn accent" href="claire-grimes/index.html">Open Claire (aka Grimes) Dossier →</a>
+        <a class="btn" href="claire-grimes/architecture.svg">architecture.svg</a>
+        <a class="btn" href="claire-grimes/chiasm.svg">chiasm.svg</a>
+        <a class="btn" href="claire-grimes/chiasm_report.json">chiasm_report.json</a>
+        <a class="btn" href="claire-grimes/data.json">data.json</a>
+      </div>
+    </article>
+  </div>
+
+  <footer>
+    Fieldglass Observatory · R2 Five Improvement Dossiers · Deterministic Local Build · 0 Cloud Tokens
+  </footer>
+</div>
+
+<script id="hub-data" type="application/json">{"hub": {"schema_version": "fieldglass-improvements-hub/v1", "contract": "fieldglass-r2-improvements/v1", "chiasm_contract": "fieldglass-causal-chiasm/v1", "milestone": "M2", "title": "R2 · Five Structured Improvement Dossiers", "index_html": "docs/improvements/index.html", "hub_overview_svg": "docs/improvements/hub_overview.svg", "preview_png": "docs/improvements/preview.png", "subject_count": 5, "total_improvements": 25, "subjects": [{"schema_version": "fieldglass-summary/v1", "milestone": "M2", "slug": "chatgpt", "display_name": "ChatGPT", "title": "ChatGPT — Structured Improvement Dossier", "tagline": "Typed tool contracts, entropy-bounded memory & calibrated uncertainty telemetry", "category": "Frontier AI", "domain_filter": "Frontier AI", "accent_hex": "#5edaf0", "index_html": "docs/improvements/chatgpt/index.html", "preview_png": "docs/improvements/chatgpt/preview.png", "braille_preview_png": "docs/improvements/chatgpt/chatgpt_braille_preview.png", "architecture_svg": "docs/improvements/chatgpt/architecture.svg", "chiasm_svg": "docs/improvements/chatgpt/chiasm.svg", "chiasm_report": "docs/improvements/chatgpt/chiasm_report.json", "data_json": "docs/improvements/chatgpt/data.json", "summary_json": "docs/improvements/chatgpt/summary.json", "improvement_count": 5, "top_improvements": [{"id": "CGPT-01", "title": "Typed Tool-Call Contracts & CanvasProof-v1 Replayable Merkle DAG", "short_title": "Typed Contracts & DAG", "impact": "11.4% -> <= 0.8%"}, {"id": "CGPT-02", "title": "Kloster A_tau(p) Dynamic Stem Router & TTL-Scoped Memory Pinning", "short_title": "A_tau Stem & Memory Gate", "impact": "42% -> <= 8% (-38% net)"}, {"id": "CGPT-03", "title": "Calibrated Uncertainty & Non-Sycophantic Refusal Telemetry", "short_title": "Calibrated Truth Telemetry", "impact": "18.5% -> <= 2.0%"}, {"id": "CGPT-04", "title": "Local-First Edge Redaction & Offline Fallback Handoff", "short_title": "Local Edge/Cloud Handoff", "impact": "3.2% -> 0.0%"}, {"id": "CGPT-05", "title": "Mid-Chain Invariant Checkpoints & 2x4 Braille Transcript Export", "short_title": "Checkpoints + Braille Export", "impact": "9.1% -> 0.0%"}], "kpis": [{"id": "CGPT-01", "metric": "Tool-call schema retry rate", "baseline": "11.4%", "target": "<= 0.8%"}, {"id": "CGPT-02", "metric": "Wasted heavy reasoning tokens", "baseline": "42%", "target": "<= 8% (-38% net)"}, {"id": "CGPT-03", "metric": "Sycophantic reversal on valid facts", "baseline": "18.5%", "target": "<= 2.0%"}, {"id": "CGPT-04", "metric": "Unredacted secret/PII egress", "baseline": "3.2%", "target": "0.0%"}, {"id": "CGPT-05", "metric": "Pre-commit broken-build writes", "baseline": "9.1%", "target": "0.0%"}], "metrics": {"episodes": 24, "tau": 0.1, "past_a_tau": 6, "future_a_tau": 5, "past_a014": 3, "future_a014": 4, "chiasm_shift": -1, "effective_information_bits": 0.419955, "h1_past_bits": 2.7849, "h1_future_bits": 2.5296, "m4_past_purity": 0.2975, "m4_future_purity": 0.3045, "presence_glyph": "^_^", "structural_invariants": ["det_sandbox"], "scene_sha256": "6e139996b86c4ace8c544c38c266c2fcb092468ff31619dea628bab486a13da9", "report_sha256": "9656b4aa7e923b988b59fc9c9a8baa744a56986bc93ce29b435c7ef7658eb6c7"}, "clinical_use": false, "executed": false, "sentience_claimed": false, "tokens_used": 0}, {"schema_version": "fieldglass-summary/v1", "milestone": "M2", "slug": "anthropic", "display_name": "Anthropic", "title": "Anthropic — Structured Improvement Dossier", "tagline": "Mechanistic telemetry, least-privilege MCP leases & filtration context anchoring", "category": "Constitutional & Coding AI", "domain_filter": "Frontier AI", "accent_hex": "#f2c45c", "index_html": "docs/improvements/anthropic/index.html", "preview_png": "docs/improvements/anthropic/preview.png", "braille_preview_png": "docs/improvements/anthropic/anthropic_braille_preview.png", "architecture_svg": "docs/improvements/anthropic/architecture.svg", "chiasm_svg": "docs/improvements/anthropic/chiasm.svg", "chiasm_report": "docs/improvements/anthropic/chiasm_report.json", "data_json": "docs/improvements/anthropic/data.json", "summary_json": "docs/improvements/anthropic/summary.json", "improvement_count": 5, "top_improvements": [{"id": "ANTH-01", "title": "Mechanistic Interpretability Telemetry Overlay (FeatureAtlas-HUD)", "short_title": "Interpretability HUD", "impact": "34% -> 86%"}, {"id": "ANTH-02", "title": "Capability-Scoped MCP Leases & Causal Chiasm Dry-Run Gate", "short_title": "Scoped MCP + Dry-Run Gate", "impact": "4.2% -> 0.0%"}, {"id": "ANTH-03", "title": "Cryptographic Span Anchoring & 200K+ Persistent Filtration Anchor", "short_title": "Span Hash + Context Anchor", "impact": "71% -> 96%"}, {"id": "ANTH-04", "title": "Deterministic Seeded CI Replay & Hermetic Zero-CDN Artifact Seal", "short_title": "Seeded Replay + ArtifactSeal", "impact": "44% -> 99.5%"}, {"id": "ANTH-05", "title": "Constitutional Rule Conflict Resolution Ledger (PolicyAudit-v1)", "short_title": "Constitutional Conflict Ledger", "impact": "3.4 turns -> 1.3 turns (-62%)"}], "kpis": [{"id": "ANTH-01", "metric": "Pre-output anomaly detection recall", "baseline": "34%", "target": "86%"}, {"id": "ANTH-02", "metric": "Out-of-scope MCP writes under injection", "baseline": "4.2%", "target": "0.0%"}, {"id": "ANTH-03", "metric": "Late-turn contract recall post-compaction", "baseline": "71%", "target": "96%"}, {"id": "ANTH-04", "metric": "Air-gapped Artifact render success", "baseline": "44%", "target": "99.5%"}, {"id": "ANTH-05", "metric": "Developer retry loops on opaque refusals", "baseline": "3.4 turns", "target": "1.3 turns (-62%)"}], "metrics": {"episodes": 24, "tau": 0.1, "past_a_tau": 5, "future_a_tau": 5, "past_a014": 3, "future_a014": 4, "chiasm_shift": 0, "effective_information_bits": 0.389288, "h1_past_bits": 2.8693, "h1_future_bits": 2.4735, "m4_past_purity": 0.2611, "m4_future_purity": 0.3148, "presence_glyph": "^_^", "structural_invariants": ["invariant_pinned", "mcp_sandboxed"], "scene_sha256": "8ba45832f2678cf7ca3e57ad096a9c7d92dbb9e2e89692e9d52678c3975d7c79", "report_sha256": "ad310ccc7869eebf7ebd5d877b6da9eb6727ece2bd31d18e2e33f93bf009bfc1"}, "clinical_use": false, "executed": false, "sentience_claimed": false, "tokens_used": 0}, {"schema_version": "fieldglass-summary/v1", "milestone": "M2", "slug": "grok", "display_name": "Grok", "title": "Grok — Structured Improvement Dossier", "tagline": "Dual-cone primary-source grounding, spectral bot de-echo & formal verification", "category": "Real-Time & Social", "domain_filter": "Real-Time & Social", "accent_hex": "#f46a7e", "index_html": "docs/improvements/grok/index.html", "preview_png": "docs/improvements/grok/preview.png", "braille_preview_png": "docs/improvements/grok/grok_braille_preview.png", "architecture_svg": "docs/improvements/grok/architecture.svg", "chiasm_svg": "docs/improvements/grok/chiasm.svg", "chiasm_report": "docs/improvements/grok/chiasm_report.json", "data_json": "docs/improvements/grok/data.json", "summary_json": "docs/improvements/grok/summary.json", "improvement_count": 5, "top_improvements": [{"id": "GROK-01", "title": "Dual-Cone Primary-Source Splitter & Domain Time-Decay Index", "short_title": "Dual-Cone + Time Decay", "impact": "19.2% -> 3.8%"}, {"id": "GROK-02", "title": "Pixel-Level Multimodal Chart & Frame Integrity Audit", "short_title": "Multimodal Chart Audit", "impact": "27.0% -> <= 4.5%"}, {"id": "GROK-03", "title": "Spectral Bot-Amplification & Echo-Cluster Deduplication", "short_title": "Spectral Bot De-Echo", "impact": "54% -> 76% (+41% rel.)"}, {"id": "GROK-04", "title": "Closed-Loop Sandboxed Code & Numerical Verification Harness", "short_title": "Sandboxed Verify Loop", "impact": "74% -> 96%"}, {"id": "GROK-05", "title": "Separated ClaimLedger, Open-Audit Receipts & 2x4 Braille Timeline", "short_title": "ClaimLedger + Braille", "impact": "52% -> 91%"}], "kpis": [{"id": "GROK-01", "metric": "Breaking-query viral rumor conflation", "baseline": "19.2%", "target": "3.8%"}, {"id": "GROK-02", "metric": "Misread truncated-axis chart rate", "baseline": "27.0%", "target": "<= 4.5%"}, {"id": "GROK-03", "metric": "Precision@10 under bot-echo bursts", "baseline": "54%", "target": "76% (+41% rel.)"}, {"id": "GROK-04", "metric": "Executable snippet first-run pass rate", "baseline": "74%", "target": "96%"}, {"id": "GROK-05", "metric": "Factual auditability & ARIA clarity", "baseline": "52%", "target": "91%"}], "metrics": {"episodes": 24, "tau": 0.1, "past_a_tau": 5, "future_a_tau": 5, "past_a014": 3, "future_a014": 4, "chiasm_shift": 0, "effective_information_bits": 0.467714, "h1_past_bits": 2.7544, "h1_future_bits": 2.5235, "m4_past_purity": 0.2924, "m4_future_purity": 0.311, "presence_glyph": "^_^", "structural_invariants": ["primary_grounded"], "scene_sha256": "170506541e72f1286991b9280a2e227e709e60b6f2b39bdf29b287a0cf8687f1", "report_sha256": "db733d91cdc04c91e8c5db187ae5574016355063d17c7bd192c9d2896f21efbd"}, "clinical_use": false, "executed": false, "sentience_claimed": false, "tokens_used": 0}, {"schema_version": "fieldglass-summary/v1", "milestone": "M2", "slug": "spacex", "display_name": "SpaceX", "title": "SpaceX — Structured Improvement Dossier", "tagline": "Read-only Countdown Chiasm triage, SHA-256 HIL provenance & LEO handover buffers", "category": "Aerospace & Telemetry", "domain_filter": "Aerospace & Telemetry", "accent_hex": "#5edaf0", "index_html": "docs/improvements/spacex/index.html", "preview_png": "docs/improvements/spacex/preview.png", "braille_preview_png": "docs/improvements/spacex/spacex_braille_preview.png", "architecture_svg": "docs/improvements/spacex/architecture.svg", "chiasm_svg": "docs/improvements/spacex/chiasm.svg", "chiasm_report": "docs/improvements/spacex/chiasm_report.json", "data_json": "docs/improvements/spacex/data.json", "summary_json": "docs/improvements/spacex/summary.json", "improvement_count": 5, "top_improvements": [{"id": "SPX-01", "title": "Read-Only Superlevel-Set A_tau(p_t) Mode-Transition Chiasm Advisor", "short_title": "Countdown Chiasm Advisor", "impact": "38 s -> 21 s (-45%)"}, {"id": "SPX-02", "title": "SHA-256 Sealed HIL, Monte Carlo & Webcast Flight-Frame Provenance", "short_title": "SHA-256 HIL & Frame Seal", "impact": "18% (OCR) -> 100% (SHA-256)"}, {"id": "SPX-03", "title": "Persistent Filtration GSE & Cryo Quick-Disconnect Drift Watch", "short_title": "GSE Cryo Filtration Watch", "impact": "0 cycles -> >= 3 cycles prior"}, {"id": "SPX-04", "title": "Starlink LEO Handover HTTP 206 Ring Buffer & Conjunction Explainability", "short_title": "LEO 206 Buffer + Conjunctions", "impact": "2.40% -> < 0.05%"}, {"id": "SPX-05", "title": "High-Contrast Dark-Observatory Anomaly HUD & 2x4 Braille Trajectory Plates", "short_title": "Anomaly HUD + Braille Flight", "impact": "5% -> 92%"}], "kpis": [{"id": "SPX-01", "metric": "Simulated multi-console triage time", "baseline": "38 s", "target": "21 s (-45%)"}, {"id": "SPX-02", "metric": "Post-flight frame-to-telemetry verifiability", "baseline": "18% (OCR)", "target": "100% (SHA-256)"}, {"id": "SPX-03", "metric": "Valve hysteresis early-warning lead", "baseline": "0 cycles", "target": ">= 3 cycles prior"}, {"id": "SPX-04", "metric": "Telemetry packet loss across LEO handover", "baseline": "2.40%", "target": "< 0.05%"}, {"id": "SPX-05", "metric": "Blind/low-vision flight milestone comprehension", "baseline": "5%", "target": "92%"}], "metrics": {"episodes": 24, "tau": 0.1, "past_a_tau": 6, "future_a_tau": 5, "past_a014": 3, "future_a014": 4, "chiasm_shift": -1, "effective_information_bits": 0.386209, "h1_past_bits": 2.7798, "h1_future_bits": 2.5337, "m4_past_purity": 0.2735, "m4_future_purity": 0.3036, "presence_glyph": "^_^", "structural_invariants": ["chiasm_margin_ok"], "scene_sha256": "09dbd716f2ff6b51d8b90a01aa9b952bc4eae1498efe295734df7c1181c972ba", "report_sha256": "6084f1c26e113bb035d3a676439cb9fe11cac91268d49c47d851d6d4c9e97111"}, "clinical_use": false, "executed": false, "sentience_claimed": false, "tokens_used": 0}, {"schema_version": "fieldglass-summary/v1", "milestone": "M2", "slug": "claire-grimes", "display_name": "Claire (aka Grimes)", "title": "Claire (aka Grimes) — Structured Improvement Dossier", "tagline": "Cryptographic Elf.Tech stem provenance, bar-quantized stage failover & Braille cymatics", "category": "Creative & Audio", "domain_filter": "Creative & Audio", "accent_hex": "#c896ff", "index_html": "docs/improvements/claire-grimes/index.html", "preview_png": "docs/improvements/claire-grimes/preview.png", "braille_preview_png": "docs/improvements/claire-grimes/claire-grimes_braille_preview.png", "architecture_svg": "docs/improvements/claire-grimes/architecture.svg", "chiasm_svg": "docs/improvements/claire-grimes/chiasm.svg", "chiasm_report": "docs/improvements/claire-grimes/chiasm_report.json", "data_json": "docs/improvements/claire-grimes/data.json", "summary_json": "docs/improvements/claire-grimes/summary.json", "improvement_count": 5, "top_improvements": [{"id": "GRIMES-01", "title": "Cryptographic Elf.Tech Voice Provenance & 50/50 Consent Licensing Registry", "short_title": "Elf.Tech Stem Provenance", "impact": "31% -> 95%"}, {"id": "GRIMES-02", "title": "Offline-First Stage Visuals & Bar-Quantized Modular Failover (StageChiasm-Sync)", "short_title": "StageChiasm Live Failover", "impact": "8.5% -> < 0.3%"}, {"id": "GRIMES-03", "title": "Archival Lore, Score & 2x4 Braille Cymatics Preservation Vault", "short_title": "Braille Cymatics Vault", "impact": "0% -> 93%"}, {"id": "GRIMES-04", "title": "Provenance-Tagged Fan Co-Creation Sandbox (LoreCoCreate-Gate)", "short_title": "Fan Co-Creation Sandbox", "impact": "41% -> 99%"}, {"id": "GRIMES-05", "title": "Single-Take Studio Flow Capture & Immutable Patch DAG (LoreVault-DAG)", "short_title": "Single-Take Patch DAG", "impact": "240 min -> <= 4 min"}], "kpis": [{"id": "GRIMES-01", "metric": "Remix / transcode stem attribution recovery", "baseline": "31%", "target": "95%"}, {"id": "GRIMES-02", "metric": "Live modular/VST catastrophic dead-air risk", "baseline": "8.5%", "target": "< 0.3%"}, {"id": "GRIMES-03", "metric": "Offline tactile/screen-reader sonic score access", "baseline": "0%", "target": "93%"}, {"id": "GRIMES-04", "metric": "Canonical vs. remix lineage clarity", "baseline": "41%", "target": "99%"}, {"id": "GRIMES-05", "metric": "Post-migration session reconstruction time", "baseline": "240 min", "target": "<= 4 min"}], "metrics": {"episodes": 24, "tau": 0.1, "past_a_tau": 6, "future_a_tau": 5, "past_a014": 3, "future_a014": 3, "chiasm_shift": -1, "effective_information_bits": 0.430585, "h1_past_bits": 2.8176, "h1_future_bits": 2.499, "m4_past_purity": 0.2702, "m4_future_purity": 0.3199, "presence_glyph": "^_^", "structural_invariants": ["elf_stem_sealed"], "scene_sha256": "bbfde6c93504c0699fc8064d761658297c73e2278339b95d95bb5c749626b4a7", "report_sha256": "0ac1b31cc9d3e1581cbcdf7e27efa7d216507ce5748de306ae74d4b41ceeb2ba"}, "clinical_use": false, "executed": false, "sentience_claimed": false, "tokens_used": 0}], "clinical_use": false, "executed": false, "sentience_claimed": false, "tokens_used": 0}, "repertoires": {"chatgpt": {"past": {"provenance_ok": 0.10956001244979635, "det_sandbox": 0.13738824261752727, "adaptive_stem": 0.10738824261752727, "memory_scoped": 0.08738824261752727, "tactile_export": 0.05391059409402182, "unverified_mem": 0.2347905691944291, "stale_bleed": 0.1439176360737091, "opaque_overthink": 0.12565646033546182}, "future": {"provenance_ok": 0.22043998755020355, "det_sandbox": 0.20261175738247275, "adaptive_stem": 0.17261175738247272, "memory_scoped": 0.15261175738247273, "tactile_export": 0.10608940590597819, "unverified_mem": 0.06520943080557091, "stale_bleed": 0.04608236392629091, "opaque_overthink": 0.03434353966453818}}, "anthropic": {"past": {"policy_traceable": 0.09956001244979634, "mcp_sandboxed": 0.1343435396645382, "invariant_pinned": 0.14391059409402182, "hermetic_ok": 0.07564941835577453, "safe_alt_open": 0.08521647278525818, "opaque_refusal": 0.19348469050319272, "broad_mcp_scope": 0.14217881181195638, "context_drift": 0.12565646033546182}, "future": {"policy_traceable": 0.21043998755020366, "mcp_sandboxed": 0.22565646033546183, "invariant_pinned": 0.19608940590597815, "hermetic_ok": 0.13435058164422542, "safe_alt_open": 0.10478352721474182, "opaque_refusal": 0.05651530949680727, "broad_mcp_scope": 0.037821188188043635, "context_drift": 0.03434353966453818}}, "grok": {"past": {"primary_grounded": 0.1212988367115491, "de_echo_cluster": 0.09434353966453818, "fresh_decayed": 0.13217176983226905, "split_badge_ok": 0.059127066879279995, "code_verified": 0.06391059409402182, "viral_rumor_mix": 0.21826821771793448, "bot_amplified": 0.16870116328845094, "stale_quote_bias": 0.14217881181195638}, "future": {"primary_grounded": 0.23870116328845092, "de_echo_cluster": 0.1856564603354618, "fresh_decayed": 0.1778282301677309, "split_badge_ok": 0.13087293312072, "code_verified": 0.1160894059059782, "viral_rumor_mix": 0.06173178228206544, "bot_amplified": 0.051298836711549084, "stale_quote_bias": 0.037821188188043635}}, "spacex": {"past": {"chiasm_margin_ok": 0.1839105940940218, "signed_hil_ok": 0.11260471540278544, "gse_filtration": 0.12391059409402182, "leo_206_buffered": 0.07738824261752726, "braille_hud_ok": 0.03912706687927999, "console_siloed": 0.20174586624143998, "handover_drop": 0.1439176360737091, "opaque_hud_only": 0.11739528459721459}, "future": {"chiasm_margin_ok": 0.23608940590597816, "signed_hil_ok": 0.19739528459721456, "gse_filtration": 0.1760894059059782, "leo_206_buffered": 0.14261175738247273, "braille_hud_ok": 0.11087293312072, "console_siloed": 0.05825413375856, "handover_drop": 0.04608236392629091, "opaque_hud_only": 0.03260471540278546}}, "claire-grimes": {"past": {"elf_stem_sealed": 0.1212988367115491, "shadow_clk_sync": 0.13260471540278543, "lore_dag_saved": 0.09086589114103273, "cymatic_braille": 0.04912706687928, "royalty_split_ok": 0.12652235147649457, "lost_attribution": 0.20174586624143998, "midi_xrun_stall": 0.1339176360737091, "patch_ephemeral": 0.1439176360737091}, "future": {"elf_stem_sealed": 0.23870116328845092, "shadow_clk_sync": 0.21739528459721455, "lore_dag_saved": 0.1691341088589673, "cymatic_braille": 0.12087293312072, "royalty_split_ok": 0.11347764852350545, "lost_attribution": 0.05825413375856, "midi_xrun_stall": 0.036082363926290904, "patch_ephemeral": 0.04608236392629091}}}}</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById("hub-data").textContent);
+  var subjectsBySlug = {};
+  data.hub.subjects.forEach(function (s) { subjectsBySlug[s.slug] = s; });
+
+  var pills = document.querySelectorAll("#domain-pills button[data-domain]");
+  var cards = document.querySelectorAll(".subject-card");
+  var rows = document.querySelectorAll(".subject-row");
+
+  pills.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var dom = btn.getAttribute("data-domain");
+      pills.forEach(function (b) { b.classList.toggle("active", b === btn); });
+      cards.forEach(function (c) {
+        c.classList.toggle("hidden", dom !== "all" && c.getAttribute("data-domain") !== dom);
+      });
+      rows.forEach(function (r) {
+        r.classList.toggle("hidden", dom !== "all" && r.getAttribute("data-domain") !== dom);
+      });
+    });
+  });
+
+  var tauSlider = document.getElementById("hub-tau-slider");
+  var tauVal = document.getElementById("hub-tau-val");
+  function updateTau() {
+    var tau = parseFloat(tauSlider.value);
+    tauVal.textContent = tau.toFixed(2);
+    document.querySelectorAll(".dyn-a-tau").forEach(function (cell) {
+      var slug = cell.getAttribute("data-slug");
+      var rep = data.repertoires[slug];
+      var pCount = 0;
+      var fCount = 0;
+      Object.keys(rep.past).forEach(function (k) {
+        if (rep.past[k] > tau) pCount += 1;
+        if (rep.future[k] > tau) fCount += 1;
+      });
+      var shift = fCount - pCount;
+      cell.textContent = pCount + " -> " + fCount + " (" + (shift >= 0 ? "+" : "") + shift + ")";
+    });
+  }
+  tauSlider.addEventListener("input", updateTau);
+  updateTau();
+
+  var selA = document.getElementById("cmp-a");
+  var selB = document.getElementById("cmp-b");
+  var cmpGrid = document.getElementById("cmp-grid");
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+  function renderCompare() {
+    var slugs = [selA.value, selB.value];
+    cmpGrid.innerHTML = slugs.map(function (sl) {
+      var s = subjectsBySlug[sl];
+      var m = s.metrics;
+      var imps = s.top_improvements.map(function (i) {
+        return "<li><b>" + escHtml(i.id) + "</b>: " + escHtml(i.title) + " <span style='color:var(--cyan)'>(" + escHtml(i.impact) + ")</span></li>";
+      }).join("");
+      return "<div class='panel2' style='border-left:3px solid " + escHtml(s.accent_hex) + "'>" +
+        "<h3 style='color:" + escHtml(s.accent_hex) + "'>" + escHtml(s.display_name) + " (" + escHtml(s.category) + ")</h3>" +
+        "<p class='sub'>" + escHtml(s.tagline) + "</p>" +
+        "<p class='sub'><b>A_0.10:</b> " + m.past_a_tau + " -> " + m.future_a_tau +
+        " | <b>EI:</b> " + m.effective_information_bits.toFixed(4) + "b" +
+        " | <b>M4:</b> " + m.m4_future_purity.toFixed(4) + "</p>" +
+        "<ul style='margin:6px 0 0;padding-left:18px;font-size:0.82rem;color:var(--muted)'>" + imps + "</ul>" +
+      "</div>";
+    }).join("");
+  }
+  selA.addEventListener("change", renderCompare);
+  selB.addEventListener("change", renderCompare);
+  renderCompare();
+})();
+</script>
+</body>
+</html>

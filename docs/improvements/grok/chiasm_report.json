@@ -1,0 +1,373 @@
+{
+  "slug": "grok",
+  "subject": "Grok",
+  "title": "GROK \u00b7 IMPROVEMENT CAUSAL CHIASM & FILTRATION TOMOGRAPHY",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "episode_count": 24,
+  "nexus_sec": 12,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 12,
+    "past_repertoire": {
+      "primary_grounded": 0.1212988367115491,
+      "de_echo_cluster": 0.09434353966453818,
+      "fresh_decayed": 0.13217176983226905,
+      "split_badge_ok": 0.059127066879279995,
+      "code_verified": 0.06391059409402182,
+      "viral_rumor_mix": 0.21826821771793448,
+      "bot_amplified": 0.16870116328845094,
+      "stale_quote_bias": 0.14217881181195638
+    },
+    "future_repertoire": {
+      "primary_grounded": 0.23870116328845092,
+      "de_echo_cluster": 0.1856564603354618,
+      "fresh_decayed": 0.1778282301677309,
+      "split_badge_ok": 0.13087293312072,
+      "code_verified": 0.1160894059059782,
+      "viral_rumor_mix": 0.06173178228206544,
+      "bot_amplified": 0.051298836711549084,
+      "stale_quote_bias": 0.037821188188043635
+    },
+    "past_accessible_volume": 5,
+    "past_accessible_states": [
+      "bot_amplified",
+      "fresh_decayed",
+      "primary_grounded",
+      "stale_quote_bias",
+      "viral_rumor_mix"
+    ],
+    "future_accessible_volume": 5,
+    "future_accessible_states": [
+      "code_verified",
+      "de_echo_cluster",
+      "fresh_decayed",
+      "primary_grounded",
+      "split_badge_ok"
+    ],
+    "chiasm_shift": 0,
+    "effective_information_bits": 0.467714,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 24,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        7,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        5,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        5,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        5,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        5,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        5,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        5,
+        3,
+        1,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "bot_amplified": 0.085833,
+      "code_verified": 0.073333,
+      "de_echo_cluster": 0.116667,
+      "fresh_decayed": 0.133333,
+      "primary_grounded": 0.152917,
+      "split_badge_ok": 0.076667,
+      "stale_quote_bias": 0.065,
+      "viral_rumor_mix": 0.116667
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "primary_grounded"
+    ],
+    "transient_states": [
+      "bot_amplified",
+      "code_verified",
+      "de_echo_cluster",
+      "fresh_decayed",
+      "split_badge_ok",
+      "stale_quote_bias",
+      "viral_rumor_mix"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "per_episode_a004": [
+    81,
+    81,
+    79,
+    81,
+    85,
+    87,
+    91,
+    93,
+    93,
+    91,
+    89,
+    89,
+    85,
+    79,
+    69,
+    65,
+    59,
+    53,
+    53,
+    53,
+    53,
+    53,
+    53,
+    53
+  ],
+  "per_episode_a010": [
+    31,
+    31,
+    29,
+    29,
+    27,
+    30,
+    28,
+    26,
+    24,
+    22,
+    22,
+    16,
+    18,
+    23,
+    27,
+    27,
+    27,
+    27,
+    29,
+    31,
+    31,
+    31,
+    31,
+    31
+  ],
+  "h1_mean_bits": 2.7958,
+  "h2_mean_bits": 2.6745,
+  "m4_purity_mean": 0.2695,
+  "scene_sha256": "170506541e72f1286991b9280a2e227e709e60b6f2b39bdf29b287a0cf8687f1",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "db733d91cdc04c91e8c5db187ae5574016355063d17c7bd192c9d2896f21efbd"
+}

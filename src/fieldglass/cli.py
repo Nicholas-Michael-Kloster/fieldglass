@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 import sys
 from typing import Sequence
@@ -24,9 +25,12 @@ from .showcase import push_to_pixel_adb, serve_directory
 
 
 def _parse_corners(raw: str) -> list[tuple[float, float]]:
-    nums = [float(x) for x in raw.replace(";", ",").split(",") if x.strip()]
-    if len(nums) != 8:
-        raise argparse.ArgumentTypeError("corners must be 8 floats: x1,y1,x2,y2,x3,y3,x4,y4 (TL,TR,BR,BL in 0..1)")
+    try:
+        nums = [float(x) for x in raw.replace(";", ",").split(",") if x.strip()]
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("corners must be 8 finite floats: x1,y1,x2,y2,x3,y3,x4,y4 (TL,TR,BR,BL in 0..1)") from exc
+    if len(nums) != 8 or not all(math.isfinite(x) for x in nums):
+        raise argparse.ArgumentTypeError("corners must be 8 finite floats: x1,y1,x2,y2,x3,y3,x4,y4 (TL,TR,BR,BL in 0..1)")
     return [(nums[i], nums[i + 1]) for i in range(0, 8, 2)]
 
 

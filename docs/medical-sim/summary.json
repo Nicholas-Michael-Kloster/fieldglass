@@ -1,0 +1,40 @@
+{
+  "contract": "fieldglass-r1-summary/v1",
+  "domain": "medical-sim",
+  "slug": "medical_sim",
+  "title": "Simulated Medical Equipment Sandbox (Non-Clinical)",
+  "subtitle": "Strictly simulated / educational biomedical waveforms & Beer-Lambert optics",
+  "route": "medical-sim/index.html",
+  "metrics": {
+    "episode_count": 16,
+    "past_a_010": 7,
+    "future_a_010": 7,
+    "effective_information_bits": 0.00224,
+    "presence_glyph": "^_^",
+    "h1_mean_bits": 2.9675,
+    "h2_mean_bits": 2.9407,
+    "m4_mean_purity": 0.2215
+  },
+  "highlights": [
+    "STRICTLY SIMULATED / EDUCATIONAL ONLY \u2014 NOT FOR CLINICAL USE",
+    "Synthetic ECG PQRST, Beer-Lambert 660/940nm SpO2, Capnography & P-V Loop",
+    "Educational dimensional-analysis infusion rate calculator"
+  ],
+  "assets": {
+    "index_html": "index.html",
+    "preview_png": "preview.png",
+    "chiasm_svg": "medical_sim_chiasm.svg",
+    "plate_svg": "medical_sim_plate.svg",
+    "braille_txt": "medical_sim_braille.txt",
+    "braille_json": "medical_sim_braille.json",
+    "braille_preview_png": "medical_sim_braille_preview.png",
+    "chiasm_report": "chiasm_report.json"
+  },
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "clinical_use": false,
+  "educational_simulation_only": true,
+  "clinical_certification_claimed": false,
+  "disclaimer": "STRICTLY SIMULATED / EDUCATIONAL SANDBOX ONLY \u2014 NOT FOR CLINICAL, DIAGNOSTIC, OR PATIENT-CARE USE."
+}

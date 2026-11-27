@@ -1,0 +1,108 @@
+{
+  "schema_version": "fieldglass-summary/v1",
+  "milestone": "M2",
+  "slug": "grok",
+  "display_name": "Grok",
+  "title": "Grok — Structured Improvement Dossier",
+  "tagline": "Dual-cone primary-source grounding, spectral bot de-echo & formal verification",
+  "category": "Real-Time & Social",
+  "domain_filter": "Real-Time & Social",
+  "accent_hex": "#f46a7e",
+  "index_html": "docs/improvements/grok/index.html",
+  "preview_png": "docs/improvements/grok/preview.png",
+  "braille_preview_png": "docs/improvements/grok/grok_braille_preview.png",
+  "architecture_svg": "docs/improvements/grok/architecture.svg",
+  "chiasm_svg": "docs/improvements/grok/chiasm.svg",
+  "chiasm_report": "docs/improvements/grok/chiasm_report.json",
+  "data_json": "docs/improvements/grok/data.json",
+  "summary_json": "docs/improvements/grok/summary.json",
+  "improvement_count": 5,
+  "top_improvements": [
+    {
+      "id": "GROK-01",
+      "title": "Dual-Cone Primary-Source Splitter & Domain Time-Decay Index",
+      "short_title": "Dual-Cone + Time Decay",
+      "impact": "19.2% -> 3.8%"
+    },
+    {
+      "id": "GROK-02",
+      "title": "Pixel-Level Multimodal Chart & Frame Integrity Audit",
+      "short_title": "Multimodal Chart Audit",
+      "impact": "27.0% -> <= 4.5%"
+    },
+    {
+      "id": "GROK-03",
+      "title": "Spectral Bot-Amplification & Echo-Cluster Deduplication",
+      "short_title": "Spectral Bot De-Echo",
+      "impact": "54% -> 76% (+41% rel.)"
+    },
+    {
+      "id": "GROK-04",
+      "title": "Closed-Loop Sandboxed Code & Numerical Verification Harness",
+      "short_title": "Sandboxed Verify Loop",
+      "impact": "74% -> 96%"
+    },
+    {
+      "id": "GROK-05",
+      "title": "Separated ClaimLedger, Open-Audit Receipts & 2x4 Braille Timeline",
+      "short_title": "ClaimLedger + Braille",
+      "impact": "52% -> 91%"
+    }
+  ],
+  "kpis": [
+    {
+      "id": "GROK-01",
+      "metric": "Breaking-query viral rumor conflation",
+      "baseline": "19.2%",
+      "target": "3.8%"
+    },
+    {
+      "id": "GROK-02",
+      "metric": "Misread truncated-axis chart rate",
+      "baseline": "27.0%",
+      "target": "<= 4.5%"
+    },
+    {
+      "id": "GROK-03",
+      "metric": "Precision@10 under bot-echo bursts",
+      "baseline": "54%",
+      "target": "76% (+41% rel.)"
+    },
+    {
+      "id": "GROK-04",
+      "metric": "Executable snippet first-run pass rate",
+      "baseline": "74%",
+      "target": "96%"
+    },
+    {
+      "id": "GROK-05",
+      "metric": "Factual auditability & ARIA clarity",
+      "baseline": "52%",
+      "target": "91%"
+    }
+  ],
+  "metrics": {
+    "episodes": 24,
+    "tau": 0.1,
+    "past_a_tau": 5,
+    "future_a_tau": 5,
+    "past_a014": 3,
+    "future_a014": 4,
+    "chiasm_shift": 0,
+    "effective_information_bits": 0.467714,
+    "h1_past_bits": 2.7544,
+    "h1_future_bits": 2.5235,
+    "m4_past_purity": 0.2924,
+    "m4_future_purity": 0.311,
+    "presence_glyph": "^_^",
+    "structural_invariants": [
+      "primary_grounded"
+    ],
+    "scene_sha256": "170506541e72f1286991b9280a2e227e709e60b6f2b39bdf29b287a0cf8687f1",
+    "report_sha256": "db733d91cdc04c91e8c5db187ae5574016355063d17c7bd192c9d2896f21efbd"
+  },
+  "clinical_use": false,
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0
+}

@@ -1,0 +1,380 @@
+{
+  "slug": "flight_sim",
+  "title": "6-DOF Flight Dynamics & Telemetry HUD",
+  "subtitle": "ISA atmosphere, stall-bounded aerodynamics, bank-to-turn & six-pack HUD",
+  "episode_count": 16,
+  "nexus_ep": 8,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 8,
+    "past_repertoire": {
+      "airspeed_band": 0.15638236837315245,
+      "climb_energy": 0.20930308385599894,
+      "bank_authority": 0.061023000742544624,
+      "pitch_stability": 0.08805946694607583,
+      "aoa_margin": 0.14358035809604844,
+      "thrust_reserve": 0.1814663450370001,
+      "heading_sweep": 0.05339512564972655,
+      "slip_damping": 0.1067902512994531
+    },
+    "future_repertoire": {
+      "airspeed_band": 0.17821849506132803,
+      "climb_energy": 0.07121837960934027,
+      "bank_authority": 0.11298621840012218,
+      "pitch_stability": 0.1293226177470559,
+      "aoa_margin": 0.15563664191135093,
+      "thrust_reserve": 0.14143885379206717,
+      "heading_sweep": 0.10732843784521287,
+      "slip_damping": 0.10385035563352261
+    },
+    "past_accessible_volume": 5,
+    "past_accessible_states": [
+      "airspeed_band",
+      "aoa_margin",
+      "climb_energy",
+      "slip_damping",
+      "thrust_reserve"
+    ],
+    "future_accessible_volume": 7,
+    "future_accessible_states": [
+      "airspeed_band",
+      "aoa_margin",
+      "bank_authority",
+      "heading_sweep",
+      "pitch_stability",
+      "slip_damping",
+      "thrust_reserve"
+    ],
+    "chiasm_shift": 2,
+    "effective_information_bits": 0.166133,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 16,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        8,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        7,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "airspeed_band": 0.13125,
+      "aoa_margin": 0.12,
+      "bank_authority": 0.065,
+      "climb_energy": 0.11625,
+      "heading_sweep": 0.065,
+      "pitch_stability": 0.08,
+      "slip_damping": 0.08,
+      "thrust_reserve": 0.1375
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [],
+    "transient_states": [
+      "airspeed_band",
+      "aoa_margin",
+      "bank_authority",
+      "climb_energy",
+      "heading_sweep",
+      "pitch_stability",
+      "slip_damping",
+      "thrust_reserve"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "per_episode": [
+    {
+      "episode": 0,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.841905,
+      "h2_bits": 2.716816,
+      "m4_purity": 0.264978
+    },
+    {
+      "episode": 1,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.843539,
+      "h2_bits": 2.719418,
+      "m4_purity": 0.264573
+    },
+    {
+      "episode": 2,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.843641,
+      "h2_bits": 2.719895,
+      "m4_purity": 0.264383
+    },
+    {
+      "episode": 3,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.843495,
+      "h2_bits": 2.720041,
+      "m4_purity": 0.264222
+    },
+    {
+      "episode": 4,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.843251,
+      "h2_bits": 2.720018,
+      "m4_purity": 0.264092
+    },
+    {
+      "episode": 5,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.843011,
+      "h2_bits": 2.719977,
+      "m4_purity": 0.263973
+    },
+    {
+      "episode": 6,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.895017,
+      "h2_bits": 2.818689,
+      "m4_purity": 0.242498
+    },
+    {
+      "episode": 7,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.913884,
+      "h2_bits": 2.851424,
+      "m4_purity": 0.236428
+    },
+    {
+      "episode": 8,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.913422,
+      "h2_bits": 2.849485,
+      "m4_purity": 0.237176
+    },
+    {
+      "episode": 9,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.911969,
+      "h2_bits": 2.847235,
+      "m4_purity": 0.237531
+    },
+    {
+      "episode": 10,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.967865,
+      "h2_bits": 2.937036,
+      "m4_purity": 0.223526
+    },
+    {
+      "episode": 11,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.907315,
+      "h2_bits": 2.847344,
+      "m4_purity": 0.236762
+    },
+    {
+      "episode": 12,
+      "a_004": 7,
+      "a_010": 6,
+      "h1_bits": 2.86136,
+      "h2_bits": 2.796138,
+      "m4_purity": 0.242937
+    },
+    {
+      "episode": 13,
+      "a_004": 8,
+      "a_010": 5,
+      "h1_bits": 2.87645,
+      "h2_bits": 2.779258,
+      "m4_purity": 0.25275
+    },
+    {
+      "episode": 14,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.897858,
+      "h2_bits": 2.818402,
+      "m4_purity": 0.244614
+    },
+    {
+      "episode": 15,
+      "a_004": 8,
+      "a_010": 6,
+      "h1_bits": 2.886619,
+      "h2_bits": 2.80404,
+      "m4_purity": 0.245726
+    }
+  ],
+  "h1_mean_bits": 2.8807,
+  "h2_mean_bits": 2.7916,
+  "m4_mean_purity": 0.2491,
+  "scene_sha256": "97a944217599e30bb3c319026a4f0faccc043955032c27cb3b0d6ed99746daf2",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "2f131cb60ae3cf51db83a6933eb9f580417051041e176a2054725b32632700e5"
+}

@@ -1,0 +1,382 @@
+{
+  "slug": "zoe_hospital_win7",
+  "title": "ZOE HOSPITAL EDITION (WIN7-ERA \u00b7 SIMULATED / NON-CLINICAL)",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "episode_count": 16,
+  "nexus_episode": 8,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 8,
+    "past_repertoire": {
+      "deep_shadow": 0.055,
+      "ink_linework": 0.09875,
+      "dark_midtone": 0.15999999999999998,
+      "botanical_mid": 0.19124999999999998,
+      "warm_sepia": 0.19374999999999998,
+      "aged_paper": 0.14,
+      "bright_cream": 0.0975,
+      "paper_highlight": 0.06375
+    },
+    "future_repertoire": {
+      "deep_shadow": 0.02875,
+      "ink_linework": 0.05375,
+      "dark_midtone": 0.1,
+      "botanical_mid": 0.20500000000000002,
+      "warm_sepia": 0.29499999999999993,
+      "aged_paper": 0.18625,
+      "bright_cream": 0.08125,
+      "paper_highlight": 0.05
+    },
+    "past_accessible_volume": 4,
+    "past_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "dark_midtone",
+      "warm_sepia"
+    ],
+    "future_accessible_volume": 3,
+    "future_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "warm_sepia"
+    ],
+    "chiasm_shift": -1,
+    "effective_information_bits": 0.095381,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 16,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        3,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        3,
+        3,
+        3,
+        1,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "aged_paper": 0.1325,
+      "botanical_mid": 0.16875,
+      "bright_cream": 0.0625,
+      "dark_midtone": 0.0975,
+      "deep_shadow": 0.0175,
+      "ink_linework": 0.05,
+      "paper_highlight": 0.04,
+      "warm_sepia": 0.199375
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "botanical_mid",
+      "warm_sepia"
+    ],
+    "transient_states": [
+      "aged_paper",
+      "bright_cream",
+      "dark_midtone",
+      "deep_shadow",
+      "ink_linework",
+      "paper_highlight"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "a_tau_series": {
+    "tau_004": [
+      7,
+      7,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7,
+      6,
+      6,
+      6
+    ],
+    "tau_010": [
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      5,
+      4,
+      4,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "tau_014": [
+      3,
+      4,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "tau_020": [
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "h1_bits": [
+      2.738425,
+      2.784179,
+      2.853375,
+      2.902414,
+      2.921926,
+      2.945542,
+      2.89569,
+      2.854338,
+      2.796502,
+      2.73786,
+      2.682573,
+      2.646881,
+      2.601798,
+      2.572974,
+      2.553617,
+      2.560988
+    ],
+    "h2_bits": [
+      2.57175,
+      2.634867,
+      2.742748,
+      2.824188,
+      2.85726,
+      2.897543,
+      2.811979,
+      2.744681,
+      2.638456,
+      2.544561,
+      2.464345,
+      2.405069,
+      2.351074,
+      2.310432,
+      2.276485,
+      2.294774
+    ],
+    "m4_purity": [
+      0.287372,
+      0.277014,
+      0.257906,
+      0.243295,
+      0.237494,
+      0.230459,
+      0.245652,
+      0.257512,
+      0.280306,
+      0.297647,
+      0.312459,
+      0.325669,
+      0.334734,
+      0.34305,
+      0.351113,
+      0.344723
+    ]
+  },
+  "braille_badge": {
+    "label": "ZOE WIN7",
+    "lines": [
+      "\u2809\u2869\u2803\u284e\u2809\u2846\u28cf\u28c9\u2801\u2800\u2800\u2800\u2847\u2840\u2847\u2808\u284f\u2800\u2857\u2884\u2847\u2809\u2869\u2803",
+      "\u282e\u2824\u2804\u2823\u2824\u2803\u2827\u2824\u2804\u2800\u2800\u2800\u2817\u2811\u2807\u2820\u2827\u2800\u2807\u2800\u2807\u2838\u2800\u2800"
+    ]
+  },
+  "chiasm_svg": "chiasm_tomography.svg",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "clinical_use": false,
+  "educational_simulation_only": true,
+  "clinical_certification_claimed": false,
+  "min_windows_version": "Windows 7 SP1 (NT 6.1)",
+  "disclaimer": "STRICTLY SIMULATED / EDUCATIONAL ONLY - NOT FOR CLINICAL, DIAGNOSTIC, OR PATIENT-CARE USE. No clinical certification claimed.",
+  "report_sha256": "e70265fd2b92a6dd3b9ab89038ce62e5d86cd31217a96efd99e03b47fed91569"
+}

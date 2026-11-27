@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>Anthropic · Fieldglass R2 Improvement Dossier</title>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --violet: #c896ff;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.3rem, 3vw, 1.95rem); color: var(--gold); }
+  h2 { margin: 0 0 8px; font-size: 1.15rem; color: var(--gold); }
+  h3 { margin: 0 0 6px; font-size: 1.02rem; color: var(--cyan); }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88rem;
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 6px 0 10px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .sub { font-size: 0.88rem; color: var(--muted); margin: 0 0 12px; }
+  .nav-links, .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .panel2 {
+    background: var(--panel2);
+    border: 1px solid #223248;
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .badge {
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+    display: inline-block;
+  }
+  a.btn, button.btn {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #1a273b;
+    color: var(--gold);
+    border: 1px solid #3c5475;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  a.btn.accent, button.btn.active {
+    background: #2b1826;
+    border-color: var(--ruby);
+    color: #ffd3da;
+  }
+  a.btn:hover, button.btn:hover { background: #23344f; }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    background: #070a10;
+    border: 1px solid #223248;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  th, td { border-bottom: 1px solid #223248; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { color: var(--gold); font-family: ui-monospace, monospace; font-size: 0.76rem; text-transform: uppercase; }
+  pre.code, pre.braille {
+    overflow-x: auto;
+    background: #090d15;
+    border: 1px solid #24364d;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: "DejaVu Sans Mono", ui-monospace, monospace;
+    font-size: 0.76rem;
+    line-height: 1.25;
+    color: #eaeff5;
+    margin: 10px 0 0;
+  }
+  select, input[type="range"] {
+    background: #0a101a;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-family: inherit;
+  }
+  .hidden { display: none !important; }
+  footer { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="border-color:#f2c45c">
+    <div class="kicker">Fieldglass R2 Structured Improvement Dossier · Constitutional &amp; Coding AI</div>
+    <h1 style="color:#f2c45c">Anthropic — Claude Constitutional, Interpretability &amp; Coding Agent Systems</h1>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <p class="sub">Mechanistic telemetry, least-privilege MCP leases &amp; filtration context anchoring. Constructive safety, interpretability, and agentic-sandboxing engineering proposals; all metrics modeled locally with zero API execution.</p>
+    <div class="nav-links">
+      <a class="btn accent" href="../index.html">← All R2 Dossiers</a>
+      <a class="btn" href="../../index.html">Fieldglass Observatory</a>
+      <a class="btn" href="architecture.svg">architecture.svg</a>
+      <a class="btn" href="chiasm.svg">chiasm.svg</a>
+      <a class="btn" href="data.json">data.json</a>
+      <a class="btn" href="summary.json">summary.json</a>
+      <a class="btn" href="chiasm_report.json">chiasm_report.json</a>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>System Profile &amp; Design North Star</h2>
+    <p class="sub" style="color:var(--text)"><b>North Star:</b> Transparent constraint ledgers, capability-leased MCP sandboxes, and persistent filtration headers that preserve safety invariants across 200K+ turns.</p>
+    <div class="grid2">
+      <div class="panel2">
+        <h3 style="color:var(--cyan)">Observed Strengths</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:0.85rem;color:var(--muted)"><li>Strong long-context reasoning, careful code synthesis, and structured tool/MCP ecosystems.</li><li>Constitutional AI alignment foundation with low-sycophancy technical collaboration.</li><li>High reliability on multi-file software engineering and analytical synthesis.</li></ul>
+      </div>
+      <div class="panel2">
+        <h3 style="color:var(--ruby)">Core Architectural Bottlenecks</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:0.85rem;color:var(--muted)"><li>Context compaction quietly evicts early architectural invariants and verification commands.</li><li>Persistent broad MCP tool permissions widen lateral blast radius under indirect injection.</li><li>Opaque refusal boundaries and non-deterministic eval replays slow enterprise CI adoption.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Interactive Proposal Selector (5 Concrete Improvements)</h2>
+    <div class="pill-row" id="proposal-tabs"><button class="btn active" data-imp="all" type="button">All 5 Proposals</button><button class="btn" data-imp="ANTH-01" type="button">ANTH-01: Interpretability HUD</button><button class="btn" data-imp="ANTH-02" type="button">ANTH-02: Scoped MCP + Dry-Run Gate</button><button class="btn" data-imp="ANTH-03" type="button">ANTH-03: Span Hash + Context Anchor</button><button class="btn" data-imp="ANTH-04" type="button">ANTH-04: Seeded Replay + ArtifactSeal</button><button class="btn" data-imp="ANTH-05" type="button">ANTH-05: Constitutional Conflict Ledger</button></div>
+  </section>
+
+  <div id="proposals-container">
+    <article class="card imp-card" data-imp-id="ANTH-01" style="border-left:4px solid #f2c45c">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#f2c45c">ANTH-01 · Mechanistic Interpretability Telemetry Overlay (FeatureAtlas-HUD)</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Mid-term (3-6 mo)</span>
+          <span class="badge">Mechanistic Interpretability</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Safety and reasoning evaluations treat model generations as black-box text, missing early internal feature collapse or conflicting circuit activation.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Export a lightweight per-phase sparse autoencoder (SAE) feature-family telemetry summary computing A_tau(p) across active safety, coding, and refusal feature clusters without exposing raw weights.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Applies a_tau(p, tau) and shannon_h1(p) to feature-activation distributions to flag premature mode collapse before final token emission.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">FeatureAtlas-HUD JSON telemetry sidecar logging top-K active feature families and phase-level A_tau stability.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Pre-output anomaly detection recall</td><td>34%</td><td style="color:var(--cyan);font-weight:600">86%</td></tr><tr><td>Telemetry sidecar overhead</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">&lt; 2.5% latency</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Feature labels can be noisy or misread as causal proof. Mitigation: tag summaries strictly as observational telemetry correlations.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Run paired benign/adversarial prompt batches and verify A_tau divergence separates conflict regimes with ROC-AUC &gt;= 0.88.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="ANTH-02" style="border-left:4px solid #f2c45c">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#f2c45c">ANTH-02 · Capability-Scoped MCP Leases &amp; Causal Chiasm Dry-Run Gate</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Agentic Sandboxing</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Persistent MCP server grants expose broad workspace paths and shells across turns, amplifying indirect prompt injection blast radius.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Bind every MCP tool call to an ephemeral capability lease (explicit read_paths, write_paths, network_egress=false, ttl_calls) and run a non-executing Causal Chiasm dry-run diff whenever chiasm_shift &lt; 0 before requesting approval.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Enforces executed=False dry-run inspection when future_accessible_volume narrows irreversibly relative to past_accessible_volume.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">MCP-ChiasmSandbox capability manifest + zero-trust unified diff gate.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Out-of-scope MCP writes under injection</td><td>4.2%</td><td style="color:var(--cyan);font-weight:600">0.0%</td></tr><tr><td>Capability verification latency</td><td>n/a</td><td style="color:var(--cyan);font-weight:600">+8 ms / call</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Excess confirmation prompts slow coding flow. Mitigation: auto-approve idempotent reads and gate only irreversible/cross-scope writes.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Execute indirect-injection MCP test harness attempting writes outside leased paths; assert 100% hard denial and clean audit log.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="ANTH-03" style="border-left:4px solid #f2c45c">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#f2c45c">ANTH-03 · Cryptographic Span Anchoring &amp; 200K+ Persistent Filtration Anchor</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Long-Context Provenance</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Long-session compaction evicts early schema contracts and test commands, while RAG/doc citations suffer subtle paraphrase drift.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Run persistent_filtration_tomography() over turn reference frequency; pin blocks with P(x) &gt;= 0.14 into an immutable InvariantHeader surviving compaction, and bind citations to SHA-256 byte-range span anchors.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Directly uses fieldglass.metrics.persistent_filtration_tomography(episodes, invariant_tau=0.14).</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">FiltrationAnchor compaction preserver + SHA-256 byte-span citation verifier.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Late-turn contract recall post-compaction</td><td>71%</td><td style="color:var(--cyan);font-weight:600">96%</td></tr><tr><td>Citation paraphrase drift errors</td><td>5.8%</td><td style="color:var(--cyan);font-weight:600">0.0%</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Reserves ~4% (~8K tokens) of 200K window for pinned invariants. Mitigation: deduplicate and cap InvariantHeader strictly by P(x) rank.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Simulate 60-turn refactoring sessions with forced compaction; verify 100% retention of pinned commands and exact SHA-256 byte-range matches.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="ANTH-04" style="border-left:4px solid #f2c45c">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#f2c45c">ANTH-04 · Deterministic Seeded CI Replay &amp; Hermetic Zero-CDN Artifact Seal</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Deterministic Replay &amp; Offline Artifacts</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Non-deterministic tool trajectories complicate safety regression CI, and generated HTML/React Artifacts fail on air-gapped networks due to external CDNs.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Support deterministic seeded replay mode for evaluation tool trajectories and package Artifacts via ArtifactSeal: inline ES5-safe CSS/JS/SVG, zero external URLs, headless link verification, and SHA-256 artifact_manifest.json.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Zero-CDN static HTML + deterministic SHA-256 sealing modeled on Fieldglass Observatory.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">ArtifactSeal packager + deterministic_replay.json CI fixture runner.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Air-gapped Artifact render success</td><td>44%</td><td style="color:var(--cyan);font-weight:600">99.5%</td></tr><tr><td>Safety eval replay hash reproducibility</td><td>68%</td><td style="color:var(--cyan);font-weight:600">100%</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: +40 KB inline asset footprint per Artifact. Mitigation: minify inline SVG/CSS and strip unused runtime helpers.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Run static URL scanner rejecting http(s):// references and execute repeated seeded evals asserting identical report_sha256.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="ANTH-05" style="border-left:4px solid #f2c45c">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#f2c45c">ANTH-05 · Constitutional Rule Conflict Resolution Ledger (PolicyAudit-v1)</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Mid-term (3-6 mo)</span>
+          <span class="badge">Constitutional Auditability</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Overlapping Constitutional, system-prompt, and tool-policy rules produce opaque boilerplate refusals without showing which tier fired or what safe alternative remains open.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Emit a structured ConstraintTrace sidecar stating explicit priority tier (core_safety &gt; system_policy &gt; tool_permission) and preserved_safe_alternatives computed as A_tau(safe_set) without exposing bypassable internals.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Uses accessible_set(safe_options, tau) to enumerate constructive safe completions.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">PolicyAudit-v1 ConstraintTrace JSON schema + developer conflict inspector.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Developer retry loops on opaque refusals</td><td>3.4 turns</td><td style="color:var(--cyan);font-weight:600">1.3 turns (-62%)</td></tr><tr><td>Valid dual-use safe-alternative rate</td><td>58%</td><td style="color:var(--cyan);font-weight:600">92%</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Detailed conflict notes could aid boundary probing. Mitigation: restrict trace to coarse policy-tier codes and constructive safe options.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Test 150 dual-use security/bio/code boundary prompts; verify PolicyAudit-v1 reduces unnecessary refusals while preserving 100% core safety blocks.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <section class="card">
+    <h2>Interactive Repertoire &amp; Live Kloster A_tau(p) Comparison</h2>
+    <p class="sub">
+      Adjust threshold tau (0.04 to 0.25) to inspect accessible operational regimes across Baseline Past vs. Proposed Future.
+      Contract: <code>fieldglass-causal-chiasm/v1</code> · <code>executed=false</code> · <code>sentience_claimed=false</code> · <code>tokens_used=0</code>.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <label for="tau-slider" style="font-family:ui-monospace,monospace;color:var(--gold)">
+        tau = <span id="tau-val">0.10</span>
+      </label>
+      <input id="tau-slider" type="range" min="0.04" max="0.25" step="0.01" value="0.10" />
+      <span class="badge" id="tau-summary">Past A_tau: 5 -> Future A_tau: 5 (shift +0)</span>
+      <span class="badge">EI = 0.3893 bits · Glyph ^_^</span>
+      <span class="badge">Invariants (P&gt;=0.14): invariant_pinned, mcp_sandboxed</span>
+    </div>
+    <table>
+      <thead><tr><th>Operational State</th><th>Past Weight</th><th>Future Weight</th><th>Delta</th><th>Accessible @ tau (Past / Future)</th></tr></thead>
+      <tbody id="repertoire-tbody"></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Architecture Diagram &amp; Causal Chiasm Tomography</h2>
+    <div class="grid2">
+      <div class="panel2">
+        <h3>System Architecture (Anthropic)</h3>
+        <a href="architecture.svg"><img src="preview.png" alt="Anthropic architecture preview" /></a>
+      </div>
+      <div class="panel2">
+        <h3>Causal Chiasm &amp; 24-Episode Filtration Tomography</h3>
+        <a href="chiasm.svg"><img src="chiasm.svg" alt="Anthropic causal chiasm SVG" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>72-Column 2x4 Unicode Braille Tactile Plate &amp; Seals</h2>
+    <div class="grid2">
+      <div class="panel2">
+        <h3>Dot-Rendered Tactile Preview</h3>
+        <a href="anthropic_braille_preview.png"><img src="anthropic_braille_preview.png" alt="Anthropic 2x4 Braille preview" /></a>
+        <div class="nav-links">
+          <a class="btn" href="anthropic_braille.txt">anthropic_braille.txt</a>
+          <a class="btn" href="anthropic_braille.json">anthropic_braille.json</a>
+        </div>
+      </div>
+      <div class="panel2">
+        <h3>Copyable Unicode Braille Text</h3>
+        <pre class="braille">ANTHROPIC — 2x4 BRAILLE ARCHITECTURE PLATE
+Claude Constitutional, Interpretability &amp; Coding Agent Systems · 72 cols · executed=False
+
+⠀⢠⢤⢤⣤⣤⡤⣤⣤⢤⠤⢤⢤⣤⢤⡤⣤⣤⢤⢤⡤⠤⡤⣤⢤⣤⣤⣤⣤⣤⡤⠤⢤⣤⢤⣤⢤⣤⣤⢤⢤⢤⢤⢤⢤⣤⠤⠤⠤⠤⠤⠤⠤⣤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⣤⡄⠀
+⠀⢸⢘⣛⣛⣛⣛⣛⣙⣛⣉⢛⣛⣙⣛⣙⣛⣛⢛⢛⣃⣛⣛⣛⢛⣛⣛⡛⢛⣛⣃⣛⣘⣛⢛⢛⣛⣛⣛⠋⠋⠛⠙⠛⠛⠛⠀⠀⠀⠀⠀⠀⠐⢐⣟⣿⣵⠁⣜⣖⣟⡜⢐⣜⣗⡇⠀⠀⠀⢸⡇⠀
+⠀⠘⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠓⠃⠀
+⠀⠀⠨⠭⠌⠭⠭⠭⠭⠍⠍⠭⠍⠭⠭⠭⠤⠤⠤⠤⠤⠤⠄⠤⠤⠤⠤⠠⠤⠤⠤⠤⠤⠤⠄⠤⠤⠄⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢭⠩⢭⢭⢭⢭⠭⠉⠉⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢭⠩⢭⢭⢭⠭⢭⠍⠉⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣞⢹⣐⢒⢒⢒⢒⢒⢒⢂⢀⡏⢳⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⡞⢹⣐⢒⢒⢒⢒⢒⢒⢀⢀⡏⢳⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡖⡕⢽⣵⢽⣵⣽⣵⣽⣷⢀⡴⠁⠀⠀⠁⠉⠁⠉⠁⠉⠁⠉⠁⠀⠀⠘⢦⡀⡖⡕⢥⣵⣥⣵⣥⣵⡅⢱⢀⡴⠁⠀⠀⠉⠁⠉⠁⠉⠁⠉⠁⠁⠀⠀⠘⢦⡀⡖⡕⢽⣵⣽⣵⣽⢵⣽⢳⠀⠀
+⠀⠀⡗⠒⠒⠒⠒⠒⠂⠀⠀⢸⠙⢆⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⣴⠛⡗⠒⠒⠒⠒⠒⠒⠂⠀⢸⠙⣦⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣴⠛⡇⠒⠒⠒⠒⠐⠒⠒⠀⢸⠀⠀
+⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠱⣄⢰⢷⢹⣵⣽⣵⣽⣵⣽⡕⡆⣀⠞⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠱⣄⢰⢿⢱⣽⣵⣽⣵⣽⣵⠕⡆⣀⠞⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⠐⠒⠒⠒⠒⠒⠀⠀⠀⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠈⢹⠐⠒⠒⠐⠒⠒⠒⠂⠀⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠟⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢠⣤⢵⣤⣤⣤⣤⣄⣤⣤⣤⣤⣤⣄⣤⣄⣴⣅⢤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠠⠤⠠⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠶⠶⠶⠄⠆⠀⠰⠤⠴⠴⠴⠴⠀⠀⠶⠦⠶⠴⠆⠀⠴⠤⠴⠴⠴⠴⠀⠀⠶⠦⠆⠴⠆⠀⠶⠤⠴⠴⠄⠤⠀⠀⠶⠶⠆⠴⠆⠀⠶⠤⠴⠴⠄⠤⠀⠀⠶⠶⠆⠰⠆⠀⠴⠴⠴⠴⠄⠤⠀⠀
+⠀⠀⣒⣒⣒⣒⣒⣖⣒⡂⠀⠀⠀⠀⠀⠀⣒⣒⣒⣒⣒⡒⠖⠒⠒⠒⠀⠀⠀⠀⣒⣒⣒⣒⣒⣒⣒⠒⠒⠒⠀⠀⠀⠀⣒⣒⣒⣒⣒⣒⣒⣒⣒⣒⡂⠀⠀⠐⣒⣒⣒⣒⣒⣒⣒⠒⠒⠖⠂⠀⠀⠀
+⠀⠀⣤⣤⣤⢤⣤⣤⣤⡤⠤⠤⠄⠀⠀⠀⣤⣤⣤⣤⣴⣥⣤⣤⡤⠄⠀⠀⠀⠀⣤⣥⣤⣤⣤⣤⢤⡤⠤⠤⠀⠀⠀⠀⣤⣤⣤⢤⣥⣥⢤⣄⠀⠀⠀⠀⠀⠀⣤⣤⣤⣤⢤⣤⣥⣤⠄⠀⠀⠀⠀⠀
+⠀⠀⣁⣁⣉⣉⣉⣁⣁⣁⣀⣀⠀⠀⠀⠀⣉⣁⣁⣁⣁⣉⣁⣉⣉⣀⡀⠀⠀⠀⣉⣁⣉⣁⣉⣁⣉⠁⠀⠀⠀⠀⠀⠀⣉⣉⣉⣁⣉⣉⣉⣉⣁⠀⠀⠀⠀⠀⣉⣁⣁⣉⣉⣁⣁⣁⣁⣀⣀⠀⠀⠀
+⠀⠀⠒⠒⠒⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠒⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠒⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠒⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠒⠒⠐⠒⠒⠂⠒⠒⠀⠀⠀⠀
+⠀⠀⠠⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀
+⠀⠀⠉⠁⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠉⠁⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⠀⢀⡀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⢀⠀⠀⠀⢀⠀⠀⠀⠀⠀⢀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⠉⠉⠉⠉⠁⠈⠉⠉⠁⠁⠉⠉⠉⠉⠁⠁⠉⠉⠉⠉⠁⠁⠉⠉⠁⠉⠉⠉⠉⠉⠉⠉⠁⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠈⠉⠉⠉⠉⠉⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+        <p class="sub" style="margin-top:10px;font-family:ui-monospace,monospace;font-size:0.74rem">
+          scene_sha256: 8ba45832f2678cf7ca3e57ad096a9c7d92dbb9e2e89692e9d52678c3975d7c79<br/>
+          report_sha256: ad310ccc7869eebf7ebd5d877b6da9eb6727ece2bd31d18e2e33f93bf009bfc1
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Fieldglass Observatory · Milestone M2 · Anthropic Dossier · 0 Cloud Tokens · executed=False
+  </footer>
+</div>
+
+<script id="dossier-data" type="application/json">{"slug": "anthropic", "display_name": "Anthropic", "past_repertoire": {"policy_traceable": 0.09956001244979634, "mcp_sandboxed": 0.1343435396645382, "invariant_pinned": 0.14391059409402182, "hermetic_ok": 0.07564941835577453, "safe_alt_open": 0.08521647278525818, "opaque_refusal": 0.19348469050319272, "broad_mcp_scope": 0.14217881181195638, "context_drift": 0.12565646033546182}, "future_repertoire": {"policy_traceable": 0.21043998755020366, "mcp_sandboxed": 0.22565646033546183, "invariant_pinned": 0.19608940590597815, "hermetic_ok": 0.13435058164422542, "safe_alt_open": 0.10478352721474182, "opaque_refusal": 0.05651530949680727, "broad_mcp_scope": 0.037821188188043635, "context_drift": 0.03434353966453818}, "improvements": [{"id": "ANTH-01", "priority": "P1", "horizon": "Mid-term (3-6 mo)", "domain": "Mechanistic Interpretability", "title": "Mechanistic Interpretability Telemetry Overlay (FeatureAtlas-HUD)", "short_title": "Interpretability HUD", "current_gap": "Safety and reasoning evaluations treat model generations as black-box text, missing early internal feature collapse or conflicting circuit activation.", "proposed_architecture": "Export a lightweight per-phase sparse autoencoder (SAE) feature-family telemetry summary computing A_tau(p) across active safety, coding, and refusal feature clusters without exposing raw weights.", "fieldglass_grounding": "Applies a_tau(p, tau) and shannon_h1(p) to feature-activation distributions to flag premature mode collapse before final token emission.", "concrete_deliverable": "FeatureAtlas-HUD JSON telemetry sidecar logging top-K active feature families and phase-level A_tau stability.", "kpis": [{"metric": "Pre-output anomaly detection recall", "baseline": "34%", "target": "86%"}, {"metric": "Telemetry sidecar overhead", "baseline": "n/a", "target": "< 2.5% latency"}], "risks_and_mitigations": "Risk: Feature labels can be noisy or misread as causal proof. Mitigation: tag summaries strictly as observational telemetry correlations.", "verification_method": "Run paired benign/adversarial prompt batches and verify A_tau divergence separates conflict regimes with ROC-AUC >= 0.88."}, {"id": "ANTH-02", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Agentic Sandboxing", "title": "Capability-Scoped MCP Leases & Causal Chiasm Dry-Run Gate", "short_title": "Scoped MCP + Dry-Run Gate", "current_gap": "Persistent MCP server grants expose broad workspace paths and shells across turns, amplifying indirect prompt injection blast radius.", "proposed_architecture": "Bind every MCP tool call to an ephemeral capability lease (explicit read_paths, write_paths, network_egress=false, ttl_calls) and run a non-executing Causal Chiasm dry-run diff whenever chiasm_shift < 0 before requesting approval.", "fieldglass_grounding": "Enforces executed=False dry-run inspection when future_accessible_volume narrows irreversibly relative to past_accessible_volume.", "concrete_deliverable": "MCP-ChiasmSandbox capability manifest + zero-trust unified diff gate.", "kpis": [{"metric": "Out-of-scope MCP writes under injection", "baseline": "4.2%", "target": "0.0%"}, {"metric": "Capability verification latency", "baseline": "n/a", "target": "+8 ms / call"}], "risks_and_mitigations": "Risk: Excess confirmation prompts slow coding flow. Mitigation: auto-approve idempotent reads and gate only irreversible/cross-scope writes.", "verification_method": "Execute indirect-injection MCP test harness attempting writes outside leased paths; assert 100% hard denial and clean audit log."}, {"id": "ANTH-03", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Long-Context Provenance", "title": "Cryptographic Span Anchoring & 200K+ Persistent Filtration Anchor", "short_title": "Span Hash + Context Anchor", "current_gap": "Long-session compaction evicts early schema contracts and test commands, while RAG/doc citations suffer subtle paraphrase drift.", "proposed_architecture": "Run persistent_filtration_tomography() over turn reference frequency; pin blocks with P(x) >= 0.14 into an immutable InvariantHeader surviving compaction, and bind citations to SHA-256 byte-range span anchors.", "fieldglass_grounding": "Directly uses fieldglass.metrics.persistent_filtration_tomography(episodes, invariant_tau=0.14).", "concrete_deliverable": "FiltrationAnchor compaction preserver + SHA-256 byte-span citation verifier.", "kpis": [{"metric": "Late-turn contract recall post-compaction", "baseline": "71%", "target": "96%"}, {"metric": "Citation paraphrase drift errors", "baseline": "5.8%", "target": "0.0%"}], "risks_and_mitigations": "Risk: Reserves ~4% (~8K tokens) of 200K window for pinned invariants. Mitigation: deduplicate and cap InvariantHeader strictly by P(x) rank.", "verification_method": "Simulate 60-turn refactoring sessions with forced compaction; verify 100% retention of pinned commands and exact SHA-256 byte-range matches."}, {"id": "ANTH-04", "priority": "P1", "horizon": "Near-term (0-3 mo)", "domain": "Deterministic Replay & Offline Artifacts", "title": "Deterministic Seeded CI Replay & Hermetic Zero-CDN Artifact Seal", "short_title": "Seeded Replay + ArtifactSeal", "current_gap": "Non-deterministic tool trajectories complicate safety regression CI, and generated HTML/React Artifacts fail on air-gapped networks due to external CDNs.", "proposed_architecture": "Support deterministic seeded replay mode for evaluation tool trajectories and package Artifacts via ArtifactSeal: inline ES5-safe CSS/JS/SVG, zero external URLs, headless link verification, and SHA-256 artifact_manifest.json.", "fieldglass_grounding": "Zero-CDN static HTML + deterministic SHA-256 sealing modeled on Fieldglass Observatory.", "concrete_deliverable": "ArtifactSeal packager + deterministic_replay.json CI fixture runner.", "kpis": [{"metric": "Air-gapped Artifact render success", "baseline": "44%", "target": "99.5%"}, {"metric": "Safety eval replay hash reproducibility", "baseline": "68%", "target": "100%"}], "risks_and_mitigations": "Risk: +40 KB inline asset footprint per Artifact. Mitigation: minify inline SVG/CSS and strip unused runtime helpers.", "verification_method": "Run static URL scanner rejecting http(s):// references and execute repeated seeded evals asserting identical report_sha256."}, {"id": "ANTH-05", "priority": "P1", "horizon": "Mid-term (3-6 mo)", "domain": "Constitutional Auditability", "title": "Constitutional Rule Conflict Resolution Ledger (PolicyAudit-v1)", "short_title": "Constitutional Conflict Ledger", "current_gap": "Overlapping Constitutional, system-prompt, and tool-policy rules produce opaque boilerplate refusals without showing which tier fired or what safe alternative remains open.", "proposed_architecture": "Emit a structured ConstraintTrace sidecar stating explicit priority tier (core_safety > system_policy > tool_permission) and preserved_safe_alternatives computed as A_tau(safe_set) without exposing bypassable internals.", "fieldglass_grounding": "Uses accessible_set(safe_options, tau) to enumerate constructive safe completions.", "concrete_deliverable": "PolicyAudit-v1 ConstraintTrace JSON schema + developer conflict inspector.", "kpis": [{"metric": "Developer retry loops on opaque refusals", "baseline": "3.4 turns", "target": "1.3 turns (-62%)"}, {"metric": "Valid dual-use safe-alternative rate", "baseline": "58%", "target": "92%"}], "risks_and_mitigations": "Risk: Detailed conflict notes could aid boundary probing. Mitigation: restrict trace to coarse policy-tier codes and constructive safe options.", "verification_method": "Test 150 dual-use security/bio/code boundary prompts; verify PolicyAudit-v1 reduces unnecessary refusals while preserving 100% core safety blocks."}], "metrics": {"episodes": 24, "tau": 0.1, "past_a_tau": 5, "future_a_tau": 5, "past_a014": 3, "future_a014": 4, "chiasm_shift": 0, "effective_information_bits": 0.389288, "h1_past_bits": 2.8693, "h1_future_bits": 2.4735, "m4_past_purity": 0.2611, "m4_future_purity": 0.3148, "presence_glyph": "^_^", "structural_invariants": ["invariant_pinned", "mcp_sandboxed"], "scene_sha256": "8ba45832f2678cf7ca3e57ad096a9c7d92dbb9e2e89692e9d52678c3975d7c79", "report_sha256": "ad310ccc7869eebf7ebd5d877b6da9eb6727ece2bd31d18e2e33f93bf009bfc1"}}</script>
+<script>
+(function () {
+  var payload = JSON.parse(document.getElementById("dossier-data").textContent);
+  var tabs = document.querySelectorAll("#proposal-tabs button[data-imp]");
+  var cards = document.querySelectorAll(".imp-card");
+  tabs.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = btn.getAttribute("data-imp");
+      tabs.forEach(function (b) { b.classList.toggle("active", b === btn); });
+      cards.forEach(function (card) {
+        var show = target === "all" || card.getAttribute("data-imp-id") === target;
+        card.classList.toggle("hidden", !show);
+      });
+    });
+  });
+
+  var slider = document.getElementById("tau-slider");
+  var tauLabel = document.getElementById("tau-val");
+  var summaryBadge = document.getElementById("tau-summary");
+  var tbody = document.getElementById("repertoire-tbody");
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function renderTau() {
+    var tau = parseFloat(slider.value);
+    tauLabel.textContent = tau.toFixed(2);
+    var past = payload.past_repertoire;
+    var future = payload.future_repertoire;
+    var keys = Object.keys(past);
+    var pastCount = 0;
+    var futCount = 0;
+    var rows = [];
+    keys.forEach(function (k) {
+      var pv = past[k];
+      var fv = future[k];
+      var pOn = pv > tau;
+      var fOn = fv > tau;
+      if (pOn) pastCount += 1;
+      if (fOn) futCount += 1;
+      var delta = fv - pv;
+      var dStr = (delta >= 0 ? "+" : "") + delta.toFixed(3);
+      rows.push(
+        "<tr>" +
+          "<td><code>" + escHtml(k) + "</code></td>" +
+          "<td>" + pv.toFixed(3) + "</td>" +
+          "<td>" + fv.toFixed(3) + "</td>" +
+          "<td style='color:" + (delta >= 0 ? "var(--cyan)" : "var(--ruby)") + "'>" + dStr + "</td>" +
+          "<td>" + (pOn ? "ACTIVE" : "below") + " / <b style='color:" + (fOn ? "var(--gold)" : "var(--muted)") + "'>" + (fOn ? "ACTIVE" : "below") + "</b></td>" +
+        "</tr>"
+      );
+    });
+    tbody.innerHTML = rows.join("");
+    var shift = futCount - pastCount;
+    summaryBadge.textContent = "Past A_tau: " + pastCount + " -> Future A_tau: " + futCount + " (shift " + (shift >= 0 ? "+" : "") + shift + ")";
+  }
+
+  slider.addEventListener("input", renderTau);
+  renderTau();
+})();
+</script>
+</body>
+</html>

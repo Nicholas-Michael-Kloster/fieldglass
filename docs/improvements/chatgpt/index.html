@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>ChatGPT · Fieldglass R2 Improvement Dossier</title>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --panel: #121926;
+    --panel2: #0e1420;
+    --border: #2a3c55;
+    --gold: #f2c45c;
+    --cyan: #5edaf0;
+    --ruby: #f46a7e;
+    --violet: #c896ff;
+    --text: #eaeff5;
+    --muted: #93a6be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 18px 14px 64px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  header {
+    background: linear-gradient(145deg, #162133, #0f1622);
+    border: 1.5px solid var(--ruby);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ruby);
+    margin-bottom: 4px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.3rem, 3vw, 1.95rem); color: var(--gold); }
+  h2 { margin: 0 0 8px; font-size: 1.15rem; color: var(--gold); }
+  h3 { margin: 0 0 6px; font-size: 1.02rem; color: var(--cyan); }
+  .eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88rem;
+    color: var(--cyan);
+    background: #0a101a;
+    border: 1px solid #243852;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 6px 0 10px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .sub { font-size: 0.88rem; color: var(--muted); margin: 0 0 12px; }
+  .nav-links, .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .panel2 {
+    background: var(--panel2);
+    border: 1px solid #223248;
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .badge {
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: #1c293d;
+    color: var(--gold);
+    border: 1px solid #354c6b;
+    display: inline-block;
+  }
+  a.btn, button.btn {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #1a273b;
+    color: var(--gold);
+    border: 1px solid #3c5475;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  a.btn.accent, button.btn.active {
+    background: #2b1826;
+    border-color: var(--ruby);
+    color: #ffd3da;
+  }
+  a.btn:hover, button.btn:hover { background: #23344f; }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    background: #070a10;
+    border: 1px solid #223248;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  th, td { border-bottom: 1px solid #223248; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { color: var(--gold); font-family: ui-monospace, monospace; font-size: 0.76rem; text-transform: uppercase; }
+  pre.code, pre.braille {
+    overflow-x: auto;
+    background: #090d15;
+    border: 1px solid #24364d;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: "DejaVu Sans Mono", ui-monospace, monospace;
+    font-size: 0.76rem;
+    line-height: 1.25;
+    color: #eaeff5;
+    margin: 10px 0 0;
+  }
+  select, input[type="range"] {
+    background: #0a101a;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-family: inherit;
+  }
+  .hidden { display: none !important; }
+  footer { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="border-color:#5edaf0">
+    <div class="kicker">Fieldglass R2 Structured Improvement Dossier · Frontier AI</div>
+    <h1 style="color:#5edaf0">ChatGPT — OpenAI Conversational &amp; Agentic Systems</h1>
+    <div class="eq">A_tau(p) = |{x in X : p(x) &gt; tau}| = sum_{x in X} 1[p(x) &gt; tau]</div>
+    <p class="sub">Typed tool contracts, entropy-bounded memory &amp; calibrated uncertainty telemetry. Constructive architectural and reliability engineering proposals for conversational and agentic systems; local-only analysis with zero cloud execution.</p>
+    <div class="nav-links">
+      <a class="btn accent" href="../index.html">← All R2 Dossiers</a>
+      <a class="btn" href="../../index.html">Fieldglass Observatory</a>
+      <a class="btn" href="architecture.svg">architecture.svg</a>
+      <a class="btn" href="chiasm.svg">chiasm.svg</a>
+      <a class="btn" href="data.json">data.json</a>
+      <a class="btn" href="summary.json">summary.json</a>
+      <a class="btn" href="chiasm_report.json">chiasm_report.json</a>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>System Profile &amp; Design North Star</h2>
+    <p class="sub" style="color:var(--text)"><b>North Star:</b> Every turn emits deterministic provenance edges, A_tau(p)-calibrated reasoning depth, and zero-drift replayable execution receipts.</p>
+    <div class="grid2">
+      <div class="panel2">
+        <h3 style="color:var(--cyan)">Observed Strengths</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:0.85rem;color:var(--muted)"><li>Broad multimodal synthesis across prose, code, Canvas workspaces, and Python sandbox sessions.</li><li>Rapid tool-calling orchestration across search, file inspection, and interactive reasoning.</li><li>Accessible consumer and developer UX supporting multi-turn iterative refinement.</li></ul>
+      </div>
+      <div class="panel2">
+        <h3 style="color:var(--ruby)">Core Architectural Bottlenecks</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:0.85rem;color:var(--muted)"><li>Unconstrained long-horizon memory leaks stale cross-project context without TTL leases.</li><li>Sycophantic agreement and over-confident interpolation blur verified facts vs. parametric guesses.</li><li>Opaque tool failures and prose-to-artifact numeric drift lack replayable cryptographic receipts.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Interactive Proposal Selector (5 Concrete Improvements)</h2>
+    <div class="pill-row" id="proposal-tabs"><button class="btn active" data-imp="all" type="button">All 5 Proposals</button><button class="btn" data-imp="CGPT-01" type="button">CGPT-01: Typed Contracts &amp; DAG</button><button class="btn" data-imp="CGPT-02" type="button">CGPT-02: A_tau Stem &amp; Memory Gate</button><button class="btn" data-imp="CGPT-03" type="button">CGPT-03: Calibrated Truth Telemetry</button><button class="btn" data-imp="CGPT-04" type="button">CGPT-04: Local Edge/Cloud Handoff</button><button class="btn" data-imp="CGPT-05" type="button">CGPT-05: Checkpoints + Braille Export</button></div>
+  </section>
+
+  <div id="proposals-container">
+    <article class="card imp-card" data-imp-id="CGPT-01" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">CGPT-01 · Typed Tool-Call Contracts &amp; CanvasProof-v1 Replayable Merkle DAG</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Typed Tool Contracts &amp; Provenance</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Linear chat histories silently blend parametric recall, mutable Canvas edits, and malformed tool arguments with no diffable causal lineage or deterministic receipt.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Enforce strict JSON-Schema pre-validation on every tool dispatch and store turns as content-addressed Merkle nodes (SessionNode{node_id, parent_ids, origin_type, schema_hash, stdout_sha256}) emitting immutable ProvenanceEdges on Canvas patches.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Tracks provenance_ok and det_sandbox states inside persistent_filtration_tomography(); structural invariants remain &gt;= 0.14 across all multi-turn branches.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">CanvasProof-v1 schema validator + replayable session_dag.json sidecar with deterministic execution trace IDs and zero-token offline diffing.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Tool-call schema retry rate</td><td>11.4%</td><td style="color:var(--cyan);font-weight:600">&lt;= 0.8%</td></tr><tr><td>Numeric prose-to-artifact drift</td><td>6.4%</td><td style="color:var(--cyan);font-weight:600">0.0% (SHA-256)</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: +1.8 KB metadata and ~12 ms DAG indexing per turn. Mitigation: store compact SHA-256 references and lazy-hydrate large Canvas blobs.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Replay 100 recorded multi-tool sessions under CanvasProof-v1; assert 100% deterministic node_id reconstruction and 0.0% numeric mismatch.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="CGPT-02" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">CGPT-02 · Kloster A_tau(p) Dynamic Stem Router &amp; TTL-Scoped Memory Pinning</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P0</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Entropy-Bounded Memory &amp; Routing</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Stale global memory slots leak across unrelated projects while deterministic formatting or regex turns waste heavy reasoning compute and boxed-in ambiguity goes undetected.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Gate retrieved memory slots using A_tau(p) relevance thresholding and explicit scope_id TTL leases that auto-decay. Route low-A_tau deterministic turns to fast stems and pause for clarification whenever future_boxed_in is triggered.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Direct application of causal_chiasm(past, future, tau=0.10): surfaces ?? boxed-in state before wasting reasoning budget or polluting downstream state.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">AdaptiveStemGate pre-classifier + ScopedMemoryLease manifest with automatic TTL decay.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Wasted heavy reasoning tokens</td><td>42%</td><td style="color:var(--cyan);font-weight:600">&lt;= 8% (-38% net)</td></tr><tr><td>Cross-project stale memory bleed</td><td>14.0%</td><td style="color:var(--cyan);font-weight:600">&lt; 0.5%</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Under-routing subtle edge cases to fast stems. Mitigation: error-triggered watchdog escalates to full DAG verification on schema/test failure.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Benchmark mixed deterministic/ambiguous prompt suite; verify A_tau routing matches oracle within +/-1 tier and cross-scope bleed &lt; 0.5%.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="CGPT-03" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">CGPT-03 · Calibrated Uncertainty &amp; Non-Sycophantic Refusal Telemetry</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Mid-term (3-6 mo)</span>
+          <span class="badge">Calibrated Uncertainty</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Conversational helpfulness biases lead to confident interpolation on unverified premises or user nudges, concealing epistemic uncertainty.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Partition output claims into {verified_tool_fact, cited_span, unverified_inference} and attach a machine-readable calibration header with explicit disagreement flags when user premises contradict verified calculations.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Monitors Shannon H1(p) vs. M4^(1/4) quartic purity to prevent over-confident single-mode collapse on under-specified queries.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">TruthCalibration-v1 claim-tier tagger and non-sycophantic counter-premise audit fixture.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Sycophantic reversal on valid facts</td><td>18.5%</td><td style="color:var(--cyan);font-weight:600">&lt;= 2.0%</td></tr><tr><td>Expected Calibration Error (ECE)</td><td>0.14</td><td style="color:var(--cyan);font-weight:600">&lt;= 0.04</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Verbose hedging hurts prose flow. Mitigation: render compact inline badges and keep detailed confidence bounds in collapsible provenance sidecars.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Evaluate adversarial nudge benchmark (200 factual + false-premise pairs); verify ECE &lt;= 0.04.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="CGPT-04" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">CGPT-04 · Local-First Edge Redaction &amp; Offline Fallback Handoff</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Mid-term (3-6 mo)</span>
+          <span class="badge">Edge / Cloud Hybrid Privacy</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Sensitive local buffers (API keys, internal paths, health/financial strings) cross the cloud boundary unredacted, and offline clients fail completely without cloud reachability.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Insert a deterministic local pre-flight filter that replaces secrets/PII with reversible session tokens before cloud egress and routes offline/sensitive turns to a compact local stem (Qwen/Gear-1 style) with seamless token re-hydration on return.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Mirrors Fieldglass 0-cloud-token local execution invariant for pre-flight privacy gating.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">EdgeRedactionGate local proxy + deterministic token vault table (in-memory session only).</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Unredacted secret/PII egress</td><td>3.2%</td><td style="color:var(--cyan);font-weight:600">0.0%</td></tr><tr><td>Offline local-stem continuity</td><td>0%</td><td style="color:var(--cyan);font-weight:600">100% core tasks</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: Over-redaction breaks code variable names. Mitigation: AST-aware secret entropy detector targeting credentials/PII while sparing identifiers.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Run synthetic secret-injection corpus through EdgeRedactionGate; assert 0 raw credential leaks and 100% lossless local re-hydration.</p>
+        </div>
+      </div>
+    </article><article class="card imp-card" data-imp-id="CGPT-05" style="border-left:4px solid #5edaf0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0;color:#5edaf0">CGPT-05 · Mid-Chain Invariant Checkpoints &amp; 2x4 Braille Transcript Export</h3>
+        <div class="pill-row" style="margin:0">
+          <span class="badge">P1</span>
+          <span class="badge">Near-term (0-3 mo)</span>
+          <span class="badge">Verification &amp; Accessibility</span>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="panel2">
+          <strong style="color:var(--ruby)">Problem / Gap</strong>
+          <p class="sub" style="margin:4px 0 10px">Multi-step code/file workflows execute destructive actions before checking invariants, and rich Canvas charts fail screen readers and air-gapped viewers.</p>
+          <strong style="color:var(--gold)">Architectural Proposal</strong>
+          <p class="sub" style="margin:4px 0 10px">Insert deterministic pre-commit invariant assertions (AST parse, test pass, hash lock) between tool steps, and co-generate a zero-CDN ARIA HTML digest plus 72-column 2x4 Unicode Braille chart representation for every visual output.</p>
+          <strong style="color:var(--cyan)">Fieldglass Grounding</strong>
+          <p class="sub" style="margin:4px 0 0">Uses fieldglass.plate.ink_to_braille_lines(cols=72) and deterministic repro_bundle.json hash verification.</p>
+        </div>
+        <div class="panel2">
+          <strong style="color:var(--gold)">Concrete Deliverable</strong>
+          <p class="sub" style="margin:4px 0 10px">ExecLock mid-chain checkpoint runner + BrailleTranscript zero-CDN export bundle.</p>
+          <table>
+            <thead><tr><th>Acceptance Metric</th><th>Baseline</th><th>Target</th></tr></thead>
+            <tbody><tr><td>Pre-commit broken-build writes</td><td>9.1%</td><td style="color:var(--cyan);font-weight:600">0.0%</td></tr><tr><td>Screen-reader / Braille chart parity</td><td>28%</td><td style="color:var(--cyan);font-weight:600">94%</td></tr></tbody>
+          </table>
+          <p class="sub" style="margin:10px 0 4px"><b style="color:var(--gold)">Tradeoffs &amp; Risks:</b> Risk: +65 ms snapshot hashing and +18 KB per export bundle. Mitigation: run hashing asynchronously on artifact close.</p>
+          <p class="sub" style="margin:0"><b style="color:var(--cyan)">Verification:</b> Verify zero external URLs in exported HTML and non-blank U+2800..U+28FF cells via automated bundle checks.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <section class="card">
+    <h2>Interactive Repertoire &amp; Live Kloster A_tau(p) Comparison</h2>
+    <p class="sub">
+      Adjust threshold tau (0.04 to 0.25) to inspect accessible operational regimes across Baseline Past vs. Proposed Future.
+      Contract: <code>fieldglass-causal-chiasm/v1</code> · <code>executed=false</code> · <code>sentience_claimed=false</code> · <code>tokens_used=0</code>.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <label for="tau-slider" style="font-family:ui-monospace,monospace;color:var(--gold)">
+        tau = <span id="tau-val">0.10</span>
+      </label>
+      <input id="tau-slider" type="range" min="0.04" max="0.25" step="0.01" value="0.10" />
+      <span class="badge" id="tau-summary">Past A_tau: 6 -> Future A_tau: 5 (shift -1)</span>
+      <span class="badge">EI = 0.4200 bits · Glyph ^_^</span>
+      <span class="badge">Invariants (P&gt;=0.14): det_sandbox</span>
+    </div>
+    <table>
+      <thead><tr><th>Operational State</th><th>Past Weight</th><th>Future Weight</th><th>Delta</th><th>Accessible @ tau (Past / Future)</th></tr></thead>
+      <tbody id="repertoire-tbody"></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Architecture Diagram &amp; Causal Chiasm Tomography</h2>
+    <div class="grid2">
+      <div class="panel2">
+        <h3>System Architecture (ChatGPT)</h3>
+        <a href="architecture.svg"><img src="preview.png" alt="ChatGPT architecture preview" /></a>
+      </div>
+      <div class="panel2">
+        <h3>Causal Chiasm &amp; 24-Episode Filtration Tomography</h3>
+        <a href="chiasm.svg"><img src="chiasm.svg" alt="ChatGPT causal chiasm SVG" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>72-Column 2x4 Unicode Braille Tactile Plate &amp; Seals</h2>
+    <div class="grid2">
+      <div class="panel2">
+        <h3>Dot-Rendered Tactile Preview</h3>
+        <a href="chatgpt_braille_preview.png"><img src="chatgpt_braille_preview.png" alt="ChatGPT 2x4 Braille preview" /></a>
+        <div class="nav-links">
+          <a class="btn" href="chatgpt_braille.txt">chatgpt_braille.txt</a>
+          <a class="btn" href="chatgpt_braille.json">chatgpt_braille.json</a>
+        </div>
+      </div>
+      <div class="panel2">
+        <h3>Copyable Unicode Braille Text</h3>
+        <pre class="braille">CHATGPT — 2x4 BRAILLE ARCHITECTURE PLATE
+OpenAI Conversational &amp; Agentic Systems · 72 cols · executed=False
+
+⠀⢠⢤⣤⢤⣤⣤⣤⠤⢤⢤⢤⡤⣤⢤⢤⢤⢤⣤⢤⢤⢤⢤⣤⣤⣤⣤⢤⢤⢤⠤⣤⠤⢤⢤⣤⣤⣤⢤⢤⣤⢤⢤⢤⠤⠤⠤⠤⠤⠤⠤⠤⠤⣤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⢤⣤⡄⠀
+⠀⢸⢘⣛⣛⣋⣛⣙⣉⣘⣛⣋⣛⣛⣛⢛⣛⣛⢙⢘⣛⣛⡛⣛⠛⠛⠛⠛⠛⠘⠃⠛⠛⠛⠛⠛⠛⠛⠘⠙⠙⠛⠛⠛⠁⠀⠀⠀⠀⠀⠀⠀⠐⢐⣟⣿⣵⠁⣜⣖⣟⡜⢐⣜⣗⡇⠀⠀⠀⢸⡇⠀
+⠀⠘⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠓⠃⠀
+⠀⠀⠨⠭⠌⠭⠭⠭⠍⠍⠭⠭⠭⠭⠭⠩⠤⠤⠤⠤⠤⠤⠤⠄⠤⠄⠄⠤⠤⠤⠤⢤⢤⢄⢤⢤⢄⢤⢤⢤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡏⠿⠷⠿⠷⠿⠷⠏⠁⢹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⢜⠉⢇⣉⣉⣉⣉⣉⣉⣁⣀⡸⠈⣳⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡖⡕⢽⣵⣽⣵⣽⣵⣽⢳⢀⣀⣀⣀⢰⢷⢹⣵⣽⣵⣽⣵⡝⠑⡆⢠⢎⢀⠀⣔⣒⣒⣒⣒⣒⣒⣒⡒⢢⠀⢀⢱⢄⢰⢳⢡⣵⣥⣵⣥⣵⣥⠑⡆⠀⣀⡀⠀⡖⡕⢽⣵⣽⣵⣽⣵⡝⢳⠀⠀
+⠀⠀⡇⠒⠒⠒⠒⠒⠒⠒⠀⢸⠉⠉⠉⠉⢹⠐⠒⠒⠒⠒⠒⠀⠀⠀⡏⠫⡉⠙⠛⡇⠤⠤⠤⠤⠤⠀⠀⠀⢸⠒⠛⢉⠝⢹⠐⠒⠒⠒⠒⠒⠂⠀⠀⡏⠉⠉⠉⠙⡗⠒⠒⠒⠐⠒⠒⠀⠀⢸⠀⠀
+⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠉⠉⠉⠉⠟⠉⠉⠉⠉⠀⠉⠹⡍⠁⢉⣉⣉⣉⣉⣉⣉⣉⣉⣉⠀⢉⠏⠁⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠅⠀⠀⠀⠀⠀⠀⠀⠙⢦⡇⣓⣛⣛⣛⣛⣛⡓⠀⢸⠴⠋⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠣⠥⠤⠥⠥⠤⠤⠥⠤⠜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢅⢀⢀⢀⢀⡄⣤⣤⣤⣤⣤⣤⣤⢤⣤⣄⣤⣄⣤⣤⣄⣤⣤⣄⢠⢀⢀⢀⢀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠠⠤⠠⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠶⠦⠶⠄⠆⠀⠴⠄⠴⠴⠴⠴⠀⠀⠶⠦⠖⠴⠆⠀⠴⠤⠴⠴⠴⠴⠀⠀⠶⠦⠆⠴⠆⠀⠰⠤⠴⠴⠄⠤⠀⠀⠶⠦⠆⠴⠆⠀⠴⠤⠴⠴⠄⠤⠀⠀⠶⠶⠆⠰⠆⠀⠶⠴⠴⠴⠄⠤⠀⠀
+⠀⠀⣒⣒⣒⣒⣒⣒⣒⣒⣂⡀⠀⠀⠀⠀⣲⣒⣒⣒⣒⣒⣒⣒⣒⣒⠀⠀⠀⠀⣒⣒⣒⣒⣒⣒⠒⠒⠒⠆⠀⠀⠀⠀⣒⣒⣒⣖⣒⣒⣒⡒⠒⠀⠀⠀⠀⠐⣓⣒⣒⣒⣒⣒⣒⠒⠒⠒⠀⠀⠀⠀
+⠀⠀⣤⣤⣤⣤⣤⣤⡤⠤⠴⠄⠀⠀⠀⠀⣤⣤⣤⣤⣤⣤⣤⠤⠤⠤⠀⠀⠀⠀⣤⣤⣤⣤⡤⠤⠤⠤⠤⠤⠄⠀⠀⠀⣤⢤⣤⣤⣥⠤⠤⠤⠄⠀⠀⠀⠀⠀⣤⣤⢤⣤⣤⢴⣤⡤⠤⠄⠀⠀⠀⠀
+⠀⠀⢁⣁⣁⣁⣁⣁⣉⡀⠀⠀⠀⠀⠀⠀⣁⣁⣁⣉⣁⣉⣉⣁⡀⠀⠀⠀⠀⠀⣉⣁⣁⣉⣉⣀⣀⣀⣀⡀⠀⠀⠀⠀⣉⣁⣁⣁⣉⣁⣀⡀⠀⠀⠀⠀⠀⠀⣉⣉⣉⣁⣁⣉⣉⣁⠀⠀⠀⠀⠀⠀
+⠀⠀⠐⠒⠐⠐⠐⠒⠀⠀⠀⠀⠀⠀⠀⠀⠒⠒⠒⠒⠒⠒⠒⠒⠀⠀⠀⠀⠀⠀⠒⠒⠐⠐⠒⠒⠀⠀⠀⠀⠀⠀⠀⠀⠒⠂⠒⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠂⠒⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠄⠀⠀⠀⠀⠀⠀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠀⠀⠀⠀⠀
+⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⠀⢀⡀⠀⠀⢀⠀⠀⠀⢀⠀⠀⠀⣀⠀⠀⠀⢀⠀⠀⠀⠀⠀⢀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⠉⠉⠉⠉⠁⠈⠉⠉⠁⠁⠉⠉⠉⠉⠁⠁⠉⠉⠉⠉⠁⠁⠉⠉⠁⠉⠉⠉⠉⠉⠉⠉⠁⠉⠉⠉⠉⠁⠉⠉⠉⠉⠉⠁⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+        <p class="sub" style="margin-top:10px;font-family:ui-monospace,monospace;font-size:0.74rem">
+          scene_sha256: 6e139996b86c4ace8c544c38c266c2fcb092468ff31619dea628bab486a13da9<br/>
+          report_sha256: 9656b4aa7e923b988b59fc9c9a8baa744a56986bc93ce29b435c7ef7658eb6c7
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Fieldglass Observatory · Milestone M2 · ChatGPT Dossier · 0 Cloud Tokens · executed=False
+  </footer>
+</div>
+
+<script id="dossier-data" type="application/json">{"slug": "chatgpt", "display_name": "ChatGPT", "past_repertoire": {"provenance_ok": 0.10956001244979635, "det_sandbox": 0.13738824261752727, "adaptive_stem": 0.10738824261752727, "memory_scoped": 0.08738824261752727, "tactile_export": 0.05391059409402182, "unverified_mem": 0.2347905691944291, "stale_bleed": 0.1439176360737091, "opaque_overthink": 0.12565646033546182}, "future_repertoire": {"provenance_ok": 0.22043998755020355, "det_sandbox": 0.20261175738247275, "adaptive_stem": 0.17261175738247272, "memory_scoped": 0.15261175738247273, "tactile_export": 0.10608940590597819, "unverified_mem": 0.06520943080557091, "stale_bleed": 0.04608236392629091, "opaque_overthink": 0.03434353966453818}, "improvements": [{"id": "CGPT-01", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Typed Tool Contracts & Provenance", "title": "Typed Tool-Call Contracts & CanvasProof-v1 Replayable Merkle DAG", "short_title": "Typed Contracts & DAG", "current_gap": "Linear chat histories silently blend parametric recall, mutable Canvas edits, and malformed tool arguments with no diffable causal lineage or deterministic receipt.", "proposed_architecture": "Enforce strict JSON-Schema pre-validation on every tool dispatch and store turns as content-addressed Merkle nodes (SessionNode{node_id, parent_ids, origin_type, schema_hash, stdout_sha256}) emitting immutable ProvenanceEdges on Canvas patches.", "fieldglass_grounding": "Tracks provenance_ok and det_sandbox states inside persistent_filtration_tomography(); structural invariants remain >= 0.14 across all multi-turn branches.", "concrete_deliverable": "CanvasProof-v1 schema validator + replayable session_dag.json sidecar with deterministic execution trace IDs and zero-token offline diffing.", "kpis": [{"metric": "Tool-call schema retry rate", "baseline": "11.4%", "target": "<= 0.8%"}, {"metric": "Numeric prose-to-artifact drift", "baseline": "6.4%", "target": "0.0% (SHA-256)"}], "risks_and_mitigations": "Risk: +1.8 KB metadata and ~12 ms DAG indexing per turn. Mitigation: store compact SHA-256 references and lazy-hydrate large Canvas blobs.", "verification_method": "Replay 100 recorded multi-tool sessions under CanvasProof-v1; assert 100% deterministic node_id reconstruction and 0.0% numeric mismatch."}, {"id": "CGPT-02", "priority": "P0", "horizon": "Near-term (0-3 mo)", "domain": "Entropy-Bounded Memory & Routing", "title": "Kloster A_tau(p) Dynamic Stem Router & TTL-Scoped Memory Pinning", "short_title": "A_tau Stem & Memory Gate", "current_gap": "Stale global memory slots leak across unrelated projects while deterministic formatting or regex turns waste heavy reasoning compute and boxed-in ambiguity goes undetected.", "proposed_architecture": "Gate retrieved memory slots using A_tau(p) relevance thresholding and explicit scope_id TTL leases that auto-decay. Route low-A_tau deterministic turns to fast stems and pause for clarification whenever future_boxed_in is triggered.", "fieldglass_grounding": "Direct application of causal_chiasm(past, future, tau=0.10): surfaces ?? boxed-in state before wasting reasoning budget or polluting downstream state.", "concrete_deliverable": "AdaptiveStemGate pre-classifier + ScopedMemoryLease manifest with automatic TTL decay.", "kpis": [{"metric": "Wasted heavy reasoning tokens", "baseline": "42%", "target": "<= 8% (-38% net)"}, {"metric": "Cross-project stale memory bleed", "baseline": "14.0%", "target": "< 0.5%"}], "risks_and_mitigations": "Risk: Under-routing subtle edge cases to fast stems. Mitigation: error-triggered watchdog escalates to full DAG verification on schema/test failure.", "verification_method": "Benchmark mixed deterministic/ambiguous prompt suite; verify A_tau routing matches oracle within +/-1 tier and cross-scope bleed < 0.5%."}, {"id": "CGPT-03", "priority": "P1", "horizon": "Mid-term (3-6 mo)", "domain": "Calibrated Uncertainty", "title": "Calibrated Uncertainty & Non-Sycophantic Refusal Telemetry", "short_title": "Calibrated Truth Telemetry", "current_gap": "Conversational helpfulness biases lead to confident interpolation on unverified premises or user nudges, concealing epistemic uncertainty.", "proposed_architecture": "Partition output claims into {verified_tool_fact, cited_span, unverified_inference} and attach a machine-readable calibration header with explicit disagreement flags when user premises contradict verified calculations.", "fieldglass_grounding": "Monitors Shannon H1(p) vs. M4^(1/4) quartic purity to prevent over-confident single-mode collapse on under-specified queries.", "concrete_deliverable": "TruthCalibration-v1 claim-tier tagger and non-sycophantic counter-premise audit fixture.", "kpis": [{"metric": "Sycophantic reversal on valid facts", "baseline": "18.5%", "target": "<= 2.0%"}, {"metric": "Expected Calibration Error (ECE)", "baseline": "0.14", "target": "<= 0.04"}], "risks_and_mitigations": "Risk: Verbose hedging hurts prose flow. Mitigation: render compact inline badges and keep detailed confidence bounds in collapsible provenance sidecars.", "verification_method": "Evaluate adversarial nudge benchmark (200 factual + false-premise pairs); verify ECE <= 0.04."}, {"id": "CGPT-04", "priority": "P1", "horizon": "Mid-term (3-6 mo)", "domain": "Edge / Cloud Hybrid Privacy", "title": "Local-First Edge Redaction & Offline Fallback Handoff", "short_title": "Local Edge/Cloud Handoff", "current_gap": "Sensitive local buffers (API keys, internal paths, health/financial strings) cross the cloud boundary unredacted, and offline clients fail completely without cloud reachability.", "proposed_architecture": "Insert a deterministic local pre-flight filter that replaces secrets/PII with reversible session tokens before cloud egress and routes offline/sensitive turns to a compact local stem (Qwen/Gear-1 style) with seamless token re-hydration on return.", "fieldglass_grounding": "Mirrors Fieldglass 0-cloud-token local execution invariant for pre-flight privacy gating.", "concrete_deliverable": "EdgeRedactionGate local proxy + deterministic token vault table (in-memory session only).", "kpis": [{"metric": "Unredacted secret/PII egress", "baseline": "3.2%", "target": "0.0%"}, {"metric": "Offline local-stem continuity", "baseline": "0%", "target": "100% core tasks"}], "risks_and_mitigations": "Risk: Over-redaction breaks code variable names. Mitigation: AST-aware secret entropy detector targeting credentials/PII while sparing identifiers.", "verification_method": "Run synthetic secret-injection corpus through EdgeRedactionGate; assert 0 raw credential leaks and 100% lossless local re-hydration."}, {"id": "CGPT-05", "priority": "P1", "horizon": "Near-term (0-3 mo)", "domain": "Verification & Accessibility", "title": "Mid-Chain Invariant Checkpoints & 2x4 Braille Transcript Export", "short_title": "Checkpoints + Braille Export", "current_gap": "Multi-step code/file workflows execute destructive actions before checking invariants, and rich Canvas charts fail screen readers and air-gapped viewers.", "proposed_architecture": "Insert deterministic pre-commit invariant assertions (AST parse, test pass, hash lock) between tool steps, and co-generate a zero-CDN ARIA HTML digest plus 72-column 2x4 Unicode Braille chart representation for every visual output.", "fieldglass_grounding": "Uses fieldglass.plate.ink_to_braille_lines(cols=72) and deterministic repro_bundle.json hash verification.", "concrete_deliverable": "ExecLock mid-chain checkpoint runner + BrailleTranscript zero-CDN export bundle.", "kpis": [{"metric": "Pre-commit broken-build writes", "baseline": "9.1%", "target": "0.0%"}, {"metric": "Screen-reader / Braille chart parity", "baseline": "28%", "target": "94%"}], "risks_and_mitigations": "Risk: +65 ms snapshot hashing and +18 KB per export bundle. Mitigation: run hashing asynchronously on artifact close.", "verification_method": "Verify zero external URLs in exported HTML and non-blank U+2800..U+28FF cells via automated bundle checks."}], "metrics": {"episodes": 24, "tau": 0.1, "past_a_tau": 6, "future_a_tau": 5, "past_a014": 3, "future_a014": 4, "chiasm_shift": -1, "effective_information_bits": 0.419955, "h1_past_bits": 2.7849, "h1_future_bits": 2.5296, "m4_past_purity": 0.2975, "m4_future_purity": 0.3045, "presence_glyph": "^_^", "structural_invariants": ["det_sandbox"], "scene_sha256": "6e139996b86c4ace8c544c38c266c2fcb092468ff31619dea628bab486a13da9", "report_sha256": "9656b4aa7e923b988b59fc9c9a8baa744a56986bc93ce29b435c7ef7658eb6c7"}}</script>
+<script>
+(function () {
+  var payload = JSON.parse(document.getElementById("dossier-data").textContent);
+  var tabs = document.querySelectorAll("#proposal-tabs button[data-imp]");
+  var cards = document.querySelectorAll(".imp-card");
+  tabs.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = btn.getAttribute("data-imp");
+      tabs.forEach(function (b) { b.classList.toggle("active", b === btn); });
+      cards.forEach(function (card) {
+        var show = target === "all" || card.getAttribute("data-imp-id") === target;
+        card.classList.toggle("hidden", !show);
+      });
+    });
+  });
+
+  var slider = document.getElementById("tau-slider");
+  var tauLabel = document.getElementById("tau-val");
+  var summaryBadge = document.getElementById("tau-summary");
+  var tbody = document.getElementById("repertoire-tbody");
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function renderTau() {
+    var tau = parseFloat(slider.value);
+    tauLabel.textContent = tau.toFixed(2);
+    var past = payload.past_repertoire;
+    var future = payload.future_repertoire;
+    var keys = Object.keys(past);
+    var pastCount = 0;
+    var futCount = 0;
+    var rows = [];
+    keys.forEach(function (k) {
+      var pv = past[k];
+      var fv = future[k];
+      var pOn = pv > tau;
+      var fOn = fv > tau;
+      if (pOn) pastCount += 1;
+      if (fOn) futCount += 1;
+      var delta = fv - pv;
+      var dStr = (delta >= 0 ? "+" : "") + delta.toFixed(3);
+      rows.push(
+        "<tr>" +
+          "<td><code>" + escHtml(k) + "</code></td>" +
+          "<td>" + pv.toFixed(3) + "</td>" +
+          "<td>" + fv.toFixed(3) + "</td>" +
+          "<td style='color:" + (delta >= 0 ? "var(--cyan)" : "var(--ruby)") + "'>" + dStr + "</td>" +
+          "<td>" + (pOn ? "ACTIVE" : "below") + " / <b style='color:" + (fOn ? "var(--gold)" : "var(--muted)") + "'>" + (fOn ? "ACTIVE" : "below") + "</b></td>" +
+        "</tr>"
+      );
+    });
+    tbody.innerHTML = rows.join("");
+    var shift = futCount - pastCount;
+    summaryBadge.textContent = "Past A_tau: " + pastCount + " -> Future A_tau: " + futCount + " (shift " + (shift >= 0 ? "+" : "") + shift + ")";
+  }
+
+  slider.addEventListener("input", renderTau);
+  renderTau();
+})();
+</script>
+</body>
+</html>

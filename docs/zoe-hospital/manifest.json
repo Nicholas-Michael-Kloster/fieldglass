@@ -1,0 +1,71 @@
+{
+  "package": "zoe-hospital-win7-edition",
+  "version": "1.0.0",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "min_windows_version": "Windows 7 SP1 (NT 6.1)",
+  "supported_runtimes": [
+    "Internet Explorer 8-11 / mshta.exe (ES5-only JS, IE8-safe CSS, zero external CDNs)",
+    "Python 3.7 / 3.8+ stdlib-only loopback HTTP/1.1 server (127.0.0.1, zero ANSI escapes)"
+  ],
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "clinical_use": false,
+  "educational_simulation_only": true,
+  "clinical_certification_claimed": false,
+  "disclaimer": "STRICTLY SIMULATED / EDUCATIONAL ONLY - NOT FOR CLINICAL, DIAGNOSTIC, OR PATIENT-CARE USE. No clinical certification claimed.",
+  "bundle_zip": "zoe_hospital_win7_bundle.zip",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 9528,
+      "sha256": "b2b74a4b298e8bf88a9590dddfbba23e5470ee9c4b77e1ea8b55511e6cee5ac9"
+    },
+    {
+      "path": "zoe_hospital_kiosk.html",
+      "bytes": 47046,
+      "sha256": "ba0c0e746449efa6360ec5b7c18dc3bf4711521e73ebd1e6771b6c4ee3f670c1"
+    },
+    {
+      "path": "zoe_hospital_kiosk.hta",
+      "bytes": 47348,
+      "sha256": "dd30d4bd5d2575fb8346cc7642fcd544e2e2848f0a468bcc1dc90479bdf9adc7"
+    },
+    {
+      "path": "zoe_hospital_win7.py",
+      "bytes": 28231,
+      "sha256": "60096e07439fd74c21d7a35ab3e9826fa965ae19f3678228e56cc26cfb4c109d"
+    },
+    {
+      "path": "launch_win7.bat",
+      "bytes": 1037,
+      "sha256": "6bcc77bd839bd778fa49c2147575bf20dd18c3bc388b5d7c61c160d7f23e9b0a"
+    },
+    {
+      "path": "chiasm_tomography.svg",
+      "bytes": 6439,
+      "sha256": "3308f0da04c10084464824f0cada95fbe2e28bc56bb4fcada3ad27a8478f7a80"
+    },
+    {
+      "path": "chiasm_report.json",
+      "bytes": 6305,
+      "sha256": "efe7b1268b5e86d0543bdcafefa519e3e8b8c54a0eb2b6ac34a78eea584a79dc"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 2039,
+      "sha256": "1afd02b0e286e0ca0369e09970acf57b1563253a70ace0176531a05d12148da4"
+    },
+    {
+      "path": "preview.png",
+      "bytes": 100776,
+      "sha256": "aa79425b808f18b53b59ebd44f2b3a59a21769e06ad8af1eb2133b3bb4316cf5"
+    },
+    {
+      "path": "README_WIN7.txt",
+      "bytes": 1277,
+      "sha256": "766b8bf02983385bb3b10966e6fc3efad008a74b6d05f03f8553bd51dce250c4"
+    }
+  ],
+  "report_sha256": "9464b4334c49d9befaaff2ed25891eee439625cb2ad5b1abf69b5bf1093bc9f4"
+}
