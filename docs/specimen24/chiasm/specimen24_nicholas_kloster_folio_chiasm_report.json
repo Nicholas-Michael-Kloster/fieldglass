@@ -1,0 +1,665 @@
+{
+  "slug": "specimen24_nicholas_kloster_folio",
+  "title": "SPECIMEN #24 \u00b7 \"NICHOLAS KLOSTER\" LOOSE-LEAF MANUSCRIPT",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "duration_sec": 245.12,
+  "episode_count": 62,
+  "nexus_sec": 175.37,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 5,
+    "past_repertoire": {
+      "deep_shadow": 0.08038295701027998,
+      "ink_linework": 0.18104274566450027,
+      "dark_midtone": 0.10478602030886376,
+      "botanical_mid": 0.1114326162802973,
+      "warm_sepia": 0.12450504065356198,
+      "aged_paper": 0.24976901905822624,
+      "bright_cream": 0.14323335697659956,
+      "paper_highlight": 0.004848244047670951
+    },
+    "future_repertoire": {
+      "deep_shadow": 0.06528277109177896,
+      "ink_linework": 0.12191571415897776,
+      "dark_midtone": 0.10754286497096693,
+      "botanical_mid": 0.13076527130210364,
+      "warm_sepia": 0.12129347923613766,
+      "aged_paper": 0.3670818743705705,
+      "bright_cream": 0.0759683042731354,
+      "paper_highlight": 0.010149720596329116
+    },
+    "past_accessible_volume": 6,
+    "past_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "bright_cream",
+      "dark_midtone",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "future_accessible_volume": 5,
+    "future_accessible_states": [
+      "aged_paper",
+      "botanical_mid",
+      "dark_midtone",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "chiasm_shift": -1,
+    "effective_information_bits": 0.085726,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 62,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        7,
+        6,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        5,
+        4,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        6,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        3,
+        3,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        3,
+        2,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        6,
+        2,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        4,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        7,
+        2,
+        2,
+        1,
+        1,
+        0
+      ],
+      [
+        5,
+        4,
+        4,
+        3,
+        2,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        2,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        4,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        6,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        4,
+        3,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        5,
+        3,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        7,
+        6,
+        2,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        6,
+        4,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        7,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        6,
+        4,
+        4,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        6,
+        5,
+        3,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        6,
+        5,
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        5,
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "aged_paper": 0.234032,
+      "botanical_mid": 0.095323,
+      "bright_cream": 0.095,
+      "dark_midtone": 0.082258,
+      "deep_shadow": 0.054516,
+      "ink_linework": 0.135645,
+      "paper_highlight": 0.0,
+      "warm_sepia": 0.102903
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "aged_paper"
+    ],
+    "transient_states": [
+      "botanical_mid",
+      "bright_cream",
+      "dark_midtone",
+      "deep_shadow",
+      "ink_linework",
+      "paper_highlight",
+      "warm_sepia"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "a_004_mean": 83.95,
+  "a_010_mean": 17.81,
+  "h1_mean_bits": 7.199,
+  "h2_mean_bits": 6.691,
+  "scene_sha256": "ce64c6628bff11848b679c1ed6190d88b5eabf230ddbbcf89f741f8767e27832",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "ec10643fcd8e49569f530979def672924c14357ac476907d38bc3662ca1e1709"
+}
