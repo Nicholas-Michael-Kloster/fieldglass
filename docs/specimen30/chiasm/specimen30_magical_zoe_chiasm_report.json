@@ -1,0 +1,320 @@
+{
+  "slug": "specimen30_magical_zoe",
+  "title": "MILESTONE SPECIMEN #30 \u00b7 \"LET'S CREATE SOMETHING MAGICAL\" (ZOE / ZOOEY)",
+  "contract": "fieldglass-causal-chiasm/v1",
+  "equation": "A_tau(p) = |{x in X : p(x) > tau}| = sum_{x in X} 1[p(x) > tau]",
+  "duration_sec": 4.96,
+  "episode_count": 24,
+  "nexus_sec": 3.12,
+  "chiasm_nexus": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "tau": 0.1,
+    "horizon": 5,
+    "past_repertoire": {
+      "deep_shadow": 0.07148799189814815,
+      "ink_linework": 0.1986617476851852,
+      "dark_midtone": 0.3067455150462963,
+      "botanical_mid": 0.20861183449074072,
+      "warm_sepia": 0.1155345775462963,
+      "aged_paper": 0.06009295428240739,
+      "bright_cream": 0.02700376157407407,
+      "paper_highlight": 0.011861617476851853
+    },
+    "future_repertoire": {
+      "deep_shadow": 0.046480155285493825,
+      "ink_linework": 0.22272255979938269,
+      "dark_midtone": 0.3057936680169753,
+      "botanical_mid": 0.18007028838734568,
+      "warm_sepia": 0.11927324459876545,
+      "aged_paper": 0.06904959972993827,
+      "bright_cream": 0.03125,
+      "paper_highlight": 0.025360484182098762
+    },
+    "past_accessible_volume": 4,
+    "past_accessible_states": [
+      "botanical_mid",
+      "dark_midtone",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "future_accessible_volume": 4,
+    "future_accessible_states": [
+      "botanical_mid",
+      "dark_midtone",
+      "ink_linework",
+      "warm_sepia"
+    ],
+    "chiasm_shift": 0,
+    "effective_information_bits": 0.02198,
+    "future_boxed_in": false,
+    "presence_glyph": "^_^",
+    "presence_meaning": "corroborated chiasm: reversible future options preserved",
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "persistent_filtration_tomography": {
+    "contract": "fieldglass-causal-chiasm/v1",
+    "episode_count": 24,
+    "thresholds": [
+      0.04,
+      0.08,
+      0.12,
+      0.18,
+      0.25,
+      0.35,
+      0.5
+    ],
+    "filtration_surface": [
+      [
+        6,
+        5,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        4,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        5,
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        4,
+        4,
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        4,
+        4,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ]
+    ],
+    "persistence_scores": {
+      "aged_paper": 0.043333,
+      "botanical_mid": 0.1675,
+      "bright_cream": 0.0,
+      "dark_midtone": 0.244167,
+      "deep_shadow": 0.033333,
+      "ink_linework": 0.1775,
+      "paper_highlight": 0.0,
+      "warm_sepia": 0.093333
+    },
+    "invariant_tau": 0.14,
+    "structural_invariants": [
+      "botanical_mid",
+      "dark_midtone",
+      "ink_linework"
+    ],
+    "transient_states": [
+      "aged_paper",
+      "bright_cream",
+      "deep_shadow",
+      "paper_highlight",
+      "warm_sepia"
+    ],
+    "executed": false,
+    "sentience_claimed": false
+  },
+  "a_004_mean": 111.83,
+  "a_010_mean": 15.21,
+  "h1_mean_bits": 7.451,
+  "h2_mean_bits": 7.219,
+  "scene_sha256": "e96c7eeabc39df6e0ae091c42518e7a8223add974d67e6e6cf9531aa10aee3ed",
+  "executed": false,
+  "sentience_claimed": false,
+  "tokens_used": 0,
+  "report_sha256": "809e0768209d560ef596b08142bd41eb318b4c4dceaa1eaf646a3c2fc5843853"
+}

@@ -54,10 +54,11 @@ A 4K 60fps walkthrough of the **Linda Hall Library of Science, Engineering & Tec
 |---|---|
 | ![Linda Hall Fig 1 Braille](docs/specimen3/assets/linda_hall_fig1_chromatography_braille_preview.png) | ![Linda Hall Chiasm](docs/specimen3/chiasm/specimen3_linda_hall_chiasm.png) |
 
-## Full Live Archive (29 Specimens on GitHub Pages)
+## Full Live Archive (30 Specimens on GitHub Pages)
 
-Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **29 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
+Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas-michael-kloster.github.io/fieldglass/)** to browse all **30 published specimens**, including live Kloster $A_\tau(p_t)$ telemetry videos, vector SVGs, 2×4 Braille broadsides, and SHA-256 sealed Causal Chiasm reports:
 
+- **[#30 · *"Let's Create Something Magical"* (Zoe / Zooey 4K Studio Intro &amp; Rainbow Sparkle Impulse Study — Milestone 30th)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-30)** — 4K 24fps animated studio welcome (`5.0 s`, 1.0× full original audio: *"Hi! I'm Zoe! Let's create something magical!"*, `24` episodes, `Past 4 → Future 4`, `EI = 0.0220 bits`, `Mean A_0.04 = 111.83`, `^_^`) with royal-violet *Rainbow Sparkle Constellation Swirl* &amp; warm-sepia *Studio Greeting* edge-field SVGs + 72-column Braille + 6-plate 4K storyboard.
 - **[#29 · *"A Deal With Bach &amp; My Birds"* (Signed Blind-Typed First-Draft Anthology)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-29)** — 12m 38s hand-signed typewritten anthology (`130` episodes, `Past 3 → Future 3`, `EI = 0.0826 bits`, `^_^`) featuring *"A poem a forest a woman / city on fire"*, Tom Waits homage *"It is raining some where / the piano plays backwards"*, *"an afair with rain"*, and signed *"A Deal with death, about a play. With Bach in background."* (Savio &amp; Greevo) &amp; *"my birds / Silence is perfect."* SVGs + Braille.
 - **[#28 · *"Blue Poems &amp; Dear Saba"* (Dec 27 – Feb 4 Unlined White Poetry Folio)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-28)** — 7m 05s unlined white folio (`71` episodes, `Past 3 → Future 5`, `EI = 0.2794 bits`, `^_^`) opening with *"This Is the Subconscious"*, *"Dear Saba"* (Umberto Saba, Futurism &amp; Surrealism), *"Like Some French Film"*, signed *"Feb 4"*, and Red-channel Prussian-indigo *"Night Building City / Blue Poems"* &amp; *"Self-Proclaimed Pilgrimage"* SVGs + Braille.
 - **[#27 · *"Copper Wire &amp; The Sage"* (Sept 2 – Oct 3 Unlined Cream Pocket Notebook)](https://nicholas-michael-kloster.github.io/fieldglass/#specimen-27)** — 6m 55s unlined cream pocket folio (`69` episodes, `Past 3 → Future 3`, `EI = 0.2938 bits`, `^_^`) with *"Copper Wire Boy &amp; Girl"*, *"Johnny Cash (at an abandoned cafe near Mexico)"*, signed *"Forbidden Fruit"*, and zero-ruled *"The Dog Is a True Sage"* (Kansas rain, Bilingual Sun) &amp; *"An Orchestra of Chaotic Sounds"* SVGs + Braille.
@@ -85,7 +86,7 @@ Open **[https://nicholas-michael-kloster.github.io/fieldglass/](https://nicholas
 
 ## Observatory Expansion (R1–R4)
 
-In addition to the 29 research specimens above, Fieldglass includes four deterministic educational & engineering expansion tracks (R1–R4), each instrumented with Kloster $A_\tau(p)$, vector SVGs, 2×4 Unicode Braille, and SHA-256 sealed Causal Chiasm reports (`executed=False`, `sentience_claimed=False`, `tokens_used=0`):
+In addition to the 30 research specimens above, Fieldglass includes four deterministic educational & engineering expansion tracks (R1–R4), each instrumented with Kloster $A_\tau(p)$, vector SVGs, 2×4 Unicode Braille, and SHA-256 sealed Causal Chiasm reports (`executed=False`, `sentience_claimed=False`, `tokens_used=0`):
 
 - **R1 · Educational Simulators & Observatory Workbench** (`src/fieldglass/observatory_r1.py`, `examples/build_r1_observatory.py`):
   - **MS-DOS 6.22 & 8086 Real-Mode Simulator** (`docs/msdos/`): 16-bit 8086 registers, A20 address calculator, 640 KB Conventional + 384 KB UMA + 64 KB HMA memory layout, 1.44 MB FAT12 geometry, and `COMMAND.COM` shell (`12` episodes, `Past 4 → Future 6`, `EI = 0.2447 bits`).

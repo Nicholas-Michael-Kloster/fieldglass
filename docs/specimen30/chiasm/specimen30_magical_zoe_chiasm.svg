@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
+<rect x="0.0" y="0.0" width="1400.0" height="1000.0" fill="#0b111b" stroke="#0b111b" stroke-width="0"/>
+<rect x="28.0" y="96.0" width="658.0" height="424.0" fill="#121b2a" stroke="#f46a7e" stroke-width="2"/>
+<rect x="714.0" y="96.0" width="658.0" height="424.0" fill="#121b2a" stroke="#294058" stroke-width="1"/>
+<rect x="28.0" y="544.0" width="1344.0" height="382.0" fill="#121b2a" stroke="#294058" stroke-width="1"/>
+<text x="28.0" y="44.0" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="21.0" font-weight="700">MILESTONE SPECIMEN #30 · "LET'S CREATE SOMETHING MAGICAL" (ZOE / ZOOEY)</text>
+<text x="28.0" y="74.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.5" font-weight="600">4K Animated Studio Greeting &amp; Rainbow Sparkle Impulse Study (5.0s · 1.0x Audio · 0.20s Cadence)</text>
+<text x="48.0" y="128.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="15.5" font-weight="700">01 / CAUSAL CHIASM AT NEXUS (0:03)</text>
+<text x="52.0" y="164.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="600">PAST (0:00-0:03) A_0.10 = 4</text>
+<text x="410.0" y="164.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="600">FUTURE (0:03-0:04) A_0.10 = 4</text>
+<polyline points="88.0,216.0 309.0,275.8 357.0,308.0" fill="none" stroke="#5edaf0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,308.0 405.0,340.2 626.0,400.0" fill="none" stroke="#f2c45c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="88.0,264.0 309.0,292.6 357.0,308.0" fill="none" stroke="#5edaf0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,308.0 405.0,323.4 626.0,352.0" fill="none" stroke="#f46a7e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="88.0,352.0 309.0,323.4 357.0,308.0" fill="none" stroke="#f2c45c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,308.0 405.0,292.6 626.0,264.0" fill="none" stroke="#5edaf0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="88.0,400.0 309.0,340.2 357.0,308.0" fill="none" stroke="#f46a7e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,308.0 405.0,275.8 626.0,216.0" fill="none" stroke="#f2c45c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,276.0 389.0,308.0 357.0,340.0 325.0,308.0 357.0,276.0" fill="none" stroke="#f46a7e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="357.0,289.4 375.6,308.0 357.0,326.6 338.4,308.0 357.0,289.4" fill="none" stroke="#f2c45c" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="325.0" y1="308.0" x2="389.0" y2="308.0" stroke="#5edaf0" stroke-width="1.2"/>
+<line x1="357.0" y1="276.0" x2="357.0" y2="340.0" stroke="#5edaf0" stroke-width="1.2"/>
+<text x="277.0" y="364.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="700">SPARKLE SWIRL (0:03)</text>
+<text x="48.0" y="478.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.5" font-weight="600">Nexus EI = 0.0220 bits · shift = +0 · glyph = ^_^ · boxed_in = False</text>
+<text x="48.0" y="502.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">24 episodes · 0 cloud tokens · SHA-256 sealed local telemetry</text>
+<text x="734.0" y="128.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="15.5" font-weight="700">02 / PERSISTENT FILTRATION TOMOGRAPHY (24 EPISODES)</text>
+<text x="734.0" y="154.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">Mean survival threshold P(x) across tonal repertoire</text>
+<text x="738.0" y="204.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">dark_midtone</text>
+<rect x="885.0" y="190.0" width="150.0" height="20.0" fill="#f46a7e" stroke="#f46a7e" stroke-width="1"/>
+<text x="1045.0" y="205.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.244 INV</text>
+<text x="738.0" y="240.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">ink_linework</text>
+<rect x="885.0" y="226.0" width="109.0" height="20.0" fill="#f46a7e" stroke="#f46a7e" stroke-width="1"/>
+<text x="1004.0" y="241.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.177 INV</text>
+<text x="738.0" y="276.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">botanical_mid</text>
+<rect x="885.0" y="262.0" width="103.0" height="20.0" fill="#f46a7e" stroke="#f46a7e" stroke-width="1"/>
+<text x="998.0" y="277.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.168 INV</text>
+<text x="738.0" y="312.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">warm_sepia</text>
+<rect x="885.0" y="298.0" width="57.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="952.0" y="313.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.093 </text>
+<text x="738.0" y="348.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">aged_paper</text>
+<rect x="885.0" y="334.0" width="26.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="921.0" y="349.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.043 </text>
+<text x="738.0" y="384.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">deep_shadow</text>
+<rect x="885.0" y="370.0" width="20.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="915.0" y="385.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.033 </text>
+<text x="738.0" y="420.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">bright_cream</text>
+<rect x="885.0" y="406.0" width="8.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="903.0" y="421.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.000 </text>
+<text x="738.0" y="456.0" fill="#e8eef5" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">paper_highlight</text>
+<rect x="885.0" y="442.0" width="8.0" height="20.0" fill="#5edaf0" stroke="#5edaf0" stroke-width="1"/>
+<text x="903.0" y="457.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">P=0.000 </text>
+<text x="734.0" y="498.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="600">Invariants (tau&gt;=0.14): botanical_mid, dark_midtone, ink_linework</text>
+<text x="48.0" y="578.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="15.5" font-weight="700">03 / LIVE KLOSTER ACCESSIBLE VOLUME TRAJECTORY  A_tau(p_t)</text>
+<text x="48.0" y="604.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">Cyan: A_0.004(p_t) [0..180]  ·  Gold: A_0.010(p_t) [0..60]  ·  Ruby marker: SPARKLE SWIRL (0:03)</text>
+<rect x="92.0" y="628.0" width="1238.0" height="240.0" fill="#0c1420" stroke="#294058" stroke-width="1"/>
+<line x1="899.4" y1="628.0" x2="899.4" y2="868.0" stroke="#f46a7e" stroke-width="2"/>
+<text x="905.4" y="648.0" fill="#f46a7e" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="700">NEXUS (0:03)</text>
+<polyline points="92.0,690.0 145.8,695.0 199.7,703.8 253.5,712.6 307.3,722.6 361.1,730.2 415.0,730.2 468.8,730.2 522.6,730.2 576.4,730.2 630.3,727.7 684.1,726.4 737.9,728.9 791.7,728.9 845.6,717.6 899.4,721.4 953.2,715.1 1007.0,717.6 1060.9,721.4 1114.7,727.7 1168.5,728.9 1222.3,727.7 1276.2,728.9 1330.0,725.1" fill="none" stroke="#5edaf0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="92.0,858.2 145.8,858.2 199.7,846.9 253.5,850.7 307.3,828.1 361.1,805.5 415.0,790.4 468.8,801.7 522.6,794.2 576.4,794.2 630.3,775.4 684.1,771.6 737.9,767.8 791.7,782.9 845.6,798.0 899.4,801.7 953.2,816.8 1007.0,805.5 1060.9,794.2 1114.7,801.7 1168.5,782.9 1222.3,801.7 1276.2,798.0 1330.0,786.7" fill="none" stroke="#f2c45c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="78.0" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">0:00</text>
+<text x="325.6" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">0:00</text>
+<text x="573.2" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">0:01</text>
+<text x="820.8" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">0:02</text>
+<text x="1068.4" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">0:03</text>
+<text x="1316.0" y="888.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="12.0" font-weight="500">0:04</text>
+<text x="48.0" y="912.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="600">A_0.010 mean=15.2 · max=25 · min=1 · H1 mean=7.45b · H2 mean=7.22b</text>
+<rect x="1062.0" y="18.0" width="310.0" height="60.0" fill="#0f1928" stroke="#5edaf0" stroke-width="1.5"/>
+<text x="1076.0" y="44.0" fill="#f2c45c" font-family="DejaVu Sans Mono, monospace" font-size="14.0" font-weight="700">A_0.10(p) = 4   GLYPH: ^_^</text>
+<text x="1076.0" y="66.0" fill="#5edaf0" font-family="DejaVu Sans Mono, monospace" font-size="11.0" font-weight="500">FIELDGLASS LOCAL TELEMETRY · 0 TOK</text>
+<text x="28.0" y="968.0" fill="#90a4bc" font-family="DejaVu Sans Mono, monospace" font-size="13.0" font-weight="500">Fieldglass Milestone Specimen #30 · Zoe / Zooey Studio Greeting Telemetry · 0 cloud tokens · executed=False</text>
+</svg>
